@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Xml.Linq;
 using TravillioXMLOutService.Models;
-using TravillioXMLOutService.Transfer.Service;
+
+using TravillioXMLOutService.Transfer.Services;
 
 namespace TravillioXMLOutService.Transfer.HotelBeds
 {
@@ -29,9 +30,10 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
                         string customerId = req.Descendants("TransferCXLPolicyRequest").Attributes("CustomerID").FirstOrDefault().Value;
                         HotelBedService hbreq = new HotelBedService(customerId);
                         XElement SearReq = req.Descendants("TransferCXLPolicyRequest").FirstOrDefault();
-                        XElement response = hbreq.CxlPolicyRequest(SearReq);
-                        SearReq.AddAfterSelf(response);
-                        return response;
+                        //XElement response = hbreq.CxlPolicyRequest(SearReq);
+                        //SearReq.AddAfterSelf(response);
+                        //return response;
+                        return SearReq;
                     }
                     else
                     {

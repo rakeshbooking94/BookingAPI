@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 using TravillioXMLOutService.Models;
-using TravillioXMLOutService.Transfer.Service;
+using TravillioXMLOutService.Transfer.Services;
 
 namespace TravillioXMLOutService.Transfer.HotelBeds
 {
     public class HB_transferAvail
     {
-        public XElement getTransferAvailability(XElement req)
+        public async Task<XElement> getTransferAvailability(XElement req)
         {
             HeaderAuth headercheck = new HeaderAuth();
             string username = req.Descendants("UserName").Single().Value;
@@ -31,7 +32,7 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
                         string customerId = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
                         HotelBedService hbreq = new HotelBedService(customerId);
                         XElement SearReq = req.Descendants("SearchRequest").FirstOrDefault();
-                        XElement response = hbreq.SearchRequest(SearReq);
+                        XElement response =await hbreq.GetSearchAsync(SearReq);
                         SearReq.AddAfterSelf(response);
                         return req;
                     }
@@ -87,7 +88,7 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
                     ex1.PageName = "HB_transferAvail";
                     ex1.CustomerID = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
                     ex1.TranID = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
-                    APILog.SendCustomExcepToDB(ex1);
+                    //APILog.SendCustomExcepToDB(ex1);
                     return searchdoc;
                     #endregion
                 }

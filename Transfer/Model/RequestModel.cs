@@ -27,25 +27,21 @@ namespace TravillioXMLOutService.Transfer.Model
             get;
             set;
         }
-
         public string RequestStr
         {
             get;
             set;
         }
-
         public string ResponseStr
         {
             get;
             set;
         }
-
         public DateTime StartTime
         {
             get;
             set;
         }
-
         public DateTime EndTime
         {
             get;

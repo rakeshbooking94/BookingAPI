@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using TravillioXMLOutService.App_Code;
 using TravillioXMLOutService.Models;
@@ -20,7 +21,9 @@ namespace TravillioXMLOutService
     public class TransferService : ITransferService, IDisposable
     {
         #region Transfer Travayoo
-        public object TransferAvailability(XElement req)
+
+
+        public async Task<object> TransferAvailabilityAsync(XElement req)
         {
             try
             {
@@ -48,7 +51,7 @@ namespace TravillioXMLOutService
                     saveex.SendCustomExcepToDB(ex1);
                 }
                 #endregion
-                availabilityresponse = reqs.getTransferAvailability(req);
+                availabilityresponse = await reqs.getTransferAvailability(req);
                 #region XML Response
                 try
                 {
@@ -114,6 +117,100 @@ namespace TravillioXMLOutService
                 #endregion
             }
         }
+        //public object TransferAvailability(XElement req)
+        //{
+        //    try
+        //    {
+        //        XElement availabilityresponse = null;
+        //        HB_transferAvail reqs = new HB_transferAvail();
+        //        #region Time Start
+        //        try
+        //        {
+        //            APILogDetail log2 = new APILogDetail();
+        //            log2.customerID = Convert.ToInt64(req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value);
+        //            log2.TrackNumber = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //            log2.LogTypeID = 0;
+        //            log2.LogType = "TimeStart";
+        //            log2.logrequestXML = req.ToString();
+        //            APILog.SaveAPILogs(log2);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            CustomException ex1 = new CustomException(ex);
+        //            ex1.MethodName = "TransferAvailability";
+        //            ex1.PageName = "TransferService";
+        //            ex1.CustomerID = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
+        //            ex1.TranID = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //            SaveAPILog saveex = new SaveAPILog();
+        //            saveex.SendCustomExcepToDB(ex1);
+        //        }
+        //        #endregion
+        //        availabilityresponse = await reqs.getTransferAvailability(req);
+        //        #region XML Response
+        //        try
+        //        {
+        //            APILogDetail log = new APILogDetail();
+        //            log.customerID = Convert.ToInt64(req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value);
+        //            log.TrackNumber = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //            log.LogTypeID = 1;
+        //            log.LogType = "Search";
+        //            log.logrequestXML = req.ToString();
+        //            log.logresponseXML = availabilityresponse.ToString();
+        //            SaveAPILog savelog = new SaveAPILog();
+        //            savelog.SaveAPILogs(log);
+        //            #region Time End
+        //            try
+        //            {
+        //                APILogDetail log3 = new APILogDetail();
+        //                log3.customerID = Convert.ToInt64(req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value);
+        //                log3.TrackNumber = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //                log3.LogTypeID = 0;
+        //                log3.LogType = "TimeEnd";
+        //                SaveAPILog savelog3 = new SaveAPILog();
+        //                savelog3.SaveAPILogs(log3);
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                CustomException ex1 = new CustomException(ex);
+        //                ex1.MethodName = "TransferAvailability";
+        //                ex1.PageName = "TransferService";
+        //                ex1.CustomerID = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
+        //                ex1.TranID = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //                SaveAPILog saveex = new SaveAPILog();
+        //                saveex.SendCustomExcepToDB(ex1);
+        //            }
+        //            #endregion
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            #region Exception
+        //            CustomException ex1 = new CustomException(ex);
+        //            ex1.MethodName = "HotelAvailability";
+        //            ex1.PageName = "TravillioService";
+        //            ex1.CustomerID = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
+        //            ex1.TranID = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //            SaveAPILog saveex = new SaveAPILog();
+        //            saveex.SendCustomExcepToDB(ex1);
+        //            #endregion
+        //        }
+        //        SerializeXMLOut serialization = new SerializeXMLOut();
+        //        return serialization.Serialize(availabilityresponse);
+        //        #endregion
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        #region Exception
+        //        CustomException ex1 = new CustomException(ex);
+        //        ex1.MethodName = "TransferAvailability";
+        //        ex1.PageName = "TransferService";
+        //        ex1.CustomerID = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
+        //        ex1.TranID = req.Descendants("SearchRequest").Attributes("TransID").FirstOrDefault().Value;
+        //        SaveAPILog saveex = new SaveAPILog();
+        //        saveex.SendCustomExcepToDB(ex1);
+        //        return ex.Message;
+        //        #endregion
+        //    }
+        //}
         public object CXLPolicyTransfer(XElement req)
         {
             try
