@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Properties/PublishProfiles
+/Properties
+/obj/Debug
+/bin
+/.vs/TravillioXMLOutService_Hotel/config
+/.vs/TravillioXMLOutService_Hotel/v16/Server/sqlite3
