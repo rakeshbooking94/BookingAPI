@@ -22,7 +22,7 @@ namespace TravillioXMLOutService.Repository.Transfer
         {
             model = _model;
             _httpClient.BaseAddress = new Uri(model.ServiceHost);
-            _httpClient.Timeout = new TimeSpan(0, 0, 30);
+            _httpClient.Timeout = new TimeSpan(0, 10, 30);
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
             _httpClient.DefaultRequestHeaders.Add("Api-key", model.UserName);
@@ -45,7 +45,7 @@ namespace TravillioXMLOutService.Repository.Transfer
                     {
                         stringResponse = await response.Content.ReadAsStringAsync();
 
-                        if(string.IsNullOrEmpty(stringResponse))
+                        if(!string.IsNullOrEmpty(stringResponse))
                         {
                             result = JsonConvert.DeserializeObject<SearchResponseModel>(stringResponse);
                         }
@@ -108,39 +108,15 @@ namespace TravillioXMLOutService.Repository.Transfer
         }
 
 
+
         #region Dispose
         /// <summary>
         /// Dispose all used resources.
         /// </summary>
-        bool disposed = false;
-
-        // Public implementation of Dispose pattern callable by consumers.
         public void Dispose()
         {
-            Dispose(true);
+            this.Dispose();
             GC.SuppressFinalize(this);
-        }
-
-        // Protected implementation of Dispose pattern.
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposed)
-                return;
-
-            if (disposing)
-            {
-                model = null;
-                // Free any other managed objects here.
-                //
-            }
-
-            // Free any unmanaged objects here.
-            //
-            disposed = true;
-        }
-        ~HotelBedRepository()
-        {
-            Dispose(false);
         }
         #endregion
     }

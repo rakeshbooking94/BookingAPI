@@ -259,16 +259,30 @@ namespace TravillioXMLOutService.Transfer.Helpers
 
 
 
-        public static XElement mergCXLPolicy(this IEnumerable<XElement> PolicyList)
+        public static decimal GetValueOrDefault(this XAttribute attribute, decimal defaultValue = 0.0m)
         {
+            if (attribute == null)
+                return defaultValue;
+            else
+                return Convert.ToDecimal(attribute.Value);
+        }
 
+
+
+
+
+
+        public static XElement MergPolicy(this List<XElement> PolicyList, decimal _totalAmount)
+        {
             List<XElement> cxlList = new List<XElement>();
-            IEnumerable<XElement> dateLst = PolicyList.GroupBy(r => new
-            {
-                r.Attribute("lastDate").Value.GetDateTime("yyyy-MM-ddTHH:mm:ss").Date,
-                noshow = r.Attribute("noShow").Value
-            }).Select(y => y.First()).
+            IEnumerable<XElement> dateLst = PolicyList.Descendants("cancellationPolicy").
+               GroupBy(r => new
+               {
+                   r.Attribute("lastDate").Value.GetDateTime("yyyy-MM-ddTHH:mm:ss").Date,
+                   noshow = r.Attribute("noShow").Value
+               }).Select(y => y.First()).
                OrderBy(p => p.Attribute("lastDate").Value.GetDateTime("yyyy-MM-ddTHH:mm:ss"));
+
 
             if (dateLst.Count() > 0)
             {
@@ -282,7 +296,6 @@ namespace TravillioXMLOutService.Transfer.Helpers
                         var prItem = rm.Descendants("cancellationPolicy").
                        Where(pq => (pq.Attribute("noShow").Value == noShow && pq.Attribute("lastDate").Value == date)).
                        FirstOrDefault();
-
                         if (prItem != null)
                         {
                             var price = prItem.Attribute("amount").Value;
@@ -292,7 +305,7 @@ namespace TravillioXMLOutService.Transfer.Helpers
                         {
                             if (noShow == "1")
                             {
-                                datePrice += Convert.ToDecimal(rm.Element("TotalAmount").Value);
+                                datePrice += _totalAmount;
                             }
                             else
                             {
@@ -309,10 +322,6 @@ namespace TravillioXMLOutService.Transfer.Helpers
                             }
                         }
                     }
-
-
-
-
                     XElement pItem = new XElement("cancellationPolicy",
                         new XAttribute("lastDate", date),
                         new XAttribute("amount", datePrice),
@@ -320,11 +329,13 @@ namespace TravillioXMLOutService.Transfer.Helpers
                     cxlList.Add(pItem);
                 }
 
-                cxlList = cxlList.GroupBy(x => new { x.Attribute("lastDate").Value.GetDateTime("yyyyMMdd HHmm").Date, x.Attribute("noShow").Value }).
+                cxlList = cxlList.GroupBy(x => new { x.Attribute("lastDate").Value.GetDateTime("yyyy-MM-ddTHH:mm:ss").Date, x.Attribute("noShow").Value }).
                     Select(y => new XElement("cancellationPolicy",
                         new XAttribute("lastDate", y.Key.Date.ToString("d MMM, yy")),
                         new XAttribute("amount", y.Max(p => Convert.ToDecimal(p.Attribute("amount").Value))),
                         new XAttribute("noShow", y.Key.Value))).OrderBy(p => p.Attribute("lastDate").Value.GetDateTime("d MMM, yy").Date).ToList();
+
+
 
                 var fItem = cxlList.FirstOrDefault();
 
@@ -333,11 +344,14 @@ namespace TravillioXMLOutService.Transfer.Helpers
                     cxlList.Insert(0, new XElement("cancellationPolicy", new XAttribute("lastDate", fItem.Attribute("lastDate").Value.GetDateTime("d MMM, yy").AddDays(-1).Date.ToString("d MMM, yy")), new XAttribute("amount", "0.00"), new XAttribute("noShow", "0")));
                 }
             }
-            XElement cxlItem = new XElement("cancellationPolicies", cxlList);
+            XElement cxlItem = new XElement("cancellationPolicyList", cxlList);
             return cxlItem;
         }
 
 
+
+ 
+        
 
 
 

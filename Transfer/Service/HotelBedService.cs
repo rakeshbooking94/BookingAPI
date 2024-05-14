@@ -62,9 +62,9 @@ namespace TravillioXMLOutService.Transfer.Services
             SearchModel model = new SearchModel()
             {
                 language = "en",
-                ftype = pickupType == 1 ? "ATLAS" : "PORT",
+                ftype = pickupType == 1 ? "IATA" : "ATLAS",
                 fcode = pickupCode,
-                ttype = dropupType == 1 ? "ATLAS" : "PORT",
+                ttype = dropupType == 1 ? "IATA" : "ATLAS",
                 tcode = dropupCode,
                 departing = pickUpdate.ToString("yyyy-MM-ddTHH:mm:ss"),
                 adults = _travyoReq.Element("Occupancy").Attribute("adult").ToINT(),
@@ -79,16 +79,16 @@ namespace TravillioXMLOutService.Transfer.Services
                 DateTime outDatetime = outDate.GetDateTime("d MMM, yy HH:mm");
                 model.comeback = outDatetime.ToString("yyyy-MM-ddTHH:mm:ss");
 
-                reqModel.RequestStr = @"transfer-api/1.0/availability/{model.language}/from/{model.ftype}/" +
-           @"{model.fcode}/to/{model.ttype}/{model.tcode}/{model.departing}/{model.comeback}/" +
-       @"{model.adults}/{model.children}/{model.infants}";
+                reqModel.RequestStr = $"transfer-api/1.0/availability/{model.language}/from/{model.ftype}/" +
+           $"{model.fcode}/to/{model.ttype}/{model.tcode}/{model.departing}/{model.comeback}/" +
+       $"{model.adults}/{model.children}/{model.infants}";
 
             }
             else
             {
-                reqModel.RequestStr = @"transfer-api/1.0/availability/{model.language}/from/{model.ftype}/" +
-      @"{model.fcode}/to/{model.ttype}/{model.tcode}/{model.departing}/" +
-  @"{model.adults}/{model.children}/{model.infants}";
+                reqModel.RequestStr = $"transfer-api/1.0/availability/{model.language}/from/{model.ftype}/" +
+      $"{model.fcode}/to/{model.ttype}/{model.tcode}/{model.departing}/" +
+  $"{model.adults}/{model.children}/{model.infants}";
             }
 
             SearchResponseModel rsmodel = await _repo.GetSearchAsync(reqModel);
@@ -161,30 +161,45 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
                                   new XElement("waitingTime", new XAttribute("cwtime", string.Empty), new XAttribute("domestic", string.Empty),
                                   new XAttribute("international", string.Empty)),
                                   new XElement("journeyTime", new XAttribute("jtime", string.Empty)),
-                                  new XElement("cancellationPolicies",
+                                  new XElement("cancellationList",
                                   from cxl in srv.cancellationPolicies
                                   select new XElement("cancellationPolicy", new XAttribute("lastDate", cxl.@from),
                                   new XAttribute("amount", cxl.amount), new XAttribute("noShow", 0))
                                   ));
 
             int count = srvTransfers.Where(x => x.Attribute("direction").Value == "OUT").Count();
+
+
+
             if (count > 0)
             {
+                //srv.Descendants("cancellationPolicy").Concat(srv.Descendants("cancellationPolicy")).mergCXLPolicy()
                 joinTransfers = from srv in srvTransfers.Where(x => x.Attribute("direction").Value == "IN")
                                 from srvOut in srvTransfers.Where(x => x.Attribute("direction").Value == "OUT")
-                                select new XElement("serviceTransfer", new XAttribute("supplierId", 10), srv, srvOut,
-                                srv.Descendants("cancellationPolicy").Concat(srv.Descendants("cancellationPolicy")).mergCXLPolicy());
+                                let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m) + srvOut.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
+                                select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
+                                new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv, srvOut,
+                                srv.Descendants("cancellationList").Concat(srv.Descendants("cancellationList")).ToList().MergPolicy(_amount));
             }
             else
             {
                 joinTransfers = from srv in srvTransfers
-                                select new XElement("serviceTransfer", new XAttribute("supplierId", 10), srv,
-                                srv.Descendants("cancellationPolicy").Concat(srv.Descendants("cancellationPolicy")).mergCXLPolicy());
+                                let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
+                                select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
+                                new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv,
+                                srv.Descendants("cancellationList").ToList().MergPolicy(_amount));
             }
+
+            joinTransfers.Descendants("cancellationList").Remove();
+
             var response = new XElement("searchResponse", new XElement("serviceTransfers",
 new XAttribute("adults", respHb.search.occupancy.adults),
 new XAttribute("children", respHb.search.occupancy.children),
 new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
+
+
+ 
+
             return response;
 
 
@@ -198,39 +213,15 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
 
 
 
+
         #region Dispose
         /// <summary>
         /// Dispose all used resources.
         /// </summary>
-        bool disposed = false;
-
-        // Public implementation of Dispose pattern callable by consumers.
         public void Dispose()
         {
-            Dispose(true);
+            this.Dispose();
             GC.SuppressFinalize(this);
-        }
-
-        // Protected implementation of Dispose pattern.
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposed)
-                return;
-
-            if (disposing)
-            {
-                model = null;
-                // Free any other managed objects here.
-                //
-            }
-
-            // Free any unmanaged objects here.
-            //
-            disposed = true;
-        }
-        ~HotelBedService()
-        {
-            Dispose(false);
         }
         #endregion
 

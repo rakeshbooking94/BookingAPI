@@ -9,7 +9,7 @@ using TravillioXMLOutService.Transfer.Services;
 
 namespace TravillioXMLOutService.Transfer.HotelBeds
 {
-    public class HB_transferAvail
+    public class HB_transferAvail : IDisposable
     {
         public async Task<XElement> getTransferAvailability(XElement req)
         {
@@ -126,7 +126,17 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
 
 
 
-   
+        #region Dispose
+        /// <summary>
+        /// Dispose all used resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose();
+            GC.SuppressFinalize(this);
+        }
+        #endregion
+
 
 
 
