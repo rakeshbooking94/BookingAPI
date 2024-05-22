@@ -679,10 +679,11 @@
     <Compile Include="Transfer\HotelBeds\HB_TrnsfrCancel.cs" />
     <Compile Include="Transfer\HotelBeds\HB_TrnsfrGetCXLPolicy.cs" />
     <Compile Include="Transfer\HotelBeds\HB_TrnsfrGetPreBook.cs" />
-    <Compile Include="Transfer\Model\HBCredentials.cs" />
-    <Compile Include="Transfer\Model\HB\SearchModel.cs" />
-    <Compile Include="Transfer\Model\HB\SearchResponseModel.cs" />
-    <Compile Include="Transfer\Model\RequestModel.cs" />
+    <Compile Include="Transfer\Models\HBCredentials.cs" />
+    <Compile Include="Transfer\Models\HB\PreBookResponseModel.cs" />
+    <Compile Include="Transfer\Models\HB\SearchModel.cs" />
+    <Compile Include="Transfer\Models\HB\SearchResponseModel.cs" />
+    <Compile Include="Transfer\Models\RequestModel.cs" />
     <Compile Include="Transfer\Repository\HotelBedRepository.cs" />
     <Compile Include="Transfer\Service\HotelBedService.cs" />
     <Compile Include="Transfer\Service\Interfaces\IHotelBedService.cs" />
