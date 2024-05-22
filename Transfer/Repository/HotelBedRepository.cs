@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using TravillioXMLOutService.Models;
-using TravillioXMLOutService.Transfer.Model;
+
+using TravillioXMLOutService.Transfer.Models;
 using TravillioXMLOutService.Transfer.Models.HB;
 
 namespace TravillioXMLOutService.Repository.Transfer

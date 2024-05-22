@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using TravillioXMLOutService.Repository.Transfer;
 using TravillioXMLOutService.Transfer.Helpers;
-using TravillioXMLOutService.Transfer.Model;
+using TravillioXMLOutService.Transfer.Models;
 using TravillioXMLOutService.Transfer.Models.HB;
 using TravillioXMLOutService.Transfer.Services.Interfaces;
 
