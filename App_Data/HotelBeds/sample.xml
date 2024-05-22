@@ -1,0 +1,42 @@
+﻿<TransferValuedAvailRQ echoToken="DummyEchoToken"
+ sessionId="134132121666"
+    xmlns="http://www.hotelbeds.com/schemas/2005/06/messages"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.hotelbeds.com/schemas/2005/06/messages TransferValuedAvailRQ.xsd"
+ version="2013/12">
+  <Language>ENG</Language>
+  <Credentials>
+    <User>TESTCHAINS</User>
+    <Password>TESTCHAINS</Password>
+  </Credentials>
+  <AvailData type="IN">
+    <ServiceDate date="20171214" time="1300" />
+    <Occupancy>
+      <AdultCount>1</AdultCount>
+      <ChildCount>0</ChildCount>
+    </Occupancy>
+    <PickupLocation xsi:type="ProductTransferTerminal">
+      <Code>BCN</Code>
+      <DateTime date="20171214" time="1300" />
+    </PickupLocation>
+    <DestinationLocation xsi:type="ProductTransferHotel">
+      <Code>175906</Code>
+    </DestinationLocation>
+  </AvailData>
+  <AvailData type="OUT">
+    <ServiceDate date="20171214" time="2100" />
+    <Occupancy>
+      <AdultCount>1</AdultCount>
+      <ChildCount>0</ChildCount>
+    </Occupancy>
+    <PickupLocation xsi:type="ProductTransferHotel">
+      <Code>175906</Code>
+      <!--<DateTime date="20171015" time="1300" />-->
+    </PickupLocation>
+    <DestinationLocation xsi:type="ProductTransferTerminal">
+      <Code>BCN</Code>
+      <DateTime date="20171214" time="2100" />
+    </DestinationLocation>
+  </AvailData>
+  <ReturnContents>Y</ReturnContents>
+</TransferValuedAvailRQ>
