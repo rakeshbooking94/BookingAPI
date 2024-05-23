@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TerminalList>
+  <Terminal Type="A" Code="AAE" Name="Annaba Rabah Bitat Int. Airport" GPS-X="7.811857000000000e+000" GPS-Y="3.682139200000000e+001" Destination="AAE" />
+  <Terminal Type="A" Code="AAL" Name="Aalborg Aalborg Airport" GPS-X="9.872241000000001e+000" GPS-Y="5.708655100000000e+001" Destination="AAL" />
+  <Terminal Type="A" Code="AAR" Name="Aarhus Aarhus Airport" GPS-X="1.062635100000000e+001" GPS-Y="5.630823000000000e+001" Destination="AAR" />
+  <Terminal Type="A" Code="ABC" Name="Albacete Albacete Los Llanos Airport" GPS-X="-1.863333000000000e+000" GPS-Y="3.894833300000000e+001" Destination="ABC" />
+  <Terminal Type="A" Code="ABZ" Name="Aberdeen Aberdeen Airport" GPS-X="-2.204186000000000e+000" GPS-Y="5.720025300000000e+001" Destination="ABZ" />
+  <Terminal Type="A" Code="ACA" Name="Acapulco General Juan N alvarez Int. Airport" GPS-X="-9.975459200000000e+001" GPS-Y="1.676240300000000e+001" Destination="ACA" />
+  <Terminal Type="A" Code="ACE" Name="Arrecife Lanzarote Airport" GPS-X="-1.360905900000000e+001" GPS-Y="2.895066800000000e+001" Destination="ACE" />
+  <Terminal Type="A" Code="ACH" Name="Altenrhein Altenrhein St Gallen Airport" GPS-X="9.566667000000001e+000" GPS-Y="4.748333300000000e+001" Destination="ACH" />
+  <Terminal Type="A" Code="ADA" Name="Adana Adana Sakirpasa Airport" GPS-X="3.529736000000000e+001" GPS-Y="3.698503200000000e+001" Destination="ADA" />
+  <Terminal Type="A" Code="ADB" Name="Izmir Adnan Menderes Int. Airport" GPS-X="2.714759400000000e+001" GPS-Y="3.829440300000000e+001" Destination="ADB" />
+  <Terminal Type="A" Code="ADL" Name="Adelaide Adelaide Int.  Airport" GPS-X="1.385373510000000e+002" GPS-Y="-3.493817600000000e+001" Destination="ADL" />
+  <Terminal Type="A" Code="ADZ" Name="San Andres Gustavo Rojas Pinilla Int. Airport" GPS-X="-8.170220800000000e+001" GPS-Y="1.258604700000000e+001" Destination="ADZ" />
+  <Terminal Type="A" Code="AEP" Name="Buenos Aires Jorge Newbery Airport" GPS-X="-5.841667000000000e+001" GPS-Y="-3.455622100000000e+001" Destination="AEP" />
+  <Terminal Type="A" Code="AGA" Name="Agadir  Agadir Al Massira Airport" GPS-X="-9.413100000000000e+000" GPS-Y="3.032500000000000e+001" Destination="AGA" />
+  <Terminal Type="A" Code="AGH" Name="Helsingborg Angelholm Airport" GPS-X="1.286250000000000e+001" GPS-Y="5.629305600000000e+001" Destination="AGH" />
+  <Terminal Type="A" Code="AGP" Name="Malaga Malaga Costa del Sol Airport" GPS-X="-4.489616000000000e+000" GPS-Y="3.667518100000000e+001" Destination="AGP" />
+  <Terminal Type="A" Code="AGR" Name="Agra Agra Airport" GPS-X="7.796277800000000e+001" GPS-Y="2.715833300000000e+001" Destination="AGR" />
+  <Terminal Type="A" Code="AGU" Name="Aguascalientes Lic. Jesus Teran Peredo Int. airp" GPS-X="-1.023137440000000e+002" GPS-Y="2.170141600000000e+001" Destination="AGU" />
+  <Terminal Type="A" Code="AHO" Name="Alghero Alghero Fertilia Airport" GPS-X="8.295890999999999e+000" GPS-Y="4.063040500000000e+001" Destination="AHO" />
+  <Terminal Type="A" Code="AJA" Name="Ajaccio Ajaccio Napoleon Bonaparte Airport" GPS-X="8.794013000000000e+000" GPS-Y="4.191986700000000e+001" Destination="AJA" />
+  <Terminal Type="A" Code="AKL" Name="Auckland Auckland Int. Airport" GPS-X="1.747835240000000e+002" GPS-Y="-3.700478600000000e+001" Destination="AKL" />
+  <Terminal Type="A" Code="AKLD" Name="Auckland Auckland International Airport " GPS-X="1.747920074000000e+002" GPS-Y="-3.700809860000000e+001" Destination="AKL" />
+  <Terminal Type="A" Code="ALC" Name="Alicante Alicante Elche Airport" GPS-X="-5.573810000000000e-001" GPS-Y="3.828709800000000e+001" Destination="ALC" />
+  <Terminal Type="A" Code="ALG" Name="Algiers Houari Boumediene Int. Airport" GPS-X="3.207136000000000e+000" GPS-Y="3.669789200000000e+001" Destination="ALG" />
+  <Terminal Type="A" Code="AMD" Name="Ahmedabad Sardar Vallabhbhai Patel Int. Airport" GPS-X="7.262416700000000e+001" GPS-Y="2.306638900000000e+001" Destination="AMD" />
+  <Terminal Type="A" Code="AMM" Name="Amman Queen Alia Int. Airport" GPS-X="3.598931800000000e+001" GPS-Y="3.172253500000000e+001" Destination="AMM" />
+  <Terminal Type="A" Code="AMS" Name="Amsterdam  Amsterdam Schiphol Airport" GPS-X="4.763385000000000e+000" GPS-Y="5.230906900000000e+001" Destination="AMS" />
+  <Terminal Type="A" Code="ANC" Name="Anchorage Ted Stevens Int. Airport" GPS-X="-1.499963890000000e+002" GPS-Y="6.117444400000000e+001" Destination="ANC" />
+  <Terminal Type="A" Code="ANR" Name="Antwerp Antwerp International (Deurne) Airport" GPS-X="4.450672000000000e+000" GPS-Y="5.118916000000000e+001" Destination="ANR" />
+  <Terminal Type="A" Code="ANU" Name="Antigua V. C. Bird Int. Airport" GPS-X="-6.179171700000000e+001" GPS-Y="1.713938300000000e+001" Destination="ANU" />
+  <Terminal Type="A" Code="AOK" Name="Karpathos Karpathos Airport" GPS-X="2.714672800000000e+001" GPS-Y="3.542068300000000e+001" Destination="AOK" />
+  <Terminal Type="A" Code="ARN" Name="Stockholm Arlanda Airport" GPS-X="1.793036400000000e+001" GPS-Y="5.964981800000000e+001" Destination="ARN" />
+  <Terminal Type="A" Code="ASP" Name="Alice Springs Alice Springs Airport" GPS-X="1.339033840000000e+002" GPS-Y="-2.380138900000000e+001" Destination="ASP" />
+  <Terminal Type="A" Code="ASR" Name="Kayseri Kayseri Airport" GPS-X="3.549489100000000e+001" GPS-Y="3.877029300000000e+001" Destination="ASR" />
+  <Terminal Type="A" Code="ASW" Name="Aswan Aswan Int. Airport" GPS-X="3.282481800000000e+001" GPS-Y="2.396802200000000e+001" Destination="ASW" />
+  <Terminal Type="A" Code="ATH" Name="Athens Eleftherios Venizelos Int. Airport" GPS-X="2.394648600000000e+001" GPS-Y="3.793635000000000e+001" Destination="ATH" />
+  <Terminal Type="A" Code="ATL" Name="Atlanta Hartsfield Jackson Int. Airport" GPS-X="-8.444403000000000e+001" GPS-Y="3.364006700000000e+001" Destination="ATL" />
+  <Terminal Type="A" Code="AUA" Name="Aruba Queen Beatrix Int. Airport" GPS-X="-7.001388900000001e+001" GPS-Y="1.250222200000000e+001" Destination="AUA" />
+  <Terminal Type="A" Code="AUH" Name="Abu Dhabi Abu Dhabi Int. Airport" GPS-X="5.464597400000000e+001" GPS-Y="2.442691200000000e+001" Destination="AUH" />
+  <Terminal Type="A" Code="AUR" Name="Aurillac Aurillac Airport " GPS-X="2.418056000000000e+000" GPS-Y="4.489750000000000e+001" Destination="AUR" />
+  <Terminal Type="A" Code="AUS" Name="Austin Bergstrom Int. Austin Airport" GPS-X="-9.766706400000000e+001" GPS-Y="3.020254500000000e+001" Destination="AUS" />
+  <Terminal Type="A" Code="AVLL" Name="DO NOT USE" Destination="VLL" />
+  <Terminal Type="A" Code="AVN" Name="Avignon Avignon-Caumont Airport" GPS-X="4.900000000000000e+000" GPS-Y="4.390000000000000e+001" Destination="AVN" />
+  <Terminal Type="A" Code="AYQ" Name="Ayers Rock Airport Connellan Airport" GPS-X="1.309765780000000e+002" GPS-Y="-2.519087700000000e+001" Destination="AYQ" />
+  <Terminal Type="A" Code="AYT" Name="Antalya Antalya Airport" GPS-X="3.080134900000000e+001" GPS-Y="3.689928200000000e+001" Destination="AYT" />
+  <Terminal Type="A" Code="AZS" Name="Samana El Catey Int. Airport" GPS-X="-6.973694399999999e+001" GPS-Y="1.927055500000000e+001" Destination="AZS" />
+  <Terminal Type="A" Code="AZSA" Name="Samana Catey Samana Airport" Destination="SAM" />
+  <Terminal Type="A" Code="BAH" Name="Manama Bahrain Int. Airport" GPS-X="5.062605000000000e+001" GPS-Y="2.626918100000000e+001" Destination="BH1" />
+  <Terminal Type="A" Code="BAQ" Name="Barranquilla Ernesto Cortissoz Int. Airport" GPS-X="-7.477617800000000e+001" GPS-Y="1.088639800000000e+001" Destination="BAQ" />
+  <Terminal Type="A" Code="BBU" Name="Bucharest Aurel Vlaicu Int. Airport" GPS-X="2.608099500000000e+001" GPS-Y="4.449593200000000e+001" Destination="BBU" />
+  <Terminal Type="A" Code="BCN" Name="Barcelona El Prat Airport" GPS-X="2.083318000000000e+000" GPS-Y="4.129747500000000e+001" Destination="BCN" />
+  <Terminal Type="A" Code="BDA" Name="Bermuda L.F. Wade Int. Airport" GPS-X="-6.470114800000000e+001" GPS-Y="3.235994000000000e+001" Destination="BDA" />
+  <Terminal Type="A" Code="BDS" Name="Brindisi Papola Casale Airport" GPS-X="1.793905300000000e+001" GPS-Y="4.065799500000000e+001" Destination="BAR" />
+  <Terminal Type="A" Code="BEG" Name="Belgrade Nikola Tesla Airport" GPS-X="2.030694400000000e+001" GPS-Y="4.481944400000000e+001" Destination="BEG" />
+  <Terminal Type="A" Code="BER" Name="Berlin Berlin Schonefeld Airport" GPS-X="1.350333300000000e+001" GPS-Y="5.236666700000000e+001" Destination="BER" />
+  <Terminal Type="A" Code="BES" Name="Brest Brest Bretagne Airport" GPS-X="-4.415827000000000e+000" GPS-Y="4.844537400000000e+001" Destination="BES" />
+  <Terminal Type="A" Code="BEY" Name="Beirut Rafic Hariri Int. Airport" GPS-X="3.549308200000000e+001" GPS-Y="3.382607300000000e+001" Destination="BEY" />
+  <Terminal Type="A" Code="BFN" Name="Bloemfontein  Bloemfontein Airport" GPS-X="2.629751600000000e+001" GPS-Y="-2.909585300000000e+001" Destination="BLF" />
+  <Terminal Type="A" Code="BFS" Name="Belfast Int. Airport Belfast" GPS-X="-6.217616000000000e+000" GPS-Y="5.466239700000000e+001" Destination="BFS" />
+  <Terminal Type="A" Code="BGI" Name="Bridgetown Grantley Adams Int. Airport" GPS-X="-5.948783500000000e+001" GPS-Y="1.308073200000000e+001" Destination="BGI" />
+  <Terminal Type="A" Code="BGO" Name="Bergen Bergen-Flesland Airport " GPS-X="5.228169000000000e+000" GPS-Y="6.028906400000000e+001" Destination="BGO" />
+  <Terminal Type="A" Code="BGY" Name="Bergamo Orio Al Serio Airport" GPS-X="9.698713000000000e+000" GPS-Y="4.566531500000000e+001" Destination="BGY" />
+  <Terminal Type="A" Code="BHD" Name="Belfast George Best City Airport" GPS-X="-5.870215000000000e+000" GPS-Y="5.461452000000000e+001" Destination="BHD" />
+  <Terminal Type="A" Code="BHX" Name="Birmingham Birmingham West Midlands Airport" GPS-X="-1.733256000000000e+000" GPS-Y="5.245251800000000e+001" Destination="BHX" />
+  <Terminal Type="A" Code="BIO" Name="Bilbao Bilbao Airport" GPS-X="-2.905808000000000e+000" GPS-Y="4.330553500000000e+001" Destination="BIO" />
+  <Terminal Type="A" Code="BIQ" Name="Biarritz Biarritz Parme Airport" GPS-X="-1.531242000000000e+000" GPS-Y="4.347241600000000e+001" Destination="BIQ" />
+  <Terminal Type="A" Code="BJL" Name="Banjul Banjul Int. Airport" GPS-X="-1.665220000000000e+001" GPS-Y="1.334406000000000e+001" Destination="BJL" />
+  <Terminal Type="A" Code="BJV" Name="Milas Bodrum Havalimani Airport" GPS-X="2.767278100000000e+001" GPS-Y="3.724395200000000e+001" Destination="BJV" />
+  <Terminal Type="A" Code="BJX" Name="Leon Guanajuato Del Bajio Int. Airport" GPS-X="-1.014789950000000e+002" GPS-Y="2.098569900000000e+001" Destination="BJX" />
+  <Terminal Type="A" Code="BJZ" Name="Badajoz Badajoz Airport" GPS-X="-6.820000000000000e+000" GPS-Y="3.889166700000000e+001" Destination="BJZ" />
+  <Terminal Type="A" Code="BKI" Name="Kota Kinabalu Kota Kinabalu Int. Airport" GPS-X="1.160507530000000e+002" GPS-Y="5.923961000000000e+000" Destination="BKI" />
+  <Terminal Type="A" Code="BKK" Name="Bangkok Suvarnabhumi Int. Airport" GPS-X="1.007520440000000e+002" GPS-Y="1.369306200000000e+001" Destination="BKK" />
+  <Terminal Type="A" Code="BLK" Name="Blackpool Blackpool International Airport" GPS-X="-3.041985000000000e+000" GPS-Y="5.377838700000000e+001" Destination="BLK" />
+  <Terminal Type="A" Code="BLL" Name="Billund Billund Airport" GPS-X="9.147874000000000e+000" GPS-Y="5.574738200000000e+001" Destination="BLL" />
+  <Terminal Type="A" Code="BLQ" Name="Bologna Borgo Panigale Airport" GPS-X="1.129328900000000e+001" GPS-Y="4.452926800000000e+001" Destination="BLQ" />
+  <Terminal Type="A" Code="BLR" Name="Bengaluru Bengaluru Int. Airport" GPS-X="7.771022800000000e+001" GPS-Y="1.320077100000000e+001" Destination="BLR" />
+  <Terminal Type="A" Code="BMA" Name="Stockholm Bromma Airport" GPS-X="1.794607900000000e+001" GPS-Y="5.935566000000000e+001" Destination="STO" />
+  <Terminal Type="A" Code="BME" Name="Broome Broome International Airport " GPS-X="1.222342900000000e+002" GPS-Y="-1.795264100000000e+001" Destination="BME" />
+  <Terminal Type="A" Code="BNA" Name="Nashville Nashville Int. Airport" GPS-X="-8.666894499999999e+001" GPS-Y="3.613174000000000e+001" Destination="NSV" />
+  <Terminal Type="A" Code="BNE" Name="Brisbane Brisbane Airport" GPS-X="1.531090580000000e+002" GPS-Y="-2.740303100000000e+001" Destination="BNE" />
+  <Terminal Type="A" Code="BOD" Name="Bordeaux Bordeaux Merignac Airport" GPS-X="-7.021700000000000e-001" GPS-Y="4.483102000000000e+001" Destination="BOD" />
+  <Terminal Type="A" Code="BOG" Name="Bogota El Dorado Int. Airport" GPS-X="-7.414313600000000e+001" GPS-Y="4.698602000000000e+000" Destination="BOG" />
+  <Terminal Type="A" Code="BOJ" Name="Bourgas Airport" GPS-X="2.751554400000000e+001" GPS-Y="4.256745000000000e+001" Destination="BOJ" />
+  <Terminal Type="A" Code="BOM" Name="Mumbai Chhatrapati Shivaji Int. Airport" GPS-X="7.286804700000000e+001" GPS-Y="1.908989100000000e+001" Destination="BOM" />
+  <Terminal Type="A" Code="BON" Name="Bonaire Flamingo International Airport Bonaire" GPS-X="-6.827670000000001e+001" GPS-Y="1.213307877000000e+001" Destination="BON" />
+  <Terminal Type="A" Code="BOS" Name="Boston Boston Logan Int. Airport" GPS-X="-7.102017600000001e+001" GPS-Y="4.236646000000000e+001" Destination="BOS" />
+  <Terminal Type="A" Code="BPN" Name="Balikpapan Sepinggan Int. Airport" GPS-X="1.169008170000000e+002" GPS-Y="-1.260623000000000e+000" Destination="BPN" />
+  <Terminal Type="A" Code="BPS" Name="Porto Seguro Porto Seguro Airport" GPS-X="-3.908109500000000e+001" GPS-Y="-1.644115800000000e+001" Destination="PSE" />
+  <Terminal Type="A" Code="BRC" Name="S. Carlos De Bariloche Tte L.Candelaria Int. Apt." GPS-X="-7.116108500000000e+001" GPS-Y="-4.114596500000000e+001" Destination="BCH" />
+  <Terminal Type="A" Code="BRE" Name="BremenBremen Airport" GPS-X="8.785352000000000e+000" GPS-Y="5.305297100000000e+001" Destination="BRE" />
+  <Terminal Type="A" Code="BRI" Name="Bari Bari Palese Airport" GPS-X="1.676391000000000e+001" GPS-Y="4.113388100000000e+001" Destination="BAR" />
+  <Terminal Type="A" Code="BRN" Name="Bern Bern Belp Airport" GPS-X="7.503560000000000e+000" GPS-Y="4.691172800000000e+001" Destination="BRN" />
+  <Terminal Type="A" Code="BRQ" Name="Brno-Turany Airport" GPS-X="1.670000000000000e+001" GPS-Y="4.915000000000000e+001" Destination="BRQ" />
+  <Terminal Type="A" Code="BRS" Name="Bristol Bristol Airport" GPS-X="-2.710659000000000e+000" GPS-Y="5.138675600000000e+001" Destination="BRS" />
+  <Terminal Type="A" Code="BRU" Name="Brussels Brussels National Airport" GPS-X="4.483602000000000e+000" GPS-Y="5.089717000000000e+001" Destination="BRU" />
+  <Terminal Type="A" Code="BSL" Name="Basel Basel Airport" GPS-X="7.532604000000000e+000" GPS-Y="4.759960800000000e+001" Destination="BSL" />
+  <Terminal Type="A" Code="BTS" Name="Bratislava Milan Rastislav stefanik" GPS-X="1.719979900000000e+001" GPS-Y="4.817001700000000e+001" Destination="BTS" />
+  <Terminal Type="A" Code="BTZ" Name="Bursa Yenisehir  Airport" GPS-X="2.900972200000000e+001" GPS-Y="4.023444400000000e+001" Destination="BTZ" />
+  <Terminal Type="A" Code="BUD" Name="Budapest Ferenc Liszt Int. Airport" GPS-X="1.926162100000000e+001" GPS-Y="4.743303700000000e+001" Destination="BUD" />
+  <Terminal Type="A" Code="BUR" Name="Burbank Bob Hope Airport" GPS-X="-1.183541130000000e+002" GPS-Y="3.419618800000000e+001" Destination="LAX" />
+  <Terminal Type="A" Code="BVA" Name="Beauvais Beauvais Tille Airport" GPS-X="2.110815000000000e+000" GPS-Y="4.945948800000000e+001" Destination="BVA" />
+  <Terminal Type="A" Code="BVC" Name="Boa Vista Rabil Airport" GPS-X="-2.283333300000000e+001" GPS-Y="1.608333300000000e+001" Destination="SI1" />
+  <Terminal Type="A" Code="BWI" Name="Baltimore Washington Baltimore Int. Airport" GPS-X="-7.666894100000000e+001" GPS-Y="3.917952600000000e+001" Destination="BWI" />
+  <Terminal Type="A" Code="CAG" Name="Cagliari Cagliari Elmas Airport" GPS-X="9.060673000000000e+000" GPS-Y="3.925433300000000e+001" Destination="CAG" />
+  <Terminal Type="A" Code="CAI" Name="Cairo Cairo Int. Airport" GPS-X="3.140646900000000e+001" GPS-Y="3.012010600000000e+001" Destination="CAI" />
+  <Terminal Type="A" Code="CAN" Name="Guangzhou Canton Baiyun Int. Airport" GPS-X="1.132973400000000e+002" GPS-Y="2.338786200000000e+001" Destination="CAN" />
+  <Terminal Type="A" Code="CAS" Name="Casablanca Mohammed V Int. Airport" GPS-X="-7.663056000000000e+000" GPS-Y="3.355972200000000e+001" Destination="CAS" />
+  <Terminal Type="A" Code="CBB" Name="Cochabamba Jorge Wilstermann Int. Airport" GPS-X="-6.617889600000000e+001" GPS-Y="-1.741395400000000e+001" Destination="CBB" />
+  <Terminal Type="A" Code="CBD" Name="Canberra Canberra International Airport" GPS-X="1.491950073000000e+002" GPS-Y="-3.530690000000000e+001" Destination="CBR" />
+  <Terminal Type="A" Code="CBG" Name="Cambridge Cambridge Airport" GPS-X="1.750000000000000e-001" GPS-Y="5.220500000000000e+001" Destination="BEF" />
+  <Terminal Type="A" Code="CCC" Name="Cayo Coco Jardines del Rey Int. Airport" GPS-X="-7.832861100000000e+001" GPS-Y="2.246111100000000e+001" Destination="CAG" />
+  <Terminal Type="A" Code="CCS" Name="Maiquetia Maiquetia Simon Bolivar Int. Airport" GPS-X="-6.700551100000000e+001" GPS-Y="1.059694200000000e+001" Destination="CCS" />
+  <Terminal Type="A" Code="CCU" Name="Calcuta Subhas Chandra Bose Airport" GPS-X="8.843930600000000e+001" GPS-Y="2.264531000000000e+001" Destination="CCU" />
+  <Terminal Type="A" Code="CDG" Name="Paris Charles de Gaulle Airport" GPS-X="2.567023000000000e+000" GPS-Y="4.900319600000000e+001" Destination="CDG" />
+  <Terminal Type="A" Code="CEB" Name="Cebu Mactan Cebu Int. Airport" GPS-X="1.239802180000000e+002" GPS-Y="1.127380130000000e+001" Destination="CEB" />
+  <Terminal Type="A" Code="CEI" Name="Chiang Rai Mae Fah Luang Int. Airport" GPS-X="9.987881100000000e+001" GPS-Y="1.995460800000000e+001" Destination="CEI" />
+  <Terminal Type="A" Code="CEQ" Name="Cannes Cannes Mandelieu Airport" GPS-X="6.954167000000000e+000" GPS-Y="4.354638900000000e+001" Destination="CAN" />
+  <Terminal Type="A" Code="CFU" Name="Corfu Ioannis Kapodistrias Int. Airport" GPS-X="1.991464500000000e+001" GPS-Y="3.960784000000000e+001" Destination="CFU" />
+  <Terminal Type="A" Code="CGH" Name="Sao Paulo Congonhas Airport" GPS-X="-4.665955600000000e+001" GPS-Y="-2.362690200000000e+001" Destination="CGH" />
+  <Terminal Type="A" Code="CGK" Name="Jakarta Soekarno Hatta Int. Airport" GPS-X="1.066555260000000e+002" GPS-Y="-6.130643000000000e+000" Destination="CGK" />
+  <Terminal Type="A" Code="CGN" Name="Cologne Bonn Airport" GPS-X="7.133653000000000e+000" GPS-Y="5.087051400000000e+001" Destination="CGN" />
+  <Terminal Type="A" Code="CHC" Name="Christchurch Christchurch Int. Airport" GPS-X="1.725388920000000e+002" GPS-Y="-4.348865500000000e+001" Destination="CHC" />
+  <Terminal Type="A" Code="CHCD" Name="Christchurch Christchurch International Airport " GPS-X="1.725319977000000e+002" GPS-Y="-4.348939900000000e+001" Destination="CHC" />
+  <Terminal Type="A" Code="CHQ" Name="Chania Souda Airport" GPS-X="2.414037400000000e+001" GPS-Y="3.554020000000000e+001" Destination="ATE" />
+  <Terminal Type="A" Code="CIA" Name="Rome Ciampino Airport" GPS-X="1.259098700000000e+001" GPS-Y="4.179906500000000e+001" Destination="CIA" />
+  <Terminal Type="A" Code="CKG" Name="Chongqing Jiangbei Int. Airport" GPS-X="1.066340800000000e+002" GPS-Y="2.972034100000000e+001" Destination="CKG" />
+  <Terminal Type="A" Code="CLJ" Name="Cluj Napoca Cluj Napoca Airport" GPS-X="2.368701400000000e+001" GPS-Y="4.678206100000000e+001" Destination="CLU" />
+  <Terminal Type="A" Code="CLO" Name="Cali Alfonso Bonilla Aragon Int. Airport" GPS-X="-7.638138900000000e+001" GPS-Y="3.543056000000000e+000" Destination="CLO" />
+  <Terminal Type="A" Code="CMB" Name="Colombo Bandaranaike Int. Airport" GPS-X="7.988649400000000e+001" GPS-Y="7.174112000000000e+000" Destination="CMB" />
+  <Terminal Type="A" Code="CMF" Name="Chambery Chambery Airport" GPS-X="5.884370000000000e+000" GPS-Y="4.563799400000000e+001" Destination="CMF" />
+  <Terminal Type="A" Code="CMW" Name="Camaguey Ignacio Agramonte Int. Airport" GPS-X="-7.784972200000000e+001" GPS-Y="2.141861100000000e+001" Destination="CMG" />
+  <Terminal Type="A" Code="CND" Name="Constanta Mihail Kogalniceanu Int. Airport" GPS-X="2.848333300000000e+001" GPS-Y="4.435000000000000e+001" Destination="CND" />
+  <Terminal Type="A" Code="CNS" Name="Cairns Cairns Airport" GPS-X="1.457540410000000e+002" GPS-Y="-1.687653800000000e+001" Destination="CNS" />
+  <Terminal Type="A" Code="CNX" Name="Chiang Mai Chiang Mai Int. Airport" GPS-X="9.896840899999999e+001" GPS-Y="1.876957400000000e+001" Destination="CNX" />
+  <Terminal Type="A" Code="COK" Name="Kochi Nedumbassery Int. Airport" GPS-X="7.639053700000000e+001" GPS-Y="1.015564400000000e+001" Destination="COK" />
+  <Terminal Type="A" Code="COR" Name="Cordoba Ing. Aeronautico A. Taravella Int.Airport" GPS-X="-6.421190400000000e+001" GPS-Y="-3.131578500000000e+001" Destination="COR" />
+  <Terminal Type="A" Code="CPE" Name="Campeche Ing. Alberto Acuna Ongay  Int. Airport" GPS-X="-9.050944400000000e+001" GPS-Y="1.983500000000000e+001" Destination="CPE" />
+  <Terminal Type="A" Code="CPH" Name="Kastrup Kastrup Copenhagen Airport" GPS-X="1.264760100000000e+001" GPS-Y="5.562905300000000e+001" Destination="CPH" />
+  <Terminal Type="A" Code="CPT" Name="Cape Town Cape Town Int. Airport" GPS-X="1.859648900000000e+001" GPS-Y="-3.396890600000000e+001" Destination="CPT" />
+  <Terminal Type="A" Code="CRK" Name="Clark Diosdado Macapagal Int. Airport" GPS-X="1.205497890000000e+002" GPS-Y="1.518769600000000e+001" Destination="MNL" />
+  <Terminal Type="A" Code="CRL" Name="Brussels Charleroi Brussels South Airport" GPS-X="4.451703000000000e+000" GPS-Y="5.045669700000000e+001" Destination="CRL" />
+  <Terminal Type="A" Code="CSK" Name="Cap Skirring Cap Skirring Airport" GPS-X="-1.674412100000000e+001" GPS-Y="1.239215400000000e+001" Destination="CSK" />
+  <Terminal Type="A" Code="CTA" Name="Catania Catania Fontanarossa Airport" GPS-X="1.506587700000000e+001" GPS-Y="3.747066300000000e+001" Destination="SIC" />
+  <Terminal Type="A" Code="CTG" Name="Cartagena Rafael Nunez Int. Airport" GPS-X="-7.551658500000001e+001" GPS-Y="1.044570400000000e+001" Destination="CTG" />
+  <Terminal Type="A" Code="CTM" Name="Chetumal Chetumal Int. Airport" GPS-X="-8.833333300000000e+001" GPS-Y="1.848194400000000e+001" Destination="CTM" />
+  <Terminal Type="A" Code="CTS" Name="Sapporo New Chitose Airport" GPS-X="1.416813410000000e+002" GPS-Y="4.278728100000000e+001" Destination="CTS" />
+  <Terminal Type="A" Code="CTU" Name="Chengdu ShuangliuChengdu Shuangliu Int. Airport" GPS-X="1.039567990000000e+002" GPS-Y="3.058113400000000e+001" Destination="CTU" />
+  <Terminal Type="A" Code="CUN" Name="Cancun Cancun Int. Airport" GPS-X="-8.687443900000000e+001" GPS-Y="2.104045700000000e+001" Destination="CUN" />
+  <Terminal Type="A" Code="CUR" Name="Curacao Hato Int. Airport" GPS-X="-6.895705800000000e+001" GPS-Y="1.218461500000000e+001" Destination="CUA" />
+  <Terminal Type="A" Code="CUU" Name="Chihuahua Int. Apt. General Roberto F. Villalobos" GPS-X="-1.059695230000000e+002" GPS-Y="2.870404800000000e+001" Destination="CUU" />
+  <Terminal Type="A" Code="CUZ" Name="Cuzco Alejandro Velasco Astete Int. Airport" GPS-X="-7.194371400000000e+001" GPS-Y="-1.353842900000000e+001" Destination="CUZ" />
+  <Terminal Type="A" Code="CVJ" Name="Cuernavaca General Mariano Matamoros Airport" GPS-X="-9.926227299999999e+001" GPS-Y="1.883460900000000e+001" Destination="CVJ" />
+  <Terminal Type="A" Code="CVT" Name="Coventry Coventry Airport" GPS-X="-1.478611000000000e+000" GPS-Y="5.236916700000000e+001" Destination="CVT" />
+  <Terminal Type="A" Code="CWB" Name="Curitiba Afonso Pena  Int. Airport" GPS-X="-4.917329800000000e+001" GPS-Y="-2.553576300000000e+001" Destination="CUR" />
+  <Terminal Type="A" Code="CWL" Name="Cardiff Cardiff Airport" GPS-X="-3.339075000000000e+000" GPS-Y="5.139876800000000e+001" Destination="CWL" />
+  <Terminal Type="A" Code="CXR" Name="Nha Trang Cam Ranh Int. Airport" GPS-X="1.092250000000000e+002" GPS-Y="1.199361100000000e+001" Destination="CXR" />
+  <Terminal Type="A" Code="CZM" Name="Cozumel Cozumel Int. Airport" GPS-X="-8.693046200000001e+001" GPS-Y="2.051120000000000e+001" Destination="CZM" />
+  <Terminal Type="A" Code="DAD" Name="Da Nang Int. Airport Da Nang" GPS-X="1.082027530000000e+002" GPS-Y="1.605333900000000e+001" Destination="DAD" />
+  <Terminal Type="A" Code="DAL" Name="Dallas Love Field Airport" GPS-X="-9.685000200000000e+001" GPS-Y="3.284390900000000e+001" Destination="DAL" />
+  <Terminal Type="A" Code="DBV" Name="Dubrovnik Airport Cilipi" GPS-X="1.826061700000000e+001" GPS-Y="4.256071800000000e+001" Destination="DBV" />
+  <Terminal Type="A" Code="DCA" Name="Washington Ronald Reagan National Airport" GPS-X="-7.704345700000000e+001" GPS-Y="3.885343400000000e+001" Destination="DCA" />
+  <Terminal Type="A" Code="DEL" Name="Delhi Indira Gandhi Int." GPS-X="7.710078900000001e+001" GPS-Y="2.855655500000000e+001" Destination="DEL" />
+  <Terminal Type="A" Code="DEN" Name="Denver Denver Int. Airport" GPS-X="-1.046730980000000e+002" GPS-Y="3.985138200000000e+001" Destination="DEN" />
+  <Terminal Type="A" Code="DFW" Name="Dallas Fort Worth Int. Airport" GPS-X="-9.703612800000001e+001" GPS-Y="3.289746200000000e+001" Destination="DFW" />
+  <Terminal Type="A" Code="DIG" Name="Shangri La Diqing Airport" GPS-X="9.967777800000000e+001" GPS-Y="2.778972200000000e+001" Destination="LJG" />
+  <Terminal Type="A" Code="DJE" Name="Djerba Djerba Zarzis Int. Airport" GPS-X="1.077514500000000e+001" GPS-Y="3.387118000000000e+001" Destination="DJE" />
+  <Terminal Type="A" Code="DKR" Name="Dakar Yoff Leopold Sedar Senghor Int. Airport" GPS-X="-1.749019400000000e+001" GPS-Y="1.474497500000000e+001" Destination="DKR" />
+  <Terminal Type="A" Code="DLC" Name="Dalian Zhoushuizi Int. Airport" GPS-X="1.215399910000000e+002" GPS-Y="3.896102000000000e+001" Destination="DLC" />
+  <Terminal Type="A" Code="DLE" Name="Dole Dole-Tavaux Airport" GPS-X="5.428719000000000e+000" GPS-Y="4.703825400000000e+001" Destination="DIJ" />
+  <Terminal Type="A" Code="DLM" Name="Dalaman Dalaman Airport" GPS-X="2.879454600000000e+001" GPS-Y="3.671755400000000e+001" Destination="DLM" />
+  <Terminal Type="A" Code="DME" Name="Moscow Moscu Domodedovo Int. Airport" GPS-X="3.789949400000000e+001" GPS-Y="5.541456600000000e+001" Destination="MOW" />
+  <Terminal Type="A" Code="DMK" Name="Bangkok Don Muang Int. Airport" GPS-X="1.006066670000000e+002" GPS-Y="1.391250000000000e+001" Destination="DMK" />
+  <Terminal Type="A" Code="DNR" Name="Saint-Malo Dinard-Pleurtuit-Saint-Malo Airport" GPS-X="-2.083611000000000e+000" GPS-Y="4.858777800000000e+001" Destination="DNR" />
+  <Terminal Type="A" Code="DNZ" Name="Denizli Cardak Airport" GPS-X="2.970333300000000e+001" GPS-Y="3.778722200000000e+001" Destination="TR3" />
+  <Terminal Type="A" Code="DOH" Name="Doha Hamad International Airport" GPS-X="5.161359400000000e+001" GPS-Y="2.526098800000000e+001" Destination="DOH" />
+  <Terminal Type="A" Code="DPS" Name="Denpasar Bali Ngurah Rai Int. Airport" GPS-X="1.151675000000000e+002" GPS-Y="-8.748056000000000e+000" Destination="BAI" />
+  <Terminal Type="A" Code="DRD" Name="Darwin Darwin International Airport " GPS-X="1.308769989000000e+002" GPS-Y="-1.241469960000000e+001" Destination="DRW" />
+  <Terminal Type="A" Code="DRS" Name="Dresden Airport Dresden Klotzsche" GPS-X="1.376608200000000e+001" GPS-Y="5.112433300000000e+001" Destination="DRS" />
+  <Terminal Type="A" Code="DTM" Name="Dortmund Dortmund Airport" GPS-X="7.613139000000000e+000" GPS-Y="5.151482600000000e+001" Destination="DTM" />
+  <Terminal Type="A" Code="DUB" Name="Dublin Dublin Airport" GPS-X="-6.243570000000000e+000" GPS-Y="5.342728000000000e+001" Destination="DUB" />
+  <Terminal Type="A" Code="DUD" Name="Dunedin Dunedin Airport" GPS-X="1.701990520000000e+002" GPS-Y="-4.592387100000000e+001" Destination="ZQN" />
+  <Terminal Type="A" Code="DUR" Name="Durban King Shaka Int. Airport" GPS-X="3.111638900000000e+001" GPS-Y="-2.961444400000000e+001" Destination="KZN" />
+  <Terminal Type="A" Code="DUS" Name="Dusseldorf  Dusseldorf Int. Airport" GPS-X="6.765580000000000e+000" GPS-Y="5.127832700000000e+001" Destination="DUS" />
+  <Terminal Type="A" Code="DWC" Name="Dubai Dubai World Central Airport" GPS-X="5.516246700000000e+001" GPS-Y="2.489284500000000e+001" Destination="DXB" />
+  <Terminal Type="A" Code="DXB" Name="Dubai Dubai Int. Airport" GPS-X="5.535291600000000e+001" GPS-Y="2.524866400000000e+001" Destination="DXB" />
+  <Terminal Type="A" Code="EAP" Name="Freiburg Euroairport Freiburg Airport" GPS-X="7.532864000000000e+000" GPS-Y="4.759932400000000e+001" Destination="EAP" />
+  <Terminal Type="A" Code="EAS" Name="San Sebastian San Sebastian Airport" GPS-X="-1.793538000000000e+000" GPS-Y="4.335640100000000e+001" Destination="EAS" />
+  <Terminal Type="A" Code="ECN" Name="Ercan Airport" GPS-X="3.350307000000000e+001" GPS-Y="3.515811800000000e+001" Destination="NC" />
+  <Terminal Type="A" Code="EDI" Name="Edinburgh Edinburgh Airport" GPS-X="-3.364177000000000e+000" GPS-Y="5.594814300000000e+001" Destination="EDI" />
+  <Terminal Type="A" Code="EFL" Name="Kefalonia Kefalonia Int. Airport" GPS-X="2.050555600000000e+001" GPS-Y="3.811805600000000e+001" Destination="ION" />
+  <Terminal Type="A" Code="EGC" Name="Bergerac Bergerac Dordogne Perigord Airport" GPS-X="4.833330000000000e-001" GPS-Y="4.485000000000000e+001" Destination="DOG" />
+  <Terminal Type="A" Code="EIN" Name="Eindhoven Eindhoven Airport" GPS-X="5.392183000000000e+000" GPS-Y="5.145895400000000e+001" Destination="EIN" />
+  <Terminal Type="A" Code="EMA" Name="East Midlands East Midlands Airport" GPS-X="-1.330595000000000e+000" GPS-Y="5.282587200000000e+001" Destination="EMA" />
+  <Terminal Type="A" Code="EOH" Name="Medellin Olaya Herrera Airport" GPS-X="-7.558640300000000e+001" GPS-Y="6.218666000000000e+000" Destination="MDE" />
+  <Terminal Type="A" Code="EPS" Name="Samana Portillo Int. Airport" GPS-X="-6.950000000000000e+001" GPS-Y="1.925000000000000e+001" Destination="SAM" />
+  <Terminal Type="A" Code="ERF" Name="Erfurt Erfurt Airport" GPS-X="1.096116300000000e+001" GPS-Y="5.097491400000000e+001" Destination="ERF" />
+  <Terminal Type="A" Code="ERS" Name="Windhoek Windhoek Eros Airport" GPS-X="1.708333300000000e+001" GPS-Y="-2.261666700000000e+001" Destination="ERS" />
+  <Terminal Type="A" Code="ESB" Name="Ankara Esenboga Int. Airport" GPS-X="3.299314500000000e+001" GPS-Y="4.011494100000000e+001" Destination="ANK" />
+  <Terminal Type="A" Code="ETH" Name="Eilat J Hozman Airport" GPS-X="3.495357100000000e+001" GPS-Y="2.955561700000000e+001" Destination="ETH" />
+  <Terminal Type="A" Code="EVN" Name="Zvartnots Zvartnots Int. Airport" GPS-X="4.439805000000000e+001" GPS-Y="4.015272000000000e+001" Destination="EVN" />
+  <Terminal Type="A" Code="EWR" Name="Newark Newark Liberty Int. Airport" GPS-X="-7.417875300000000e+001" GPS-Y="4.068907100000000e+001" Destination="EWR" />
+  <Terminal Type="A" Code="EXT" Name="Devon Exeter Int. Airport" GPS-X="-3.410968000000000e+000" GPS-Y="5.073110900000000e+001" Destination="EXT" />
+  <Terminal Type="A" Code="EZE" Name="Buenos Aires Ministro Pistarini Int. Airport" GPS-X="-5.853983400000000e+001" GPS-Y="-3.481273000000000e+001" Destination="BUE" />
+  <Terminal Type="A" Code="FAO" Name="Algarve Int. Faro Airport" GPS-X="-7.968545000000000e+000" GPS-Y="3.702064600000000e+001" Destination="FAO" />
+  <Terminal Type="A" Code="FCO" Name="Rome Fiumicino Leonardo da Vinci Int. Airport" GPS-X="1.225034600000000e+001" GPS-Y="4.179459400000000e+001" Destination="FCO" />
+  <Terminal Type="A" Code="FDF" Name="Fort-de-France Martinique Aime Cesaire Int. Apt." GPS-X="-6.100320050000000e+001" GPS-Y="1.459099960000000e+001" Destination="FDF" />
+  <Terminal Type="A" Code="FDH" Name="Friedrichshafen Friedrichshafen Airport" GPS-X="9.523482000000000e+000" GPS-Y="4.767277500000000e+001" Destination="FDH" />
+  <Terminal Type="A" Code="FEZ" Name="Fes Fes Sais Airport" GPS-X="-4.982138000000000e+000" GPS-Y="3.393079100000000e+001" Destination="FEZ" />
+  <Terminal Type="A" Code="FKB" Name="Karlsruhe Baden Baden Airport" GPS-X="8.089752000000001e+000" GPS-Y="4.878103100000000e+001" Destination="FKB" />
+  <Terminal Type="A" Code="FLL" Name="Fort Lauderdale Fort Lauderdale Int. Airport" GPS-X="-8.014490800000000e+001" GPS-Y="2.607149200000000e+001" Destination="FLL" />
+  <Terminal Type="A" Code="FLN" Name="Florianopolis Hercilio Luz Int. Airport" GPS-X="-4.854520000000000e+001" GPS-Y="-2.766444500000000e+001" Destination="FLO" />
+  <Terminal Type="A" Code="FLR" Name="Florence Peretola Airport" GPS-X="1.120198900000000e+001" GPS-Y="4.380212600000000e+001" Destination="FLR" />
+  <Terminal Type="A" Code="FMM" Name="Memmingen Memmingen Aiport" GPS-X="1.023944400000000e+001" GPS-Y="4.798861100000000e+001" Destination="FMM" />
+  <Terminal Type="A" Code="FMO" Name="Munster Osnabruck Munster Osnabruck Int. Airport" GPS-X="7.694928000000000e+000" GPS-Y="5.213005300000000e+001" Destination="FMO" />
+  <Terminal Type="A" Code="FNC" Name="Madeira Madeira Int. Airport" GPS-X="-1.677563500000000e+001" GPS-Y="3.269312100000000e+001" Destination="FNC" />
+  <Terminal Type="A" Code="FNI" Name="Nimes-Garons Nimes-Ales-Camargue-Cevennes Airport" GPS-X="4.421586600000000e+000" GPS-Y="4.376295020000000e+001" Destination="FNI" />
+  <Terminal Type="A" Code="FON" Name="La Fortuna La Fortuna Airport" GPS-X="-8.448333300000000e+001" GPS-Y="1.040000000000000e+001" Destination="ARE" />
+  <Terminal Type="A" Code="FOR" Name="Fortaleza Pinto Martins Int. Airport" GPS-X="-3.854083500000000e+001" GPS-Y="-3.779073000000000e+000" Destination="FTZ" />
+  <Terminal Type="A" Code="FPO" Name="Freeport Grand Bahama Int. Airport" GPS-X="-7.870519700000000e+001" GPS-Y="2.654729200000000e+001" Destination="FPO" />
+  <Terminal Type="A" Code="FRA" Name="Frankfurt Frankfurt Am Main Airport" GPS-X="8.573677999999999e+000" GPS-Y="5.004895200000000e+001" Destination="FRA" />
+  <Terminal Type="A" Code="FTE" Name="El Calafate Comandante Armando Tola Airport" GPS-X="-7.205369500000001e+001" GPS-Y="-5.028422700000000e+001" Destination="CFE" />
+  <Terminal Type="A" Code="FUE" Name="Fuerteventura Fuerteventura Airport" GPS-X="-1.386989300000000e+001" GPS-Y="2.845060500000000e+001" Destination="FUE" />
+  <Terminal Type="A" Code="FUK" Name="Fukuoka Fukuoka Airport" GPS-X="1.304438910000000e+002" GPS-Y="3.358428600000000e+001" Destination="FUK" />
+  <Terminal Type="A" Code="GCM" Name="Georgetown Owen Roberts Int. Airport" GPS-X="-8.135778600000000e+001" GPS-Y="1.929636900000000e+001" Destination="GCM" />
+  <Terminal Type="A" Code="GDL" Name="Guadalajara Miguel Hidalgo y Costilla Int.Airport" GPS-X="-1.033039840000000e+002" GPS-Y="2.052598600000000e+001" Destination="GDL" />
+  <Terminal Type="A" Code="GDN" Name="Gdansk Lech Walesa Airport" GPS-X="1.846865400000000e+001" GPS-Y="5.438097900000000e+001" Destination="GDN" />
+  <Terminal Type="A" Code="GIG" Name="Rio De Janeiro Int. Antonio Carlos Jobim Airport" GPS-X="-4.324651000000000e+001" GPS-Y="-2.281465400000000e+001" Destination="GIG" />
+  <Terminal Type="A" Code="GLA" Name="Glasgow Glasgow Int. Airport" GPS-X="-4.431782000000000e+000" GPS-Y="5.586421300000000e+001" Destination="GLA" />
+  <Terminal Type="A" Code="GMP" Name="Seoul Gimpo Int. Airport" GPS-X="1.268035120000000e+002" GPS-Y="3.755928700000000e+001" Destination="GMP" />
+  <Terminal Type="A" Code="GNB" Name="Grenoble Grenoble Isere Int. Airport" GPS-X="5.332019000000000e+000" GPS-Y="4.535983200000000e+001" Destination="GNB" />
+  <Terminal Type="A" Code="GOA" Name="Genoa Cristoforo Colombo Airport" GPS-X="8.850809999999999e+000" GPS-Y="4.441506600000000e+001" Destination="GOA" />
+  <Terminal Type="A" Code="GOI" Name="Goa Dabolim Int. Airport" GPS-X="7.383982500000001e+001" GPS-Y="1.538453400000000e+001" Destination="GOO" />
+  <Terminal Type="A" Code="GPA" Name="Patras Araxos Airport" GPS-X="2.173333300000000e+001" GPS-Y="3.825000000000000e+001" Destination="PEL" />
+  <Terminal Type="A" Code="GRJ" Name="George George Airport" GPS-X="2.238223500000000e+001" GPS-Y="-3.400148000000000e+001" Destination="GRJ" />
+  <Terminal Type="A" Code="GRO" Name="Gerona Girona Costa Brava Airport" GPS-X="2.766383000000000e+000" GPS-Y="4.189804100000000e+001" Destination="GRO" />
+  <Terminal Type="A" Code="GRU" Name="Sao Paulo Sao Paulo Guarulhos Int. Airport" GPS-X="-4.648192600000000e+001" GPS-Y="-2.342566800000000e+001" Destination="GRU" />
+  <Terminal Type="A" Code="GRX" Name="Granada Federico Garcia Lorca Airport" GPS-X="-3.776954000000000e+000" GPS-Y="3.718472800000000e+001" Destination="GRX" />
+  <Terminal Type="A" Code="GRZ" Name="Graz Graz airport" GPS-X="1.544322800000000e+001" GPS-Y="4.699615700000000e+001" Destination="GRZ" />
+  <Terminal Type="A" Code="GSE" Name="Gothenburg Gothenburg City Airport SAve" GPS-X="1.186451300000000e+001" GPS-Y="5.777774900000000e+001" Destination="GOT" />
+  <Terminal Type="A" Code="GUA" Name="Guatemala La Aurora Int. Airport" GPS-X="-9.053067900000001e+001" GPS-Y="1.458807100000000e+001" Destination="GUA" />
+  <Terminal Type="A" Code="GVA" Name="Geneve Geneve Int. Airport" GPS-X="6.105774000000000e+000" GPS-Y="4.622963400000000e+001" Destination="GVA" />
+  <Terminal Type="A" Code="GWY" Name="Galway Galway Airport" GPS-X="-9.033333000000001e+000" GPS-Y="5.328333300000000e+001" Destination="GWY" />
+  <Terminal Type="A" Code="GYD" Name="Baku Heydar Aliyev Int. Airport" GPS-X="5.005039000000000e+001" GPS-Y="4.046248700000000e+001" Destination="GYD" />
+  <Terminal Type="A" Code="GYE" Name="Guayaquil Jose Joaquin De Olmedo Int. Airport" GPS-X="-7.988032100000000e+001" GPS-Y="-2.142654000000000e+000" Destination="GYE" />
+  <Terminal Type="A" Code="GYN" Name="Goiana Santa Genoveva Airport" GPS-X="-4.922662400000000e+001" GPS-Y="-1.663263100000000e+001" Destination="GOI" />
+  <Terminal Type="A" Code="GZP" Name="Antalya Gazipasa Airport" GPS-X="3.230140000000000e+001" GPS-Y="3.629930000000000e+001" Destination="AYT" />
+  <Terminal Type="A" Code="GZT" Name="Gaziantep Oguzeli Int. Airport" GPS-X="3.747374900000000e+001" GPS-Y="3.694493500000000e+001" Destination="GZT" />
+  <Terminal Type="A" Code="HAJ" Name="Hannover de Langenhagen Airport" GPS-X="9.694766000000000e+000" GPS-Y="5.245925400000000e+001" Destination="HAJ" />
+  <Terminal Type="A" Code="HAM" Name="Hamburg Hamburg Airport" GPS-X="1.000641400000000e+001" GPS-Y="5.363127900000000e+001" Destination="HAM" />
+  <Terminal Type="A" Code="HAN" Name="Hanoi Noi Bai Int. Airport" GPS-X="1.058028270000000e+002" GPS-Y="2.121418400000000e+001" Destination="HAN" />
+  <Terminal Type="A" Code="HAV" Name="Havana Jose Marti Int. Airport" GPS-X="-8.240818299999999e+001" GPS-Y="2.299844900000000e+001" Destination="HAV" />
+  <Terminal Type="A" Code="HDS" Name="Hoedspruit Hoedspruit Airport" GPS-X="3.095000000000000e+001" GPS-Y="-2.435000000000000e+001" Destination="HDS" />
+  <Terminal Type="A" Code="HEL" Name="Helsinki Helsinki Vantaa Airport" GPS-X="2.496644900000000e+001" GPS-Y="6.031795300000000e+001" Destination="HEL" />
+  <Terminal Type="A" Code="HER" Name="Heraklion Nikos Kazantzakis Int. Airport" GPS-X="2.517419300000000e+001" GPS-Y="3.533663000000000e+001" Destination="ATE" />
+  <Terminal Type="A" Code="HGH" Name="Hangzhou Xiaoshan Int. Airport" GPS-X="1.204323560000000e+002" GPS-Y="3.023693400000000e+001" Destination="HGH" />
+  <Terminal Type="A" Code="HHN" Name="Frankfurt Frankfurt Hahn Airport" GPS-X="7.264167000000000e+000" GPS-Y="4.994833300000000e+001" Destination="HHN" />
+  <Terminal Type="A" Code="HIJ" Name="Mihara Hiroshima Airport" GPS-X="1.329194440000000e+002" GPS-Y="3.443611100000000e+001" Destination="HIJ" />
+  <Terminal Type="A" Code="HJR" Name="Khajuraho Khajuraho Airport " GPS-X="7.991641700000000e+001" GPS-Y="2.481874600000000e+001" Destination="HJR" />
+  <Terminal Type="A" Code="HKG" Name="Hong Kong Hong Kong Int. Airport" GPS-X="1.139364900000000e+002" GPS-Y="2.231524800000000e+001" Destination="HKG" />
+  <Terminal Type="A" Code="HKT" Name="Phuket Int. Airport Phuket" GPS-X="9.830643600000001e+001" GPS-Y="8.107619000000000e+000" Destination="HKT" />
+  <Terminal Type="A" Code="HND" Name="Tokyo Haneda Int. Airport" GPS-X="1.397845240000000e+002" GPS-Y="3.554906900000000e+001" Destination="HND" />
+  <Terminal Type="A" Code="HNL" Name="Honolulu Honolulu Int. Airport" GPS-X="-1.579216670000000e+002" GPS-Y="2.132583300000000e+001" Destination="KAE" />
+  <Terminal Type="A" Code="HOG" Name="Holguin Frank Pais Int. Airport" GPS-X="-7.631500000000000e+001" GPS-Y="2.078527800000000e+001" Destination="HOG" />
+  <Terminal Type="A" Code="HOU" Name="Houston William P Hobby Airport" GPS-X="-9.527701800000000e+001" GPS-Y="2.965451300000000e+001" Destination="HOU" />
+  <Terminal Type="A" Code="HRG" Name="Hurghada Hurghada Int. Airport" GPS-X="3.380550000000000e+001" GPS-Y="2.718915600000000e+001" Destination="HRG" />
+  <Terminal Type="A" Code="HUI" Name="Hue Phu Bai Int. Airport" GPS-X="1.077008710000000e+002" GPS-Y="1.639822400000000e+001" Destination="DAD" />
+  <Terminal Type="A" Code="HUX" Name="Huatulco  Bahias de Huatulco Int. Airport" GPS-X="-9.623555600000000e+001" GPS-Y="1.576833300000000e+001" Destination="HUA" />
+  <Terminal Type="A" Code="IAD" Name="Washington Dulles Int. Airport" GPS-X="-7.744773499999999e+001" GPS-Y="3.895315000000000e+001" Destination="IAD" />
+  <Terminal Type="A" Code="IAH" Name="Houston George Bush Int. Airport" GPS-X="-9.534000000000000e+001" GPS-Y="2.998333300000000e+001" Destination="HOU" />
+  <Terminal Type="A" Code="IAR" Name="Tunoshna Tunoshna Airport" GPS-X="4.016089300000000e+001" GPS-Y="5.755975300000000e+001" Destination="IAR" />
+  <Terminal Type="A" Code="IBZ" Name="Ibiza Ibiza San Jose Airport" GPS-X="1.367803000000000e+000" GPS-Y="3.887659500000000e+001" Destination="IBZ" />
+  <Terminal Type="A" Code="ICN" Name="Seoul Incheon Int. Airport" GPS-X="1.264512340000000e+002" GPS-Y="3.744852600000000e+001" Destination="ICN" />
+  <Terminal Type="A" Code="IEV" Name="Kiev Zhulyany Zhulyany Int. Airport" GPS-X="3.045083300000000e+001" GPS-Y="5.040194400000000e+001" Destination="KBP" />
+  <Terminal Type="A" Code="IGR" Name="Puerto Iguazu Cataratas del Iguazu Int. Airport" GPS-X="-5.447634700000000e+001" GPS-Y="-2.573150500000000e+001" Destination="IGU" />
+  <Terminal Type="A" Code="IGU" Name="Foz do Iguacu Cataratas Int. Airport" GPS-X="-5.448882200000000e+001" GPS-Y="-2.559793700000000e+001" Destination="FDI" />
+  <Terminal Type="A" Code="INN" Name="Innsbruck Innsbruck Airport" GPS-X="1.135146700000000e+001" GPS-Y="4.725745000000000e+001" Destination="INN" />
+  <Terminal Type="A" Code="INV" Name="Inverness Inverness Airport" GPS-X="-4.063738000000000e+000" GPS-Y="5.753934600000000e+001" Destination="INV" />
+  <Terminal Type="A" Code="IST" Name="Istanbul Ataturk Int. Airport" GPS-X="2.881527800000000e+001" GPS-Y="4.097666700000000e+001" Destination="IST" />
+  <Terminal Type="A" Code="ITM" Name="Osaka Itami Int. Airport" GPS-X="1.354417190000000e+002" GPS-Y="3.479097500000000e+001" Destination="ITM" />
+  <Terminal Type="A" Code="IXU" Name="Aurangabad Aurangabad Airport" GPS-X="7.539720700000000e+001" GPS-Y="1.986646400000000e+001" Destination="IXU" />
+  <Terminal Type="A" Code="JAI" Name="Jaipur Jaipur Airport" GPS-X="7.580099500000000e+001" GPS-Y="2.682200400000000e+001" Destination="JAI" />
+  <Terminal Type="A" Code="JAL" Name="Xalapa El Lencero Airport" GPS-X="-9.678194400000000e+001" GPS-Y="1.947222200000000e+001" Destination="JAL" />
+  <Terminal Type="A" Code="JAX" Name="Jacksonville Jacksonville Int. Airport" GPS-X="-8.168305300000000e+001" GPS-Y="3.049125400000000e+001" Destination="MCO" />
+  <Terminal Type="A" Code="JCAH" Name="Cannes Cannes HELIPORT" GPS-X="7.018453000000000e+000" GPS-Y="4.354722500000000e+001" Destination="CAN" />
+  <Terminal Type="A" Code="JED" Name="Jeddah King Abdulaziz Int. Airport" GPS-X="3.915057900000000e+001" GPS-Y="2.167023200000000e+001" Destination="JED" />
+  <Terminal Type="A" Code="JER" Name="Saint Helier Jersey Airport" GPS-X="-2.194344000000000e+000" GPS-Y="4.920529700000000e+001" Destination="CIS" />
+  <Terminal Type="A" Code="JFK" Name="New York John F Kennedy Int. Airport" GPS-X="-7.378816999999999e+001" GPS-Y="4.064233500000000e+001" Destination="JFK" />
+  <Terminal Type="A" Code="JKH" Name="Chios Omiros Airport" GPS-X="2.614233500000000e+001" GPS-Y="3.834579500000000e+001" Destination="CG1" />
+  <Terminal Type="A" Code="JKL" Name="Kalymnos Kalymnos National Airport" GPS-X="2.694055600000000e+001" GPS-Y="3.696333300000000e+001" Destination="DOD" />
+  <Terminal Type="A" Code="JMK" Name="Mykonos Mykonos National Airport" GPS-X="2.534444400000000e+001" GPS-Y="3.743611100000000e+001" Destination="MKS" />
+  <Terminal Type="A" Code="JNB" Name="Johannesburg O R Tambo Int. Airport" GPS-X="2.823131300000000e+001" GPS-Y="-2.613266400000000e+001" Destination="JNB" />
+  <Terminal Type="A" Code="JNX" Name="Naxos National Airport" GPS-X="2.538333300000000e+001" GPS-Y="3.710000000000000e+001" Destination="NAX" />
+  <Terminal Type="A" Code="JOG" Name="Yogyakarta Adisutjipto Airport" GPS-X="1.104370600000000e+002" GPS-Y="-7.785572000000000e+000" Destination="JOG" />
+  <Terminal Type="A" Code="JOI" Name="Joinville Lauro Carneiro de Loyola Airport" GPS-X="-4.878333300000000e+001" GPS-Y="-2.623333300000000e+001" Destination="JOI" />
+  <Terminal Type="A" Code="JPA" Name="Joao Pessoa Presidente Castro Pinto Int. Airport" GPS-X="-3.494815900000000e+001" GPS-Y="-7.145357000000000e+000" Destination="JOA" />
+  <Terminal Type="A" Code="JSI" Name="Skiathos Alexandros Papadiamantis Airport" GPS-X="2.350555600000000e+001" GPS-Y="3.918055600000000e+001" Destination="SKI" />
+  <Terminal Type="A" Code="JSY" Name="Syros National Airport" GPS-X="2.495000000000000e+001" GPS-Y="3.742361100000000e+001" Destination="JSY" />
+  <Terminal Type="A" Code="JTR" Name="Santorini Thira National Airport" GPS-X="2.547598300000000e+001" GPS-Y="3.640426200000000e+001" Destination="SAT" />
+  <Terminal Type="A" Code="JUL" Name="Juliaca Inca Manco Capac Int. Airport" GPS-X="-7.015444400000000e+001" GPS-Y="-1.546416700000000e+001" Destination="PUN" />
+  <Terminal Type="A" Code="KBP" Name="Boryspil Kiev Int. Airport Boryspil" GPS-X="3.089520700000000e+001" GPS-Y="5.034124400000000e+001" Destination="KBP" />
+  <Terminal Type="A" Code="KBV" Name="Krabi Airport Krabi" GPS-X="9.898061900000000e+001" GPS-Y="8.097281000000001e+000" Destination="KBV" />
+  <Terminal Type="A" Code="KCH" Name="Kuching Int. Airport Kuching" GPS-X="1.103408330000000e+002" GPS-Y="1.484167000000000e+000" Destination="KCH" />
+  <Terminal Type="A" Code="KGD" Name="Kaliningrad Khrabrovo Airport" GPS-X="2.058664600000000e+001" GPS-Y="5.488265600000000e+001" Destination="KGD" />
+  <Terminal Type="A" Code="KGS" Name="Kos Hippocrates Int. Airport" GPS-X="2.709527800000000e+001" GPS-Y="3.679305600000000e+001" Destination="KSS" />
+  <Terminal Type="A" Code="KHH" Name="Kaohsiung Kaohsiung Int. Airport" GPS-X="1.203452780000000e+002" GPS-Y="2.257250000000000e+001" Destination="TPE" />
+  <Terminal Type="A" Code="KIN" Name="Kingston Norman Manley Int. Airport" GPS-X="-7.677815800000001e+001" GPS-Y="1.793775000000000e+001" Destination="KIN" />
+  <Terminal Type="A" Code="KIV" Name="Moldova Chi?in?u International Airport" GPS-X="2.893496700000000e+001" GPS-Y="4.693544200000000e+001" Destination="KIV" />
+  <Terminal Type="A" Code="KIX" Name="Osaka Kansai Int. Airport" GPS-X="1.352439770000000e+002" GPS-Y="3.443533000000000e+001" Destination="KIX" />
+  <Terminal Type="A" Code="KLO" Name="Kalibo Kalibo Int. Airport" GPS-X="1.223818320000000e+002" GPS-Y="1.168715200000000e+001" Destination="MPH" />
+  <Terminal Type="A" Code="KLU" Name="Klagenfurt Airport Klagenfurt" GPS-X="1.432419200000000e+001" GPS-Y="4.665012200000000e+001" Destination="KLU" />
+  <Terminal Type="A" Code="KLV" Name="Karlovy Vary Karlovy Vary Airport" GPS-X="1.291666700000000e+001" GPS-Y="5.020000000000000e+001" Destination="PRG" />
+  <Terminal Type="A" Code="KLX" Name="Kalamata Kalamata Airport" GPS-X="2.202777800000000e+001" GPS-Y="3.706944400000000e+001" Destination="PEL" />
+  <Terminal Type="A" Code="KMG" Name="Kunming Changshui Int. Airport" GPS-X="1.029291670000000e+002" GPS-Y="2.510194400000000e+001" Destination="KMH" />
+  <Terminal Type="A" Code="KOA" Name="Kona Kona Int. Airport" GPS-X="-1.560410770000000e+002" GPS-Y="1.973617400000000e+001" Destination="KAI" />
+  <Terminal Type="A" Code="KRK" Name="Krakow John Paul II Int. Airport" GPS-X="1.979374400000000e+001" GPS-Y="5.007549100000000e+001" Destination="KRK" />
+  <Terminal Type="A" Code="KTW" Name="Katowice Katowice Int. Airport" GPS-X="1.907402900000000e+001" GPS-Y="5.047083300000000e+001" Destination="KTW" />
+  <Terminal Type="A" Code="KUA" Name="Kuantan Sultan Ahmad Shah Airport" GPS-X="1.032151820000000e+002" GPS-Y="3.780765000000000e+000" Destination="KUA" />
+  <Terminal Type="A" Code="KUL" Name="Kuala Lumpur Int. Airport" GPS-X="1.017172590000000e+002" GPS-Y="2.744344000000000e+000" Destination="KUL" />
+  <Terminal Type="A" Code="KUN" Name="KaunasKaunas International Airport" GPS-X="2.408480070000000e+001" GPS-Y="5.496390150000000e+001" Destination="KUN" />
+  <Terminal Type="A" Code="KVA" Name="Kavala Megas Alexandros Airport" GPS-X="2.461967500000000e+001" GPS-Y="4.091299400000000e+001" Destination="KVA" />
+  <Terminal Type="A" Code="KWI" Name="KuwaitKuwait International Airport" GPS-X="4.797125100000000e+001" GPS-Y="2.924011600000000e+001" Destination="KW" />
+  <Terminal Type="A" Code="KWL" Name="Guilin Liangjiang Guilin Liangjang Int. Airport" GPS-X="1.100468390000000e+002" GPS-Y="2.521758500000000e+001" Destination="KWL" />
+  <Terminal Type="A" Code="KYA" Name="Konya Konya Airport" GPS-X="3.256222200000000e+001" GPS-Y="3.797916700000000e+001" Destination="KYA" />
+  <Terminal Type="A" Code="LAP" Name="La Paz Manuel Marquez de Leon Int. Airport" GPS-X="-1.103678340000000e+002" GPS-Y="2.407608800000000e+001" Destination="PAZ" />
+  <Terminal Type="A" Code="LAS" Name="Las Vegas McCarran Int. Airport" GPS-X="-1.151475990000000e+002" GPS-Y="3.608100000000000e+001" Destination="LAS" />
+  <Terminal Type="A" Code="LAX" Name="Los AngelesLos Angeles Int. Airport" GPS-X="-1.184082790000000e+002" GPS-Y="3.394339900000000e+001" Destination="LAX" />
+  <Terminal Type="A" Code="LBA" Name="Leeds Leeds Bradford Int. Airport" GPS-X="-1.659985000000000e+000" GPS-Y="5.386933900000000e+001" Destination="LBA" />
+  <Terminal Type="A" Code="LBC" Name="Lubeck Lubeck Blankensee Airport" GPS-X="1.070116200000000e+001" GPS-Y="5.380527300000000e+001" Destination="LBC" />
+  <Terminal Type="A" Code="LCA" Name="Larnaca Larnaca Int. Airport" GPS-X="3.362599100000000e+001" GPS-Y="3.488086600000000e+001" Destination="LCA" />
+  <Terminal Type="A" Code="LCG" Name="La Coruna Airport La Coruna" GPS-X="-8.381923000000001e+000" GPS-Y="4.330236000000000e+001" Destination="LCG" />
+  <Terminal Type="A" Code="LCY" Name="London London City Airport" GPS-X="4.936500000000000e-002" GPS-Y="5.150438000000000e+001" Destination="LCY" />
+  <Terminal Type="A" Code="LDB" Name="Londrina Gobernador Jose Richa Airport" GPS-X="-5.113771500000000e+001" GPS-Y="-2.332845600000000e+001" Destination="LOD" />
+  <Terminal Type="A" Code="LED" Name="Saint Petersburg Pulkovo Airport" GPS-X="5.979984700000000e+001" GPS-Y="3.027050500000000e+001" Destination="LED" />
+  <Terminal Type="A" Code="LEI" Name="Almeria Almeria Airport" GPS-X="-2.371873000000000e+000" GPS-Y="3.684798400000000e+001" Destination="LEI" />
+  <Terminal Type="A" Code="LEJ" Name="Leipzig Halle Airport Leipzig Halle" GPS-X="1.222120200000000e+001" GPS-Y="5.142026200000000e+001" Destination="LEJ" />
+  <Terminal Type="A" Code="LEN" Name="Leon Leon Airport" GPS-X="-5.646290000000000e+000" GPS-Y="4.259056900000000e+001" Destination="LEN" />
+  <Terminal Type="A" Code="LGA" Name="New York La Guardia Airport" GPS-X="-7.387161700000000e+001" GPS-Y="4.077425200000000e+001" Destination="LGA" />
+  <Terminal Type="A" Code="LGB" Name="Long Beach Long Beach Airport" GPS-X="-1.181444940000000e+002" GPS-Y="3.381819400000000e+001" Destination="LAX" />
+  <Terminal Type="A" Code="LGG" Name="Liege Liege Airport" GPS-X="5.460149000000000e+000" GPS-Y="5.064333400000000e+001" Destination="LUX" />
+  <Terminal Type="A" Code="LGK" Name="Langkawi Langkawi Int. Airport" GPS-X="9.973140300000000e+001" GPS-Y="6.342174000000000e+000" Destination="LGK" />
+  <Terminal Type="A" Code="LGW" Name="London Gatwick Airport" GPS-X="-1.774160000000000e-001" GPS-Y="5.115083600000000e+001" Destination="LGW" />
+  <Terminal Type="A" Code="LGWH" Name="Gatwich Gatwich port" Destination="LON" />
+  <Terminal Type="A" Code="LHR" Name="London Heathrow Airport" GPS-X="-4.535660000000000e-001" GPS-Y="5.146960300000000e+001" Destination="LHR" />
+  <Terminal Type="A" Code="LIH" Name="Lihue Lihue Airport" GPS-X="-1.593494450000000e+002" GPS-Y="2.197820400000000e+001" Destination="LIH" />
+  <Terminal Type="A" Code="LIL" Name="Lille Lille Lesquin Airport" GPS-X="3.106067000000000e+000" GPS-Y="5.057204700000000e+001" Destination="LIL" />
+  <Terminal Type="A" Code="LIM" Name="Lima Jorge Chavez Int. Airport" GPS-X="-7.710879000000000e+001" GPS-Y="-1.202476300000000e+001" Destination="LIM" />
+  <Terminal Type="A" Code="LIN" Name="Milan Linate Int. Airport" GPS-X="9.279157000000000e+000" GPS-Y="4.546095800000000e+001" Destination="LIN" />
+  <Terminal Type="A" Code="LIR" Name="Liberia Daniel Oduber Quiros Int. Airport" GPS-X="-8.553839400000000e+001" GPS-Y="1.060000500000000e+001" Destination="GAN" />
+  <Terminal Type="A" Code="LIS" Name="Lisbon Portela Airport" GPS-X="-9.128164999999999e+000" GPS-Y="3.877004300000000e+001" Destination="LIS" />
+  <Terminal Type="A" Code="LJG" Name="Lijiang Sanyi Airport" GPS-X="1.002447380000000e+002" GPS-Y="2.667173800000000e+001" Destination="LJG" />
+  <Terminal Type="A" Code="LJU" Name="Ljubljana Brnik Airport" GPS-X="1.445497200000000e+001" GPS-Y="4.623102000000000e+001" Destination="LJU" />
+  <Terminal Type="A" Code="LOP" Name="Lombok Lombok Int. Airport" GPS-X="1.162738380000000e+002" GPS-Y="-8.761611000000000e+000" Destination="AMI" />
+  <Terminal Type="A" Code="LOR" Name="Loreto Loreto Int. Airport" Destination="LOR" />
+  <Terminal Type="A" Code="LPA" Name="Gran Canaria Las Palmas Airport" GPS-X="-1.538462600000000e+001" GPS-Y="2.793239800000000e+001" Destination="LPA" />
+  <Terminal Type="A" Code="LPB" Name="La Paz El Alto Int. Airport" GPS-X="-6.817690300000000e+001" GPS-Y="-1.650889100000000e+001" Destination="LPB" />
+  <Terminal Type="A" Code="LPL" Name="Liverpool Int. John Lennon Airport" GPS-X="-2.854905000000000e+000" GPS-Y="5.333761600000000e+001" Destination="LPL" />
+  <Terminal Type="A" Code="LPQ" Name="Luang Prabang Luang Praban Int. Airport" GPS-X="1.021637090000000e+002" GPS-Y="1.989705500000000e+001" Destination="LPQ" />
+  <Terminal Type="A" Code="LPY" Name="Le Puy-en-Velay Le Puy-Loudes Airport " GPS-X="3.766667000000000e+000" GPS-Y="4.508333300000000e+001" Destination="CLR" />
+  <Terminal Type="A" Code="LRM" Name="La RomanaLa Romana Int. Airport" GPS-X="-6.890000000000001e+001" GPS-Y="1.841666700000000e+001" Destination="LRM" />
+  <Terminal Type="A" Code="LRS" Name="Leros Leros Airport" GPS-X="2.678333300000000e+001" GPS-Y="3.751666700000000e+001" Destination="LRS" />
+  <Terminal Type="A" Code="LST" Name="Launceston Launceston Airport" GPS-X="1.472053280000000e+002" GPS-Y="-4.154351100000000e+001" Destination="HBA" />
+  <Terminal Type="A" Code="LTN" Name="London London Luton Airport" GPS-X="-3.762320000000000e-001" GPS-Y="5.187976800000000e+001" Destination="LTN" />
+  <Terminal Type="A" Code="LUG" Name="LuganoLugano Airport" GPS-X="8.909827000000000e+000" GPS-Y="4.600239300000000e+001" Destination="LUG" />
+  <Terminal Type="A" Code="LUX" Name="LuxembourgLuxembourg Int. Airport" GPS-X="6.209539000000000e+000" GPS-Y="4.963111300000000e+001" Destination="LUX" />
+  <Terminal Type="A" Code="LVI" Name="Livingstone Livingstone Airport" GPS-X="2.582222200000000e+001" GPS-Y="-1.782055600000000e+001" Destination="LIG" />
+  <Terminal Type="A" Code="LWO" Name="Lviv Lviv Int. Airport" GPS-X="2.395531900000000e+001" GPS-Y="4.981641800000000e+001" Destination="LWO" />
+  <Terminal Type="A" Code="LXR" Name="Luxor Luxor Int. Airport" GPS-X="3.269968300000000e+001" GPS-Y="2.567491900000000e+001" Destination="LXR" />
+  <Terminal Type="A" Code="LYN" Name="Lyon Lyon Bron Airport" GPS-X="4.573083300000000e+001" GPS-Y="2.000000000000000e+000" Destination="LYS" />
+  <Terminal Type="A" Code="LYS" Name="Lyon Saint Exupery Airport" GPS-X="5.080334000000000e+000" GPS-Y="4.572142600000000e+001" Destination="LYS" />
+  <Terminal Type="A" Code="MAA" Name="Chennai Chennai Int. Airport" GPS-X="8.016378200000000e+001" GPS-Y="1.298226700000000e+001" Destination="CNN" />
+  <Terminal Type="A" Code="MAD" Name="Madrid Adolfo Suarez Madrid-Barajas Airport" GPS-X="-3.564479000000000e+000" GPS-Y="4.049027000000000e+001" Destination="MAD" />
+  <Terminal Type="A" Code="MAH" Name="Menorca Mahon Airport" GPS-X="4.224099000000000e+000" GPS-Y="3.986503000000000e+001" Destination="MAH" />
+  <Terminal Type="A" Code="MAN" Name="Manchester Manchester Airport" GPS-X="-2.273354000000000e+000" GPS-Y="5.336290800000000e+001" Destination="MAN" />
+  <Terminal Type="A" Code="MAO" Name="Manaus Eduardo Gomes Int. Airport" GPS-X="-6.004609200000000e+001" GPS-Y="-3.031327000000000e+000" Destination="MNA" />
+  <Terminal Type="A" Code="MBA" Name="Mombasa Moi Int. Airport" GPS-X="3.960324700000000e+001" GPS-Y="-4.032700000000000e+000" Destination="MBA" />
+  <Terminal Type="A" Code="MBJ" Name="Montego Bay Sir Donald Sangster Int. Airport" GPS-X="-7.791663200000001e+001" GPS-Y="1.849846400000000e+001" Destination="MBJ" />
+  <Terminal Type="A" Code="MCO" Name="Orlando Orlando Int. Airport" GPS-X="-8.130830100000000e+001" GPS-Y="2.843217700000000e+001" Destination="MCO" />
+  <Terminal Type="A" Code="MCT" Name="Muscat Seeb Int. Airport" GPS-X="5.828404200000000e+001" GPS-Y="2.360073900000000e+001" Destination="MCT" />
+  <Terminal Type="A" Code="MCZ" Name="Maceio Zumbi dos Palmares Int. Airport" GPS-X="-3.579211400000000e+001" GPS-Y="-9.514027000000001e+000" Destination="MAO" />
+  <Terminal Type="A" Code="MDE" Name="Medellin Jose Maria Cordova Int. Airport" GPS-X="-7.542820600000000e+001" GPS-Y="6.171382000000000e+000" Destination="MDE" />
+  <Terminal Type="A" Code="MDL" Name="Mandalay Mandalay Int. Airport" GPS-X="9.597208700000000e+001" GPS-Y="2.170590900000000e+001" Destination="MDL" />
+  <Terminal Type="A" Code="MDW" Name="Chicago Midway Int. Airport" GPS-X="-8.774087100000000e+001" GPS-Y="4.178813600000000e+001" Destination="ORD" />
+  <Terminal Type="A" Code="MDZ" Name="Mendoza El Plumerillo Int. Airport" GPS-X="-6.879890900000000e+001" GPS-Y="-3.282788800000000e+001" Destination="MEZ" />
+  <Terminal Type="A" Code="MEL" Name="Melbourne Tullamarine Int. Airport" GPS-X="1.448497770000000e+002" GPS-Y="-3.766961100000000e+001" Destination="MLB" />
+  <Terminal Type="A" Code="MEM" Name="Memphis Memphis Int. Airport" GPS-X="-8.998225800000000e+001" GPS-Y="3.504457900000000e+001" Destination="MEM" />
+  <Terminal Type="A" Code="MEX" Name="Mexico City Benito Juarez Int. Airport" GPS-X="-9.907277800000000e+001" GPS-Y="1.943527800000000e+001" Destination="MEX" />
+  <Terminal Type="A" Code="MFM" Name="Macau Macao Int. Airport" GPS-X="1.135728500000000e+002" GPS-Y="2.215658700000000e+001" Destination="MFM" />
+  <Terminal Type="A" Code="MHP" Name="Minsk Int. Minsk Airport" GPS-X="2.755000000000000e+001" GPS-Y="5.385000000000000e+001" Destination="MSQ" />
+  <Terminal Type="A" Code="MIA" Name="MiamiMiami  Int. Airport" GPS-X="-8.027823400000000e+001" GPS-Y="2.579600000000000e+001" Destination="MIA" />
+  <Terminal Type="A" Code="MID" Name="Merida Manuel Crescencio Rejon Int. Airport" GPS-X="-8.966374800000000e+001" GPS-Y="2.093382200000000e+001" Destination="MID" />
+  <Terminal Type="A" Code="MILO" Name="Milos Milos Airport" Destination="MILO" />
+  <Terminal Type="A" Code="MIR" Name="Monastir Habib Bourguiba Int. Airport" GPS-X="1.075315500000000e+001" GPS-Y="3.576108300000000e+001" Destination="MIR" />
+  <Terminal Type="A" Code="MJT" Name="Lesbos Mytilene Int. Airport" GPS-X="2.659944400000000e+001" GPS-Y="3.905611100000000e+001" Destination="ESV" />
+  <Terminal Type="A" Code="MJV" Name="Murcia Murcia San Javier Airport" GPS-X="-8.190400000000000e-001" GPS-Y="3.777521300000000e+001" Destination="MJV" />
+  <Terminal Type="A" Code="MLA" Name="Malta Malta Int. Airport" GPS-X="1.449540100000000e+001" GPS-Y="3.584977600000000e+001" Destination="MLA" />
+  <Terminal Type="A" Code="MLH" Name="Mulhouse Mulhouse Airport" GPS-X="7.532864000000000e+000" GPS-Y="4.759932400000000e+001" Destination="MLH" />
+  <Terminal Type="A" Code="MLM" Name="Morelia General Francisco Mujica Int. Airport" GPS-X="-1.010281260000000e+002" GPS-Y="1.984669700000000e+001" Destination="MLM" />
+  <Terminal Type="A" Code="MLX" Name="Malatya Erhac Airport" GPS-X="3.825361100000000e+001" GPS-Y="3.835444400000000e+001" Destination="MLX" />
+  <Terminal Type="A" Code="MMX" Name="Malmo Malmo-Sturup Airport" GPS-X="1.336372700000000e+001" GPS-Y="5.553875900000000e+001" Destination="MMX" />
+  <Terminal Type="A" Code="MNL" Name="Manila Ninoy Aquino Int. Airport" GPS-X="1.210192080000000e+002" GPS-Y="1.451120500000000e+001" Destination="MNL" />
+  <Terminal Type="A" Code="MPH" Name="Caticlan Godofredo P.Ramos Airport" GPS-X="1.219520990000000e+002" GPS-Y="1.192526300000000e+001" Destination="MPH" />
+  <Terminal Type="A" Code="MPM" Name="Maputo Maputo Int. Airport" GPS-X="3.257429000000000e+001" GPS-Y="-2.592438800000000e+001" Destination="MPM" />
+  <Terminal Type="A" Code="MQM" Name="Mardin Mardin Airport" GPS-X="4.063170000000000e+001" GPS-Y="3.722330000000000e+001" Destination="MQM" />
+  <Terminal Type="A" Code="MQP" Name="Nelspruit Kruger Mpumalanga Int. Airport" GPS-X="3.109813200000000e+001" GPS-Y="-2.538494600000000e+001" Destination="MQP" />
+  <Terminal Type="A" Code="MRS" Name="Marseille Provence Airport" GPS-X="5.222137000000000e+000" GPS-Y="4.344178000000000e+001" Destination="MRS" />
+  <Terminal Type="A" Code="MRU" Name="Port Louis Sir Seewoosagur Ramgoolam Int. Airport" GPS-X="5.767662900000000e+001" GPS-Y="-2.043199800000000e+001" Destination="MRU" />
+  <Terminal Type="A" Code="MSP" Name="Minneapolis Saint Paul Int. Airport" GPS-X="-9.321092200000000e+001" GPS-Y="4.488301600000000e+001" Destination="MSP" />
+  <Terminal Type="A" Code="MST" Name="Maastricht Aachen Airport" GPS-X="5.768827000000000e+000" GPS-Y="5.091561900000000e+001" Destination="MST" />
+  <Terminal Type="A" Code="MSY" Name="New Orleans Louis Armstrong Int. Airport" GPS-X="-9.025639099999999e+001" GPS-Y="2.998456400000000e+001" Destination="MSY" />
+  <Terminal Type="A" Code="MTY" Name="Monterrey General Mariano Escobedo Int. Airport" GPS-X="-1.001143950000000e+002" GPS-Y="2.577656900000000e+001" Destination="MTY" />
+  <Terminal Type="A" Code="MUC" Name="Munich Franz Josef Strauss Airport" GPS-X="1.179014300000000e+001" GPS-Y="4.835300500000000e+001" Destination="MUC" />
+  <Terminal Type="A" Code="MVD" Name="Montevideo Carrasco Int. Airport" GPS-X="-5.602646600000000e+001" GPS-Y="-3.484115400000000e+001" Destination="MVD" />
+  <Terminal Type="A" Code="MVK" Name="Navegantes Ministro Victor Konder Airport" Destination="BLN" />
+  <Terminal Type="A" Code="MXP" Name="Milan Malpensa Airport" GPS-X="8.712370000000000e+000" GPS-Y="4.562740500000000e+001" Destination="MXP" />
+  <Terminal Type="A" Code="MZT" Name="Mazatlan General Rafael Buelna Int. Airport" GPS-X="-1.062701480000000e+002" GPS-Y="2.316731400000000e+001" Destination="MZT" />
+  <Terminal Type="A" Code="NAN" Name="Nadi Nadi International Airport" GPS-X="1.774516070000000e+002" GPS-Y="-1.775327000000000e+001" Destination="NAN" />
+  <Terminal Type="A" Code="NAP" Name="Naples Int. Airport Napoles Capodichino" GPS-X="1.429166700000000e+001" GPS-Y="4.088611100000000e+001" Destination="NAP" />
+  <Terminal Type="A" Code="NAS" Name="Nassau Lynden Pindling Int. Airport" GPS-X="-7.746649900000000e+001" GPS-Y="2.505041900000000e+001" Destination="PID" />
+  <Terminal Type="A" Code="NAT" Name="Natal Governador Aluizio Alves Int. Airport" GPS-X="-3.536625600000000e+001" GPS-Y="-5.768726000000000e+000" Destination="NAT" />
+  <Terminal Type="A" Code="NAV" Name="Nevsehir Nevsehir Kapadokya Airport" GPS-X="3.471666700000000e+001" GPS-Y="3.863333300000000e+001" Destination="NAV" />
+  <Terminal Type="A" Code="NBE" Name="Enfidha Hammamet Int. Airport" GPS-X="1.043861100000000e+001" GPS-Y="3.607583300000000e+001" Destination="NBE" />
+  <Terminal Type="A" Code="NBO" Name="Nairobi Jomo Kenyatta Int. Airport" GPS-X="3.692578100000000e+001" GPS-Y="-1.319167000000000e+000" Destination="NBO" />
+  <Terminal Type="A" Code="NCE" Name="Nice Cote D'Azur Int. Airport" GPS-X="7.205232000000000e+000" GPS-Y="4.366048800000000e+001" Destination="NCE" />
+  <Terminal Type="A" Code="NLP" Name="Nelspruit Nelspruit Airport" GPS-X="3.091388900000000e+001" GPS-Y="-2.550083300000000e+001" Destination="NLP" />
+  <Terminal Type="A" Code="NOC" Name="Knock Ireland West Airport" GPS-X="-8.810468000000000e+000" GPS-Y="5.391400200000000e+001" Destination="NOC" />
+  <Terminal Type="A" Code="NQY" Name="Newquay Newquay Cornwall Airport" GPS-X="-4.997922000000000e+000" GPS-Y="5.043745000000000e+001" Destination="NQY" />
+  <Terminal Type="A" Code="NRN" Name="Weeze Niederrhein Airport" GPS-X="6.150168000000000e+000" GPS-Y="5.159928600000000e+001" Destination="NRN" />
+  <Terminal Type="A" Code="NRT" Name="Narita Narita Int. Airport" GPS-X="1.403874430000000e+002" GPS-Y="3.577321300000000e+001" Destination="NRT" />
+  <Terminal Type="A" Code="NTE" Name="Nantes Nantes Atlantique Airport" GPS-X="-1.601402000000000e+000" GPS-Y="4.715762300000000e+001" Destination="NTE" />
+  <Terminal Type="A" Code="NUE" Name="Nuremberg Nuremberg Airport" GPS-X="1.107706200000000e+001" GPS-Y="4.949416800000000e+001" Destination="NUE" />
+  <Terminal Type="A" Code="NWI" Name="Norwich Int Norwich Airport" GPS-X="1.276782000000000e+000" GPS-Y="5.266953400000000e+001" Destination="NWI" />
+  <Terminal Type="A" Code="NYO" Name="Stockholm Stockholm Skavsta Airport" GPS-X="1.692286600000000e+001" GPS-Y="5.878424700000000e+001" Destination="STO" />
+  <Terminal Type="A" Code="OAK" Name="Oakland Oakland Int. Airport" GPS-X="-1.222120110000000e+002" GPS-Y="3.771188000000000e+001" Destination="SFO" />
+  <Terminal Type="A" Code="OAX" Name="Oaxaca Xoxocotlan Int. Airport" GPS-X="-9.672163500000001e+001" GPS-Y="1.700088400000000e+001" Destination="OAX" />
+  <Terminal Type="A" Code="ODE" Name="Odense Odense Airport" GPS-X="1.032881400000000e+001" GPS-Y="5.547356000000000e+001" Destination="ODE" />
+  <Terminal Type="A" Code="ODS" Name="Odessa Odessa Int. Airport" GPS-X="3.067671800000000e+001" GPS-Y="4.644100800000000e+001" Destination="ODS" />
+  <Terminal Type="A" Code="OGG" Name="Kahului Kahului Airport" GPS-X="-1.564386290000000e+002" GPS-Y="2.089288300000000e+001" Destination="MAU" />
+  <Terminal Type="A" Code="OHD" Name="Ohrid St. Paul The Apostle Airport" GPS-X="2.074321600000000e+001" GPS-Y="4.118023100000000e+001" Destination="OHD" />
+  <Terminal Type="A" Code="OKA" Name="Okinawa Naha Airport" GPS-X="1.276458420000000e+002" GPS-Y="2.620495400000000e+001" Destination="AHA" />
+  <Terminal Type="A" Code="OLB" Name="Olbia Costa Smeralda Airport" GPS-X="9.514823000000000e+000" GPS-Y="4.090314300000000e+001" Destination="OLB" />
+  <Terminal Type="A" Code="OOL" Name="Gold Coast Coolangatta Airport" GPS-X="1.535090770000000e+002" GPS-Y="-2.816565700000000e+001" Destination="OOL" />
+  <Terminal Type="A" Code="OPO" Name="Porto Francisco Sa Carneiro Airport" GPS-X="-8.670272000000001e+000" GPS-Y="4.123777400000000e+001" Destination="OPO" />
+  <Terminal Type="A" Code="ORD" Name="Chicago O'Hare Int. Airport" GPS-X="-8.790487600000000e+001" GPS-Y="4.197691200000000e+001" Destination="ORD" />
+  <Terminal Type="A" Code="ORK" Name="Cork Cork Airport" GPS-X="-8.489846999999999e+000" GPS-Y="5.184910700000000e+001" Destination="ORK" />
+  <Terminal Type="A" Code="ORN" Name="Oran Es Senia Oran Es Senia Airport" GPS-X="-6.061080000000000e-001" GPS-Y="3.562001900000000e+001" Destination="TAF" />
+  <Terminal Type="A" Code="ORY" Name="Paris Orly Airport" GPS-X="2.359700000000000e+000" GPS-Y="4.872828300000000e+001" Destination="ORY" />
+  <Terminal Type="A" Code="OSL" Name="Gardermoen Oslo Airport" GPS-X="1.110041100000000e+001" GPS-Y="6.019419200000000e+001" Destination="OSL" />
+  <Terminal Type="A" Code="OST" Name="Ostend–Bruges International Airport" GPS-X="2.863611000000000e+000" GPS-Y="5.119972200000000e+001" Destination="BRU" />
+  <Terminal Type="A" Code="OTP" Name="Bucharest Henri Coand? Int. Airport" GPS-X="2.607706300000000e+001" GPS-Y="4.457115500000000e+001" Destination="OTP" />
+  <Terminal Type="A" Code="OUD" Name="Oujda Angads Airport" GPS-X="-1.933333000000000e+000" GPS-Y="3.478333300000000e+001" Destination="TT1" />
+  <Terminal Type="A" Code="OVD" Name="Asturias Asturias Airport" GPS-X="-6.032094000000000e+000" GPS-Y="4.355891000000000e+001" Destination="OVD" />
+  <Terminal Type="A" Code="OXF" Name="Oxford Oxford Airport" GPS-X="-1.320000000000000e+000" GPS-Y="5.183694400000000e+001" Destination="OXF" />
+  <Terminal Type="A" Code="PAC" Name="Panama City Marcos A. Gelabert Intl. Airport" GPS-X="-7.955561299999999e+001" GPS-Y="8.971004000000001e+000" Destination="PTY" />
+  <Terminal Type="A" Code="PAD" Name="Paderborn Lippstadt Paderborn Lippstadt Airport" GPS-X="8.619832000000001e+000" GPS-Y="5.161033200000000e+001" Destination="PAD" />
+  <Terminal Type="A" Code="PAS" Name="Paros Paros Airport" GPS-X="2.510000000000000e+001" GPS-Y="3.706666700000000e+001" Destination="ARO" />
+  <Terminal Type="A" Code="PBC" Name="Huejotzingo Puebla International Airport" GPS-X="-9.836750000000001e+001" GPS-Y="1.913500000000000e+001" Destination="PBC" />
+  <Terminal Type="A" Code="PBI" Name="West Palm Beach Palm Beach Int. Airport" GPS-X="-8.009043800000001e+001" GPS-Y="2.668888500000000e+001" Destination="MCO" />
+  <Terminal Type="A" Code="PBM" Name="Paramaribo Johan Adolf Pengel Int. Airport" GPS-X="-5.519111100000000e+001" GPS-Y="5.451389000000000e+000" Destination="WSO" />
+  <Terminal Type="A" Code="PDL" Name="Ponta Delgada Azores Joao Paulo II Airport" GPS-X="-2.569646900000000e+001" GPS-Y="3.774384700000000e+001" Destination="PDL" />
+  <Terminal Type="A" Code="PDP" Name="Maldonado Punta Del Este Int. Airport" GPS-X="-5.509316400000000e+001" GPS-Y="-3.485721300000000e+001" Destination="PDP" />
+  <Terminal Type="A" Code="PDV" Name="Plovdiv Plovdiv Airport" GPS-X="2.471666700000000e+001" GPS-Y="4.230000000000000e+001" Destination="PDV" />
+  <Terminal Type="A" Code="PEK" Name="Beijing Capital Int. Airport" GPS-X="1.165870950000000e+002" GPS-Y="4.007853800000000e+001" Destination="PEK" />
+  <Terminal Type="A" Code="PEN" Name="Penang Penang Int. Airport" GPS-X="1.002651730000000e+002" GPS-Y="5.292961000000000e+000" Destination="PEN" />
+  <Terminal Type="A" Code="PER" Name="Perth Perth Int. Airport" GPS-X="1.159602360000000e+002" GPS-Y="-3.193360400000000e+001" Destination="PER" />
+  <Terminal Type="A" Code="PERD" Name="Perth Perth Domestic Airport " GPS-X="1.159602360000000e+002" GPS-Y="-3.193360400000000e+001" Destination="PER" />
+  <Terminal Type="A" Code="PFO" Name="Paphos Paphos Int. Airport" GPS-X="3.248910400000000e+001" GPS-Y="3.471155200000000e+001" Destination="PA" />
+  <Terminal Type="A" Code="PHL" Name="Philadelphia Philadelphia Int. Airport" GPS-X="-7.524330500000001e+001" GPS-Y="3.987641300000000e+001" Destination="PHL" />
+  <Terminal Type="A" Code="PHX" Name="Phoenix Sky Harbor Int. Airport" GPS-X="-1.120001640000000e+002" GPS-Y="3.343503600000000e+001" Destination="PHX" />
+  <Terminal Type="A" Code="PHZ" Name="Phi Phi Island Phi Phi Island Airport" GPS-X="9.828333300000000e+001" GPS-Y="8.166667000000000e+000" Destination="HKT" />
+  <Terminal Type="A" Code="PIK" Name="Glasgow Glasgow Prestwick Airport" GPS-X="-4.611286000000000e+000" GPS-Y="5.550843200000000e+001" Destination="PIK" />
+  <Terminal Type="A" Code="PIT" Name="Pittsburgh Int. Airport Pittsburgh" GPS-X="-8.025657000000000e+001" GPS-Y="4.049585000000000e+001" Destination="PIT" />
+  <Terminal Type="A" Code="PIX" Name="Pico Island Airport Isla Pico" GPS-X="-2.830000000000000e+001" GPS-Y="3.846666700000000e+001" Destination="PDL" />
+  <Terminal Type="A" Code="PLS" Name="Providenciales Providenciales Int. Airport" GPS-X="-7.226263500000000e+001" GPS-Y="2.177532800000000e+001" Destination="PLS" />
+  <Terminal Type="A" Code="PLU" Name="Belo Horizonte Carlos Drummond de Andrade Airport" GPS-X="-4.394929300000000e+001" GPS-Y="-1.984941500000000e+001" Destination="BHZ" />
+  <Terminal Type="A" Code="PLZ" Name="Port Elizabeth Port Elizabeth Airport" GPS-X="2.561142100000000e+001" GPS-Y="-3.398371000000000e+001" Destination="PLZ" />
+  <Terminal Type="A" Code="PMC" Name="Puerto Montt El Tepual Int. Airport" GPS-X="-7.309831200000001e+001" GPS-Y="-4.143372600000000e+001" Destination="PMC" />
+  <Terminal Type="A" Code="PMI" Name="Palma Majorca Son Sant Joan Airport" GPS-X="2.730388000000000e+000" GPS-Y="3.954765400000000e+001" Destination="PMI" />
+  <Terminal Type="A" Code="PMO" Name="Palermo Punta Raisi Airport" GPS-X="1.310477900000000e+001" GPS-Y="3.818652500000000e+001" Destination="SIC" />
+  <Terminal Type="A" Code="PMV" Name="Porlamar Santiago Marino Caribbean Int. Airport" GPS-X="-6.396899200000000e+001" GPS-Y="1.091718900000000e+001" Destination="IMA" />
+  <Terminal Type="A" Code="PNA" Name="Pamplona Pamplona Airport" GPS-X="-1.639347000000000e+000" GPS-Y="4.276749700000000e+001" Destination="PNA" />
+  <Terminal Type="A" Code="PNH" Name="Phnom Penh Phnom Penh Int. Airport" GPS-X="1.048461740000000e+002" GPS-Y="1.155219300000000e+001" Destination="PNH" />
+  <Terminal Type="A" Code="POA" Name="Porto Alegre Salgado Filho Int. Airport" GPS-X="-5.117708800000000e+001" GPS-Y="-2.998961100000000e+001" Destination="POO" />
+  <Terminal Type="A" Code="POP" Name="Puerto Plata Gregorio Luperon Int. Airport" GPS-X="-7.056314999999999e+001" GPS-Y="1.975494200000000e+001" Destination="POP" />
+  <Terminal Type="A" Code="POS" Name="Port Of Spain Piarco Int. Airport" GPS-X="-6.133941400000000e+001" GPS-Y="1.060208900000000e+001" Destination="POS" />
+  <Terminal Type="A" Code="POZ" Name="Pozna? Poznan Lawica Airport" GPS-X="1.682884500000000e+001" GPS-Y="5.241432700000000e+001" Destination="POZ" />
+  <Terminal Type="A" Code="PPS" Name="Puerto Princesa Puerto Princesa Int. Airport" GPS-X="1.187567390000000e+002" GPS-Y="9.740198000000000e+000" Destination="PH1" />
+  <Terminal Type="A" Code="PPT" Name="Papeete Tahiti Faa'a Int. Airport" GPS-X="-1.496093750000000e+002" GPS-Y="-1.755962900000000e+001" Destination="PPT" />
+  <Terminal Type="A" Code="PRG" Name="Prague Vaclav Havel Int. Airport" GPS-X="1.426663800000000e+001" GPS-Y="5.010618800000000e+001" Destination="PRG" />
+  <Terminal Type="A" Code="PRI" Name="Praslin Island Praslin Island Airport" GPS-X="5.569231300000000e+001" GPS-Y="-4.323883000000000e+000" Destination="PRI" />
+  <Terminal Type="A" Code="PSA" Name="Pisa Galileo Galilei Int. Airport" GPS-X="1.039991500000000e+001" GPS-Y="4.369871300000000e+001" Destination="PSA" />
+  <Terminal Type="A" Code="PTY" Name="Panama Tocumen Int. Airport" GPS-X="-7.938763899999999e+001" GPS-Y="9.066897000000001e+000" Destination="PTY" />
+  <Terminal Type="A" Code="PUJ" Name="Punta Cana Punta Cana Int. Airport" GPS-X="-6.836399800000000e+001" GPS-Y="1.856247700000000e+001" Destination="PUJ" />
+  <Terminal Type="A" Code="PUS" Name="Busan Gimhae Int Airport" GPS-X="1.289465880000000e+002" GPS-Y="3.517315400000000e+001" Destination="PUS" />
+  <Terminal Type="A" Code="PUY" Name="Pula Pula Airport" GPS-X="1.392361100000000e+001" GPS-Y="4.489166700000000e+001" Destination="PUY" />
+  <Terminal Type="A" Code="PVG" Name="Shanghai Shanghai Pudong Int. Airport" GPS-X="1.217998080000000e+002" GPS-Y="3.115182400000000e+001" Destination="PVG" />
+  <Terminal Type="A" Code="PVK" Name="Preveza Lefkada Aktion National Airport" GPS-X="2.076583300000000e+001" GPS-Y="3.892638900000000e+001" Destination="CNG" />
+  <Terminal Type="A" Code="PVR" Name="Puerto VallartaLicenciado G. Diaz Ordaz Int. Apt." GPS-X="-1.052489790000000e+002" GPS-Y="2.067829700000000e+001" Destination="PVR" />
+  <Terminal Type="A" Code="PXM" Name="Puerto Escondido Int. Airport" GPS-X="-9.708333300000000e+001" GPS-Y="1.585000000000000e+001" Destination="MOR" />
+  <Terminal Type="A" Code="PXO" Name="Porto Santo Porto Santo Airport" GPS-X="-1.634501400000000e+001" GPS-Y="3.307002300000000e+001" Destination="FNC" />
+  <Terminal Type="A" Code="QGZ" Name="La Gomera La Gomera Airport" GPS-X="-1.721363699000000e+001" GPS-Y="2.802944062000000e+001" Destination="QGZ" />
+  <Terminal Type="A" Code="QRO" Name="Queretaro Queretaro Int. Airport" GPS-X="-1.003833330000000e+002" GPS-Y="2.060000000000000e+001" Destination="QRO" />
+  <Terminal Type="A" Code="RAI" Name="Santiago Praia Int. Airport" GPS-X="-2.348656600000000e+001" GPS-Y="1.494532100000000e+001" Destination="SI1" />
+  <Terminal Type="A" Code="RAK" Name="Marrakech Marrakech Menara Airport" GPS-X="-8.026902000000000e+000" GPS-Y="3.160187500000000e+001" Destination="RAK" />
+  <Terminal Type="A" Code="RBA" Name="Rabat Rabat Sale Airport" GPS-X="-6.748619000000000e+000" GPS-Y="3.403613800000000e+001" Destination="RBA" />
+  <Terminal Type="A" Code="RDU" Name="Raleigh Durham Raleigh Durham Int. Airport" GPS-X="-7.879086200000000e+001" GPS-Y="3.587359200000000e+001" Destination="RAL" />
+  <Terminal Type="A" Code="REC" Name="Recife Gilberto Freyre Int. Airport" GPS-X="-3.491792100000000e+001" GPS-Y="-8.131506999999999e+000" Destination="REC" />
+  <Terminal Type="A" Code="REK" Name="Reykjavik Reykjavik Airport" GPS-X="-2.194965000000000e+001" GPS-Y="6.413450000000000e+001" Destination="REK" />
+  <Terminal Type="A" Code="REP" Name="Siem Reap Angkor Int. Airport" GPS-X="1.038159270000000e+002" GPS-Y="1.340843600000000e+001" Destination="REP" />
+  <Terminal Type="A" Code="REU" Name="Tarragona Reus Airport" GPS-X="1.153319000000000e+000" GPS-Y="4.114610200000000e+001" Destination="REU" />
+  <Terminal Type="A" Code="RGN" Name="Yangon Rangun Int. Airport" GPS-X="9.613415200000000e+001" GPS-Y="1.690006900000000e+001" Destination="RGN" />
+  <Terminal Type="A" Code="RGS" Name="Burgos Burgos Airport" GPS-X="-3.622950000000000e+000" GPS-Y="4.235493800000000e+001" Destination="BRG" />
+  <Terminal Type="A" Code="RHE" Name="Reims Reims Airport" GPS-X="4.050556000000000e+000" GPS-Y="4.931083300000000e+001" Destination="RHE" />
+  <Terminal Type="A" Code="RHO" Name="Rhodes Diagoras Int. Airport" GPS-X="2.809067700000000e+001" GPS-Y="3.640186600000000e+001" Destination="RHO" />
+  <Terminal Type="A" Code="RIX" Name="Riga Riga Int. Airport" GPS-X="2.397980600000000e+001" GPS-Y="5.692208000000000e+001" Destination="RIX" />
+  <Terminal Type="A" Code="RJK" Name="Rijeka Rijeka Airport" GPS-X="1.456833300000000e+001" GPS-Y="4.521583300000000e+001" Destination="RJK" />
+  <Terminal Type="A" Code="RJL" Name="Logrono Logrono Agoncillo Airport" GPS-X="-2.323611000000000e+000" GPS-Y="4.245694400000000e+001" Destination="LOG" />
+  <Terminal Type="A" Code="RMF" Name="Marsa Alam Int. Airport Marsa Alam" GPS-X="3.459277800000000e+001" GPS-Y="2.555578700000000e+001" Destination="RMF" />
+  <Terminal Type="A" Code="RNO" Name="Reno Tahoe Int. Airport" GPS-X="-1.197756980000000e+002" GPS-Y="3.950578200000000e+001" Destination="RNO" />
+  <Terminal Type="A" Code="RNS" Name="Rennes Rennes–Saint-Jacques Airport" GPS-X="-1.726249000000000e+000" GPS-Y="4.806806400000000e+001" Destination="RNS" />
+  <Terminal Type="A" Code="ROT" Name="Rotorua Rotorua Airport" GPS-X="1.763174590000000e+002" GPS-Y="-3.810982000000000e+001" Destination="ROT" />
+  <Terminal Type="A" Code="RSW" Name="Fort Myers Southwest Florida Int. Airport" GPS-X="-8.175526300000000e+001" GPS-Y="2.652788700000000e+001" Destination="RSW" />
+  <Terminal Type="A" Code="RUH" Name="Riyadh King Khalid Int. Airport" GPS-X="4.670287600000000e+001" GPS-Y="2.495928900000000e+001" Destination="RUH" />
+  <Terminal Type="A" Code="RUN" Name="Saint Denis Roland Garros Airport" GPS-X="5.551187700000000e+001" GPS-Y="-2.089200000000000e+001" Destination="RUN" />
+  <Terminal Type="A" Code="SAL" Name="El Salvador Monsenor oscar A. Romero Int. Airport" GPS-X="-8.905723000000000e+001" GPS-Y="1.344512600000000e+001" Destination="SVD" />
+  <Terminal Type="A" Code="SAN" Name="San Diego Int. Airport San Diego" GPS-X="-1.171973120000000e+002" GPS-Y="3.273193800000000e+001" Destination="SAD" />
+  <Terminal Type="A" Code="SAT" Name="San Antonio San Antonio International Airport" GPS-X="-9.847264300000001e+001" GPS-Y="2.952493700000000e+001" Destination="HOU" />
+  <Terminal Type="A" Code="SAV" Name="Raleigh Durham Raleigh Durham Int. Airport" GPS-X="-8.121058800000000e+001" GPS-Y="3.213580000000000e+001" Destination="SAV" />
+  <Terminal Type="A" Code="SAW" Name="Istanbul Sabiha Gokcen Int. Airport" GPS-X="2.930918800000000e+001" GPS-Y="4.090467600000000e+001" Destination="SAW" />
+  <Terminal Type="A" Code="SBZ" Name="SibiuSibiu Int. Airport" GPS-X="2.409352900000000e+001" GPS-Y="4.578975700000000e+001" Destination="SBZ" />
+  <Terminal Type="A" Code="SCL" Name="Santiago Arturo Merino Benitez Airport" GPS-X="-7.079382099999999e+001" GPS-Y="-3.339717500000000e+001" Destination="SCL" />
+  <Terminal Type="A" Code="SCQ" Name="Santiago De Compostela Santiago de Compostela Apt" GPS-X="-8.420327000000000e+000" GPS-Y="4.289731700000000e+001" Destination="SCQ" />
+  <Terminal Type="A" Code="SCU" Name="Santiago De Cuba Antonio Maceo Int. Airport" GPS-X="-7.583583299999999e+001" GPS-Y="1.996916700000000e+001" Destination="STG" />
+  <Terminal Type="A" Code="SDQ" Name="Santo Domingo Las Americas Int. Airport" GPS-X="-6.967674200000000e+001" GPS-Y="1.843012500000000e+001" Destination="SDQ" />
+  <Terminal Type="A" Code="SDR" Name="Santander Santander Parayas Airport" GPS-X="-3.824453000000000e+000" GPS-Y="4.342308600000000e+001" Destination="SDR" />
+  <Terminal Type="A" Code="SDU" Name="Rio De Janeiro Santos Dumont Airport" GPS-X="-4.316709700000000e+001" GPS-Y="-2.291154100000000e+001" Destination="SDU" />
+  <Terminal Type="A" Code="SDV" Name="Tel Aviv Sde Dove Airport" GPS-X="3.478785800000000e+001" GPS-Y="3.210488500000000e+001" Destination="SDV" />
+  <Terminal Type="A" Code="SEA" Name="Seattle Tacoma Int. Airport Tacoma" GPS-X="-1.223017320000000e+002" GPS-Y="4.744383900000000e+001" Destination="SEA" />
+  <Terminal Type="A" Code="SEN" Name="Southend London Southend Airport" GPS-X="6.955560000000000e-001" GPS-Y="5.157139970000000e+001" Destination="LON" />
+  <Terminal Type="A" Code="SEZ" Name="Seychelles Victoria Seychelles Int. Airport" GPS-X="5.551127900000000e+001" GPS-Y="-4.671275000000000e+000" Destination="PRI" />
+  <Terminal Type="A" Code="SFB" Name="Orlando Sanford Int. Airport" GPS-X="-8.124320400000001e+001" GPS-Y="2.877511800000000e+001" Destination="SFB" />
+  <Terminal Type="A" Code="SFG" Name="St.Martin Grand Case Esperance Airport" GPS-X="-6.304889000000000e+001" GPS-Y="1.810055500000000e+001" Destination="SXM" />
+  <Terminal Type="A" Code="SFO" Name="San Francisco San Francisco Int. Airport" GPS-X="-1.223898810000000e+002" GPS-Y="3.761521500000000e+001" Destination="SFO" />
+  <Terminal Type="A" Code="SFQ" Name="Sanliurfa Sanliurfa Gap Airport" GPS-X="3.885023000000000e+001" GPS-Y="3.708860000000000e+001" Destination="SFQ" />
+  <Terminal Type="A" Code="SGN" Name="Ho Chi Minh Tan Son Nhat Int. Airport" GPS-X="1.066624770000000e+002" GPS-Y="1.081304500000000e+001" Destination="SGN" />
+  <Terminal Type="A" Code="SHA" Name="Shanghai Hongqiao Int. Airport" GPS-X="1.213334730000000e+002" GPS-Y="3.119779000000000e+001" Destination="PVG" />
+  <Terminal Type="A" Code="SHJ" Name="Sharjah International Airport" GPS-X="5.552029000000000e+001" GPS-Y="2.532087300000000e+001" Destination="SHJ" />
+  <Terminal Type="A" Code="SID" Name="Sal Espargos Amilcar Cabral Int. Airport" GPS-X="-2.294361300000000e+001" GPS-Y="1.673469600000000e+001" Destination="SI1" />
+  <Terminal Type="A" Code="SIN" Name="Singapore Changi International Airport" GPS-X="1.039902010000000e+002" GPS-Y="1.361173000000000e+000" Destination="SIN" />
+  <Terminal Type="A" Code="SIP" Name="Simferopol Simferopol Int. Airport" GPS-X="3.399819300000000e+001" GPS-Y="4.502065800000000e+001" Destination="KBP" />
+  <Terminal Type="A" Code="SIR" Name="Sion Sion Airport" GPS-X="7.333333000000000e+000" GPS-Y="4.625000000000000e+001" Destination="SIR" />
+  <Terminal Type="A" Code="SJD" Name="Los Cabos Int. Airport Los Cabos" GPS-X="-1.097172830000000e+002" GPS-Y="2.316235400000000e+001" Destination="SJD" />
+  <Terminal Type="A" Code="SJJ" Name="Sarajevo Sarajevo Int. Airport" GPS-X="1.833606500000000e+001" GPS-Y="4.382668700000000e+001" Destination="SJJ" />
+  <Terminal Type="A" Code="SJO" Name="San Jose Juan Santamaria Int. Airport" GPS-X="-8.420408000000001e+001" GPS-Y="9.998238000000001e+000" Destination="SJO" />
+  <Terminal Type="A" Code="SJU" Name="San Juan Luis Munoz Marin Int. Airport" GPS-X="-6.600468300000000e+001" GPS-Y="1.843740300000000e+001" Destination="SJU" />
+  <Terminal Type="A" Code="SJZ" Name="Sao Jorge Island Sao Jorge Airport" GPS-X="-2.816843000000000e+001" GPS-Y="3.866461600000000e+001" Destination="PDL" />
+  <Terminal Type="A" Code="SKG" Name="Thessaloniki Thessaloniki Macedonia Int. Airport" GPS-X="2.297222200000000e+001" GPS-Y="4.052083300000000e+001" Destination="SKG" />
+  <Terminal Type="A" Code="SKP" Name="Skopje Alexander The Great Airport" GPS-X="2.162872000000000e+001" GPS-Y="4.195648900000000e+001" Destination="SKP" />
+  <Terminal Type="A" Code="SLA" Name="Salta Martin Miguel De Guemes Int. Airport" GPS-X="-6.547849300000000e+001" GPS-Y="-2.484421700000000e+001" Destination="SLT" />
+  <Terminal Type="A" Code="SLC" Name="Salt Lake City Salt Lake City Int. Airport" GPS-X="-1.119806730000000e+002" GPS-Y="4.078564500000000e+001" Destination="SLC" />
+  <Terminal Type="A" Code="SLM" Name="Salamanca Salamanca Matacan  Airport" GPS-X="-5.501944000000000e+000" GPS-Y="4.095194400000000e+001" Destination="SLM" />
+  <Terminal Type="A" Code="SLP" Name="San Luis Potosi Ponciano Arriaga Int. Airp." GPS-X="-1.009341508000000e+002" GPS-Y="2.225688610000000e+001" Destination="MOR" />
+  <Terminal Type="A" Code="SLU" Name="Castries George F. L. Charles Airport" GPS-X="-6.099441100000000e+001" GPS-Y="1.402041700000000e+001" Destination="UVF" />
+  <Terminal Type="A" Code="SLZ" Name="San Luis Marechal Cunha Machado Int. Airport" GPS-X="-4.423668400000000e+001" GPS-Y="-2.583316000000000e+000" Destination="LUI" />
+  <Terminal Type="A" Code="SMF" Name="Sacramento Sacramento Int. Airport" GPS-X="-1.215936950000000e+002" GPS-Y="3.869228300000000e+001" Destination="SAC" />
+  <Terminal Type="A" Code="SMI" Name="Samos Samos Airport" GPS-X="2.691441800000000e+001" GPS-Y="3.769144800000000e+001" Destination="AEG" />
+  <Terminal Type="A" Code="SMR" Name="Santa Marta Simon Bolivar Int. Airport" GPS-X="-7.423270400000000e+001" GPS-Y="1.111713200000000e+001" Destination="SMR" />
+  <Terminal Type="A" Code="SNA" Name="Orange County John Wayne Airport" GPS-X="-1.178605380000000e+002" GPS-Y="3.368020100000000e+001" Destination="LAX" />
+  <Terminal Type="A" Code="SNN" Name="Shannon Shannon Airport" GPS-X="-8.920389999999999e+000" GPS-Y="5.269248000000000e+001" Destination="SNN" />
+  <Terminal Type="A" Code="SNU" Name="Santa Clara Abel Santamaria Airport" GPS-X="-7.994194400000001e+001" GPS-Y="2.249194400000000e+001" Destination="VCL" />
+  <Terminal Type="A" Code="SOC" Name="Solo Adi Sumarmo Int. Airport" GPS-X="1.107566700000000e+002" GPS-Y="-7.515830000000000e+000" Destination="JOG" />
+  <Terminal Type="A" Code="SOF" Name="Sofia Airport Int. Sofia" GPS-X="2.341443100000000e+001" GPS-Y="4.268834200000000e+001" Destination="SOF" />
+  <Terminal Type="A" Code="SOU" Name="Southampton Southampton Int. Airport" GPS-X="-1.361318000000000e+000" GPS-Y="5.095072500000000e+001" Destination="SOU" />
+  <Terminal Type="A" Code="SPC" Name="La Palma la Palma Airport" GPS-X="-1.775555600000000e+001" GPS-Y="2.862638900000000e+001" Destination="SPC" />
+  <Terminal Type="A" Code="SPU" Name="Split Split Airport" GPS-X="1.629946000000000e+001" GPS-Y="4.353652500000000e+001" Destination="SPU" />
+  <Terminal Type="A" Code="SSA" Name="Salvador De BahiaDep. Luis E. Magalhaes Int. Apt." GPS-X="-3.833519600000000e+001" GPS-Y="-1.291398800000000e+001" Destination="SVD" />
+  <Terminal Type="A" Code="SSH" Name="Sharm El Sheikh Int. Airport Sharm el Sheik" GPS-X="3.438525300000000e+001" GPS-Y="2.797935700000000e+001" Destination="SSH" />
+  <Terminal Type="A" Code="STN" Name="London  Stansted Airport" GPS-X="2.627030000000000e-001" GPS-Y="5.188926700000000e+001" Destination="STN" />
+  <Terminal Type="A" Code="STR" Name="Stuttgart Stuttgart Airport" GPS-X="9.193624000000000e+000" GPS-Y="4.869073200000000e+001" Destination="STR" />
+  <Terminal Type="A" Code="STT" Name="Saint Thomas Cyril E. King Int. Airport" GPS-X="-6.496944400000000e+001" GPS-Y="1.833750000000000e+001" Destination="SPB" />
+  <Terminal Type="A" Code="SUB" Name="Surabaya Juanda Int. Airport" GPS-X="1.127937820000000e+002" GPS-Y="-7.377937000000000e+000" Destination="SUB" />
+  <Terminal Type="A" Code="SUF" Name="Lamezia Lamezia Terme Int. Airport" GPS-X="1.624497200000000e+001" GPS-Y="3.891001500000000e+001" Destination="RDC" />
+  <Terminal Type="A" Code="SVO" Name="Moscow  Moscow Sheremetyevo Int. Airport" GPS-X="3.741657400000000e+001" GPS-Y="5.596632400000000e+001" Destination="MOW" />
+  <Terminal Type="A" Code="SVQ" Name="Seville Seville San Pablo Airport" GPS-X="-5.900136000000000e+000" GPS-Y="3.742347600000000e+001" Destination="SVQ" />
+  <Terminal Type="A" Code="SVX" Name="Yekaterinburg Koltsovo Airport" GPS-X="6.080431200000000e+001" GPS-Y="5.675033500000000e+001" Destination="RU2" />
+  <Terminal Type="A" Code="SWD" Name="Seward Seward Airport" GPS-X="-1.494180600000000e+002" GPS-Y="6.013333000000000e+001" Destination="ANC" />
+  <Terminal Type="A" Code="SXB" Name="Strasbourg Entzheim Int. Apt. Strasbourg Entzheim" GPS-X="7.627674000000000e+000" GPS-Y="4.854487700000000e+001" Destination="SXB" />
+  <Terminal Type="A" Code="SXF" Name="Berlin Berlin Schonefeld Airport" GPS-X="1.352138800000000e+001" GPS-Y="5.237027800000000e+001" Destination="SXF" />
+  <Terminal Type="A" Code="SXM" Name="Saint Maarten Princesa Juliana Int. Airport" GPS-X="-6.310864600000000e+001" GPS-Y="1.804123200000000e+001" Destination="SXM" />
+  <Terminal Type="A" Code="SYD" Name="Sydney Int. Airport Kingsford Smith" GPS-X="1.511798980000000e+002" GPS-Y="-3.393292200000000e+001" Destination="SYD" />
+  <Terminal Type="A" Code="SYX" Name="Sanya Phoenix Int. Airport" GPS-X="1.094088800000000e+002" GPS-Y="1.830527600000000e+001" Destination="SYX" />
+  <Terminal Type="A" Code="SZB" Name="Subang Sultan Abdul Aziz Shah Airport" GPS-X="1.015580780000000e+002" GPS-Y="3.130644000000000e+000" Destination="KUL" />
+  <Terminal Type="A" Code="SZG" Name="Salzburg Wolfgang Amadeus Mozart Airport" GPS-X="1.299733100000000e+001" GPS-Y="4.779122600000000e+001" Destination="SZG" />
+  <Terminal Type="A" Code="SZK" Name="Skukuza Skukuza Airport" GPS-X="3.158611100000000e+001" GPS-Y="-2.496250000000000e+001" Destination="MPM" />
+  <Terminal Type="A" Code="TAB" Name="Tobago A.N.R. Robinson Int. Airport" GPS-X="-6.083968500000000e+001" GPS-Y="1.115254100000000e+001" Destination="TOB" />
+  <Terminal Type="A" Code="TAG" Name="Tagbilaran Tagbilaran Airport" GPS-X="1.238536140000000e+002" GPS-Y="9.657587000000000e+000" Destination="PH4" />
+  <Terminal Type="A" Code="TAO" Name="Qingdao Liuting Int. Airport" GPS-X="1.203823610000000e+002" GPS-Y="3.626588400000000e+001" Destination="CN6" />
+  <Terminal Type="A" Code="TBJ" Name="Tabarka Ain Draham Int. Airport" GPS-X="8.876389000000000e+000" GPS-Y="3.697833300000000e+001" Destination="TAK" />
+  <Terminal Type="A" Code="TDX" Name="Trat Airport Trat" GPS-X="1.023186750000000e+002" GPS-Y="1.227395300000000e+001" Destination="TDX" />
+  <Terminal Type="A" Code="TER" Name="Terceira Island Lajes Airport" GPS-X="-2.708757000000000e+001" GPS-Y="3.875407500000000e+001" Destination="PDL" />
+  <Terminal Type="A" Code="TFN" Name="Tenerife Tenerife North Airport" GPS-X="-1.634598200000000e+001" GPS-Y="2.848805700000000e+001" Destination="TFS" />
+  <Terminal Type="A" Code="TFS" Name="Tenerife Tenerife South Airport" GPS-X="-1.657250000000000e+001" GPS-Y="2.804444400000000e+001" Destination="TFS" />
+  <Terminal Type="A" Code="TGD" Name="Podgorica Podgorica Airport" GPS-X="1.924602400000000e+001" GPS-Y="4.236802300000000e+001" Destination="TIV" />
+  <Terminal Type="A" Code="TGZ" Name="Tuxtla Gutierrez Angel Albino Corzo Int. Airport" GPS-X="-9.302249999999999e+001" GPS-Y="1.656361100000000e+001" Destination="CIP" />
+  <Terminal Type="A" Code="TIA" Name="Tirana International Airport Nene Tereza" GPS-X="1.971328000000000e+001" GPS-Y="4.141913300000000e+001" Destination="TIA" />
+  <Terminal Type="A" Code="TIJ" Name="Tijuana Tijuana International Airport" GPS-X="-1.169759240000000e+002" GPS-Y="3.254430300000000e+001" Destination="TIJ" />
+  <Terminal Type="A" Code="TIV" Name="TivatTivat  Airport" GPS-X="1.872555600000000e+001" GPS-Y="4.240361100000000e+001" Destination="TIV" />
+  <Terminal Type="A" Code="TLC" Name="Toluca Toluca Int. Airport" GPS-X="-9.956574800000000e+001" GPS-Y="1.933662200000000e+001" Destination="MDF" />
+  <Terminal Type="A" Code="TLL" Name="Tallinn Tallin Airport" GPS-X="2.479870300000000e+001" GPS-Y="5.941662200000000e+001" Destination="TLL" />
+  <Terminal Type="A" Code="TLN" Name="Toulon/Hyeres Le Palyvestre Airport " GPS-X="6.159303000000000e+000" GPS-Y="4.309348900000000e+001" Destination="TOU" />
+  <Terminal Type="A" Code="TLS" Name="Toulouse Toulouse Blagnac Airport" GPS-X="1.374321000000000e+000" GPS-Y="4.363007100000000e+001" Destination="TLS" />
+  <Terminal Type="A" Code="TLV" Name="Tel Aviv Ben Gurion Int. Airport" GPS-X="3.487074100000000e+001" GPS-Y="3.200045400000000e+001" Destination="TLV" />
+  <Terminal Type="A" Code="TNG" Name="Tangier Tanger Ibn Battouta Int. Airport" GPS-X="-5.912898000000000e+000" GPS-Y="3.572628600000000e+001" Destination="TNG" />
+  <Terminal Type="A" Code="TOE" Name="Tozeur Nefta Int. Airport Tozeur Nefta" GPS-X="8.133333000000000e+000" GPS-Y="3.391666700000000e+001" Destination="TOE" />
+  <Terminal Type="A" Code="TOR" Name="Toronto Toronto Pearson International Airport" GPS-X="-7.963060000000000e+001" GPS-Y="4.367720030000000e+001" Destination="ON" />
+  <Terminal Type="A" Code="TPA" Name="TampaTampa Int. Airport" GPS-X="-8.253541500000000e+001" GPS-Y="2.797986900000000e+001" Destination="TPA" />
+  <Terminal Type="A" Code="TPE" Name="Taipei Taiwan Taoyuan Int. Airport" GPS-X="1.212324800000000e+002" GPS-Y="2.507551200000000e+001" Destination="TPE" />
+  <Terminal Type="A" Code="TPS" Name="Trapani Vincenzo Florio Airport" GPS-X="1.249586500000000e+001" GPS-Y="3.790138500000000e+001" Destination="SIC" />
+  <Terminal Type="A" Code="TRN" Name="Turin Caselle Airport" GPS-X="7.643049000000000e+000" GPS-Y="4.519145500000000e+001" Destination="TRN" />
+  <Terminal Type="A" Code="TRS" Name="Trieste Ronchi dei Legionari Airport" GPS-X="1.348567800000000e+001" GPS-Y="4.582078100000000e+001" Destination="TRS" />
+  <Terminal Type="A" Code="TSA" Name="Taipei Taipei Songshan Airport" GPS-X="1.215527850000000e+002" GPS-Y="2.506737200000000e+001" Destination="TPE" />
+  <Terminal Type="A" Code="TSF" Name="Treviso Sant'Angelo Treviso Airport" GPS-X="1.220444400000000e+001" GPS-Y="4.565511300000000e+001" Destination="VCE" />
+  <Terminal Type="A" Code="TSN" Name="Tianjin Binhai Int. Airport" GPS-X="1.173559060000000e+002" GPS-Y="3.912827300000000e+001" Destination="PEK" />
+  <Terminal Type="A" Code="TSR" Name="Timisoara Traian Vuia Airport" GPS-X="2.132012000000000e+001" GPS-Y="4.580992400000000e+001" Destination="TSR" />
+  <Terminal Type="A" Code="TST" Name="Trang Airport Trang" GPS-X="9.961666700000001e+001" GPS-Y="7.500000000000000e+000" Destination="TST" />
+  <Terminal Type="A" Code="TTC" Name="Taltal Las Breas Airport" GPS-X="-7.037904600000000e+001" GPS-Y="-2.555817500000000e+001" Destination="MVD" />
+  <Terminal Type="A" Code="TUF" Name="Tours Tours-Val-de-Loire Airport" GPS-X="7.265840000000000e-001" GPS-Y="4.743223700000000e+001" Destination="TUF" />
+  <Terminal Type="A" Code="TUN" Name="Tunis Carthage Int. Airport Tunis Carthage" GPS-X="1.021709000000000e+001" GPS-Y="3.684762100000000e+001" Destination="TUN" />
+  <Terminal Type="A" Code="TXL" Name="BerlinBerlin Tegel Airport" GPS-X="1.329172200000000e+001" GPS-Y="5.255394400000000e+001" Destination="BER" />
+  <Terminal Type="A" Code="TZX" Name="Trabzon Trabzon Airport" GPS-X="3.978168100000000e+001" GPS-Y="4.099419100000000e+001" Destination="TZX" />
+  <Terminal Type="A" Code="UDR" Name="Udaipur Maharana Pratap Airport " GPS-X="7.389126899999999e+001" GPS-Y="2.461919000000000e+001" Destination="UDA" />
+  <Terminal Type="A" Code="UIO" Name="Quito Mariscal Sucre Int. Airport" GPS-X="-7.835597600000000e+001" GPS-Y="-1.238110000000000e-001" Destination="UIO" />
+  <Terminal Type="A" Code="UIP" Name="Quimper Quimper–Bretagne Airport" GPS-X="-4.170833000000000e+000" GPS-Y="4.797444400000000e+001" Destination="UIP" />
+  <Terminal Type="A" Code="UPG" Name="Makassar Sultan Hasanuddin Int. Airport" GPS-X="1.195477380000000e+002" GPS-Y="-5.077019000000000e+000" Destination="ID4" />
+  <Terminal Type="A" Code="USH" Name="Ushuaia Malvinas Argentinas Int. Airport" GPS-X="-6.831244900000000e+001" GPS-Y="-5.483934700000000e+001" Destination="USH" />
+  <Terminal Type="A" Code="USM" Name="Koh Samui Int. Airport Koh Samui" GPS-X="1.000630240000000e+002" GPS-Y="9.551698000000000e+000" Destination="USM" />
+  <Terminal Type="A" Code="UTP" Name="Utapao Rayong Pattaya International Airport" GPS-X="1.010166670000000e+002" GPS-Y="1.268333300000000e+001" Destination="PYX" />
+  <Terminal Type="A" Code="UVF" Name="Vieux Fort Hewanorra Int. Airport" GPS-X="-6.095222200000000e+001" GPS-Y="1.373555600000000e+001" Destination="UVF" />
+  <Terminal Type="A" Code="VAN" Name="Van Ferit Melen Airport" GPS-X="4.333222200000000e+001" GPS-Y="3.845861100000000e+001" Destination="VAN" />
+  <Terminal Type="A" Code="VAR" Name="Varna Varna Airport" GPS-X="2.782909600000000e+001" GPS-Y="4.323725800000000e+001" Destination="VAR" />
+  <Terminal Type="A" Code="VCE" Name="Venice Marco Polo Int. Airport" GPS-X="1.233794700000000e+001" GPS-Y="4.550228500000000e+001" Destination="VCE" />
+  <Terminal Type="A" Code="VDA" Name="Eilat Ovda Int. Airport" GPS-X="3.493390000000000e+001" GPS-Y="2.995201400000000e+001" Destination="DDS" />
+  <Terminal Type="A" Code="VDE" Name="El Hierro El Hierro Airport" GPS-X="-1.788493700000000e+001" GPS-Y="2.781396800000000e+001" Destination="VDE" />
+  <Terminal Type="A" Code="VER" Name="Veracruz General Heriberto Jara Int. Airport" GPS-X="-9.618321000000000e+001" GPS-Y="1.914227500000000e+001" Destination="VER" />
+  <Terminal Type="A" Code="VFA" Name=" Victoria Falls International Airport" GPS-X="2.584027800000000e+001" GPS-Y="-1.809305600000000e+001" Destination="VF" />
+  <Terminal Type="A" Code="VGO" Name="Vigo Vigo Airport" GPS-X="-8.634024999999999e+000" GPS-Y="4.222455100000000e+001" Destination="VGO" />
+  <Terminal Type="A" Code="VIE" Name="Vienna Schwechat Int. Airport" GPS-X="1.656358300000000e+001" GPS-Y="4.811972000000000e+001" Destination="VIE" />
+  <Terminal Type="A" Code="VIT" Name="Vitoria Vitoria Airport" GPS-X="-2.500000000000000e+000" GPS-Y="4.283333300000000e+001" Destination="VIT" />
+  <Terminal Type="A" Code="VIX" Name="Vitoria Eurico de Aguiar Salles Airport" GPS-X="-4.028956700000000e+001" GPS-Y="-2.025680900000000e+001" Destination="VIO" />
+  <Terminal Type="A" Code="VKO" Name="Moscow Vnukovo Int. Airport" GPS-X="3.729209800000000e+001" GPS-Y="5.560315000000000e+001" Destination="MOW" />
+  <Terminal Type="A" Code="VLC" Name="Valencia Manises Airport" GPS-X="-4.734750000000000e-001" GPS-Y="3.949179200000000e+001" Destination="VLC" />
+  <Terminal Type="A" Code="VLL" Name="Valladolid Valladolid Airport" GPS-X="-4.844626000000000e+000" GPS-Y="4.170581000000000e+001" Destination="VLL" />
+  <Terminal Type="A" Code="VNO" Name="VilniusVilnius  Int. Airport" GPS-X="2.527960500000000e+001" GPS-Y="5.464307900000000e+001" Destination="VNO" />
+  <Terminal Type="A" Code="VOL" Name="Volos Nea Anchialos Airport" GPS-X="2.279266100000000e+001" GPS-Y="3.922029100000000e+001" Destination="CNG" />
+  <Terminal Type="A" Code="VRA" Name="Varadero Juan Gualberto Gomez Int. Airport" GPS-X="-8.143694300000000e+001" GPS-Y="2.303989600000000e+001" Destination="VRA" />
+  <Terminal Type="A" Code="VRN" Name="Verona Verona Villafranca Airport" GPS-X="1.090679600000000e+001" GPS-Y="4.540233000000000e+001" Destination="VRN" />
+  <Terminal Type="A" Code="VSA" Name="Villahermosa Carlos Rovirosa Perez Int. Airport" GPS-X="-9.281898700000001e+001" GPS-Y="1.799242900000000e+001" Destination="VSA" />
+  <Terminal Type="A" Code="VST" Name="Vasteras Stockholm Vasteras Airport" GPS-X="1.663055600000000e+001" GPS-Y="5.958916700000000e+001" Destination="VST" />
+  <Terminal Type="A" Code="VVI" Name="Santa Cruz Viru Viru Int. Airport" GPS-X="-6.314048900000000e+001" GPS-Y="-1.764823400000000e+001" Destination="VVI" />
+  <Terminal Type="A" Code="WAW" Name="Warsaw Frederic Chopin Airport" GPS-X="2.097328900000000e+001" GPS-Y="5.217090600000000e+001" Destination="WAW" />
+  <Terminal Type="A" Code="WDH" Name="Windhoek Hosea Kutako Int. Airport" GPS-X="1.746320200000000e+001" GPS-Y="-2.248734500000000e+001" Destination="ERS" />
+  <Terminal Type="A" Code="WLG" Name="Wellington Wellington Airport" GPS-X="1.748121630000000e+002" GPS-Y="-4.132903600000000e+001" Destination="WLG" />
+  <Terminal Type="A" Code="WMI" Name="Warsaw Modlin Airport" GPS-X="2.065166700000000e+001" GPS-Y="5.245111100000000e+001" Destination="WAW" />
+  <Terminal Type="A" Code="WRO" Name="Wroc?aw Nicolaus Copernicus Airport" GPS-X="1.689940300000000e+001" GPS-Y="5.110482200000000e+001" Destination="WRO" />
+  <Terminal Type="A" Code="WVB" Name="Walvis Bay Rooikop Airport" GPS-X="1.464527700000000e+001" GPS-Y="-2.297971800000000e+001" Destination="SWP" />
+  <Terminal Type="A" Code="XIY" Name="Xi An Xianyang Int. Airport" GPS-X="1.087560530000000e+002" GPS-Y="3.444115600000000e+001" Destination="XIY" />
+  <Terminal Type="A" Code="XMN" Name="Xiamen Gaoqi Int. Airport" GPS-X="1.181341780000000e+002" GPS-Y="2.454306400000000e+001" Destination="XMN" />
+  <Terminal Type="A" Code="XQP" Name="Quepos La Managua Airport" GPS-X="-8.413334900000000e+001" GPS-Y="9.439145999999999e+000" Destination="SJO" />
+  <Terminal Type="A" Code="XRY" Name="Jerez de la Frontera Jerez Airport" GPS-X="-6.064535000000000e+000" GPS-Y="3.675061400000000e+001" Destination="XRY" />
+  <Terminal Type="A" Code="XSP" Name="Singapore Seletar Airport" GPS-X="1.038711220000000e+002" GPS-Y="1.417690000000000e+000" Destination="SIN" />
+  <Terminal Type="A" Code="YIH" Name="Yichang Sanxia Airport" GPS-X="1.114789380000000e+002" GPS-Y="3.054993400000000e+001" Destination="YIH" />
+  <Terminal Type="A" Code="YLW" Name="Kelowna Kelowna Int. Airport" GPS-X="-1.193813960000000e+002" GPS-Y="4.995154200000000e+001" Destination="BC" />
+  <Terminal Type="A" Code="YOW" Name="Ottawa McDonald Cartier Int. Airport" GPS-X="-7.567277799999999e+001" GPS-Y="4.532083300000000e+001" Destination="YOW" />
+  <Terminal Type="A" Code="YQB" Name="Quebec Jean Lesage Int. Airport" GPS-X="-7.138338800000000e+001" GPS-Y="4.679203700000000e+001" Destination="QU" />
+  <Terminal Type="A" Code="YUL" Name="Montreal Pierre Elliott Trudeau Int. Airport" GPS-X="-7.374990600000000e+001" GPS-Y="4.545771500000000e+001" Destination="QC" />
+  <Terminal Type="A" Code="YVR" Name="Vancouver Vancouver Int. Airport" GPS-X="-1.231791910000000e+002" GPS-Y="4.919469700000000e+001" Destination="YVR" />
+  <Terminal Type="A" Code="YYC" Name="Calgary Calgary Int. Airport" GPS-X="-1.140105510000000e+002" GPS-Y="5.113139400000000e+001" Destination="YYC" />
+  <Terminal Type="A" Code="YYZ" Name="Toronto Lester B Pearson Int. Airport" GPS-X="-7.961145999999999e+001" GPS-Y="4.368158500000000e+001" Destination="YYZ" />
+  <Terminal Type="A" Code="ZAD" Name="Zadar Zadar Airport" GPS-X="1.535666700000000e+001" GPS-Y="4.409777800000000e+001" Destination="ZAD" />
+  <Terminal Type="A" Code="ZAG" Name="Zagreb Zagreb Airport" GPS-X="1.606151900000000e+001" GPS-Y="4.573324200000000e+001" Destination="ZAG" />
+  <Terminal Type="A" Code="ZAZ" Name="Zaragoza Zaragoza Airport" GPS-X="-1.007466000000000e+000" GPS-Y="4.166386200000000e+001" Destination="ZAZ" />
+  <Terminal Type="A" Code="ZCL" Name="Zacatecas General Leobardo C.Ruiz Int.airp." GPS-X="-1.026828562000000e+002" GPS-Y="2.290034480000000e+001" Destination="ZAC" />
+  <Terminal Type="A" Code="ZCO" Name="Temuco Maquehue Airport" GPS-X="-7.263845000000001e+001" GPS-Y="-3.877035600000000e+001" Destination="ZCO" />
+  <Terminal Type="A" Code="ZIH" Name="Ixtapa ZihuatanejoInt. Airport Ixtapa Zihuatanejo" GPS-X="-1.014640620000000e+002" GPS-Y="1.760678200000000e+001" Destination="IXT" />
+  <Terminal Type="A" Code="ZLO" Name="Manzanillo Playa De Oro Int. Airport" GPS-X="-1.043505560000000e+002" GPS-Y="1.911333300000000e+001" Destination="ZLO" />
+  <Terminal Type="A" Code="ZNZ" Name="Zanzibar Zanzibar Int. Airport" GPS-X="3.922118500000000e+001" GPS-Y="-6.218466000000000e+000" Destination="ZNZ" />
+  <Terminal Type="A" Code="ZQN" Name="Queenstown Queenstown Airport" GPS-X="1.687391040000000e+002" GPS-Y="-4.502203900000000e+001" Destination="ZQN" />
+  <Terminal Type="A" Code="ZQND" Name="Queenstown Queenstown International Airport" GPS-X="1.687389984000000e+002" GPS-Y="-4.502109910000000e+001" Destination="ZQN" />
+  <Terminal Type="A" Code="ZRH" Name="Zurich Kloten Airport" GPS-X="8.561745999999999e+000" GPS-Y="4.745060400000000e+001" Destination="ZRH" />
+  <Terminal Type="A" Code="ZTH" Name="Zakynthos Dionysios Solomos Int. Airport" GPS-X="2.088471100000000e+001" GPS-Y="3.775350500000000e+001" Destination="ZTE" />
+</TerminalList>

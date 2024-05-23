@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CurrencyMarkup>
+  <Agent Id="10011" CurrencyCode="INR" SellingRate="0.51" MACurrency="USD" MAgent="1230"  MMarkUp="2.01" MType="1" SMarkUp="2.01" SType="1"   />
+  <Currency Code="AED" BuyingRate="0.51" />
+  <Currency Code="USD" BuyingRate="0.51" />
+</CurrencyMarkup>

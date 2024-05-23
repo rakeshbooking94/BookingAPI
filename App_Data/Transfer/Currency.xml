@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CurrencyList>
+	<Currency Code="AZN" Name="Azerbaijan Manat"/>
+	<Currency Code="BAD" Name="DINAR"/>
+	<Currency Code="BAM" Name="Bosnia and Herzegovina Convertible Mark"/>
+	<Currency Code="BBD" Name="BARBADOS DOLLAR"/>
+	<Currency Code="BDT" Name="TAKA"/>
+	<Currency Code="BEF" Name="FRANCO BELGA"/>
+	<Currency Code="BGL" Name="LEV"/>
+	<Currency Code="BGN" Name="Bulgarian Lev"/>
+	<Currency Code="BHD" Name="Bahraini Dinar"/>
+	<Currency Code="BIF" Name="BURUNDI FRANC"/>
+	<Currency Code="BMD" Name="BERMUDN. DOLLAR"/>
+	<Currency Code="BND" Name="Brunei Dollar"/>
+	<Currency Code="BOB" Name="BOLIVIANO"/>
+	<Currency Code="BRL" Name="Brazilian Real"/>
+	<Currency Code="BSD" Name="BAHAMIAN DOLLAR"/>
+	<Currency Code="BTN" Name="NGULTRUM"/>
+	<Currency Code="BWP" Name="Botswanan PULA"/>
+	<Currency Code="BYB" Name="BELARUS RUBLE"/>
+	<Currency Code="BYR" Name="Belarusian Ruble"/>
+	<Currency Code="BZD" Name="BELIZE DOLLAR"/>
+	<Currency Code="CAD" Name="Canadian Dollar"/>
+	<Currency Code="CDF" Name="Congolese Franc"/>
+	<Currency Code="CFP" Name="Central Pacific Franc"/>
+	<Currency Code="CHF" Name="Swiss Franc"/>
+	<Currency Code="CLP" Name="CHILEAN PESO"/>
+	<Currency Code="CNY" Name="Chinese Yuan Renminbi"/>
+	<Currency Code="COP" Name="COLOMBIAN PESO"/>
+	<Currency Code="CRC" Name="COSTA R. COLON"/>
+	<Currency Code="CRD" Name="Dolar Costa Rica"/>
+	<Currency Code="CSK" Name="Czechoslovakian Koruna"/>
+	<Currency Code="CUC" Name="Cuban Convertible Peso"/>
+	<Currency Code="CUP" Name="CUBAN PESO"/>
+	<Currency Code="CVE" Name="CAPE V. ESCUDO"/>
+	<Currency Code="CYP" Name="Cyprus Pound"/>
+	<Currency Code="CZK" Name="Czech Koruna"/>
+	<Currency Code="DEM" Name="MARCO ALEMAN"/>
+	<Currency Code="DJF" Name="DJIBOUTI FRANC"/>
+	<Currency Code="DKK" Name="Danish Krone"/>
+	<Currency Code="DOP" Name="Dominican Peso"/>
+	<Currency Code="DZD" Name="ALGERIAN DINAR"/>
+	<Currency Code="ECS" Name="ECUADORIAN SUCRE"/>
+	<Currency Code="EEK" Name="Estonian Kroon"/>
+	<Currency Code="EGP" Name="Egyptian Pound"/>
+	<Currency Code="ESP" Name="PESETA"/>
+	<Currency Code="ETB" Name="ETHIOPIAN BIRR"/>
+	<Currency Code="EUR" Name="Euro"/>
+	<Currency Code="FIM" Name="MARCO FINLANDES"/>
+	<Currency Code="FJD" Name="FIJI DOLLAR"/>
+	<Currency Code="FKP" Name="FLKND. IS.POUND"/>
+	<Currency Code="FRF" Name="FRANCO FRANCES"/>
+	<Currency Code="GBP" Name="United Kingdom Pound"/>
+	<Currency Code="GEL" Name="GEORGIAN LARI"/>
+	<Currency Code="GHC" Name="GHANAIAN CEDI"/>
+	<Currency Code="GHS" Name="Ghanian New Cedi"/>
+	<Currency Code="GIP" Name="GIBRALTAR POUND"/>
+	<Currency Code="GMD" Name="GAMBIAN DALASI"/>
+	<Currency Code="GNF" Name="GUINEA FRANC"/>
+	<Currency Code="GRD" Name="DRACMA GRIEGO                 "/>
+	<Currency Code="GTQ" Name="QUETZAL"/>
+	<Currency Code="GYD" Name="G. DOLLAR"/>
+	<Currency Code="HKD" Name="Hong Kong Dollar"/>
+	<Currency Code="HNL" Name="HONDURAN LEMPIRA"/>
+	<Currency Code="HRK" Name="CROATIAN KUNA"/>
+	<Currency Code="HTG" Name="HAITIAN GOURDE"/>
+	<Currency Code="HUF" Name="Hungarian Forint"/>
+	<Currency Code="IDR" Name="Indonesian Rupiah"/>
+	<Currency Code="IEP" Name="LIBRA IRLANDESA"/>
+	<Currency Code="ILS" Name="ISRAEL NEW SHEKEL"/>
+	<Currency Code="INR" Name="Indian Rupee"/>
+	<Currency Code="IQD" Name="IRAQI DINAR"/>
+	<Currency Code="IRR" Name="IRANIAN RIAL"/>
+	<Currency Code="ISK" Name="Iceland Krona"/>
+	<Currency Code="ITL" Name="LIRA ITALIANA"/>
+	<Currency Code="JMD" Name="JAMAICAN DOLLAR"/>
+	<Currency Code="JOD" Name="Jordanian Dinar"/>
+	<Currency Code="JPY" Name="Japanese Yen"/>
+	<Currency Code="KES" Name="KENYEN SHILLING"/>
+	<Currency Code="KGS" Name="Kyrgyzstan SOM"/>
+	<Currency Code="KHR" Name="CAMBODIAN RIEL"/>
+	<Currency Code="KMF" Name="COMORO FRANC"/>
+	<Currency Code="KPW" Name="NTH. KOREAN WON"/>
+	<Currency Code="KRW" Name="STH. KOREAN WON"/>
+	<Currency Code="KWD" Name="Kuwaiti Dinar"/>
+	<Currency Code="KYD" Name="Cayman Islands DOLLAR"/>
+	<Currency Code="KZT" Name="Kazakhstani TENGE"/>
+	<Currency Code="LAK" Name="LAOTIAN KIP"/>
+	<Currency Code="LBP" Name="LEBANESE POUND"/>
+	<Currency Code="LKR" Name="SRI LANKA RUPEE"/>
+	<Currency Code="LRD" Name="LIBERIAN DOLLAR"/>
+	<Currency Code="LSL" Name="Basotho LOTI"/>
+	<Currency Code="LTL" Name="Lithuanian Litas"/>
+	<Currency Code="LUF" Name="LUXEMBG. FRANC"/>
+	<Currency Code="LVL" Name="Latvian Lats"/>
+	<Currency Code="LYD" Name="LIBYAN DINAR"/>
+	<Currency Code="MAD" Name="Moroccan Dirham"/>
+	<Currency Code="MDL" Name="MOLDOVAN LEU"/>
+	<Currency Code="MGA" Name="Ariary malgache (de Madagascar)"/>
+	<Currency Code="MGF" Name="MALAGASY FRANC"/>
+	<Currency Code="MKD" Name="Macedonian DENAR"/>
+	<Currency Code="MMK" Name="Burmese KYAT"/>
+	<Currency Code="MNT" Name="Mongolian TUGRIK"/>
+	<Currency Code="MOP" Name="MACAU PATACA"/>
+	<Currency Code="MRO" Name="Mauritanian OUGUIYA"/>
+	<Currency Code="MTL" Name="Maltese Lira"/>
+	<Currency Code="MUR" Name="MAURITIUS RUPEE"/>
+	<Currency Code="MVR" Name="Maldivian RUFIYAA"/>
+	<Currency Code="MWK" Name="Malawian KWACHA"/>
+	<Currency Code="MXN" Name="Mexican Peso"/>
+	<Currency Code="MYR" Name="Malaysian Ringgit"/>
+	<Currency Code="MZM" Name="Mozambican METICAL"/>
+	<Currency Code="MZN" Name="Mozambique New Metical"/>
+	<Currency Code="NAD" Name="NAMIBIA DOLLAR"/>
+	<Currency Code="NGN" Name="Nigerian NAIRA"/>
+	<Currency Code="NIO" Name="Nicaraguan CORDOBA Oro"/>
+	<Currency Code="NLG" Name="FLORIN HOLANDES"/>
+	<Currency Code="NOK" Name="Norwegian Kroner"/>
+	<Currency Code="NPR" Name="NEPALESE RUPEE"/>
+	<Currency Code="NZD" Name="New Zealand Dollar"/>
+	<Currency Code="OMR" Name="Omani Rial"/>
+	<Currency Code="PAB" Name="Panamanian BALBOA"/>
+	<Currency Code="PEN" Name="Peruvian NUEVO SOL"/>
+	<Currency Code="PGK" Name="Papua New Guinean KINA"/>
+	<Currency Code="PHP" Name="PHILIPPINE PESO"/>
+	<Currency Code="PKR" Name="PAKISTAN RUPEE"/>
+	<Currency Code="PLN" Name="Polish Zloty"/>
+	<Currency Code="PTE" Name="ESCUDO PORTUGUES"/>
+	<Currency Code="PYG" Name="Paraguayan GUARANI"/>
+	<Currency Code="QAR" Name="Qatari Rial"/>
+	<Currency Code="RMB" Name="CHINESE YUAN RMB"/>
+	<Currency Code="ROL" Name="Romanian Leu"/>
+	<Currency Code="RON" Name="Romanian New Leu"/>
+	<Currency Code="RSD" Name="Serbian Dinar"/>
+	<Currency Code="RUB" Name="Russian Rouble"/>
+	<Currency Code="RUR" Name="RUSSIAN RUBLE"/>
+	<Currency Code="RWF" Name="RWANDA FRANC"/>
+	<Currency Code="SAR" Name="Saudi Riyal"/>
+	<Currency Code="SBD" Name="Solomon Islander DOLLAR"/>
+	<Currency Code="SCR" Name="SEYCHEL. RUPEE"/>
+	<Currency Code="SDD" Name="SUDANESE DINAR"/>
+	<Currency Code="SDG" Name="Sudanese Pound"/>
+	<Currency Code="SDP" Name="Sudanese Old Pound"/>
+	<Currency Code="SEK" Name="Swedish Krona"/>
+	<Currency Code="SGD" Name="Singapore Dollar"/>
+	<Currency Code="SHP" Name="St. Helena Pound"/>
+	<Currency Code="SIT" Name="Slovenian Tolar"/>
+	<Currency Code="SKK" Name="Slovak Koruna"/>
+	<Currency Code="SLL" Name="Sierra Leonean LEONE"/>
+	<Currency Code="SOS" Name="SOM. SHILLING"/>
+	<Currency Code="SRD" Name="Suriname Dollar"/>
+	<Currency Code="SRG" Name="SURINAM GUILDER"/>
+	<Currency Code="STD" Name="DOBRA"/>
+	<Currency Code="SVC" Name="EL SALV. COLON"/>
+	<Currency Code="SYP" Name="SYRIAN POUND"/>
+	<Currency Code="SZL" Name="LILANGENI"/>
+	<Currency Code="THB" Name="Thai Baht"/>
+	<Currency Code="TJR" Name="TAJIK RUBLE"/>
+	<Currency Code="TJS" Name="Somoni"/>
+	<Currency Code="TMM" Name="MANAT"/>
+	<Currency Code="TMT" Name="MANAT TURKMENO"/>
+	<Currency Code="TND" Name="Tunisian Dinar"/>
+	<Currency Code="TOP" Name="Tongan PA ANGA"/>
+	<Currency Code="TPE" Name="TIMOR ESCUDO"/>
+	<Currency Code="TRL" Name="TURKISH LIRA"/>
+	<Currency Code="TRY" Name="Turkish New Lira"/>
+	<Currency Code="TSJ" Name="TSJ"/>
+	<Currency Code="TTD" Name="Trinidad and Tobago DOLLAR"/>
+	<Currency Code="TWD" Name="NEW TWN. DOLLAR"/>
+	<Currency Code="TZS" Name="TANZN. SHILLING"/>
+	<Currency Code="UAH" Name="Ukrainian HRYVNIA"/>
+	<Currency Code="UGX" Name="UGANDA SHILLING"/>
+	<Currency Code="UKP" Name="null"/>
+	<Currency Code="USD" Name="US Dollar"/>
+	<Currency Code="UST" Name="TURAVIA INTERNACIONAL EUROPA"/>
+	<Currency Code="UYU" Name="PESO URUGUAYO"/>
+	<Currency Code="UZS" Name="UZBEKISTAN SUM"/>
+	<Currency Code="VEB" Name="BOLIVAR"/>
+	<Currency Code="VEF" Name="Venezuelan Bolivar Fuerte"/>
+	<Currency Code="VND" Name="Vietnamese DONG"/>
+	<Currency Code="VUV" Name="Vanuatu VATU"/>
+	<Currency Code="WST" Name="Samoan TALA"/>
+	<Currency Code="XAF" Name="Central African FRANC BEAC"/>
+	<Currency Code="XAG" Name="Silver (oz.)"/>
+	<Currency Code="XAU" Name="Gold (oz.)"/>
+	<Currency Code="XCD" Name="EAST. C. DOLLAR"/>
+	<Currency Code="XDR" Name="SP. DRWG. RIGHT"/>
+	<Currency Code="XEU" Name="UNIDAD MONETARIA EUROPEA      "/>
+	<Currency Code="XOF" Name="FRANCO CFA"/>
+	<Currency Code="XPD" Name="Palladium (oz.)"/>
+	<Currency Code="XPF" Name="French Pacific FRANC"/>
+	<Currency Code="XPT" Name="Platinum (oz.)"/>
+	<Currency Code="YER" Name="YEMENI RIAL"/>
+	<Currency Code="YUM" Name="NEW DINAR"/>
+	<Currency Code="YUN" Name="Yugoslav Dinar"/>
+	<Currency Code="ZAR" Name="South African Rand"/>
+	<Currency Code="ZMK" Name="Zambian KWACHA"/>
+	<Currency Code="ZMW" Name="Zambian KWACHA"/>
+	<Currency Code="ZRN" Name="NEW ZAIRE"/>
+	<Currency Code="ZWD" Name="ZIMBABWE DOLLAR"/>
+</CurrencyList>

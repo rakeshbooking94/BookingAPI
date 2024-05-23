@@ -1,0 +1,125 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication xmlns="">
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>TR_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <PrebookRequest TransID="123ghjg321gjgj" CustomerID="123" Ip="">
+      <SupplierList>
+        <supplierdetail supplierid="4" username="TESTCHAINS" password="TESTCHAINS">Test</supplierdetail>
+      </SupplierList>
+      <Itinerary trtype="IN" type="IN" amount="123" servicename="Suttle Transfer" servicecode="102" availToken="fOkjRMSVS+uJ5JpCQiagFg==">
+        <TransferInfo type="ProductTransfer">
+          <Code>1|0|0</Code>
+          <Type code="P"/>
+          <VehicleType code="3"/>
+        </TransferInfo>
+        <PickupLocation type="Terminal">
+          <Code>BCN</Code>
+          <PickupTime date="20171014" time="1300" />
+        </PickupLocation>
+        <DestinationLocation type="Hotel">
+          <Code>175906</Code>
+          <DropOffTime date="20171014" time="1300" />
+        </DestinationLocation>
+      </Itinerary>
+      <Itinerary trtype="OUT" type="OUT" amount="123" servicename="Suttle Transfer" servicecode="102" availToken="fOkjRMSVS+uJ5JpCQiagFg==">
+        <TransferInfo type="ProductTransfer">
+          <Code>1|0|0</Code>
+          <Type code="P"/>
+          <VehicleType code="3"/>
+        </TransferInfo>
+        <PickupLocation type="Terminal">
+          <Code>BCN</Code>
+          <PickupTime date="20171014" time="1300" />
+        </PickupLocation>
+        <DestinationLocation type="Hotel">
+          <Code>175906</Code>
+          <DropOffTime date="20171014" time="1300" />
+        </DestinationLocation>
+      </Itinerary>
+      <Occupancy adult="2" child="2">
+        <childage>3</childage>
+        <childage>4</childage>
+      </Occupancy>
+      <CurrencyCode>KWD</CurrencyCode>
+    </PrebookRequest>
+    <PrebookResponse>
+      <Services>
+        <ServiceTransfer name="Suttle Transfer" code="STL" adult="2" child="2" childage="2,3" tandc="" imgurl="http://media.stage/prvt-prm-mvel.png" currency="EUR">
+          <VehicleList>
+            <Vehicle SupplierID="4">
+              <Transfer trtype="IN" type="IN" amount="55.50" status="true" booktoken="fOkjRMSVS+uJ5JpCQiagFg==" SPUICODE="">
+                <PickupLocation>
+                  <Name>IGI Airport</Name>
+                  <Code>DEL</Code>
+                  <PickupTime date="20171221" time="10:00"></PickupTime>
+                </PickupLocation>
+                <DestinationLocation>
+                  <Name>Crown Plaza</Name>
+                  <Code>abc</Code>
+                  <DropOffTime date="20171221" time="10:00"></DropOffTime>
+                </DestinationLocation>
+                <TransferInfo>
+                  <Product>Premium product type</Product>
+                  <TransferType code="P">Private hire with driver</TransferType>
+                  <TransferCode>1|0|0</TransferCode>
+                  <VehicleType code="Y">Minivan extra lugagge</VehicleType>
+                  <GuidelinesList>
+                    <Description title="CAN'T FIND DRIVER">In the event of being unable to locate the driver, please call the emergency number indicated in this voucher.</Description>
+                    <Description title="VOUCHER">Remember to bring this voucher and valid photo ID with you</Description>
+                    <!-- Need to add from seprate place (Transfer Pickup Information, title will be fixed in this)-->
+                    <Description title="PickupInfo">Once you have collected your luggage, a staff member will be waiting for you at the Arrivals Hall with a sign with your name on it.</Description>
+                  </GuidelinesList>
+                  <TransferCapacityList totpax="4" totlug="7" lugtype="Suitcase/s">
+                    <Description>Maximum capacity per vehicle</Description>
+                  </TransferCapacityList>
+                  <WaitingTime cwtime="20 minutes" domestic="60 minutes" international="90 minutes"></WaitingTime>
+                  <JourneyTime jtime="50 minutes"></JourneyTime>
+                </TransferInfo>
+              </Transfer>
+              <Transfer trtype="OUT" type="OUT" amount="55.05" status="true" booktoken="fOkjRMSVS+uJ5JpCQiagFg==" SPUICODE="">
+                <PickupLocation>
+                  <Name>IGI Airport</Name>
+                  <Code>DEL</Code>
+                  <PickupTime date="20171222" time="10:00"></PickupTime>
+                </PickupLocation>
+                <DestinationLocation>
+                  <Name>Crown Plaza</Name>
+                  <Code>abc</Code>
+                  <DropOffTime date="20171222" time="10:00"></DropOffTime>
+                </DestinationLocation>
+                <TransferInfo>
+                  <Product>Premium product type</Product>
+                  <TransferType code="P">Private hire with driver</TransferType>
+                  <TransferCode>1|0|0</TransferCode>
+                  <VehicleType code="Y">Minivan extra lugagge</VehicleType>
+                  <GuidelinesList>
+                    <Description title="CAN'T FIND DRIVER">In the event of being unable to locate the driver, please call the emergency number indicated in this voucher.</Description>
+                    <Description title="VOUCHER">Remember to bring this voucher and valid photo ID with you</Description>
+                    <!-- Need to add from seprate place (Transfer Pickup Information, title will be fixed in this)-->
+                    <Description title="PickupInfo">Once you have collected your luggage, a staff member will be waiting for you at the Arrivals Hall with a sign with your name on it.</Description>
+                  </GuidelinesList>
+                  <TransferCapacityList totpax="4" totlug="7" lugtype="Suitcase/s">
+                    <Description>Maximum capacity per vehicle</Description>
+                  </TransferCapacityList>
+                  <WaitingTime cwtime="20 minutes" domestic="60 minutes" international="90 minutes"></WaitingTime>
+                  <JourneyTime jtime="50 minutes"></JourneyTime>
+                </TransferInfo>
+              </Transfer>
+              <CancellationPolicies>
+                <CancellationPolicy LastCXLDate="20171012" ApplicableAmount="0.00" NoShowPolicy="0"></CancellationPolicy>
+                <CancellationPolicy LastCXLDate="20171013" ApplicableAmount="30.6" NoShowPolicy="0"></CancellationPolicy>
+              </CancellationPolicies>
+            </Vehicle>
+          </VehicleList>
+        </ServiceTransfer>
+      </Services>
+    </PrebookResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
