@@ -10,6 +10,6 @@ namespace TravillioXMLOutService.Transfer.Services.Interfaces
     internal interface IHotelBedService
     {
         Task<XElement> GetSearchAsync(XElement _travyoReq);
-        
+        Task<XElement> GetPreBookSearchAsync(XElement _travyoReq);
     }
 }

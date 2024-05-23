@@ -13,7 +13,7 @@
       <SupplierList>
         <supplierdetail supplierid="4" username="TESTCHAINS" password="TESTCHAINS">Test</supplierdetail>
       </SupplierList>
-      <Itinerary trtype="IN" type="IN" amount="123" servicename="Suttle Transfer" servicecode="102" availToken="fOkjRMSVS+uJ5JpCQiagFg==">
+      <Itinerary trtype="IN" type="IN" amount="123" servicename="Suttle Transfer" servicecode="102" ratekey="fOkjRMSVS+uJ5JpCQiagFg==">
         <TransferInfo type="ProductTransfer">
           <Code>1|0|0</Code>
           <Type code="P"/>
@@ -28,7 +28,7 @@
           <DropOffTime date="20171014" time="1300" />
         </DestinationLocation>
       </Itinerary>
-      <Itinerary trtype="OUT" type="OUT" amount="123" servicename="Suttle Transfer" servicecode="102" availToken="fOkjRMSVS+uJ5JpCQiagFg==">
+      <Itinerary trtype="OUT" type="OUT" amount="123" servicename="Suttle Transfer" servicecode="102" ratekey="fOkjRMSVS+uJ5JpCQiagFg==">
         <TransferInfo type="ProductTransfer">
           <Code>1|0|0</Code>
           <Type code="P"/>

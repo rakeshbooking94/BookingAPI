@@ -46,7 +46,7 @@ namespace TravillioXMLOutService.Repository.Transfer
                     {
                         stringResponse = await response.Content.ReadAsStringAsync();
 
-                        if(!string.IsNullOrEmpty(stringResponse))
+                        if (!string.IsNullOrEmpty(stringResponse))
                         {
                             result = JsonConvert.DeserializeObject<SearchResponseModel>(stringResponse);
                         }
@@ -54,7 +54,7 @@ namespace TravillioXMLOutService.Repository.Transfer
                         {
                             result = null;
                         }
-                        
+
                     }
                     else
                     {
@@ -77,9 +77,59 @@ namespace TravillioXMLOutService.Repository.Transfer
                 SaveLog(reqModel);
                 throw ex;
             }
-
-
         }
+
+
+        public async Task<SearchResponseModel> GetPreBookSearchAsync(LogRequestModel reqModel)
+        {
+            SearchResponseModel result = null;
+            try
+            {
+                using (var dbConn = new SaveAPILog())
+                {
+                    reqModel = await dbConn.GetLogResponseAsync(reqModel);
+                    if (reqModel.IsResult)
+                    {
+                        result = JsonConvert.DeserializeObject<SearchResponseModel>(reqModel.LogResponse);
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                var _exception = new XElement("PrebookException",
+                    new XElement("Message", ex.Message),
+                    new XElement("Source", ex.StackTrace),
+                    new XElement("HelpLink", ex.HelpLink));
+                throw ex;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public void SaveLog(RequestModel _req)
         {

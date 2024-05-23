@@ -8,6 +8,7 @@ using System.Net;
 using System.Runtime.Remoting.Contexts;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace TravillioXMLOutService.Models
@@ -454,6 +455,72 @@ namespace TravillioXMLOutService.Models
             }
             return "Unknown pc";
         }
+
+
+
+
+
+
+        public async Task<LogRequestModel> GetLogResponseAsync(LogRequestModel model)
+        {
+            try
+            {
+                model.IsResult = false;
+                using (conn = new SqlConnection(ConfigurationManager.ConnectionStrings["INGMContext"].ToString()))
+                {
+                    using (cmd = new SqlCommand("APIProc", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@TransID", model.TrackNumber);
+                        cmd.Parameters.AddWithValue("@customerID", model.CustomerId);
+                        cmd.Parameters.AddWithValue("@SuplId", model.SupplierId);
+                        cmd.Parameters.AddWithValue("@logTypeID", model.LogTypeId);
+                        cmd.Parameters.AddWithValue("@IpAddress", model.IpAddress);
+
+                        if (cmd.Connection.State == System.Data.ConnectionState.Closed)
+                        {
+                            cmd.Connection.Open();
+                        }
+
+
+                        var result = await cmd.ExecuteScalarAsync();
+                        if (result != null)
+                        {
+                            model.IsResult = true;
+                            model.LogResponse = result.ToString();
+                        }
+
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                model.LogResponse = ex.Message;
+            }
+            return model;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #region Dispose
         /// <summary>
         /// Dispose all used resources.
@@ -463,6 +530,23 @@ namespace TravillioXMLOutService.Models
             this.Dispose();
             GC.SuppressFinalize(this);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #endregion
     }
 }

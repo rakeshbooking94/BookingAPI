@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using TravillioXMLOutService.Models;
 using TravillioXMLOutService.Repository.Transfer;
 using TravillioXMLOutService.Transfer.Helpers;
 using TravillioXMLOutService.Transfer.Models;
@@ -46,9 +47,10 @@ namespace TravillioXMLOutService.Transfer.Services
             reqModel.Action = _travyoReq.Name.LocalName.GetAction().ToString();
             return reqModel;
         }
-
+        #region Search
         public async Task<XElement> GetSearchAsync(XElement _travyoReq)
         {
+            XElement response = null;
             reqModel = CreateReqModel(_travyoReq);
             reqModel.EndTime = DateTime.Now;
             var pickup = _travyoReq.Descendants("Itinerary").FirstOrDefault().Element("PickupLocation");
@@ -95,35 +97,57 @@ namespace TravillioXMLOutService.Transfer.Services
 
             if (rsmodel != null)
             {
-                var reponse = this.BindResponse(rsmodel);
-                return reponse;
+                IEnumerable<XElement> srvTransfers;
+                IEnumerable<XElement> joinTransfers;
+                srvTransfers = from srv in rsmodel.services
+                               select travayooResponse(srv, rsmodel.search.comeBack);
+                int count = srvTransfers.Where(x => x.Attribute("direction").Value == "OUT").Count();
+                if (count > 0)
+                {
+                    joinTransfers = from srv in srvTransfers.Where(x => x.Attribute("direction").Value == "IN")
+                                    from srvOut in srvTransfers.Where(x => x.Attribute("direction").Value == "OUT")
+                                    let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m) + srvOut.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
+                                    select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
+                                    new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv, srvOut,
+                                    srv.Descendants("cancellationList").Concat(srv.Descendants("cancellationList")).ToList().MergPolicy(_amount));
+                }
+                else
+                {
+                    joinTransfers = from srv in srvTransfers
+                                    let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
+                                    select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
+                                    new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv,
+                                    srv.Descendants("cancellationList").ToList().MergPolicy(_amount));
+                }
+                joinTransfers.Descendants("cancellationList").Remove();
+                response = new XElement("searchResponse", new XElement("serviceTransfers",
+    new XAttribute("adults", rsmodel.search.occupancy.adults),
+    new XAttribute("children", rsmodel.search.occupancy.children),
+    new XAttribute("infants", rsmodel.search.occupancy.infants), joinTransfers));
+
             }
             else
             {
-
-                var response = new XElement("searchResponse", new XElement("serviceTransfers",
+                response = new XElement("searchResponse", new XElement("serviceTransfers",
 new XAttribute("adults", model.adults),
 new XAttribute("children", model.children),
 new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to find any transfer service ")));
-                return response;
+
             }
 
-
-
+            return response;
+            //doc.Add(response);
+            //doc.Save(ConfigurationManager.AppSettings["fileDirectory"] + string.Format("response-{0}.xml", DateTime.Now.Ticks));
         }
 
-
-        XElement BindResponse(SearchResponseModel respHb)
+        XElement travayooResponse(TravillioXMLOutService.Transfer.Models.HB.Services srv, Departure comeBack)
         {
-            IEnumerable<XElement> srvTransfers;
-            IEnumerable<XElement> joinTransfers;
 
-            srvTransfers = from srv in respHb.services
-                           select new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.transferType),
+            var model = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.transferType),
                                   new XAttribute("direction", srv.direction == "ARRIVAL" ? "IN" : "OUT"),
-                                  new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date == null ? respHb.search.comeBack.date : srv.pickupInformation.date),
+                                  new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date == null ? comeBack.date : srv.pickupInformation.date),
 
-                                  new XAttribute("time", srv.pickupInformation.time == null ? respHb.search.comeBack.time : srv.pickupInformation.time)),
+                                  new XAttribute("time", srv.pickupInformation.time == null ? comeBack.time : srv.pickupInformation.time)),
 
                                   new XElement("pickUp", new XAttribute("code", srv.pickupInformation.@from.code),
                                   new XAttribute("type", srv.pickupInformation.@from.type),
@@ -167,15 +191,32 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
                                   new XAttribute("amount", cxl.amount), new XAttribute("noShow", 0))
                                   ));
 
-            int count = srvTransfers.Where(x => x.Attribute("direction").Value == "OUT").Count();
+            return model;
 
+        }
 
+        #endregion
 
+        #region PreBook
+        public async Task<XElement> GetPreBookSearchAsync(XElement _travyoReq)
+        {
+            var req = new LogRequestModel();
+            req.CustomerId = Convert.ToInt64(_travyoReq.Attribute("CustomerID").Value);
+            req.TrackNumber = _travyoReq.Attribute("TransID").Value;
+            req.IpAddress = _travyoReq.Attribute("TransID").Value;
+            req.LogTypeId = 1;
+            req.SupplierId = 10;
+            var respHb = await _repo.GetPreBookSearchAsync(req);
+            var result = from srv in respHb.services
+                         join reqSrv in _travyoReq.Descendants("Itinerary") on srv.rateKey equals reqSrv.Attribute("ratekey").Value
+                         select travayooResponse(srv, respHb.search.comeBack);
+            IEnumerable<XElement> joinTransfers;
+            int count = result.Where(x => x.Attribute("direction").Value == "OUT").Count();
             if (count > 0)
             {
-                //srv.Descendants("cancellationPolicy").Concat(srv.Descendants("cancellationPolicy")).mergCXLPolicy()
-                joinTransfers = from srv in srvTransfers.Where(x => x.Attribute("direction").Value == "IN")
-                                from srvOut in srvTransfers.Where(x => x.Attribute("direction").Value == "OUT")
+
+                joinTransfers = from srv in result.Where(x => x.Attribute("direction").Value == "IN")
+                                from srvOut in result.Where(x => x.Attribute("direction").Value == "OUT")
                                 let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m) + srvOut.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
                                 select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
                                 new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv, srvOut,
@@ -183,30 +224,32 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
             }
             else
             {
-                joinTransfers = from srv in srvTransfers
+                joinTransfers = from srv in result
                                 let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
                                 select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
                                 new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv,
                                 srv.Descendants("cancellationList").ToList().MergPolicy(_amount));
             }
-
             joinTransfers.Descendants("cancellationList").Remove();
-
-            var response = new XElement("searchResponse", new XElement("serviceTransfers",
+            var response = new XElement("prebookResponse", new XElement("serviceTransfers",
 new XAttribute("adults", respHb.search.occupancy.adults),
 new XAttribute("children", respHb.search.occupancy.children),
 new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
 
-
- 
-
             return response;
-
-
-            //doc.Add(response);
-            //doc.Save(ConfigurationManager.AppSettings["fileDirectory"] + string.Format("response-{0}.xml", DateTime.Now.Ticks));
-
         }
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
 
 
 

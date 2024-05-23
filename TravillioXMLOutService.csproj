@@ -149,6 +149,7 @@
     <Compile Include="Models\APILogDetail.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\LogRequestModel.cs" />
     <Compile Include="Models\Common\common_citymap.cs" />
     <Compile Include="Models\Common\ExceptionModel.cs" />
     <Compile Include="Models\Common\RequestModel.cs" />
@@ -267,6 +268,20 @@
     <Content Include="App_Data\HotelBeds\sample.xml" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />
     <Content Include="App_Data\SupplierCredential\SupplierCredentials.xml" />
+    <Content Include="App_Data\Transfer\Currency.xml" />
+    <Content Include="App_Data\Transfer\CurrencyMarkup.xml" />
+    <Content Include="App_Data\Transfer\Destinations_ING.xml" />
+    <Content Include="App_Data\Transfer\Hotel.xml" />
+    <Content Include="App_Data\Transfer\Language.xml" />
+    <Content Include="App_Data\Transfer\newjson.xml" />
+    <Content Include="App_Data\Transfer\newPrebook.xml" />
+    <Content Include="App_Data\Transfer\newResponse.xml" />
+    <Content Include="App_Data\Transfer\onewayjsonb2b.xml" />
+    <Content Include="App_Data\Transfer\PreBook - Copy.xml" />
+    <Content Include="App_Data\Transfer\PreBook.xml" />
+    <Content Include="App_Data\Transfer\SearchRequest.xml" />
+    <Content Include="App_Data\Transfer\Terminals.xml" />
+    <Content Include="App_Data\Transfer\TestResponse.xml" />
     <Content Include="log.txt" />
     <Content Include="packages.config" />
     <Content Include="packages\jQuery.1.4.4\jQuery.1.4.4.nupkg" />

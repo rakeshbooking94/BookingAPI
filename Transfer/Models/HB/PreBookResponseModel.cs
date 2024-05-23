@@ -7,7 +7,6 @@ namespace TravillioXMLOutService.Transfer.Models.HB
 {
     public class PreBookResponseModel
     {
-
         public Services services { get; set; }
 
     }
