@@ -1,0 +1,131 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication xmlns="">customerID
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <PrebookRequest TransID="9e5dfc8d-dd5e-4468-9737-8b4f3c381ee4" CustomerID="10017" IpAddress="122.177.109.88" CurrencyCode="EUR">
+      <supplierdetail supplierid="10" username="TESTCHAINS" password="TESTCHAINS">Test</supplierdetail>
+      <occupancy adult="1" child="3" childage="3|4|2"></occupancy>
+      <itinerary direction="IN" type="IN" amount="123" code="1"  servicecode="102">
+        <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-30|11:45|2024-06-30|11:45|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|a0214ccf857d3611e5b8e97fbe6fd8d3|1269799|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+        <pickUp type="1" code="BCN">
+          <pickUpTime date="30 Jun, 24" time="11:45" />
+        </pickUp>
+        <dropOff type="2" code="100414">        
+          <dropOffTime date="30 Jun, 24" time="" />
+        </dropOff>
+      </itinerary>
+      <itinerary direction="OUT" type="OUT" amount="123" code="1|0|0"  servicecode="102" rateKey="fOkjRMSVS+uJ5JpCQiagFg==">
+        <pickUp type="Hotel" code="175906">
+          <pickUpTime date="2024-06-29" time="05:45:00" />
+        </pickUp>
+        <dropOff type="Terminal" code="BCN">
+          <dropOff date="2024-06-29" time="05:45:00" />
+        </dropOff>
+      </itinerary>
+    </PrebookRequest>
+    <prebookResponse>
+      <serviceTransfers adults="1" children="0" infants="0">
+        <serviceTransfer supplierId="10">
+          <transfer id="0" type="SHARED" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                Note: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”
+
+                FINDING YOUR DRIVER
+
+                TERMINAL 1
+                April - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.
+
+                Nov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B
+
+                TERMINAL 2
+                From2 desk is located in TERMINAL 2B, opposite desks 95 - 97.
+
+                If you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.
+                If you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.
+                If you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                There may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.
+
+                Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="9.69" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|700dddce8785f139dd286b33aab61a4b|1269799|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="99" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="50 min. Estimated journey time">50 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="99 passenger(s) maximum">99 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="suitcases permitted">suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="SH">Shuttle</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                Note: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”
+
+                FINDING YOUR DRIVER
+
+                TERMINAL 1
+                April - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.
+
+                Nov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B
+
+                TERMINAL 2
+                From2 desk is located in TERMINAL 2B, opposite desks 95 - 97.
+
+                If you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.
+                If you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.
+                If you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                There may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.
+
+                Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />        
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+      </serviceTransfers>
+    </prebookResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -203,12 +203,12 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
             var req = new LogRequestModel();
             req.CustomerId = Convert.ToInt64(_travyoReq.Attribute("CustomerID").Value);
             req.TrackNumber = _travyoReq.Attribute("TransID").Value;
-            req.IpAddress = _travyoReq.Attribute("TransID").Value;
+            req.IpAddress = _travyoReq.Attribute("IpAddress").Value;
             req.LogTypeId = 1;
             req.SupplierId = 10;
             var respHb = await _repo.GetPreBookSearchAsync(req);
             var result = from srv in respHb.services
-                         join reqSrv in _travyoReq.Descendants("Itinerary") on srv.rateKey equals reqSrv.Attribute("ratekey").Value
+                         join reqSrv in _travyoReq.Descendants("Itinerary") on srv.rateKey equals reqSrv.Element("ratekey").Value
                          select travayooResponse(srv, respHb.search.comeBack);
             IEnumerable<XElement> joinTransfers;
             int count = result.Where(x => x.Attribute("direction").Value == "OUT").Count();
@@ -231,7 +231,7 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
                                 srv.Descendants("cancellationList").ToList().MergPolicy(_amount));
             }
             joinTransfers.Descendants("cancellationList").Remove();
-            var response = new XElement("prebookResponse", new XElement("serviceTransfers",
+            var response = new XElement("PrebookResponse", new XElement("serviceTransfers",
 new XAttribute("adults", respHb.search.occupancy.adults),
 new XAttribute("children", respHb.search.occupancy.children),
 new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));

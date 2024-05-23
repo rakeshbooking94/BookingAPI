@@ -11,16 +11,15 @@ namespace TravillioXMLOutService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "ITransferService" in both code and config file together.
     //[ServiceContract]   
-     [ServiceContract(SessionMode = SessionMode.NotAllowed)]
+    [ServiceContract(SessionMode = SessionMode.NotAllowed)]
     public interface ITransferService
     {
         #region Transfer
-        //[OperationContract, XmlSerializerFormat]
-        //object TransferAvailability(XElement req);
+
         [OperationContract, XmlSerializerFormat]
         object CXLPolicyTransfer(XElement req);
         [OperationContract, XmlSerializerFormat]
-        object PreBookTransfer(XElement req);
+        Task<object> PreBookTransferAsync(XElement req);
         [OperationContract, XmlSerializerFormat]
         object ConfirmBookingTransfer(XElement req);
         [OperationContract, XmlSerializerFormat]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 using TravillioXMLOutService.Models;
@@ -12,7 +13,7 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
     public class HB_TrnsfrGetPreBook
     {
         #region Transfer PreBook
-        public XElement PreBookTransfer(XElement req)
+        public async Task<XElement> PreBookTransfer(XElement req)
         {
             HeaderAuth headercheck = new HeaderAuth();
             string username = req.Descendants("UserName").Single().Value;
@@ -27,48 +28,14 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
                 {
                     int hotelbeds = req.Descendants("supplierdetail").Where(x => x.Attribute("supplierid").Value == "10").Count();
                     if (hotelbeds == 1)
-                    {
-                        //HB_TrnsfrPreBook hbreq = new HB_TrnsfrPreBook();
-                        //XElement response = hbreq.transferprebookhb(req);
-
-
-
-
-
+                    {                     
+                                                                     
                         string customerId = req.Descendants("PrebookRequest").Attributes("CustomerID").FirstOrDefault().Value;
                         HotelBedService hbreq = new HotelBedService(customerId);
                         XElement SearReq = req.Descendants("PrebookRequest").FirstOrDefault();
-                        //XElement response = hbreq.PreBookingRequest(SearReq);
-                        //SearReq.AddAfterSelf(response);
-
-
-
-
-
-
-
-
-
-
-
-                        return req;
-                    
-                    
-                    
-                
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                        XElement response = await hbreq.GetPreBookSearchAsync(SearReq);
+                        SearReq.AddAfterSelf(response);
+                        return req;          
                     
                     
                     }
