@@ -124,7 +124,7 @@ namespace TravillioXMLOutService.Transfer.Services
     new XAttribute("adults", rsmodel.search.occupancy.adults),
     new XAttribute("children", rsmodel.search.occupancy.children),
     new XAttribute("infants", rsmodel.search.occupancy.infants), joinTransfers));
-
+                response.Descendants("cancellationList").Remove();
             }
             else
             {
@@ -134,7 +134,7 @@ new XAttribute("children", model.children),
 new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to find any transfer service ")));
 
             }
-
+           
             return response;
             //doc.Add(response);
             //doc.Save(ConfigurationManager.AppSettings["fileDirectory"] + string.Format("response-{0}.xml", DateTime.Now.Ticks));
@@ -230,12 +230,11 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
                                 new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv,
                                 srv.Descendants("cancellationList").ToList().MergPolicy(_amount));
             }
-            joinTransfers.Descendants("cancellationList").Remove();
             var response = new XElement("PrebookResponse", new XElement("serviceTransfers",
 new XAttribute("adults", respHb.search.occupancy.adults),
 new XAttribute("children", respHb.search.occupancy.children),
 new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
-
+            response.Descendants("cancellationList").Remove();
             return response;
         }
         #endregion

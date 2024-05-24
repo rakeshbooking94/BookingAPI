@@ -82,15 +82,16 @@ namespace TravillioXMLOutService.Repository.Transfer
 
         public async Task<SearchResponseModel> GetPreBookSearchAsync(LogRequestModel reqModel)
         {
+            string stringResponse;
             SearchResponseModel result = null;
             try
             {
                 using (var dbConn = new SaveAPILog())
                 {
-                    reqModel = await dbConn.GetLogResponseAsync(reqModel);
+                    stringResponse = await dbConn.GetLogResponseAsync(reqModel);
                     if (reqModel.IsResult)
                     {
-                        result = JsonConvert.DeserializeObject<SearchResponseModel>(reqModel.LogResponse);
+                        result = JsonConvert.DeserializeObject<SearchResponseModel>(stringResponse);
                     }
                 }
                 return result;

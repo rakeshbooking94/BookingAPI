@@ -461,7 +461,7 @@ namespace TravillioXMLOutService.Models
 
 
 
-        public async Task<LogRequestModel> GetLogResponseAsync(LogRequestModel model)
+        public async Task<string> GetLogResponseAsync(LogRequestModel model)
         {
             try
             {
@@ -470,7 +470,9 @@ namespace TravillioXMLOutService.Models
                 {
                     using (cmd = new SqlCommand("APIProc", conn))
                     {
+                       
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@flag", 6);
                         cmd.Parameters.AddWithValue("@TransID", model.TrackNumber);
                         cmd.Parameters.AddWithValue("@customerID", model.CustomerId);
                         cmd.Parameters.AddWithValue("@SuplId", model.SupplierId);
@@ -492,14 +494,16 @@ namespace TravillioXMLOutService.Models
 
 
                     }
-
+                    conn.Close();
+                    return model.LogResponse;
                 }
             }
             catch (Exception ex)
             {
-                model.LogResponse = ex.Message;
+                throw ex;
+
             }
-            return model;
+           
         }
 
 
@@ -524,18 +528,29 @@ namespace TravillioXMLOutService.Models
         #region Dispose
         /// <summary>
         /// Dispose all used resources.
-        /// </summary>
+        /// </summary> 
+
+
+
+
+        private bool _isDisposed = false;
         public void Dispose()
         {
-            this.Dispose();
+            Dispose(true);
             GC.SuppressFinalize(this);
         }
 
-
-
-
-
-
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (!_isDisposed)
+                {
+                    //Do your unmanaged disposing here
+                    _isDisposed = true;
+                }
+            }
+        }
 
 
 
