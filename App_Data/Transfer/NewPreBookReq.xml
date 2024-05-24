@@ -1,0 +1,37 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication xmlns="">
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>TR_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <PrebookRequest TransID="9e5dfc8d-dd5e-4468-9737-8b4f3c381ee4" CustomerID="10017" IpAddress="122.177.109.88" CurrencyCode="EUR">
+      <supplierdetail supplierid="10" username="TESTCHAINS" password="TESTCHAINS">Test</supplierdetail>
+      <occupancy adult="1" child="3" childage="3|4|2"></occupancy>
+      <Itinerary direction="IN" type="IN" amount="123" code="1"  servicecode="102">
+        <ratekey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-30|11:45|2024-06-30|11:45|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|a0214ccf857d3611e5b8e97fbe6fd8d3|1269799|T|1d40ff86837b2abe69efc083c800209f</ratekey>
+        <pickUp type="1" code="BCN">
+          <pickUpTime date="30 Jun, 24" time="11:45" />
+        </pickUp>
+        <dropOff type="2" code="100414">
+          <dropOffTime date="30 Jun, 24" time="" />
+        </dropOff>
+      </Itinerary>
+
+
+      <Itinerary direction="OUT" type="IN" amount="OUT" code="1"  servicecode="102">
+        <ratekey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-30|11:45|2024-06-30|11:45|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|a0214ccf857d3611e5b8e97fbe6fd8d3|1269799|T|1d40ff86837b2abe69efc083c800209f</ratekey>
+        <pickUp type="1" code="BCN">
+          <pickUpTime date="30 Jun, 24" time="11:45" />
+        </pickUp>
+        <dropOff type="2" code="100414">
+          <dropOffTime date="30 Jun, 24" time="" />
+        </dropOff>
+      </Itinerary>
+    </PrebookRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
