@@ -143,7 +143,7 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
         XElement travayooResponse(TravillioXMLOutService.Transfer.Models.HB.Services srv, Departure comeBack)
         {
 
-            var model = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.transferType),
+            var model = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.transferType), new XAttribute("newPrice", string.Empty),
                                   new XAttribute("direction", srv.direction == "ARRIVAL" ? "IN" : "OUT"),
                                   new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date == null ? comeBack.date : srv.pickupInformation.date),
 
