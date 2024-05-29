@@ -262,6 +262,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceLog\ServiceLog.txt" />
+    <None Include="App_Data\HotelBeds\confirmation.json" />
     <Content Include="App_Data\HotelBeds\hb_facility.xml" />
     <Content Include="App_Data\HotelBeds\hotelimage.xml" />
     <Content Include="App_Data\HotelBeds\hotelstatic_hb.xml" />

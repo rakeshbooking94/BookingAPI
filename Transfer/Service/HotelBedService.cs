@@ -53,13 +53,13 @@ namespace TravillioXMLOutService.Transfer.Services
             XElement response = null;
             reqModel = CreateReqModel(_travyoReq);
             reqModel.EndTime = DateTime.Now;
-            var pickup = _travyoReq.Descendants("Itinerary").FirstOrDefault().Element("PickupLocation");
-            var dropup = _travyoReq.Descendants("Itinerary").FirstOrDefault().Element("DestinationLocation");
+            var pickup = _travyoReq.Descendants("Itinerary").FirstOrDefault().Element("PickUp");
+            var dropup = _travyoReq.Descendants("Itinerary").FirstOrDefault().Element("DropOff");
             int pickupType = pickup.Attribute("type").ToINT();
             int dropupType = dropup.Attribute("type").ToINT();
-            string pickupCode = pickup.Element("Code").Value;
-            string dropupCode = dropup.Element("Code").Value;
-            string inDate = pickup.Element("PickupTime").Attribute("date").Value + " " + pickup.Element("PickupTime").Attribute("time").Value;
+            string pickupCode = pickup.Attribute("Code").Value;
+            string dropupCode = dropup.Attribute("Code").Value;
+            string inDate = pickup.Element("PickUpTime").Attribute("date").Value + " " + pickup.Element("PickUpTime").Attribute("time").Value;
             DateTime pickUpdate = inDate.GetDateTime("d MMM, yy HH:mm");
             SearchModel model = new SearchModel()
             {
@@ -69,15 +69,15 @@ namespace TravillioXMLOutService.Transfer.Services
                 ttype = dropupType == 1 ? "IATA" : "ATLAS",
                 tcode = dropupCode,
                 departing = pickUpdate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                adults = _travyoReq.Element("Occupancy").Attribute("adult").ToINT(),
-                children = _travyoReq.Element("Occupancy").Attribute("child").ToINT(),
+                adults = _travyoReq.Element("Occupancy").Attribute("adults").ToINT(),
+                children = _travyoReq.Element("Occupancy").Attribute("children").ToINT(),
                 infants = 0
             };
             int searchType = _travyoReq.Descendants("Itinerary").Count();
             if (searchType > 1)
             {
-                var Outpickup = _travyoReq.Descendants("Itinerary").Where(x => x.Attribute("type").Value == "OUT").FirstOrDefault().Element("PickupLocation");
-                string outDate = Outpickup.Element("PickupTime").Attribute("date").Value + " " + pickup.Element("PickupTime").Attribute("time").Value;
+                var Outpickup = _travyoReq.Descendants("Itinerary").Where(x => x.Attribute("type").Value == "OUT").FirstOrDefault().Element("PickUp");
+                string outDate = Outpickup.Element("PickUpTime").Attribute("date").Value + " " + pickup.Element("PickUpTime").Attribute("time").Value;
                 DateTime outDatetime = outDate.GetDateTime("d MMM, yy HH:mm");
                 model.comeback = outDatetime.ToString("yyyy-MM-ddTHH:mm:ss");
 
@@ -136,7 +136,7 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
             }
            
             return response;
-            //doc.Add(response);
+            //doc.Add(response);  strDate = strDate.AlterFormat("yyyyMMdd", "d MMM, yy");
             //doc.Save(ConfigurationManager.AppSettings["fileDirectory"] + string.Format("response-{0}.xml", DateTime.Now.Ticks));
         }
 
@@ -145,9 +145,9 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
 
             var model = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.transferType), new XAttribute("newPrice", string.Empty),
                                   new XAttribute("direction", srv.direction == "ARRIVAL" ? "IN" : "OUT"),
-                                  new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date == null ? comeBack.date : srv.pickupInformation.date),
+                                  new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date == null ? comeBack.date.AlterFormat("yyyy-MM-dd", "d MMM, yy") : srv.pickupInformation.date.AlterFormat("yyyy-MM-dd", "d MMM, yy")),
 
-                                  new XAttribute("time", srv.pickupInformation.time == null ? comeBack.time : srv.pickupInformation.time)),
+                                  new XAttribute("time", srv.pickupInformation.time == null ? comeBack.time.AlterFormat("HH:mm:ss", "HH:mm") : srv.pickupInformation.time.AlterFormat("HH:mm:ss", "HH:mm"))),
 
                                   new XElement("pickUp", new XAttribute("code", srv.pickupInformation.@from.code),
                                   new XAttribute("type", srv.pickupInformation.@from.type),

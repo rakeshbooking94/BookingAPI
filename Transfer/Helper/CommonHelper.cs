@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.EnterpriseServices;
 using System.Globalization;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
@@ -272,6 +274,83 @@ namespace TravillioXMLOutService.Transfer.Helpers
 
 
 
+        public static string cleanForJSON(this string s)
+        {
+            if (s == null || s.Length == 0)
+            {
+                return "";
+            }
+
+            char c = '\0';
+            int i;
+            int len = s.Length;
+            System.Text.StringBuilder sb = new StringBuilder(len + 4);
+            String t;
+
+            for (i = 0; i < len; i += 1)
+            {
+                c = s[i];
+                switch (c)
+                {
+                    case '/':
+                        sb.Append('\\');
+                        sb.Append(c);
+                        break;
+                    case '\b':
+                        sb.Append("\\b");
+                        break;
+                    case '\t':
+                        sb.Append("\\t");
+                        break;
+                    case '\n':
+                        sb.Append("\\n");
+                        break;
+                    case '\f':
+                        sb.Append("\\f");
+                        break;
+                    case '\r':
+                        sb.Append("\\r");
+                        break;
+                    default:
+                        int cint = Convert.ToInt32(c);
+                        if (cint >= 123 || (cint >= 32 && cint <= 46) || (cint >= 58 && cint <= 64) || ((cint >= 91 && cint <= 96) && cint != 92))
+                        {
+                            sb.Append(String.Format("\\u{0:x4} ", cint).Trim());
+                        }
+                        else
+                        {
+                            sb.Append(c);
+                        }
+                        break;
+                }
+            }
+            return sb.ToString();
+        }
+
+
+        public static string cleanFormJSON(this string str)
+        {
+            if (str == null || str.Length == 0)
+            {
+                return "";
+            }
+            str = Regex.Replace(str, @"\\u(?<Value>[a-zA-Z0-9]{4})",
+         m =>
+         {
+             return ((char)int.Parse(m.Groups["Value"].Value, NumberStyles.HexNumber)).ToString();
+         });
+
+            str = str.Replace("\\n", "\n");
+            str = str.Replace("\\b", "\b");
+            str = str.Replace("\\f", "\f");
+            str = str.Replace("\\t", "\t");
+            str = str.Replace("\\r", "\r");
+            str = str.Replace("\\", "/");
+            return str.ToString();
+
+        }
+
+
         public static XElement MergPolicy(this List<XElement> PolicyList, decimal _totalAmount)
         {
             List<XElement> cxlList = new List<XElement>();
@@ -350,8 +429,13 @@ namespace TravillioXMLOutService.Transfer.Helpers
 
 
 
- 
-        
+
+
+
+
+
+
+
 
 
 

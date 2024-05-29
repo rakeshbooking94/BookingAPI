@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using TravillioXMLOutService.Models;
-
+using TravillioXMLOutService.Transfer.Helpers;
 using TravillioXMLOutService.Transfer.Models;
 using TravillioXMLOutService.Transfer.Models.HB;
 
@@ -17,30 +18,40 @@ namespace TravillioXMLOutService.Repository.Transfer
 {
     public class HotelBedRepository : IDisposable
     {
+        
         HBCredentials model;
-        private static readonly HttpClient _httpClient = new HttpClient();
         public HotelBedRepository(HBCredentials _model)
         {
             model = _model;
+        }
+
+        HttpClient CreateClient()
+        {
+            HttpClient _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(model.ServiceHost);
             _httpClient.Timeout = new TimeSpan(0, 10, 30);
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
             _httpClient.DefaultRequestHeaders.Add("Api-key", model.UserName);
             _httpClient.DefaultRequestHeaders.Add("X-Signature", model.Password);
+            return _httpClient;
         }
+
 
 
         public async Task<SearchResponseModel> GetSearchAsync(RequestModel reqModel)
         {
             var startTime = DateTime.Now;
             string stringResponse;
-            SearchResponseModel result;
+            SearchResponseModel result = null;
             string soapResult = string.Empty;
             try
             {
-                using (var request = new HttpRequestMessage(new HttpMethod("GET"), reqModel.RequestStr))
+                var _httpClient = this.CreateClient();
+
+                using (var request = new HttpRequestMessage(HttpMethod.Get, reqModel.RequestStr))
                 {
+                    request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var response = await _httpClient.SendAsync(request);
                     if (response.IsSuccessStatusCode)
                     {
@@ -58,12 +69,13 @@ namespace TravillioXMLOutService.Repository.Transfer
                     }
                     else
                     {
-                        throw new HttpRequestException(response.ReasonPhrase);
+                        stringResponse = response.ReasonPhrase;
                     }
+                    reqModel.ResponseStr = stringResponse.cleanFormJSON();
+                    reqModel.EndTime = DateTime.Now;
+                    SaveLog(reqModel);
                 }
-                reqModel.ResponseStr = stringResponse;
-                reqModel.EndTime = DateTime.Now;
-                SaveLog(reqModel);
+
                 return result;
             }
             catch (Exception ex)
@@ -77,7 +89,10 @@ namespace TravillioXMLOutService.Repository.Transfer
                 SaveLog(reqModel);
                 throw ex;
             }
+
+
         }
+
 
 
         public async Task<SearchResponseModel> GetPreBookSearchAsync(LogRequestModel reqModel)
