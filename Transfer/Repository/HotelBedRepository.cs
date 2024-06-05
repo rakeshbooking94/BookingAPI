@@ -125,12 +125,63 @@ namespace TravillioXMLOutService.Repository.Transfer
 
 
 
-        //public async Task<XElement> GetConfirmAsync(ConfirmReqModel reqModel)
-        //{
+        public async Task<ConfirmResponseModel> GetConfirmAsync(RequestModel reqModel)
+        {
+            var startTime = DateTime.Now;
+            string stringResponse;
+            ConfirmResponseModel result = null;
+            try
+            {
+                var _httpClient = this.CreateClient();
+
+                using (var request = new HttpRequestMessage(HttpMethod.Get, reqModel.RequestStr))
+                {
+                    request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    request.Content = new StringContent(JsonConvert.SerializeObject(reqModel));
+
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var response = await _httpClient.SendAsync(request);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        stringResponse = await response.Content.ReadAsStringAsync();
+
+                        if (!string.IsNullOrEmpty(stringResponse))
+                        {
+                            result = JsonConvert.DeserializeObject<ConfirmResponseModel>(stringResponse);
+                        }
+                        else
+                        {
+                            result = null;
+                        }
+
+                    }
+                    else
+                    {
+                        stringResponse = response.ReasonPhrase;
+                    }
+                    reqModel.ResponseStr = stringResponse.cleanFormJSON();
+                    reqModel.EndTime = DateTime.Now;
+                    SaveLog(reqModel);
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                var _exception = new XElement("SearchException",
+                    new XElement("Message", ex.Message),
+                    new XElement("Source", ex.StackTrace),
+                    new XElement("HelpLink", ex.HelpLink));
+                reqModel.ResponseStr = _exception.ToString();
+                reqModel.EndTime = DateTime.Now;
+                SaveLog(reqModel);
+                throw ex;
+            }
 
 
-
-        //}
+        }
 
 
 
