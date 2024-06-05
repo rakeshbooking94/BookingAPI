@@ -120,14 +120,14 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string currencyId { get; set; }
 
     }
-    public class CancellationPolicies
+    public class CancellationPolicy
     {
         public double amount { get; set; }
         public DateTime from { get; set; }
         public string currencyId { get; set; }
-        public string isForceMajeure { get; set; }
-
+        public bool isForceMajeure { get; set; }
     }
+
     public class Links
     {
         public string rel { get; set; }
@@ -148,7 +148,7 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public Content content { get; set; }
         public Price price { get; set; }
         public string rateKey { get; set; }
-        public IList<CancellationPolicies> cancellationPolicies { get; set; }
+        public IList<CancellationPolicy> cancellationPolicies { get; set; }
         public IList<Links> links { get; set; }
         public int factsheetId { get; set; }
 

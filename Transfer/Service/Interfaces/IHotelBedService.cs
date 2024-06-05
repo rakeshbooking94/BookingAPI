@@ -11,5 +11,6 @@ namespace TravillioXMLOutService.Transfer.Services.Interfaces
     {
         Task<XElement> GetSearchAsync(XElement _travyoReq);
         Task<XElement> GetPreBookSearchAsync(XElement _travyoReq);
+        Task<XElement> GetConfirmAsync(XElement _travyoReq);
     }
 }

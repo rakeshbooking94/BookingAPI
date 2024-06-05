@@ -18,7 +18,7 @@ namespace TravillioXMLOutService.Repository.Transfer
 {
     public class HotelBedRepository : IDisposable
     {
-        
+
         HBCredentials model;
         public HotelBedRepository(HBCredentials _model)
         {
@@ -125,7 +125,12 @@ namespace TravillioXMLOutService.Repository.Transfer
 
 
 
+        //public async Task<XElement> GetConfirmAsync(ConfirmReqModel reqModel)
+        //{
 
+
+
+        //}
 
 
 

@@ -263,6 +263,7 @@
     </Compile>
     <Compile Include="ServiceLog\ServiceLog.txt" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
+    <Content Include="App_Data\HotelBeds\confirmResponse.json" />
     <Content Include="App_Data\HotelBeds\hb_facility.xml" />
     <Content Include="App_Data\HotelBeds\hotelimage.xml" />
     <Content Include="App_Data\HotelBeds\hotelstatic_hb.xml" />
@@ -275,12 +276,14 @@
     <Content Include="App_Data\Transfer\Destinations_ING.xml" />
     <Content Include="App_Data\Transfer\Hotel.xml" />
     <Content Include="App_Data\Transfer\Language.xml" />
+    <Content Include="App_Data\Transfer\newConfirm.xml" />
     <Content Include="App_Data\Transfer\newjson.xml" />
     <Content Include="App_Data\Transfer\newPrebook.xml" />
     <Content Include="App_Data\Transfer\newResponse.xml" />
     <Content Include="App_Data\Transfer\onewayjsonb2b.xml" />
     <Content Include="App_Data\Transfer\NewPreBookReq.xml" />
     <Content Include="App_Data\Transfer\PreBook.xml" />
+    <Content Include="App_Data\Transfer\Response.xml" />
     <Content Include="App_Data\Transfer\SearchRequest.xml" />
     <Content Include="App_Data\Transfer\Terminals.xml" />
     <Content Include="App_Data\Transfer\TestResponse.xml" />
@@ -697,6 +700,8 @@
     <Compile Include="Transfer\HotelBeds\HB_TrnsfrGetCXLPolicy.cs" />
     <Compile Include="Transfer\HotelBeds\HB_TrnsfrGetPreBook.cs" />
     <Compile Include="Transfer\Models\HBCredentials.cs" />
+    <Compile Include="Transfer\Models\HB\ConfirmResponseModel.cs" />
+    <Compile Include="Transfer\Models\HB\ConfirmReqModel.cs" />
     <Compile Include="Transfer\Models\HB\PreBookResponseModel.cs" />
     <Compile Include="Transfer\Models\HB\SearchModel.cs" />
     <Compile Include="Transfer\Models\HB\SearchResponseModel.cs" />
