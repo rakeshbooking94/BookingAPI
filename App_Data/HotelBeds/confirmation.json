@@ -1,0 +1,36 @@
+﻿{
+"language": "es",
+"holder": {
+"name": "John",
+"surname": "Doe",
+"email": "john.doe@hotelbeds.com",
+"phone": "+16543245812"
+},
+"transfers": [
+{
+"rateKey": "ARRIVAL|IATA|BCN|ATLAS|398692|2024-01-11|03:25|2024-01-11|03:25|2~0~0||99|||||102|SHRD||SH|STND|21.74||||39|398692|SIMPLE|7152346f9266ec84477e88405ab3a3f0|1269799|T|1b3814dfc98b4495220e3ecb1ff1ee6f",
+"transferDetails": [
+{
+"type": "FLIGHT",
+"direction": "ARRIVAL",
+"code": "XR1234",
+"companyName": "RYANAIR"
+}
+]
+},
+{
+"rateKey": "DEPARTURE|ATLAS|398692|IATA|BCN|2024-01-15|03:25|2024-01-15|03:25|2~0~0||99|||||102|SHRD||SH|STND|21.74||||39|BCN|SIMPLE|b0abec268a99c5d615c22b696dfec96e|1269799|T|1b3814dfc98b4495220e3ecb1ff1ee6f",
+"transferDetails": [
+{
+"type": "FLIGHT",
+"direction": "DEPARTURE",
+"code": "XR1234",
+"companyName": "IBERIA"
+}
+]
+}
+],
+"clientReference": "BOSTON#12-203#456754",
+"welcomeMessage": "Welcome Mr. John Doe",
+"remark": "Booking remarks go here."
+}

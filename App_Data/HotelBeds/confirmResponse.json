@@ -1,0 +1,208 @@
+﻿{
+    "bookings": [
+        {
+            "reference": "102-14536491",
+            "bookingFileId": null,
+            "creationDate": "2023-11-24T11:32:41",
+            "status": "CONFIRMED",
+            "modificationsPolicies": {
+                "cancellation": true,
+                "modification": true
+            },
+            "holder": {
+                "name": "John",
+                "surname": "Doe",
+                "email": "john.doe@hotelbeds.com",
+                "phone": "+16543245812"
+            },
+            "transfers": [
+                {
+                    "id": 1,
+                    "rateKey": "ARRIVAL|IATA|BCN|ATLAS|398692|2024-01-11|15:25|2024-01-11|15:25|2~0~0||99|||||102|SHRD||SH|STND|20.01||||39|398692|SIMPLE|173a9268801b66cdac4a1bbe6430b137|1269799|T|1b3814dfc98b4495220e3ecb1ff1ee6f",
+                    "status": "CONFIRMED",
+                    "transferType": "SHARED",
+                    "vehicle": {
+                        "code": "SH",
+                        "name": "Shuttle"
+                    },
+                    "category": {
+                        "code": "STND",
+                        "name": "Standard"
+                    },
+                    "pickupInformation": {
+                        "from": {
+                            "code": "BCN",
+                            "description": "Barcelona Airport",
+                            "type": "IATA"
+                        },
+                        "to": {
+                            "code": "398692",
+                            "description": "Lugaris Rambla",
+                            "type": "ATLAS"
+                        },
+                        "date": "2024-01-11",
+                        "time": "15:25:00",
+                        "pickup": {
+                            "address": null,
+                            "number": null,
+                            "town": null,
+                            "zip": null,
+                            "description": "\nIMPORTANT NOTE: CONSTRUCTION WORKS IN TERMINAL 2B from OCT '22 - APR '23. Please proceed to the FROM2 office located in the Departures Area. Once you reach check-in desk 71, continue past the construction works and on the left-hand side of the escalators, opposite the construction, you will find the FROM2 office.  \n\n\nNote: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”\n\nFINDING YOUR DRIVER\n\nTERMINAL 1\nApril - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.\n\nNov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B\n\nTERMINAL 2\nFrom2 desk is located in TERMINAL 2B, opposite desks 95 - 97.\n\nIf you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.\nIf you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.\nIf you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.\n\nIdentify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.\n\n\n\nDIFFICULTY IN LOCATING YOUR DRIVER\nContact your supplier for assistance. Do not leave without having contacted your supplier on +34 937672836 first.\n\nThere may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.\n\n Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.",
+                            "altitude": null,
+                            "latitude": 41.3989153,
+                            "longitude": 2.20509,
+                            "checkPickup": {
+                                "mustCheckPickupTime": true,
+                                "url": "www.checkpickup.com",
+                                "hoursBeforeConsulting": null
+                            },
+                            "pickupId": null,
+                            "stopName": null,
+                            "image": null
+                        }
+                    },
+                    "paxes": [
+                        {
+                            "type": "ADULT",
+                            "age": 30
+                        },
+                        {
+                            "type": "ADULT",
+                            "age": 30
+                        }
+                    ],
+                    "content": {
+                        "vehicle": {
+                            "code": "SH",
+                            "name": "Shuttle"
+                        },
+                        "category": {
+                            "code": "STND",
+                            "name": "Standard"
+                        },
+                        "images": [
+                            {
+                                "url": "https://assets.htxstaging.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                                "type": "EXTRALARGE"
+                            },
+                            {
+                                "url": "https://assets.htxstaging.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                                "type": "LARGE"
+                            },
+                            {
+                                "url": "https://assets.htxstaging.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                                "type": "MEDIUM"
+                            },
+                            {
+                                "url": "https://assets.htxstaging.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                                "type": "SMALL"
+                            }
+                        ],
+                        "transferDetailInfo": [
+                            {
+                                "id": "0",
+                                "name": "transfertime",
+                                "description": "50 min. Estimated journey time",
+                                "type": "GENERAL_INFO"
+                            },
+                            {
+                                "id": "1",
+                                "name": "minpax",
+                                "description": "1 passenger(s) minimum",
+                                "type": "GENERAL_INFO"
+                            },
+                            {
+                                "id": "2",
+                                "name": "maxpax",
+                                "description": "99 passenger(s) maximum",
+                                "type": "GENERAL_INFO"
+                            },
+                            {
+                                "id": "3",
+                                "name": "luggage",
+                                "description": "suitcases permitted",
+                                "type": "GENERAL_INFO"
+                            }
+                        ],
+                        "customerTransferTimeInfo": [],
+                        "supplierTransferTimeInfo": [],
+                        "transferRemarks": [
+                            {
+                                "type": "CONTRACT",
+                                "description": "\nIMPORTANT NOTE: CONSTRUCTION WORKS IN TERMINAL 2B from OCT '22 - APR '23. Please proceed to the FROM2 office located in the Departures Area. Once you reach check-in desk 71, continue past the construction works and on the left-hand side of the escalators, opposite the construction, you will find the FROM2 office.  \n\n\nNote: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”\n\nFINDING YOUR DRIVER\n\nTERMINAL 1\nApril - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.\n\nNov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B\n\nTERMINAL 2\nFrom2 desk is located in TERMINAL 2B, opposite desks 95 - 97.\n\nIf you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.\nIf you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.\nIf you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.\n\nIdentify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.\n\n\n\nDIFFICULTY IN LOCATING YOUR DRIVER\nContact your supplier for assistance. Do not leave without having contacted your supplier on +34 937672836 first.\n\nThere may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.\n\n Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.",
+                                "mandatory": true
+                            }
+                        ]
+                    },
+                    "price": {
+                        "totalAmount": 20.01,
+                        "netAmount": 0.00,
+                        "currencyId": "EUR"
+                    },
+                    "cancellationPolicies": [
+                        {
+                            "amount": 20.99,
+                            "from": "2024-01-10T00:00:00",
+                            "currencyId": "USD",
+                            "isForceMajeure": false
+                        }
+                    ],
+                    "factsheetId": null,
+                    "arrivalFlightNumber": "XR1234",
+                    "departureFlightNumber": null,
+                    "arrivalShipName": null,
+                    "departureShipName": null,
+                    "arrivalTrainInfo": null,
+                    "departureTrainInfo": null,
+                    "transferDetails": [
+                        {
+                            "type": "FLIGHT",
+                            "direction": "ARRIVAL",
+                            "code": "XR1234",
+                            "companyName": null
+                        }
+                    ],
+                    "sourceMarketEmergencyNumber": "34871180153",
+                    "links": [
+                        {
+                            "rel": "transferCancel",
+                            "href": "/booking/en/reference/102-14536491",
+                            "method": "DELETE"
+                        }
+                    ]
+                }
+            ],
+            "clientReference": "BOSTON#12-203#456754",
+            "remark": "",
+            "invoiceCompany": {
+                "code": "E14"
+            },
+            "supplier": {
+                "name": "HOTELBEDS SPAIN, S.L.U",
+                "vatNumber": "ESB28916765"
+            },
+            "totalAmount": 20.99,
+            "totalNetAmount": 20.99,
+            "pendingAmount": 20.99,
+            "currency": "USD",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "/booking/en/reference/102-14536491",
+                    "method": "GET"
+                },
+                {
+                    "rel": "bookingDetail",
+                    "href": "/booking/en/reference/102-14536491",
+                    "method": "GET"
+                },
+                {
+                    "rel": "bookingCancel",
+                    "href": "/booking/en/reference/102-14536491",
+                    "method": "DELETE"
+                }
+            ],
+            "paymentDataRequired": false
+        }
+    ]
+}

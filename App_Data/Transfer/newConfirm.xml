@@ -1,0 +1,77 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication xmlns="">
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>TR_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <bookRequest TransID="afdd7eea-2af5-45d6-b97a-23f12db777c1" TransactionID="602" CustomerID="10028" Ip="86.108.33.16" language="" currency=""  xmlns="">
+      <SupplierList>
+        <supplierdetail supplierid="10" username="TESTCHAINS" password="TESTCHAINS" />Test
+      </SupplierList>
+      <Itinerary type="SHARED" direction="IN" amount="40.530" booktoken="61568891268" >
+        <ratekey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-07-30|12:15|2024-07-30|12:15|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|4b99606388826daa08afc104dd05e6ba|1269799|T|1d40ff86837b2abe69efc083c800209f</ratekey>
+        <pickUp type="IATA" code="BCN" travelName="RYANAIR" travelCode="XR1234" >
+          <pickUpTime date="22 Jul, 24" time="19:00" />
+        </pickUp>
+        <dropOff code="100414" type="ATLAS">
+          <dropOffTime date="22 Jul, 24" time="19:00" />
+        </dropOff>
+      </Itinerary>
+      <Itinerary type="SHARED" direction="Out" amount="40.530" booktoken="61568891268" >
+        <ratekey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-07-30|12:15|2024-07-30|12:15|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|4b99606388826daa08afc104dd05e6ba|1269799|T|1d40ff86837b2abe69efc083c800209f</ratekey>
+        <pickUp type="IATA" code="BCN" travelName="RYANAIR" travelCode="XR1234" >
+          <pickUpTime date="22 Jul, 24" time="19:00" />
+        </pickUp>
+        <dropOff type="IATA" code="BCN" travelName="RYANAIR" travelCode="XR1234" >
+          <dropOffTime date="22 Jul, 24" time="19:00" />
+        </dropOff>
+      </Itinerary>
+      <Pax adults="2" children="1">
+        <PaxItem sno="1" type="AD" title="Mr" age="30" isLead="true" firstName="MOHAMMED"  lastName="OMAR" phone="" email=""/>
+        <PaxItem sno="2" type="AD" title="Miss" age="30" isLead="false" firstName="FARAH"  lastName="OMAR" phone="" email=""/>
+        <PaxItem sno="3" type="CH" title="Mr" age="10" isLead="false" firstName="MOHAMMED"  lastName="OMAR" phone="" email=""/>
+      </Pax>
+      <Comment />
+    </bookRequest>
+    <bookResponse>
+      <Services>
+        <ServiceTransfer bookConfirmno="17423" voucherRefno="174-17423" bookToken="61568891268" currencyCode="USD">
+          <Vehicle SupplierID="10">
+            <Transfer SPUICODE="174#T#1" type="OUT" amount="40.530" bookRefno="17423-T1" status="CONFIRMED" PickUpTime="16:05" PickUpDate="22 Jul, 22">
+              <voucherRemarks>DESTINATION SERVICES TURKEY TURIZM VE SEYAHAT ANONIM SIRKETI vatNumber 2930493059</voucherRemarks>
+              <PickUp></PickUp>
+              <DropOff></DropOff>
+              <web webTime="" />
+              <ContactInfoList>
+                <ContactInfo>
+                  <Type>Assistance origin</Type>
+                  <TimeFrom>0000</TimeFrom>
+                  <TimeTo>2359</TimeTo>
+                  <OperationDays>Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</OperationDays>
+                  <Language>ENG</Language>
+                  <CountryCode>0</CountryCode>
+                  <PhoneNumber>+34971211630</PhoneNumber>
+                </ContactInfo>
+                <ContactInfo>
+                  <Type>Assistance destination</Type>
+                  <TimeFrom>0000</TimeFrom>
+                  <TimeTo>2359</TimeTo>
+                  <OperationDays>Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday</OperationDays>
+                  <Language>ENG</Language>
+                  <CountryCode>0</CountryCode>
+                  <PhoneNumber>+34871180153</PhoneNumber>
+                </ContactInfo>
+              </ContactInfoList>
+              <MeetingPoint>You will be picked up at the hotel main lobby. If you are unable to locate the driver/agent, please call Go North Cyprus Travel Ltd on +90 533 834 2137. Languages spoken at the call centre: English. Please do not leave the pick-up area without having contacted the agent/driver first. If the supplier doesn't answer the phone, please call our emergency telephone number listed at the bottom of the voucher before leaving the pick-up area.</MeetingPoint>
+            </Transfer>
+          </Vehicle>
+        </ServiceTransfer>
+      </Services>
+    </bookResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
