@@ -125,7 +125,7 @@ namespace TravillioXMLOutService.Repository.Transfer
 
 
 
-        public async Task<ConfirmResponseModel> GetConfirmAsync(RequestModel reqModel)
+        public async Task<ConfirmResponseModel> GetConfirmAsync(RequestModel reqModel, ConfirmReqModel _req)
         {
             var startTime = DateTime.Now;
             string stringResponse;
@@ -134,11 +134,10 @@ namespace TravillioXMLOutService.Repository.Transfer
             {
                 var _httpClient = this.CreateClient();
 
-                using (var request = new HttpRequestMessage(HttpMethod.Get, reqModel.RequestStr))
+                using (var request = new HttpRequestMessage(HttpMethod.Post, reqModel.RequestStr))
                 {
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    request.Content = new StringContent(JsonConvert.SerializeObject(reqModel));
+                    request.Content = new StringContent(JsonConvert.SerializeObject(_req));
 
                     request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 

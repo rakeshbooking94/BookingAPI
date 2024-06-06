@@ -240,56 +240,75 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         #endregion
 
 
-        #region Search
+        #region Confirm
+
+
+
+
+        List<TransferDetail> transferDetails(XElement _req)
+        {
+            var firstItem = _req.Descendants("pickUp").Select(y => new TransferDetail
+            {
+                type = y.Attribute("type").Value,
+                direction = _req.Attribute("direction").Value == "IN" ? "ARRIVAL" : "DEPARTURE",
+                code = y.Attribute("travelCode").Value,
+                companyName = y.Attribute("travelName").Value,
+            });
+            if (_req.Element("dropOff").Attribute("type").Value == "FLIGHT")
+            {
+                var secondItem = _req.Descendants("dropOff").Select(y => new TransferDetail
+                {
+                    type = y.Attribute("type").Value,
+                    direction = _req.Attribute("direction").Value == "IN" ? "ARRIVAL" : "DEPARTURE",
+                    code = y.Attribute("travelCode").Value,
+                    companyName = y.Attribute("travelName").Value,
+                });
+                firstItem.Concat(secondItem);
+            }
+            return firstItem.ToList();
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         public async Task<XElement> GetConfirmAsync(XElement _travyoReq)
         {
-
-
             XElement response = null;
             reqModel = CreateReqModel(_travyoReq);
             reqModel.EndTime = DateTime.Now;
-            var guest = _travyoReq.Descendants("Itinerary").
-
+            var guest = _travyoReq.Descendants("PaxItem").Where(x => x.Attribute("isLead").Value == "true").FirstOrDefault();
             ConfirmReqModel req = new ConfirmReqModel()
             {
-                
                 language = "en",
                 clientReference = _travyoReq.Attribute("TransactionID").Value,
                 welcomeMessage = _travyoReq.Element("Note").Value,
                 remark = _travyoReq.Element("Comment").Value,
                 holder = new Holder
                 {
-                    name = _travyoReq.Attribute("Code").Value,
-                    surname = _travyoReq.Attribute("Code").Value,
-                    email = _travyoReq.Attribute("Code").Value,
-                    phone = _travyoReq.Attribute("Code").Value,
+                    name = guest.Attribute("firstName").Value,
+                    surname = guest.Attribute("lastName").Value,
+                    email = guest.Attribute("email").Value,
+                    phone = guest.Attribute("phone").Value,
                 },
-
-                transfers = _travyoReq.Descendants("Itinerary").Select(x => new TransfeReq
+                transfers = _travyoReq.Descendants("Itinerary").Select(item => new TransfeReq
                 {
-                    rateKey = "",
-                    transferDetails = x.Descendants("").Select(y => new TransferDetail
-                    {
-
-
-
-                        type = "",
-                        direction = "",
-                        code = "",
-                        companyName = "",
-
-
-                    })
-
-                })
-
-
-            };
-
-
+                    rateKey = item.Element("ratekey").Value,
+                    transferDetails = this.transferDetails(item)
+                }).ToList()
+            }; 
+            reqModel.RequestStr = $"transfer-api/1.0/bookings/";
+            ConfirmResponseModel rsmodel = await _repo.GetConfirmAsync(reqModel, req);
 
         }
-
 
 
 

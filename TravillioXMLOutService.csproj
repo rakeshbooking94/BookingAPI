@@ -286,7 +286,6 @@
     <Content Include="App_Data\Transfer\onewayjsonb2b.xml" />
     <Content Include="App_Data\Transfer\NewPreBookReq.xml" />
     <Content Include="App_Data\Transfer\PreBook.xml" />
-    <Content Include="App_Data\Transfer\Response.xml" />
     <Content Include="App_Data\Transfer\SearchRequest.xml" />
     <Content Include="App_Data\Transfer\Terminals.xml" />
     <Content Include="App_Data\Transfer\TestResponse.xml" />
