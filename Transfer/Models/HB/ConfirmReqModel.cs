@@ -8,7 +8,7 @@ namespace TravillioXMLOutService.Transfer.Models.HB
     public class ConfirmReqModel : BaseModel
     {        
         public Holder holder { get; set; }
-        public List<Transfer> transfers { get; set; }
+        public List<TransfeReq> transfers { get; set; }
         public string clientReference { get; set; }
         public string welcomeMessage { get; set; }
         public string remark { get; set; }
@@ -21,7 +21,7 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string phone { get; set; }
     }
 
-    public class Transfer
+    public class TransfeReq
     {
         public string rateKey { get; set; }
         public List<TransferDetail> transferDetails { get; set; }

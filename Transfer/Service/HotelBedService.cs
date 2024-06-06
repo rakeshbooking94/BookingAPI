@@ -134,7 +134,7 @@ new XAttribute("children", model.children),
 new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to find any transfer service ")));
 
             }
-           
+
             return response;
             //doc.Add(response);  strDate = strDate.AlterFormat("yyyyMMdd", "d MMM, yy");
             //doc.Save(ConfigurationManager.AppSettings["fileDirectory"] + string.Format("response-{0}.xml", DateTime.Now.Ticks));
@@ -240,7 +240,55 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         #endregion
 
 
+        #region Search
+        public async Task<XElement> GetConfirmAsync(XElement _travyoReq)
+        {
 
+
+            XElement response = null;
+            reqModel = CreateReqModel(_travyoReq);
+            reqModel.EndTime = DateTime.Now;
+            var guest = _travyoReq.Descendants("Itinerary").
+
+            ConfirmReqModel req = new ConfirmReqModel()
+            {
+                
+                language = "en",
+                clientReference = _travyoReq.Attribute("TransactionID").Value,
+                welcomeMessage = _travyoReq.Element("Note").Value,
+                remark = _travyoReq.Element("Comment").Value,
+                holder = new Holder
+                {
+                    name = _travyoReq.Attribute("Code").Value,
+                    surname = _travyoReq.Attribute("Code").Value,
+                    email = _travyoReq.Attribute("Code").Value,
+                    phone = _travyoReq.Attribute("Code").Value,
+                },
+
+                transfers = _travyoReq.Descendants("Itinerary").Select(x => new TransfeReq
+                {
+                    rateKey = "",
+                    transferDetails = x.Descendants("").Select(y => new TransferDetail
+                    {
+
+
+
+                        type = "",
+                        direction = "",
+                        code = "",
+                        companyName = "",
+
+
+                    })
+
+                })
+
+
+            };
+
+
+
+        }
 
 
 
