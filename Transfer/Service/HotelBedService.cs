@@ -243,6 +243,54 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         #region Confirm
 
 
+        public async Task<XElement> GetConfirmAsync(XElement _travyoReq)
+        {
+            XElement response = null;
+            reqModel = CreateReqModel(_travyoReq);
+            reqModel.EndTime = DateTime.Now;
+            var guest = _travyoReq.Descendants("PaxItem").Where(x => x.Attribute("isLead").Value == "true").FirstOrDefault();
+            ConfirmReqModel req = new ConfirmReqModel()
+            {
+                language = "en",
+                clientReference = _travyoReq.Attribute("TransactionID").Value,
+                welcomeMessage = _travyoReq.Element("Note").Value,
+                remark = _travyoReq.Element("Comment").Value,
+                holder = new Holder
+                {
+                    name = guest.Attribute("firstName").Value,
+                    surname = guest.Attribute("lastName").Value,
+                    email = guest.Attribute("email").Value,
+                    phone = guest.Attribute("phone").Value,
+                },
+                transfers = _travyoReq.Descendants("Itinerary").Select(item => new TransfeReq
+                {
+                    rateKey = item.Element("ratekey").Value,
+                    transferDetails = this.transferDetails(item)
+                }).ToList()
+            };
+            reqModel.RequestStr = $"transfer-api/1.0/bookings/";
+            ConfirmResponseModel rsmodel = await _repo.GetConfirmAsync(reqModel, req);
+            if (rsmodel != null)
+            {
+                var bokg = rsmodel.bookings.FirstOrDefault();
+                response = new XElement("bookResponse", new XElement("serviceTransfer",
+                    new XAttribute("supplierId", 10),
+                    new XAttribute("supName", bokg.supplier.name),
+                    new XAttribute("vatNumber", bokg.supplier.vatNumber),
+                    new XAttribute("status", bokg.status),
+                    new XAttribute("bookConfirmno", bokg.reference),
+                    new XAttribute("voucherRefno", bokg.reference),
+                    new XAttribute("currency", bokg.currency),
+                    new XElement("voucherRemarks", bokg.supplier.name + " vatNumber " + bokg.supplier.vatNumber),
+                    bindResponse(bokg)));
+            }
+            else
+            {
+                response = new XElement("bookResponse", new XAttribute("supplierId", 10),
+                        new XElement("ErrorTxt", "Unable to book transfer service "));
+            }
+            return response;
+        }
 
 
         List<TransferDetail> transferDetails(XElement _req)
@@ -269,56 +317,52 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        public async Task<XElement> GetConfirmAsync(XElement _travyoReq)
+        IEnumerable<XElement> bindResponse(Booking bokModel)
         {
-            XElement response = null;
-            reqModel = CreateReqModel(_travyoReq);
-            reqModel.EndTime = DateTime.Now;
-            var guest = _travyoReq.Descendants("PaxItem").Where(x => x.Attribute("isLead").Value == "true").FirstOrDefault();
-            ConfirmReqModel req = new ConfirmReqModel()
-            {
-                language = "en",
-                clientReference = _travyoReq.Attribute("TransactionID").Value,
-                welcomeMessage = _travyoReq.Element("Note").Value,
-                remark = _travyoReq.Element("Comment").Value,
-                holder = new Holder
-                {
-                    name = guest.Attribute("firstName").Value,
-                    surname = guest.Attribute("lastName").Value,
-                    email = guest.Attribute("email").Value,
-                    phone = guest.Attribute("phone").Value,
-                },
-                transfers = _travyoReq.Descendants("Itinerary").Select(item => new TransfeReq
-                {
-                    rateKey = item.Element("ratekey").Value,
-                    transferDetails = this.transferDetails(item)
-                }).ToList()
-            }; 
-            reqModel.RequestStr = $"transfer-api/1.0/bookings/";
-            ConfirmResponseModel rsmodel = await _repo.GetConfirmAsync(reqModel, req);
+            var transfers = from srv in bokModel.transfers
+                            select new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("status", srv.status),
+                            new XAttribute("type", srv.transferType),
+                                   new XAttribute("direction", ""),
+                                   new XAttribute("price", srv.price.totalAmount),
+                                     new XElement("productName", srv.category.name + " " + srv.vehicle.name),
+                                     new XElement("rateKey", srv.rateKey),
+
+                                   new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date.AlterFormat("yyyy-MM-dd", "d MMM, yy")),
+                                   new XAttribute("time", srv.pickupInformation.time.AlterFormat("HH:mm:ss", "HH:mm"))),
+
+                                   new XElement("pickUp", new XAttribute("code", srv.pickupInformation.@from.code),
+                                   new XElement("emergencyNumber", srv.sourceMarketEmergencyNumber),
+                                   new XAttribute("type", srv.pickupInformation.@from.type),
+                                   new XElement("name", srv.pickupInformation.@from.description),
+                                   new XElement("description", srv.pickupInformation.pickup.description),
+                                   new XElement("address", srv.pickupInformation.pickup.address.IsNullString(),
+                                   new XAttribute("number", srv.pickupInformation.pickup.number.IsNullString()),
+                                   new XAttribute("town", srv.pickupInformation.pickup.town.IsNullString()),
+                                   new XAttribute("zip", srv.pickupInformation.pickup.zip.IsNullString()),
+                                   new XAttribute("altitude", srv.pickupInformation.pickup.altitude.IsNullNumber()),
+                                   new XAttribute("latitude", srv.pickupInformation.pickup.latitude.IsNullNumber()),
+                                   new XAttribute("longitude", srv.pickupInformation.pickup.longitude.IsNullNumber()),
+                                   new XAttribute("stopName", srv.pickupInformation.pickup.stopName.IsNullString()),
+                                   new XAttribute("pickupId", srv.pickupInformation.pickup.pickupId.IsNullString()),
+                                   new XAttribute("image", srv.pickupInformation.pickup.image.IsNullString()))),
+
+                                   new XElement("dropOff", new XAttribute("code", srv.pickupInformation.to.code),
+                                   new XAttribute("type", srv.pickupInformation.to.type),
+                                   new XElement("name", srv.pickupInformation.to.description)),
+                                          new XElement("remarks",
+                                   from note in srv.content.transferRemarks
+                                   select new XElement("remark", new XAttribute("type", note.type), new XAttribute("mandatory", note.mandatory), note.description)),
+                                   new XElement("cancellationList",
+                                   from cxl in srv.cancellationPolicies
+                                   select new XElement("cancellationPolicy", new XAttribute("lastDate", cxl.@from),
+                                   new XAttribute("amount", cxl.amount), new XAttribute("noShow", 0))
+                                   ));
+
+            return transfers;
 
         }
 
-
-
-
-
-
-
-
-
-
+        #endregion
 
 
 

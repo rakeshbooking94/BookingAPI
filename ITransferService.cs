@@ -15,17 +15,17 @@ namespace TravillioXMLOutService
     public interface ITransferService
     {
         #region Transfer
-
         [OperationContract, XmlSerializerFormat]
-        object CXLPolicyTransfer(XElement req);
+        Task<object> TransferAvailabilityAsync(XElement req);
         [OperationContract, XmlSerializerFormat]
         Task<object> PreBookTransferAsync(XElement req);
         [OperationContract, XmlSerializerFormat]
-        object ConfirmBookingTransfer(XElement req);
+        Task<object> ConfirmBookingTransferAsync(XElement req);
         [OperationContract, XmlSerializerFormat]
         object CancelBookingTransfer(XElement req);
         [OperationContract, XmlSerializerFormat]
-        Task<object> TransferAvailabilityAsync(XElement req);
+        object CXLPolicyTransfer(XElement req);
+
         #endregion
     }
 }

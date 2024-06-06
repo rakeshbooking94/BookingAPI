@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 using TravillioXMLOutService.Models;
@@ -12,7 +13,7 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
     public class HB_TrnsfrBook
     {
         #region Transfer Book
-        public XElement BookTransfer(XElement req)
+        public async Task<XElement> BookTransfer(XElement req)
         {
             HeaderAuth headercheck = new HeaderAuth();
             string username = req.Descendants("UserName").Single().Value;
@@ -35,8 +36,8 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
                         string customerId = req.Descendants("bookRequest").Attributes("CustomerID").FirstOrDefault().Value;
                         HotelBedService hbreq = new HotelBedService(customerId);
                         XElement SearReq = req.Descendants("bookRequest").FirstOrDefault();
-                        //XElement response = hbreq.ConfirmRequest(SearReq);
-                        //SearReq.AddAfterSelf(response);
+                        XElement response =await hbreq.GetConfirmAsync(SearReq);
+                        SearReq.AddAfterSelf(response);
                         return req;
                     
                     }

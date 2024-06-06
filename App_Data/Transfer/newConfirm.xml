@@ -41,9 +41,9 @@
     </bookRequest>
     <bookResponse>
       <serviceTransfer supName="" vatNumber="" supplierId="10" status="" bookConfirmno="17423" voucherRefno="174-17423"  currency="USD">
+        <voucherRemarks>DESTINATION SERVICES TURKEY TURIZM VE SEYAHAT ANONIM SIRKETI vatNumber 2930493059</voucherRemarks>
         <transfer id="0"  status="CONFIRMED" type="SHARED" direction="IN" price="">
           <productName>Standard Shuttle </productName>
-          <voucherRemarks>DESTINATION SERVICES TURKEY TURIZM VE SEYAHAT ANONIM SIRKETI vatNumber 2930493059</voucherRemarks>
           <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|700dddce8785f139dd286b33aab61a4b|1269799|T|1d40ff86837b2abe69efc083c800209f</rateKey>
           <pickUpTime date="2024-06-29" time="05:45:00" />
           <pickUp code="BCN" type="IATA">
