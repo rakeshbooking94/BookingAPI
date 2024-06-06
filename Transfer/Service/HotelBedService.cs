@@ -243,7 +243,7 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         #region Confirm
 
 
-        public async Task<XElement> GetConfirmAsync(XElement _travyoReq)
+        public async Task<XElement> ConfirmBookingAsync(XElement _travyoReq)
         {
             XElement response = null;
             reqModel = CreateReqModel(_travyoReq);
@@ -365,7 +365,19 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         #endregion
 
 
+        #region Cancel
 
+        public async Task<XElement> CancelBookingAsync(XElement _travyoReq)
+        {
+            XElement response = null;
+            reqModel = CreateReqModel(_travyoReq);
+            reqModel.EndTime = DateTime.Now;
+            reqModel.RequestStr = $"transfer-api/1.0/bookings/en/reference/";
+            SearchResponseModel rsmodel = await _repo.GetSearchAsync(reqModel);
+            return response;
+        }
+
+        #endregion
 
         #region Dispose
         /// <summary>
