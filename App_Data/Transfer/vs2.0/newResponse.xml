@@ -1,0 +1,965 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication xmlns="">
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <SearchRequest TransID="78d5ae63-cdb7-4cd6-9ec3-b5e81fcf0536" CustomerID="10017" Ip="::1" xmlns="">
+      <SupplierList>
+        <supplierdetail supplierid="10" username="TESTCHAINS" password="TESTCHAINS">HotelBed</supplierdetail>
+      </SupplierList>
+      <Itinerary type="IN">
+        <PickupLocation type="1">
+          <Code>BCN</Code>
+          <PickupTime date="29 Jun, 24" time="05:45" />
+        </PickupLocation>
+        <DestinationLocation type="2">
+          <Code>100414</Code>
+          <DropOffTime date="29 Jun, 24" time="" />
+        </DestinationLocation>
+      </Itinerary>
+      <Occupancy adult="1" child="0" />
+      <language>ENG</language>
+      <CurrencyCode>EUR</CurrencyCode>
+    </SearchRequest>
+    <searchResponse>
+      <serviceTransfers adults="1" children="0" infants="0">
+        <serviceTransfer supplierId="10">
+          <transfer id="0" type="SHARED" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                Note: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”
+
+                FINDING YOUR DRIVER
+
+                TERMINAL 1
+                April - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.
+
+                Nov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B
+
+                TERMINAL 2
+                From2 desk is located in TERMINAL 2B, opposite desks 95 - 97.
+
+                If you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.
+                If you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.
+                If you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                There may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.
+
+                Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="9.69" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||99|||||102|SHRD||SH|STND|9.69||||39|100414|SIMPLE|700dddce8785f139dd286b33aab61a4b|1269799|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="99" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="50 min. Estimated journey time">50 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="99 passenger(s) maximum">99 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="suitcases permitted">suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="SH">Shuttle</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                Note: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”
+
+                FINDING YOUR DRIVER
+
+                TERMINAL 1
+                April - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.
+
+                Nov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B
+
+                TERMINAL 2
+                From2 desk is located in TERMINAL 2B, opposite desks 95 - 97.
+
+                If you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.
+                If you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.
+                If you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                There may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.
+
+                Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="9.69" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="1" type="SHARED" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                Note: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”
+
+                FINDING YOUR DRIVER
+
+                TERMINAL 1
+                April - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.
+
+                Nov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B
+
+                TERMINAL 2
+                From2 desk is located in TERMINAL 2B, opposite desks 95 - 97.
+
+                If you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.
+                If you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.
+                If you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                There may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.
+
+                Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="11.99" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||99|||||102|SHRD||SH|PRM|11.99||||519|100414|SIMPLE|e84c0c6937f56a62b507bc63c1191dd1|1270071|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="99" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="40 min. Estimated journey time">40 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="99 passenger(s) maximum">99 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="suitcases permitted">suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/speedyshuttle.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/speedyshuttle.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/speedyshuttle.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/speedyshuttle.jpg</image>
+            </images>
+            <category code="PRM">Premium</category>
+            <vehicle code="SH">Shuttle</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                Note: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”
+
+                FINDING YOUR DRIVER
+
+                TERMINAL 1
+                April - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.
+
+                Nov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B
+
+                TERMINAL 2
+                From2 desk is located in TERMINAL 2B, opposite desks 95 - 97.
+
+                If you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.
+                If you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.
+                If you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                There may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.
+
+                Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="11.99" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="2" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="39.06" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||3|||||102|PRVT||CR|STND|39.06||||43|100414|SIMPLE|00605420abff3b2ef7ee7a940fb2f89d|1269888|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="3" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="3 passenger(s) maximum">3 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="3 suitcases permitted">3 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/private.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/private.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/private.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/private.jpg</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="CR">Car</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="39.06" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="3" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="70.06" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||7|||||102|PRVT||MNBS|STND|70.06||||2|100414|SIMPLE|3dfb365c40cb7f11ae749f3e3c260879|1269268|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="7" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="7 passenger(s) maximum">7 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="7 suitcases permitted">7 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="MNBS">Minibus</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="70.06" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="4" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 75 minutes on arrival you must call the supplier. There are 75 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="77" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||3|||||102|PRVT||CR|PRM|77.00||||18|100414|SIMPLE|726ec76cdc86342976ea4951f073add1|1269721|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="3" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="3 passenger(s) maximum">3 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="3 suitcases permitted">3 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxury-car.png</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxury-car.png</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxury-car.png</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxury-car.png</image>
+            </images>
+            <category code="PRM">Premium</category>
+            <vehicle code="CR">Car</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 75 minutes on arrival you must call the supplier. There are 75 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="77" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="5" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="93.01" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||12|||||102|PRVT||MNBS|STND|93.01||||2|100414|SIMPLE|e22308edb89225c1d36ed2637a548922|1269407|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="8" maxPaxCapacity="12" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="8 passenger(s) minimum">8 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="12 passenger(s) maximum">12 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="12 suitcases permitted">12 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/minibus-minified.jpg</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="MNBS">Minibus</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="93.01" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="6" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="97.4" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||3|||||102|PRVT||DSBLD|STND|97.40||||13|100414|SIMPLE|ec0c84dc596bd0477cee4522e012d64d|1269618|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="3" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="3 passenger(s) maximum">3 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="3 suitcases permitted">3 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/wheelchair-taxi.jpg</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/wheelchair-taxi.jpg</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/wheelchair-taxi.jpg</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/wheelchair-taxi.jpg</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="DSBLD">Adapted Vehicle</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="97.4" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="7" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 75 minutes on arrival you must call the supplier. There are 75 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="107.8" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||7|||||102|PRVT||MNBS|PRM|107.80||||78|100414|SIMPLE|60cfd4a4ce96ca13e362fadeb9ffc767|1270015|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="1" maxPaxCapacity="7" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="1 passenger(s) minimum">1 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="7 passenger(s) maximum">7 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="7 suitcases permitted">7 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxuryminivan.png</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxuryminivan.png</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxuryminivan.png</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/luxuryminivan.png</image>
+            </images>
+            <category code="PRM">Premium</category>
+            <vehicle code="MNBS">Minibus</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 75 minutes on arrival you must call the supplier. There are 75 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="107.8" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="8" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="167.41" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||24|||||102|PRVT||BS|STND|167.41||||11|100414|SIMPLE|d221662c5b9195a3c3dd05a749228702|1269522|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="13" maxPaxCapacity="24" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="13 passenger(s) minimum">13 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="24 passenger(s) maximum">24 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="24 suitcases permitted">24 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="BS">Bus</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="167.41" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="9" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="290.07" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||34|||||102|PRVT||BS|STND|290.07||||11|100414|SIMPLE|596adac5516cbadfa392cfbfccd668d9|1269577|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="25" maxPaxCapacity="34" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="25 passenger(s) minimum">25 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="34 passenger(s) maximum">34 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="34 suitcases permitted">34 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="BS">Bus</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="290.07" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+        <serviceTransfer supplierId="10">
+          <transfer id="10" type="PRIVATE" direction="IN">
+            <pickUpTime date="2024-06-29" time="05:45:00" />
+            <pickUp code="BCN" type="IATA">
+              <name>Barcelona Airport</name>
+              <description>
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </description>
+              <address number="" town="" zip="" altitude="0.00" latitude="0.00" longitude="0.00" stopName="" pickupId="" image=""></address>
+            </pickUp>
+            <dropOff code="100414" type="ATLAS">
+              <name>ABaC Restaurant Hotel Barcelona GL Monumento</name>
+            </dropOff>
+            <price totalAmount="347.52" currencyId="EUR">
+              <rateKey>ARRIVAL|IATA|BCN|ATLAS|100414|2024-06-29|05:45|2024-06-29|05:45|1~0~0||55|||||102|PRVT||BS|STND|347.52||||11|100414|SIMPLE|3423faa5b5a122bfcae157b4308975ad|1269578|T|1d40ff86837b2abe69efc083c800209f</rateKey>
+            </price>
+            <capacity minPaxCapacity="35" maxPaxCapacity="55" lugtype="">
+              <description></description>
+            </capacity>
+            <guideLines>
+              <description id="0" type="GENERAL_INFO" title="30 min. Estimated journey time">30 min. Estimated journey time</description>
+              <description id="1" type="GENERAL_INFO" title="35 passenger(s) minimum">35 passenger(s) minimum</description>
+              <description id="2" type="GENERAL_INFO" title="55 passenger(s) maximum">55 passenger(s) maximum</description>
+              <description id="3" type="GENERAL_INFO" title="55 suitcases permitted">55 suitcases permitted</description>
+            </guideLines>
+            <images>
+              <image type="EXTRALARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="LARGE">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="MEDIUM">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+              <image type="SMALL">https://assets.holidaytaxis.com/imgs/default/vehicle_set/coach.png</image>
+            </images>
+            <category code="STND">Standard</category>
+            <vehicle code="BS">Bus</vehicle>
+            <remarks>
+              <remark type="CONTRACT" mandatory="true">
+                For arrivals in BCN City: Please note that for areas restricted to vehicles (such as Las Ramblas) the driver will stop at the nearest corner and direct the passengers to their hotels. There might be a short walk from the permitted drop off point to the accommodation.
+
+                FINDING YOUR DRIVER
+
+                Terminal 1
+                Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Terminal 2
+                Exit INTO the arrivals hall where your driver/representative, wearing an orange shirt, will be waiting holding a sign with your name and/or FROM2 TRAVEL on it.
+
+                Identify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.
+
+
+
+
+                DIFFICULTY IN LOCATING YOUR DRIVER
+                Contact your supplier, , for assistance. Do not leave without having contacted your supplier on +34 937672836 first.
+
+                In the event of delays over 60 minutes on arrival you must call the supplier. There are 60 minutes wait time included from your landing/disembarkation time.
+              </remark>
+            </remarks>
+            <waitingTime cwtime="" domestic="" international="" />
+            <journeyTime jtime="" />
+            <cancellationPolicies>
+              <cancellationPolicy lastDate="2024-06-28T05:45:00" amount="347.52" noShow="0" />
+            </cancellationPolicies>
+          </transfer>
+          <cancellationPolicy lastDate="" amount="200.15" noShow="true" />
+        </serviceTransfer>
+      </serviceTransfers>
+    </searchResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
