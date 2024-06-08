@@ -100,12 +100,12 @@ namespace TravillioXMLOutService.Transfer.Services
                 IEnumerable<XElement> srvTransfers;
                 IEnumerable<XElement> joinTransfers;
                 srvTransfers = from srv in rsmodel.services
-                               select travayooResponse(srv, rsmodel.search.comeBack);
-                int count = srvTransfers.Where(x => x.Attribute("direction").Value == "OUT").Count();
+                               select travayooResponse(srv, rsmodel.search);
+                int count = srvTransfers.Where(x => x.Attribute("type").Value == "OUT").Count();
                 if (count > 0)
                 {
-                    joinTransfers = from srv in srvTransfers.Where(x => x.Attribute("direction").Value == "IN")
-                                    from srvOut in srvTransfers.Where(x => x.Attribute("direction").Value == "OUT")
+                    joinTransfers = from srv in srvTransfers.Where(x => x.Attribute("type").Value == "IN")
+                                    from srvOut in srvTransfers.Where(x => x.Attribute("type").Value == "OUT")
                                     let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m) + srvOut.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
                                     select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
                                     new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv, srvOut,
@@ -140,15 +140,45 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
             //doc.Save(ConfigurationManager.AppSettings["fileDirectory"] + string.Format("response-{0}.xml", DateTime.Now.Ticks));
         }
 
-        XElement travayooResponse(TravillioXMLOutService.Transfer.Models.HB.Services srv, Departure comeBack)
+        public PickupInformation pickupInformation { get; set; }
+        XElement pickupTime(PickupInformation item, Search req)
+        {
+            XElement _node = null;
+            if (!string.IsNullOrEmpty(item.date))
+            {
+                _node = new XElement("pickUpTime",
+                    new XAttribute("date", item.date.AlterFormat("yyyy-MM-dd", "d MMM, yy")),
+                    new XAttribute("time", item.time.AlterFormat("HH:mm:ss", "HH:mm")));
+            }
+            else
+            {
+
+                if (item.from.code == req.from.code)
+                {
+                    _node = new XElement("pickUpTime",
+                  new XAttribute("date", req.departure.date.AlterFormat("yyyy-MM-dd", "d MMM, yy")),
+                  new XAttribute("time", req.departure.time.AlterFormat("HH:mm:ss", "HH:mm")));
+                }
+                else
+                {
+                    _node = new XElement("pickUpTime",
+                                     new XAttribute("date", req.comeBack.date.AlterFormat("yyyy-MM-dd", "d MMM, yy")),
+                                     new XAttribute("time", req.comeBack.time.AlterFormat("HH:mm:ss", "HH:mm")));
+                }
+
+
+            }
+            return _node;
+        }
+
+        XElement travayooResponse(TravillioXMLOutService.Transfer.Models.HB.Services srv, Search req)
         {
 
-            var model = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.transferType), new XAttribute("newPrice", string.Empty),
-                                  new XAttribute("direction", srv.direction == "ARRIVAL" ? "IN" : "OUT"),
-                                  new XElement("pickUpTime", new XAttribute("date", srv.pickupInformation.date == null ? comeBack.date.AlterFormat("yyyy-MM-dd", "d MMM, yy") : srv.pickupInformation.date.AlterFormat("yyyy-MM-dd", "d MMM, yy")),
-
-                                  new XAttribute("time", srv.pickupInformation.time == null ? comeBack.time.AlterFormat("HH:mm:ss", "HH:mm") : srv.pickupInformation.time.AlterFormat("HH:mm:ss", "HH:mm"))),
-
+            var model = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("type", srv.pickupInformation.@from.code == req.from.code ? "IN" : "OUT"),
+                new XAttribute("newPrice", string.Empty),
+                                  new XAttribute("direction", srv.direction),
+                                    new XAttribute("transferType", srv.transferType),
+                                    pickupTime(srv.pickupInformation, req),
                                   new XElement("pickUp", new XAttribute("code", srv.pickupInformation.@from.code),
                                   new XAttribute("type", srv.pickupInformation.@from.type),
                                   new XElement("name", srv.pickupInformation.@from.description),
@@ -209,14 +239,14 @@ new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to fi
             var respHb = await _repo.GetPreBookSearchAsync(req);
             var result = from srv in respHb.services
                          join reqSrv in _travyoReq.Descendants("Itinerary") on srv.rateKey equals reqSrv.Element("ratekey").Value
-                         select travayooResponse(srv, respHb.search.comeBack);
+                         select travayooResponse(srv, respHb.search);
             IEnumerable<XElement> joinTransfers;
-            int count = result.Where(x => x.Attribute("direction").Value == "OUT").Count();
+            int count = result.Where(x => x.Attribute("type").Value == "OUT").Count();
             if (count > 0)
             {
 
-                joinTransfers = from srv in result.Where(x => x.Attribute("direction").Value == "IN")
-                                from srvOut in result.Where(x => x.Attribute("direction").Value == "OUT")
+                joinTransfers = from srv in result.Where(x => x.Attribute("type").Value == "IN")
+                                from srvOut in result.Where(x => x.Attribute("type").Value == "OUT")
                                 let _amount = srv.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m) + srvOut.Element("price").Attribute("totalAmount").GetValueOrDefault(0.0m)
                                 select new XElement("serviceTransfer", new XAttribute("supplierId", 10),
                                 new XAttribute("currency", srv.Element("price").Attribute("currencyId").Value), srv, srvOut,
@@ -295,26 +325,30 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
 
         List<TransferDetail> transferDetails(XElement _req)
         {
-            var firstItem = _req.Descendants("pickUp").Select(y => new TransferDetail
+            XElement x = _req.Element("pickUp");
+            XElement y = _req.Element("dropOff");
+            List<TransferDetail> lst=new List<TransferDetail>();
+            if (x.Attribute("type").Value == "IATA")
             {
-                type = y.Attribute("type").Value,
-                direction = _req.Attribute("direction").Value == "IN" ? "ARRIVAL" : "DEPARTURE",
-                code = y.Attribute("travelCode").Value,
-                companyName = y.Attribute("travelName").Value,
-            });
-            if (_req.Element("dropOff").Attribute("type").Value == "FLIGHT")
-            {
-                var secondItem = _req.Descendants("dropOff").Select(y => new TransferDetail
+                lst.Add(new TransferDetail
                 {
-                    type = y.Attribute("type").Value,
-                    direction = _req.Attribute("direction").Value == "IN" ? "ARRIVAL" : "DEPARTURE",
+                    type = "FLIGHT",
+                    direction = _req.Attribute("direction").Value,
+                    code = x.Attribute("travelCode").Value,
+                    companyName = x.Attribute("travelName").Value,
+                });
+            }
+            if (y.Attribute("type").Value == "IATA")
+            {
+                lst.Add(new TransferDetail
+                {
+                    type = "FLIGHT",
+                    direction = _req.Attribute("direction").Value,
                     code = y.Attribute("travelCode").Value,
                     companyName = y.Attribute("travelName").Value,
-                });
-                firstItem.Concat(secondItem);
+                });              
             }
-            return firstItem.ToList();
-
+            return lst;
         }
 
         IEnumerable<XElement> bindResponse(Booking bokModel)

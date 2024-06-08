@@ -5,8 +5,10 @@ using System.Web;
 
 namespace TravillioXMLOutService.Transfer.Models.HB
 {
-    public class ConfirmReqModel : BaseModel
-    {        
+    public class ConfirmReqModel
+    {
+
+        public string language { get; set; }
         public Holder holder { get; set; }
         public List<TransfeReq> transfers { get; set; }
         public string clientReference { get; set; }

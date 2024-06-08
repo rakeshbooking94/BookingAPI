@@ -125,7 +125,7 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public double amount { get; set; }
         public DateTime from { get; set; }
         public string currencyId { get; set; }
-        public bool isForceMajeure { get; set; }
+        public bool? isForceMajeure { get; set; }
     }
 
     public class Links

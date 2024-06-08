@@ -36,7 +36,7 @@ namespace TravillioXMLOutService.Transfer.HotelBeds
                         string customerId = req.Descendants("bookRequest").Attributes("CustomerID").FirstOrDefault().Value;
                         HotelBedService hbreq = new HotelBedService(customerId);
                         XElement SearReq = req.Descendants("bookRequest").FirstOrDefault();
-                        XElement response =await hbreq.GetConfirmAsync(SearReq);
+                        XElement response =await hbreq.ConfirmBookingAsync(SearReq);
                         SearReq.AddAfterSelf(response);
                         return req;
                     
