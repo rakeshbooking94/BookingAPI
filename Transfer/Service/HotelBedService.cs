@@ -123,7 +123,7 @@ namespace TravillioXMLOutService.Transfer.Services
                 response = new XElement("searchResponse", new XElement("serviceTransfers",
     new XAttribute("adults", rsmodel.search.occupancy.adults),
     new XAttribute("children", rsmodel.search.occupancy.children),
-    new XAttribute("infants", rsmodel.search.occupancy.infants), joinTransfers));
+    new XAttribute("infants", rsmodel.search.occupancy.infants), joinTransfers.Take(30)));
                 response.Descendants("cancellationList").Remove();
             }
             else
@@ -312,7 +312,7 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
                     new XAttribute("voucherRefno", bokg.reference),
                     new XAttribute("currency", bokg.currency),
                     new XElement("voucherRemarks", bokg.supplier.name + " vatNumber " + bokg.supplier.vatNumber),
-                    bindResponse(bokg)));
+                    bindResponse(bokg, _travyoReq)));
             }
             else
             {
@@ -327,7 +327,7 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         {
             XElement x = _req.Element("pickUp");
             XElement y = _req.Element("dropOff");
-            List<TransferDetail> lst=new List<TransferDetail>();
+            List<TransferDetail> lst = new List<TransferDetail>();
             if (x.Attribute("type").Value == "IATA")
             {
                 lst.Add(new TransferDetail
@@ -346,17 +346,30 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
                     direction = _req.Attribute("direction").Value,
                     code = y.Attribute("travelCode").Value,
                     companyName = y.Attribute("travelName").Value,
-                });              
+                });
             }
             return lst;
         }
 
-        IEnumerable<XElement> bindResponse(Booking bokModel)
+        IEnumerable<XElement> bindResponse(Booking bokModel, XElement req)
         {
             var transfers = from srv in bokModel.transfers
-                            select new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("status", srv.status),
+                            join trip in req.Descendants("Itinerary") on srv.id equals trip.Attribute("index").ToINT(-1)
+                            select BindResponseElemnet(srv, trip);
+
+            return transfers;
+
+        }
+
+
+
+        XElement BindResponseElemnet(Transfers srv, XElement trip)
+        {
+
+            var _item = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("status", srv.status),
                             new XAttribute("type", srv.transferType),
-                                   new XAttribute("direction", ""),
+                                   new XAttribute("booktoken", trip.Attribute("booktoken").Value),
+                                       new XAttribute("direction", ""),
                                    new XAttribute("price", srv.price.totalAmount),
                                      new XElement("productName", srv.category.name + " " + srv.vehicle.name),
                                      new XElement("rateKey", srv.rateKey),
@@ -392,9 +405,15 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
                                    new XAttribute("amount", cxl.amount), new XAttribute("noShow", 0))
                                    ));
 
-            return transfers;
+            return _item;
 
         }
+
+
+
+
+
+
 
         #endregion
 
