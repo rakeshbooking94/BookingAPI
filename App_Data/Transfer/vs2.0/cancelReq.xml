@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>TR_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <cancellationReq TransID="33d6765b-839c-4025-a1b6-056df26d9d25" CustomerID="10017"  Ip="::1" language="ENG" currency="EUR">
+      <supplier supplierid="10" username="TESTCHAINS" password="TESTCHAINS">Test</supplier>
+      <serviceTransfer bookingNo="33d676">
+        <transfer code="1" supRefno="d9d25"/>
+        <transfer code="2" supRefno="33d676"/>
+      </serviceTransfer>
+    </cancellationReq>
+  </soapenv:Body>
+</soapenv:Envelope>
