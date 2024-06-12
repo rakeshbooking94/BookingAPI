@@ -282,6 +282,7 @@
     <Content Include="App_Data\Transfer\Destinations_ING.xml" />
     <Content Include="App_Data\Transfer\Hotel.xml" />
     <Content Include="App_Data\Transfer\Language.xml" />
+    <Content Include="App_Data\Transfer\vs2.0\cancelReq.xml" />
     <Content Include="App_Data\Transfer\vs2.0\newConfirm.xml" />
     <Content Include="App_Data\Transfer\vs2.0\newPrebook.xml" />
     <Content Include="App_Data\Transfer\vs2.0\newResponse.xml" />

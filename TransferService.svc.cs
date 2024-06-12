@@ -251,19 +251,19 @@ namespace TravillioXMLOutService
 
 
 
-        public object CancelBookingTransfer(XElement req)
+        public async Task<object> CancelBookingTransferAsync(XElement req)
         {
             try
             {
                 XElement cancelresponse = null;
                 HB_TrnsfrCancel reqs = new HB_TrnsfrCancel();
-                cancelresponse = reqs.CancelTransfer(req);
+                cancelresponse =await reqs.CancelTransfer(req);
                 #region XML Response
                 try
                 {
                     APILogDetail log = new APILogDetail();
-                    log.customerID = Convert.ToInt64(req.Descendants("TransferCancelRequest").Attributes("CustomerID").FirstOrDefault().Value);
-                    log.TrackNumber = req.Descendants("TransferCancelRequest").Attributes("TransID").FirstOrDefault().Value;
+                    log.customerID = Convert.ToInt64(req.Descendants("cancellationRequest").Attributes("customerId").FirstOrDefault().Value);
+                    log.TrackNumber = req.Descendants("cancellationRequest").Attributes("transId").FirstOrDefault().Value;
                     log.LogTypeID = 6;
                     log.LogType = "Cancel";
                     log.logrequestXML = req.ToString();
@@ -277,8 +277,8 @@ namespace TravillioXMLOutService
                     CustomException ex1 = new CustomException(ex);
                     ex1.MethodName = "CancelBookingTransfer";
                     ex1.PageName = "TransferService";
-                    ex1.CustomerID = req.Descendants("TransferCancelRequest").Attributes("CustomerID").FirstOrDefault().Value;
-                    ex1.TranID = req.Descendants("TransferCancelRequest").Attributes("TransID").FirstOrDefault().Value;
+                    ex1.CustomerID = req.Descendants("cancellationRequest").Attributes("customerId").FirstOrDefault().Value;
+                    ex1.TranID = req.Descendants("cancellationRequest").Attributes("transId").FirstOrDefault().Value;
                     SaveAPILog saveex = new SaveAPILog();
                     saveex.SendCustomExcepToDB(ex1);
                     #endregion
@@ -293,8 +293,8 @@ namespace TravillioXMLOutService
                 CustomException ex1 = new CustomException(ex);
                 ex1.MethodName = "CancelBookingTransfer";
                 ex1.PageName = "TransferService";
-                ex1.CustomerID = req.Descendants("TransferCancelRequest").Attributes("CustomerID").FirstOrDefault().Value;
-                ex1.TranID = req.Descendants("TransferCancelRequest").Attributes("TransID").FirstOrDefault().Value;
+                ex1.CustomerID = req.Descendants("cancellationRequest").Attributes("customerId").FirstOrDefault().Value;
+                ex1.TranID = req.Descendants("cancellationRequest").Attributes("v").FirstOrDefault().Value;
                 SaveAPILog saveex = new SaveAPILog();
                 saveex.SendCustomExcepToDB(ex1);
                 return ex.Message;

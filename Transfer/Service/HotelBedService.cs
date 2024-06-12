@@ -123,6 +123,7 @@ namespace TravillioXMLOutService.Transfer.Services
                 response = new XElement("searchResponse", new XElement("serviceTransfers",
     new XAttribute("adults", rsmodel.search.occupancy.adults),
     new XAttribute("children", rsmodel.search.occupancy.children),
+    new XAttribute("childrenAge", _travyoReq.Element("Occupancy").Attribute("childrenAge").Value),
     new XAttribute("infants", rsmodel.search.occupancy.infants), joinTransfers.Take(30)));
                 response.Descendants("cancellationList").Remove();
             }
@@ -131,6 +132,7 @@ namespace TravillioXMLOutService.Transfer.Services
                 response = new XElement("searchResponse", new XElement("serviceTransfers",
 new XAttribute("adults", model.adults),
 new XAttribute("children", model.children),
+ new XAttribute("childrenAge", _travyoReq.Element("Occupancy").Attribute("childrenAge").Value),
 new XAttribute("infants", model.infants), new XElement("ErrorTxt", "Unable to find any transfer service ")));
 
             }

@@ -22,7 +22,7 @@ namespace TravillioXMLOutService
         [OperationContract, XmlSerializerFormat]
         Task<object> ConfirmBookingTransferAsync(XElement req);
         [OperationContract, XmlSerializerFormat]
-        object CancelBookingTransfer(XElement req);
+        Task<object> CancelBookingTransferAsync(XElement req);
         [OperationContract, XmlSerializerFormat]
         object CXLPolicyTransfer(XElement req);
 
