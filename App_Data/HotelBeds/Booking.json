@@ -1,0 +1,353 @@
+﻿{
+  "bookings": [
+    {
+      "reference": "102-17210011",
+      "bookingFileId": null,
+      "creationDate": "2024-06-12T14:47:09",
+      "status": "CONFIRMED",
+      "modificationsPolicies": {
+        "cancellation": true,
+        "modification": true
+      },
+      "holder": {
+        "name": "Adarsh",
+        "surname": "Tripath",
+        "email": "pardeepkamboj07@yahoo.com",
+        "phone": "09027972157"
+      },
+      "transfers": [
+        {
+          "id": 1,
+          "status": "CONFIRMED",
+          "transferType": "SHARED",
+          "vehicle": {
+            "code": "SH",
+            "name": null
+          },
+          "category": {
+            "code": "STND",
+            "name": "Estándar"
+          },
+          "pickupInformation": {
+            "from": {
+              "code": "100414",
+              "description": "ABaC Restaurant Hotel Barcelona GL Monumento",
+              "type": "ATLAS"
+            },
+            "to": {
+              "code": "BCN",
+              "description": "Aeropuerto de Barcelona",
+              "type": "IATA"
+            },
+            "date": "2024-07-24",
+            "time": "09:10:00",
+            "pickup": {
+              "address": "Avinguda Del Tibidabo,1  ",
+              "number": null,
+              "town": "BARCELONA",
+              "zip": "08022",
+              "description": "You MUST confirm your pick up time\n\nUse ONE of the following methods:\n\n1. Visit https://hbd.htxstaging.com approx. 24 hours prior to your departure and follow instructions on the screen\n\n 2. Contact the supplier 24h prior to departure during their office hours.\n\nPlease ensure that you are at your pick-up point 10/15 minutes before the confirmed time.\n\nIdentify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.\n\n \n\nDIFFICULTY IN LOCATING YOUR DRIVER\nContact your supplier, FROM2 TRAVEL AGENCY S.L. - Catalonia, for assistance. Do not leave without having contacted your supplier on +34 937672836 first.\n\nIn the event you are delayed for your departure pick up you must call the supplier.",
+              "altitude": null,
+              "latitude": 41.410792,
+              "longitude": 2.136316,
+              "checkPickup": {
+                "mustCheckPickupTime": true,
+                "url": "www.checkpickup.com",
+                "hoursBeforeConsulting": 24
+              },
+              "pickupId": null,
+              "stopName": null,
+              "image": null
+            }
+          },
+          "paxes": [
+            {
+              "type": "ADULT",
+              "age": 30
+            }
+          ],
+          "content": {
+            "vehicle": {
+              "code": "SH",
+              "name": "Shuttle"
+            },
+            "category": {
+              "code": "STND",
+              "name": "Estándar"
+            },
+            "images": [
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "SMALL"
+              },
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "MEDIUM"
+              },
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "LARGE"
+              },
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "EXTRALARGE"
+              }
+            ],
+            "transferDetailInfo": [
+              {
+                "id": "TRFTIME",
+                "name": "Duracion trayecto",
+                "description": "min. Duracion estimada del trayecto",
+                "type": "GENERAL_INFO"
+              },
+              {
+                "id": "MINPAX",
+                "name": "Minimo pax",
+                "description": "pasajero(s) minimo",
+                "type": "GENERAL_INFO"
+              },
+              {
+                "id": "MAXPAX",
+                "name": "Maximo pax",
+                "description": "pasajero(s) maximo",
+                "type": "GENERAL_INFO"
+              },
+              {
+                "id": "LUGGAGE",
+                "name": "Numero de maletas permitidas",
+                "description": "maletas permitidas",
+                "type": "GENERAL_INFO"
+              }
+            ],
+            "customerTransferTimeInfo": [],
+            "supplierTransferTimeInfo": [],
+            "transferRemarks": [
+              {
+                "type": "CONTRACT",
+                "description": "You MUST confirm your pick up time\n\nUse ONE of the following methods:\n\n1. Visit https://hbd.htxstaging.com approx. 24 hours prior to your departure and follow instructions on the screen\n\n 2. Contact the supplier 24h prior to departure during their office hours.\n\nPlease ensure that you are at your pick-up point 10/15 minutes before the confirmed time.\n\nIdentify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.\n\n \n\nDIFFICULTY IN LOCATING YOUR DRIVER\nContact your supplier, FROM2 TRAVEL AGENCY S.L. - Catalonia, for assistance. Do not leave without having contacted your supplier on +34 937672836 first.\n\nIn the event you are delayed for your departure pick up you must call the supplier.",
+                "mandatory": true
+              }
+            ]
+          },
+          "price": {
+            "totalAmount": 9.69,
+            "netAmount": 9.69,
+            "currencyId": "EUR"
+          },
+          "cancellationPolicies": [
+            {
+              "amount": 9.69,
+              "from": "2024-07-23T00:00:00",
+              "currencyId": "EUR",
+              "isForceMajeure": false
+            }
+          ],
+          "factsheetId": 39,
+          "arrivalFlightNumber": null,
+          "departureFlightNumber": "X18992",
+          "arrivalShipName": null,
+          "departureShipName": null,
+          "arrivalTrainInfo": null,
+          "departureTrainInfo": null,
+          "transferDetails": [
+            {
+              "type": "FLIGHT",
+              "direction": "DEPARTURE",
+              "code": "X18992",
+              "companyName": null
+            }
+          ],
+          "sourceMarketEmergencyNumber": "34971211630",
+          "links": [
+            {
+              "rel": "transferCancel",
+              "href": "/booking/es/reference/102-17210011/id/1",
+              "method": "DELETE"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "status": "CONFIRMED",
+          "transferType": "SHARED",
+          "vehicle": {
+            "code": "SH",
+            "name": null
+          },
+          "category": {
+            "code": "STND",
+            "name": "Estándar"
+          },
+          "pickupInformation": {
+            "from": {
+              "code": "XXX",
+              "description": null,
+              "type": "IATA"
+            },
+            "to": {
+              "code": "100414",
+              "description": "ABaC Restaurant Hotel Barcelona GL Monumento",
+              "type": "ATLAS"
+            },
+            "date": "2024-07-26",
+            "time": "12:30:00",
+            "pickup": {
+              "address": null,
+              "number": null,
+              "town": null,
+              "zip": null,
+              "description": "\nNote: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”\n\nFINDING YOUR DRIVER\n\nTERMINAL 1\nApril - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.\n\nNov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B\n\nTERMINAL 2\nFrom2 desk is located in TERMINAL 2B, opposite desks 95 - 97.\n\nIf you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.\nIf you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.\nIf you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.\n\nIdentify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.\n\n\n\nDIFFICULTY IN LOCATING YOUR DRIVER\nContact your supplier, FROM2 TRAVEL AGENCY S.L. - Catalonia, for assistance. Do not leave without having contacted your supplier on +34 937672836 first.\n\nThere may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.\n\n Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.",
+              "altitude": null,
+              "latitude": null,
+              "longitude": null,
+              "checkPickup": {
+                "mustCheckPickupTime": true,
+                "url": "www.checkpickup.com",
+                "hoursBeforeConsulting": 24
+              },
+              "pickupId": null,
+              "stopName": null,
+              "image": null
+            }
+          },
+          "paxes": [
+            {
+              "type": "ADULT",
+              "age": 30
+            }
+          ],
+          "content": {
+            "vehicle": {
+              "code": "SH",
+              "name": "Shuttle"
+            },
+            "category": {
+              "code": "STND",
+              "name": "Estándar"
+            },
+            "images": [
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "SMALL"
+              },
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "MEDIUM"
+              },
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "LARGE"
+              },
+              {
+                "url": "https://assets.holidaytaxis.com/imgs/default/vehicle_set/shuttle1min3.jpg",
+                "type": "EXTRALARGE"
+              }
+            ],
+            "transferDetailInfo": [
+              {
+                "id": "TRFTIME",
+                "name": "Duracion trayecto",
+                "description": "min. Duracion estimada del trayecto",
+                "type": "GENERAL_INFO"
+              },
+              {
+                "id": "MINPAX",
+                "name": "Minimo pax",
+                "description": "pasajero(s) minimo",
+                "type": "GENERAL_INFO"
+              },
+              {
+                "id": "MAXPAX",
+                "name": "Maximo pax",
+                "description": "pasajero(s) maximo",
+                "type": "GENERAL_INFO"
+              },
+              {
+                "id": "LUGGAGE",
+                "name": "Numero de maletas permitidas",
+                "description": "maletas permitidas",
+                "type": "GENERAL_INFO"
+              }
+            ],
+            "customerTransferTimeInfo": [],
+            "supplierTransferTimeInfo": [],
+            "transferRemarks": [
+              {
+                "type": "CONTRACT",
+                "description": "\nNote: To check the drop off / pick up point assigned to your hotel, please access: http://confirm.from2travel.com/ and navigate to “PLEASE CLICK FOR DIRECTIONS TO HOTEL/PICK UP POINT”\n\nFINDING YOUR DRIVER\n\nTERMINAL 1\nApril - Oct: Exit INTO the arrivals hall, turn right and make your way to the Catalonia Tourism office. You will find a From2 representative (orange t-shirt) that will assist you in finding the From2 office. If there is no representative visible please wait for a few moments as they may be returning to the terminal from the coach park.\n\nNov - Mar: From2 desk is located in TERMINAL 2B, opposite desks 95 - 97. Follow the airport signs to the downstairs exit door. Take the FREE GREEN TERMINALS SHUTTLE BUS to TERMINAL 2B\n\nTERMINAL 2\nFrom2 desk is located in TERMINAL 2B, opposite desks 95 - 97.\n\nIf you arrive at Terminal 2B exit into the arrivals hall and make your way to From2 desk.\nIf you arrive at Terminal 2A exit the terminal building and make your way to Terminal 2B.\nIf you arrive at Terminal 2C exit the terminal building and make your way to Terminal 2B.\n\nIdentify yourself by showing this confirmation to your Supplier, for whom we act as a booking agent.\n\n\n\nDIFFICULTY IN LOCATING YOUR DRIVER\nContact your supplier, FROM2 TRAVEL AGENCY S.L. - Catalonia, for assistance. Do not leave without having contacted your supplier on +34 937672836 first.\n\nThere may be a wait for your shuttle at the airport as they run on a schedule. (Maximum wait time 1 hour from the moment you meet the driver/representative). In event you are delayed during the arrival process you must contact the supplier.\n\n Please note shuttles will not stop at private addresses/villas and may not offer a door to door service.",
+                "mandatory": true
+              }
+            ]
+          },
+          "price": {
+            "totalAmount": 9.69,
+            "netAmount": 9.69,
+            "currencyId": "EUR"
+          },
+          "cancellationPolicies": [
+            {
+              "amount": 9.69,
+              "from": "2024-07-25T00:00:00",
+              "currencyId": "EUR",
+              "isForceMajeure": false
+            }
+          ],
+          "factsheetId": 39,
+          "arrivalFlightNumber": "ar0269",
+          "departureFlightNumber": null,
+          "arrivalShipName": null,
+          "departureShipName": null,
+          "arrivalTrainInfo": null,
+          "departureTrainInfo": null,
+          "transferDetails": [
+            {
+              "type": "FLIGHT",
+              "direction": "ARRIVAL",
+              "code": "ar0269",
+              "companyName": null
+            }
+          ],
+          "sourceMarketEmergencyNumber": "34971211630",
+          "links": [
+            {
+              "rel": "transferCancel",
+              "href": "/booking/es/reference/102-17210011/id/2",
+              "method": "DELETE"
+            }
+          ]
+        }
+      ],
+      "clientReference": "213969",
+      "remark": "BaC Restaurant Hotel Barcelona G LBaC Restaurant Hotel Barcelona GL",
+      "invoiceCompany": {
+        "code": "E14"
+      },
+      "supplier": {
+        "name": "HOTELBEDS SPAIN, S.L.U",
+        "vatNumber": "ESB28916765"
+      },
+      "totalAmount": 19.38,
+      "totalNetAmount": 19.38,
+      "pendingAmount": 19.38,
+      "currency": "EUR",
+      "links": [
+        {
+          "rel": "self",
+          "href": "/booking/es/reference/102-17210011",
+          "method": "GET"
+        },
+        {
+          "rel": "bookingDetail",
+          "href": "/booking/es/reference/102-17210011",
+          "method": "GET"
+        },
+        {
+          "rel": "bookingCancel",
+          "href": "/booking/es/reference/102-17210011",
+          "method": "DELETE"
+        }
+      ],
+      "paymentDataRequired": false
+    }
+  ]
+}
