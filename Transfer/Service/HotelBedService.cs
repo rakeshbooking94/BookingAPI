@@ -358,13 +358,8 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
             var transfers = from srv in bokModel.transfers
                             join trip in req.Descendants("Itinerary") on srv.id equals trip.Attribute("index").ToINT(-1)
                             select BindResponseElemnet(srv, trip);
-
             return transfers;
-
         }
-
-
-
         XElement BindResponseElemnet(Transfers srv, XElement trip)
         {
 
@@ -411,12 +406,6 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
 
         }
 
-
-
-
-
-
-
         #endregion
 
 
@@ -427,10 +416,43 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
             XElement response = null;
             reqModel = CreateReqModel(_travyoReq);
             reqModel.EndTime = DateTime.Now;
-            reqModel.RequestStr = $"transfer-api/1.0/bookings/en/reference/";
-            SearchResponseModel rsmodel = await _repo.GetSearchAsync(reqModel);
+            reqModel.RequestStr = $"transfer-api/1.0/bookings/en/reference/{_travyoReq.Descendants("serviceTransfer").FirstOrDefault().Attribute("bookingNo").Value}";
+
+            ConfirmResponseModel rsmodel = await _repo.CancelBookingAsync(reqModel);
+            if (rsmodel != null)
+            {
+                var bokg = rsmodel.bookings.FirstOrDefault();
+                response = new XElement("cancellationResponse", new XElement("serviceTransfer",
+                    new XAttribute("supplierId", 10),
+                    new XAttribute("supName", bokg.supplier.name),
+                    new XAttribute("vatNumber", bokg.supplier.vatNumber),
+                    new XAttribute("status", bokg.status),
+                    new XAttribute("bookConfirmno", bokg.reference),
+                    new XAttribute("totalAmount", bokg.totalAmount),
+                    new XAttribute("currency", bokg.currency),
+                    BindCancelResponse(bokg, _travyoReq)));
+            }
+            else
+            {
+                response = new XElement("cancellationResponse", new XAttribute("supplierId", 10),
+                        new XElement("ErrorTxt", "Unable to cancel transfer service "));
+            }
             return response;
+
         }
+
+        IEnumerable<XElement> BindCancelResponse(Booking bokModel, XElement req)
+        {
+            var transfers = from srv in bokModel.transfers
+                            join trip in req.Descendants("transfer") on srv.id equals trip.Attribute("code").ToINT(-1)
+                            select new XElement("transfer", 
+                            new XAttribute("id", srv.id),
+                            new XAttribute("status", srv.status),
+                            new XAttribute("type", srv.transferType),
+                            new XAttribute("price", srv.price.totalAmount));
+            return transfers;
+        }
+
 
         #endregion
 

@@ -17,5 +17,12 @@
         <transfer code="2" supRefno="33d676"/>
       </serviceTransfer>
     </cancellationRequest>
+    <cancellationResponse supName="" vatNumber="" supplierId="10" status="cancel" bookConfirmno="17423"
+                          totalAmount="198.23"  currency="USD">
+      <serviceTransfer bookingNo="33d676">
+        <transfer id="1" status="cancel" type="private" price="10.23"/>
+        <transfer id="2" status="cancel" type="shared" price="14.56"/>
+      </serviceTransfer>
+    </cancellationResponse>
   </soapenv:Body>
 </soapenv:Envelope>

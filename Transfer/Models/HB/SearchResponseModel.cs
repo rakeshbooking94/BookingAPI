@@ -26,6 +26,20 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string description { get; set; }
         public string type { get; set; }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class Search
     {
         public string language { get; set; }
@@ -71,6 +85,23 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string image { get; set; }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class PickupInformation
     {
         public Location from { get; set; }
@@ -80,7 +111,21 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public Pickup pickup { get; set; }
 
     }
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class Images
     {
         public string url { get; set; }
@@ -95,6 +140,20 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string type { get; set; }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class TransferRemarks
     {
         public string type { get; set; }
@@ -102,6 +161,9 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public bool mandatory { get; set; }
 
     }
+
+
+
     public class Content
     {
         public Vehicle vehicle { get; set; }
@@ -113,6 +175,19 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public IList<TransferRemarks> transferRemarks { get; set; }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class Price
     {
         public double totalAmount { get; set; }
@@ -120,6 +195,25 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string currencyId { get; set; }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class CancellationPolicy
     {
         public double amount { get; set; }
@@ -135,6 +229,20 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public string method { get; set; }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class Services
     {
         public int id { get; set; }

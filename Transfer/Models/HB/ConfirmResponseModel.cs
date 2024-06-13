@@ -12,7 +12,11 @@ namespace TravillioXMLOutService.Transfer.Models.HB
     }
 
 
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
+
+
+
+
     public class Booking
     {
         public string reference { get; set; }
@@ -34,7 +38,6 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public bool paymentDataRequired { get; set; }
     }
 
-   
 
     public class InvoiceCompany
     {
@@ -91,12 +94,11 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public List<Links> links { get; set; }
     }
 
-   
-
-   
 
 
-  
+
+
+
 
 
 }
