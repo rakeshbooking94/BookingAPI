@@ -392,7 +392,7 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
 
             var _item = new XElement("transfer", new XAttribute("id", srv.id), new XAttribute("status", srv.status),
                             new XAttribute("type", srv.transferType),
-                                   new XAttribute("booktoken", srv.id),
+                                   new XAttribute("booktoken", trip.Attribute("booktoken").Value),
                                        new XAttribute("direction", ""),
                                    new XAttribute("price", srv.price.totalAmount),
                                      new XElement("productName", srv.category.name + " " + srv.vehicle.name),
