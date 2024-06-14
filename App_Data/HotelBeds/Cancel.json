@@ -1,0 +1,123 @@
+﻿{
+  "bookings": [
+    {
+      "reference": "102-17209378",
+      "bookingFileId": null,
+      "creationDate": "2024-06-10T17:13:59",
+      "status": "CANCELLED",
+      "modificationsPolicies": {
+        "cancellation": false,
+        "modification": false
+      },
+      "holder": {
+        "name": "Adarsh",
+        "surname": "Tripath",
+        "email": "pardeepkamboj07@yahoo.com",
+        "phone": "09027972157"
+      },
+      "transfers": [
+        {
+          "id": 1,
+          "status": "CANCELLED",
+          "transferType": "SHARED",
+          "vehicle": {
+            "code": "SH",
+            "name": null
+          },
+          "category": {
+            "code": "STND",
+            "name": "Standard"
+          },
+          "pickupInformation": {
+            "from": {
+              "code": "XXX",
+              "description": null,
+              "type": "IATA"
+            },
+            "to": {
+              "code": "100414",
+              "description": "ABaC Restaurant Hotel Barcelona GL Monumento",
+              "type": "ATLAS"
+            },
+            "date": "2024-06-15"
+          },
+          "paxes": [
+            {
+              "type": "ADULT",
+              "age": 30
+            }
+          ],
+          "price": {
+            "totalAmount": 9.83,
+            "netAmount": 9.83,
+            "currencyId": "EUR"
+          },
+          "factsheetId": null
+        },
+        {
+          "id": 2,
+          "status": "CANCELLED",
+          "transferType": "SHARED",
+          "vehicle": {
+            "code": "SH",
+            "name": null
+          },
+          "category": {
+            "code": "STND",
+            "name": "Standard"
+          },
+          "pickupInformation": {
+            "from": {
+              "code": "100414",
+              "description": "ABaC Restaurant Hotel Barcelona GL Monumento",
+              "type": "ATLAS"
+            },
+            "to": {
+              "code": "BCN",
+              "description": "Barcelona Airport",
+              "type": "IATA"
+            },
+            "date": "2024-06-18"
+          },
+          "paxes": [
+            {
+              "type": "ADULT",
+              "age": 30
+            }
+          ],
+          "price": {
+            "totalAmount": 0.00,
+            "netAmount": 0.00,
+            "currencyId": "EUR"
+          },
+          "factsheetId": null
+        }
+      ],
+      "clientReference": "213968",
+      "remark": "test",
+      "invoiceCompany": {
+        "code": "E14"
+      },
+      "supplier": {
+        "name": "HOTELBEDS SPAIN, S.L.U",
+        "vatNumber": "ESB28916765"
+      },
+      "totalAmount": 9.83,
+      "totalNetAmount": 9.83,
+      "pendingAmount": 9.83,
+      "currency": "EUR",
+      "links": [
+        {
+          "rel": "self",
+          "href": "/booking/en/reference/102-17209378",
+          "method": "GET"
+        },
+        {
+          "rel": "bookingDetail",
+          "href": "/booking/en/reference/102-17209378",
+          "method": "GET"
+        }
+      ]
+    }
+  ]
+}
