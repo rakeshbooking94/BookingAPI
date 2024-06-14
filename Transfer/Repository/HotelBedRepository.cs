@@ -246,7 +246,7 @@ namespace TravillioXMLOutService.Repository.Transfer
 
 
 
-        public async Task<ConfirmResponseModel> CancelBookingAsync(RequestModel reqModel)
+        public async Task<ConfirmResponseModel> CancelBookingTAsync(RequestModel reqModel)
         {
             var startTime = DateTime.Now;
             string stringResponse;
@@ -299,11 +299,23 @@ namespace TravillioXMLOutService.Repository.Transfer
         }
 
 
+        public async Task<ConfirmResponseModel> CancelBookingAsync(RequestModel reqModel)
+        {
+            return await LoadJson();
+        }
 
+        //
 
-
-
-
+        public async Task<ConfirmResponseModel> LoadJson()
+        {
+            var basePath = CommonHelper.BasePath() + @"\App_Data\HotelBeds\";
+            //File.WriteAllText(basePath + string.Format("HBSRESP-{0}.json", DateTime.Now.Ticks), stringResponse);
+            using (StreamReader r = new StreamReader("D:\\Rakesh\\BookingAPI\\App_Data\\HotelBeds\\Cancel.json"))
+            {
+                string json = await r.ReadToEndAsync();
+                return JsonConvert.DeserializeObject<ConfirmResponseModel>(json);
+            }
+        }
 
 
 

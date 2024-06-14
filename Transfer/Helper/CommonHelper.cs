@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.EnterpriseServices;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -33,6 +34,16 @@ namespace TravillioXMLOutService.Transfer.Helpers
             {
                 return null;
             }
+        }
+
+
+
+
+        public static string BasePath()
+        {
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var basePath = currentDirectory.Split(new string[] { "\\bin" }, StringSplitOptions.None)[0];
+            return basePath;
         }
 
 
