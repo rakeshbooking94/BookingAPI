@@ -82,7 +82,7 @@ namespace TravillioXMLOutService.Transfer.Models.HB
         public Content content { get; set; }
         public Price price { get; set; }
         public List<CancellationPolicy> cancellationPolicies { get; set; }
-        public int factsheetId { get; set; }
+        public int? factsheetId { get; set; }
         public string arrivalFlightNumber { get; set; }
         public string departureFlightNumber { get; set; }
         public string arrivalShipName { get; set; }

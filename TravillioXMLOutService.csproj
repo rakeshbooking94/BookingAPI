@@ -270,6 +270,7 @@
     <Content Include=".vs\VSWorkspaceState.json" />
     <Content Include="App_Data\HotelBeds\Booking.json" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
+    <None Include="App_Data\HotelBeds\cancelResp.json" />
     <Content Include="App_Data\HotelBeds\confirmResponse.json" />
     <Content Include="App_Data\HotelBeds\hb_facility.xml" />
     <Content Include="App_Data\HotelBeds\hotelimage.xml" />

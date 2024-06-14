@@ -47,6 +47,33 @@ namespace TravillioXMLOutService.Transfer.Services
             reqModel.Action = _travyoReq.Name.LocalName.GetAction().ToString();
             return reqModel;
         }
+
+
+
+        RequestModel CreateReqModell(XElement _travyoReq)
+        {
+            reqModel = new RequestModel();
+            reqModel.StartTime = DateTime.Now;
+            reqModel.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
+            reqModel.TrackNo = _travyoReq.Attribute("transId").Value;
+            reqModel.ActionId = (int)_travyoReq.Name.LocalName.GetAction();
+            reqModel.Action = _travyoReq.Name.LocalName.GetAction().ToString();
+            return reqModel;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #region Search
         public async Task<XElement> GetSearchAsync(XElement _travyoReq)
         {
@@ -414,7 +441,7 @@ new XAttribute("infants", respHb.search.occupancy.infants), joinTransfers));
         public async Task<XElement> CancelBookingAsync(XElement _travyoReq)
         {
             XElement response = null;
-            reqModel = CreateReqModel(_travyoReq);
+            reqModel = CreateReqModell(_travyoReq);
             reqModel.EndTime = DateTime.Now;
             reqModel.RequestStr = $"transfer-api/1.0/bookings/en/reference/{_travyoReq.Descendants("serviceTransfer").FirstOrDefault().Attribute("bookingNo").Value}";
 
