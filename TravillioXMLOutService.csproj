@@ -269,6 +269,7 @@
     <Content Include=".vs\TravillioXMLOutService_Hotel\v17\.suo" />
     <Content Include=".vs\VSWorkspaceState.json" />
     <Content Include="App_Data\HotelBeds\Booking.json" />
+    <Content Include="App_Data\HotelBeds\Cancel.json" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
     <None Include="App_Data\HotelBeds\cancelResp.json" />
     <Content Include="App_Data\HotelBeds\confirmResponse.json" />
