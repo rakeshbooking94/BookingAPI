@@ -64,6 +64,20 @@ namespace TravillioXMLOutService.Models
                 //throw ex;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void SaveAPILogs_search(APILogDetail apilog)
         {
             try
@@ -459,7 +473,48 @@ namespace TravillioXMLOutService.Models
 
 
 
+        #region Transfer
 
+
+
+
+
+        public void SaveAPILogs_Transfer(APILogDetail apilog)
+        {
+            try
+            {
+                using (conn = new SqlConnection(ConfigurationManager.ConnectionStrings["INGMContext"].ToString()))
+                {
+                    using (cmd = new SqlCommand("SP_InsertAPILog_Transfer", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@customerID", apilog.customerID);
+                        cmd.Parameters.AddWithValue("@TrackNumber", apilog.TrackNumber);
+                        cmd.Parameters.AddWithValue("@logTypeID", apilog.LogTypeID);
+                        cmd.Parameters.AddWithValue("@logType", apilog.LogType);
+                        cmd.Parameters.AddWithValue("@SupplierID", apilog.SupplierID);
+                        cmd.Parameters.AddWithValue("@logMsg", "");
+                        cmd.Parameters.AddWithValue("@logrequestXML", apilog.logrequestXML);
+                        cmd.Parameters.AddWithValue("@logresponseXML", apilog.logresponseXML);
+                        cmd.Parameters.AddWithValue("@logStatus", apilog.logStatus);
+                        cmd.Parameters.AddWithValue("@StartTime", apilog.StartTime);
+                        cmd.Parameters.AddWithValue("@EndTime", apilog.EndTime);
+                        cmd.Parameters.Add("@retVal", SqlDbType.Int);
+                        cmd.Parameters["@retVal"].Direction = ParameterDirection.Output;
+                        if (cmd.Connection.State == System.Data.ConnectionState.Closed)
+                        {
+                            cmd.Connection.Open();
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+
+                }
+            }
+            catch (FormatException ex)
+            {
+                //throw ex;
+            }
+        }
 
         public async Task<string> GetLogResponseAsync(LogRequestModel model)
         {
@@ -470,7 +525,7 @@ namespace TravillioXMLOutService.Models
                 {
                     using (cmd = new SqlCommand("APIProc", conn))
                     {
-                       
+
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@flag", 6);
                         cmd.Parameters.AddWithValue("@TransID", model.TrackNumber);
@@ -503,8 +558,13 @@ namespace TravillioXMLOutService.Models
                 throw ex;
 
             }
-           
+
         }
+
+
+        #endregion
+
+
 
 
 

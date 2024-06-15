@@ -38,7 +38,8 @@ namespace TravillioXMLOutService
                     log2.LogTypeID = 0;
                     log2.LogType = "TimeStart";
                     log2.logrequestXML = req.ToString();
-                    APILog.SaveAPILogs(log2);
+                    SaveAPILog savelog1 = new SaveAPILog();
+                    savelog1.SaveAPILogs_Transfer(log2);
                 }
                 catch (Exception ex)
                 {
@@ -63,7 +64,7 @@ namespace TravillioXMLOutService
                     log.logrequestXML = req.ToString();
                     log.logresponseXML = availabilityresponse.ToString();
                     SaveAPILog savelog = new SaveAPILog();
-                    savelog.SaveAPILogs(log);
+                    savelog.SaveAPILogs_Transfer(log);
                     #region Time End
                     try
                     {
@@ -73,7 +74,7 @@ namespace TravillioXMLOutService
                         log3.LogTypeID = 0;
                         log3.LogType = "TimeEnd";
                         SaveAPILog savelog3 = new SaveAPILog();
-                        savelog3.SaveAPILogs(log3);
+                        savelog3.SaveAPILogs_Transfer(log3);
                     }
                     catch (Exception ex)
                     {
@@ -137,7 +138,7 @@ namespace TravillioXMLOutService
                     log.logrequestXML = req.ToString();
                     log.logresponseXML = prebookresponse.ToString();
                     SaveAPILog savelog = new SaveAPILog();
-                    savelog.SaveAPILogs(log);
+                    savelog.SaveAPILogs_Transfer(log);
                 }
                 catch (Exception ex)
                 {
@@ -186,7 +187,7 @@ namespace TravillioXMLOutService
                     log2.LogType = "Book";
                     log2.logrequestXML = req.ToString();
                     SaveAPILog savelog = new SaveAPILog();
-                    savelog.SaveAPILogs(log2);
+                    savelog.SaveAPILogs_Transfer(log2);
                 }
                 catch (Exception ex)
                 {
@@ -214,7 +215,7 @@ namespace TravillioXMLOutService
                     log.logrequestXML = req.ToString();
                     log.logresponseXML = bookresponse.ToString();
                     SaveAPILog savelog = new SaveAPILog();
-                    savelog.SaveAPILogs(log);
+                    savelog.SaveAPILogs_Transfer(log);
                 }
                 catch (Exception ex)
                 {
@@ -269,7 +270,7 @@ namespace TravillioXMLOutService
                     log.logrequestXML = req.ToString();
                     log.logresponseXML = cancelresponse.ToString();
                     SaveAPILog savelog = new SaveAPILog();
-                    savelog.SaveAPILogs(log);
+                    savelog.SaveAPILogs_Transfer(log);
                 }
                 catch (Exception ex)
                 {
@@ -321,7 +322,7 @@ namespace TravillioXMLOutService
                     log.logrequestXML = req.ToString();
                     log.logresponseXML = cxlpolicyresponse.ToString();
                     SaveAPILog savelog = new SaveAPILog();
-                    savelog.SaveAPILogs(log);
+                    savelog.SaveAPILogs_Transfer(log);
                 }
                 catch (Exception ex)
                 {

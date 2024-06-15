@@ -37,8 +37,6 @@ namespace TravillioXMLOutService.Repository.Transfer
             return _httpClient;
         }
 
-
-
         public async Task<SearchResponseModel> GetSearchAsync(RequestModel reqModel)
         {
             var startTime = DateTime.Now;
@@ -92,9 +90,7 @@ namespace TravillioXMLOutService.Repository.Transfer
 
 
         }
-
-
-
+               
         public async Task<SearchResponseModel> GetPreBookSearchAsync(LogRequestModel reqModel)
         {
             string stringResponse;
@@ -120,11 +116,7 @@ namespace TravillioXMLOutService.Repository.Transfer
                 throw ex;
             }
         }
-
-
-
-
-
+                          
         public async Task<ConfirmResponseModel> GetConfirmAsync(RequestModel reqModel, ConfirmReqModel _req)
         {
             var startTime = DateTime.Now;
@@ -181,71 +173,7 @@ namespace TravillioXMLOutService.Repository.Transfer
 
 
         }
-
-
-
-
-        //public async Task<ConfirmResponseModel> CancelBookingAsync(RequestModel reqModel, ConfirmReqModel _req)
-        //{
-
-
-        //    var startTime = DateTime.Now;
-        //    string stringResponse;
-        //    ConfirmResponseModel result = null;
-        //    try
-        //    {
-        //        var _httpClient = this.CreateClient();
-
-        //        using (var request = new HttpRequestMessage(HttpMethod.Post, reqModel.RequestStr))
-        //        {
-
-
-        //            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-        //            var response = await _httpClient.SendAsync(request);
-        //            if (response.IsSuccessStatusCode)
-        //            {
-        //                stringResponse = await response.Content.ReadAsStringAsync();
-
-        //                if (!string.IsNullOrEmpty(stringResponse))
-        //                {
-        //                    result = JsonConvert.DeserializeObject<ConfirmResponseModel>(stringResponse);
-        //                }
-        //                else
-        //                {
-        //                    result = null;
-        //                }
-
-        //            }
-        //            else
-        //            {
-        //                stringResponse = response.ReasonPhrase;
-        //            }
-        //            reqModel.ResponseStr = stringResponse.cleanFormJSON();
-        //            reqModel.EndTime = DateTime.Now;
-        //            SaveLog(reqModel);
-        //        }
-
-        //        return result;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        var _exception = new XElement("SearchException",
-        //            new XElement("Message", ex.Message),
-        //            new XElement("Source", ex.StackTrace),
-        //            new XElement("HelpLink", ex.HelpLink));
-        //        reqModel.ResponseStr = _exception.ToString();
-        //        reqModel.EndTime = DateTime.Now;
-        //        SaveLog(reqModel);
-        //        throw ex;
-        //    }
-
-
-
-        //}
-
-
-
+                          
         public async Task<ConfirmResponseModel> CancelBookingAsync(RequestModel reqModel)
         {
             var startTime = DateTime.Now;
@@ -297,17 +225,7 @@ namespace TravillioXMLOutService.Repository.Transfer
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
+                                    
 
         public void SaveLog(RequestModel _req)
         {
@@ -322,7 +240,7 @@ namespace TravillioXMLOutService.Repository.Transfer
             log.StartTime = _req.StartTime;
             log.EndTime = _req.EndTime;
             SaveAPILog savelog = new SaveAPILog();
-            savelog.SaveAPILogs(log);
+            savelog.SaveAPILogs_Transfer(log);
         }
 
         public void SaveException(RequestModel _req, Exception ex)
