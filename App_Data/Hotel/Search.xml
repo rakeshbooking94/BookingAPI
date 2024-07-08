@@ -1,0 +1,199 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <searchRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <FromDate>26/05/2022</FromDate>
+      <ToDate>27/05/2022</ToDate>
+      <Nights>1</Nights>
+      <CountryID>1</CountryID>
+      <CountryCode>AE</CountryCode>
+      <CountryName>United Arab Emirates</CountryName>
+      <CityID>1312</CityID>
+      <CityCode>DXB</CityCode>
+      <CityName>DUBAI</CityName>
+      <AreaID>0</AreaID>
+      <AreaName/>
+      <MinStarRating>3</MinStarRating>
+      <MaxStarRating>5</MaxStarRating>
+      <HotelID/>
+      <HotelName/>
+      <PaxNationality_CountryID>29</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
+      <PaxResidenceID>29</PaxResidenceID>
+      <PaxResidenceName>United Kingdom</PaxResidenceName>
+      <CurrencyID>1</CurrencyID>
+      <DesiredCurrencyCode>EUR</DesiredCurrencyCode>
+      <CustomerID>10017</CustomerID>
+      <TransID>d03f9c2d-7d82-4c5b-aa3b-2238ce586fe4</TransID>
+      <StaffUser>0</StaffUser>
+      <WhiteLabelCustID>0</WhiteLabelCustID>
+      <Giata>TRUE</Giata>
+      <DeployementType>TRUE</DeployementType>
+      <OnRequest>true</OnRequest>
+      <Rooms>
+        <RoomPax Adult="2" ChildAge="">
+          <Adult>2</Adult>
+          <Child>0</Child>
+        </RoomPax>
+      </Rooms>
+      <MealPlanList>
+        <MealType/>
+      </MealPlanList>
+      <PropertyType/>
+      <SuppliersList>
+        <SupplierID xmlout="false" custID="10017" custName="">1</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">4</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">6</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">9</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">13</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">16</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">17</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">20</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">21</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">27</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">35</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">37</SupplierID>
+        <SupplierID xmlout="false" custID="10017" custName="">44</SupplierID>
+      </SuppliersList>
+      <SubAgentID>50092</SubAgentID>
+      <AgencyName>AAAgent by bStaff - Rehlat Al Rowad Groups KSA</AgencyName>
+      <AgentUserID>0</AgentUserID>
+      <NationalityName>United Kingdom</NationalityName>
+    </searchRequest>
+    <searchResponse>
+      <Hotels>
+      <Hotel>
+        <HotelID>JP00146L</HotelID>
+        <HotelName>Star Metro Deira Hotel Apartments</HotelName>
+        <PropertyTypeName/>
+        <CountryID>1</CountryID>
+        <CountryName>United Arab Emirates</CountryName>
+        <CountryCode>AE</CountryCode>
+        <CityId>1312</CityId>
+        <CityCode>DXB</CityCode>
+        <CityName>DUBAI</CityName>
+        <AreaId/>
+        <AreaName/>
+        <RequestID>JP00146L</RequestID>
+        <Address>Al Muteena Building, Salahuddin Rd - Dubai - United Arab Emirates</Address>
+        <Location/>
+        <Description/>
+        <StarRating>4</StarRating>
+        <MinRate>61.46</MinRate>
+        <HotelImgSmall>http://pix5.agoda.net/hotelimages/108/108208/108208_15092215080036265952.jpg?s=312x</HotelImgSmall>
+        <HotelImgLarge>http://pix5.agoda.net/hotelimages/108/108208/108208_15092215080036265952.jpg?s=312x</HotelImgLarge>
+        <MapLink/>
+        <Longitude>55.3234645</Longitude>
+        <Latitude>25.2707949</Latitude>
+        <xmloutcustid>10017</xmloutcustid>
+        <xmlouttype>false</xmlouttype>
+        <DMC>W2M</DMC>
+        <SupplierID>16</SupplierID>
+        <Currency>USD</Currency>
+        <Offers/>
+        <Facilities/>
+        <Rooms/>
+        <ConvertedMinRate>61.46000000</ConvertedMinRate>
+        <GiataID>103367</GiataID>
+        <GiataList>
+          <GiataHotelList GHtlID="98204" GSupID="4" xmlout="false" custID="10017" custName="HotelBeds" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="1ec0d1" GSupID="6" xmlout="false" custID="10017" custName="HPro" GRequestID="20220526_1_2_0_76_zen2195ffb535614341b375676579d73d8d_1649828460" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="109e7f" GSupID="6" xmlout="false" custID="10017" custName="HPro" GRequestID="20220526_1_2_0_76_zen3c28be2af29b4df58f89609bbf67a74d_1649828469" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="699914" GSupID="13" xmlout="false" custID="10017" custName="Restel" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="JP00146L" GSupID="16" xmlout="false" custID="10017" custName="W2M" GRequestID="JP00146L" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="1876527" GSupID="20" xmlout="false" custID="10017" custName="Expedia" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="94126" GSupID="44" xmlout="false" custID="10017" custName="WelcomeBeds" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+        </GiataList>
+      </Hotel>
+      <Hotel>
+        <HotelID>2173527</HotelID>
+        <HotelName>Holiday Inn Express Dubai Safa Park</HotelName>
+        <PropertyTypeName/>
+        <CountryID/>
+        <CountryName>United Arab Emirates</CountryName>
+        <CountryCode>AE</CountryCode>
+        <CityId/>
+        <CityCode>DXB</CityCode>
+        <CityName>Dubai</CityName>
+        <AreaId/>
+        <AreaName/>
+        <RequestID/>
+        <Address>Al Wasl District, </Address>
+        <Location>Al Wasl District, </Location>
+        <Description/>
+        <StarRating>3</StarRating>
+        <MinRate>80.45</MinRate>
+        <HotelImgSmall>https://i.travelapi.com/hotels/3000000/2180000/2173600/2173527/f5e35bc3_b.jpg</HotelImgSmall>
+        <HotelImgLarge>https://i.travelapi.com/hotels/3000000/2180000/2173600/2173527/f5e35bc3_b.jpg</HotelImgLarge>
+        <MapLink/>
+        <Longitude>55.255287</Longitude>
+        <Latitude>25.188848</Latitude>
+        <xmloutcustid>10017</xmloutcustid>
+        <xmlouttype>false</xmlouttype>
+        <DMC>Expedia</DMC>
+        <SupplierID>20</SupplierID>
+        <Currency>USD</Currency>
+        <Offers/>
+        <Facilities/>
+        <Rooms/>
+        <searchType>hotel_package</searchType>
+        <ConvertedMinRate>80.45000000</ConvertedMinRate>
+        <GiataID>103615</GiataID>
+        <GiataList>
+          <GiataHotelList GHtlID="2173527" GSupID="20" xmlout="false" custID="10017" custName="Expedia" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+        </GiataList>
+      </Hotel>
+      <Hotel>
+        <HotelID>700026</HotelID>
+        <HotelName>Holiday Inn Dubai - Al Barsha</HotelName>
+        <PropertyTypeName>Hotel</PropertyTypeName>
+        <CountryID>1</CountryID>
+        <CountryName>United Arab Emirates</CountryName>
+        <CountryCode>AE</CountryCode>
+        <CityId>1312</CityId>
+        <CityCode>DXB</CityCode>
+        <CityName>DUBAI</CityName>
+        <AreaId/>
+        <AreaName/>
+        <RequestID/>
+        <Address>AL BARSHA, SHEIKH ZAYED ROAD, 1</Address>
+        <Location/>
+        <Description/>
+        <StarRating>4</StarRating>
+        <MinRate>41.67</MinRate>
+        <HotelImgSmall>http://www.hotelresb2b.com/images/hoteles/892243_foto_1.jpg</HotelImgSmall>
+        <HotelImgLarge>http://www.hotelresb2b.com/images/hoteles/892243_foto_1.jpg</HotelImgLarge>
+        <MapLink/>
+        <Longitude>55.193642</Longitude>
+        <Latitude>25.11631</Latitude>
+        <xmloutcustid>10017</xmloutcustid>
+        <xmlouttype>false</xmlouttype>
+        <DMC>Restel</DMC>
+        <SupplierID>13</SupplierID>
+        <Currency>USD</Currency>
+        <Offers/>
+        <Facilities/>
+        <Rooms/>
+        <ConvertedMinRate>41.67000000</ConvertedMinRate>
+        <GiataID>103616</GiataID>
+        <GiataList>
+          <GiataHotelList GHtlID="122042" GSupID="4" xmlout="false" custID="10017" custName="HotelBeds" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="10a354" GSupID="6" xmlout="false" custID="10017" custName="HPro" GRequestID="20220526_1_2_0_76_zen3c28be2af29b4df58f89609bbf67a74d_1649828469" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="700026" GSupID="13" xmlout="false" custID="10017" custName="Restel" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="1971502" GSupID="20" xmlout="false" custID="10017" custName="Expedia" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+          <GiataHotelList GHtlID="128309" GSupID="44" xmlout="false" custID="10017" custName="WelcomeBeds" GRequestID="" sessionKey="" sourcekey="" publishedkey=""/>
+        </GiataList>
+      </Hotel>
+      </Hotels>
+      </searchResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
