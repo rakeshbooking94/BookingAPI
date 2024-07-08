@@ -277,6 +277,8 @@
     <Content Include="App_Data\HotelBeds\hotelimage.xml" />
     <Content Include="App_Data\HotelBeds\hotelstatic_hb.xml" />
     <Content Include="App_Data\HotelBeds\sample.xml" />
+    <Content Include="App_Data\Hotel\RoomAvail.xml" />
+    <Content Include="App_Data\Hotel\Search.xml" />
     <Content Include="App_Data\Script\apilog.sql" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />
     <Content Include="App_Data\SupplierCredential\SupplierCredentials.xml" />
