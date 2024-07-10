@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Rakesh\\BookingAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\rakesh\\bookingapi\\transfer\\service\\hotelbedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:transfer\\service\\hotelbedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\rakesh\\bookingapi\\app_data\\hotelbeds\\task.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:app_data\\hotelbeds\\task.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|D:\\Rakesh\\BookingAPI\\transfer\\repository\\hotelbedrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:transfer\\repository\\hotelbedrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Task.txt",
+              "DocumentMoniker": "D:\\Rakesh\\BookingAPI\\App_Data\\HotelBeds\\Task.txt",
+              "RelativeDocumentMoniker": "App_Data\\HotelBeds\\Task.txt",
+              "ToolTip": "D:\\Rakesh\\BookingAPI\\App_Data\\HotelBeds\\Task.txt",
+              "RelativeToolTip": "App_Data\\HotelBeds\\Task.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-07-10T05:41:30.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HotelBedService.cs",
+              "DocumentMoniker": "D:\\Rakesh\\BookingAPI\\Transfer\\Service\\HotelBedService.cs",
+              "RelativeDocumentMoniker": "Transfer\\Service\\HotelBedService.cs",
+              "ToolTip": "D:\\Rakesh\\BookingAPI\\Transfer\\Service\\HotelBedService.cs",
+              "RelativeToolTip": "Transfer\\Service\\HotelBedService.cs",
+              "ViewState": "AQIAALUBAAAAAAAAAAAYwMUBAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T05:37:47.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HotelBedRepository.cs",
+              "DocumentMoniker": "D:\\Rakesh\\BookingAPI\\Transfer\\Repository\\HotelBedRepository.cs",
+              "RelativeDocumentMoniker": "Transfer\\Repository\\HotelBedRepository.cs",
+              "ToolTip": "D:\\Rakesh\\BookingAPI\\Transfer\\Repository\\HotelBedRepository.cs",
+              "RelativeToolTip": "Transfer\\Repository\\HotelBedRepository.cs",
+              "ViewState": "AQIAAP0AAAAAAAAAAAAQwBoBAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T05:20:08.941Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
