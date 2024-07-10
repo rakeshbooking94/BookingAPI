@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -31,6 +31,7 @@
     <DockerLaunchUrl>http://{ServiceIPAddress}/AirService.svc</DockerLaunchUrl>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,7 +66,6 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
@@ -414,6 +414,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.checkAvailabilityByHotelNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.HotelAvailabilityV7Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\HotelBookingRequestService\CommonComplexType.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -427,6 +433,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HotelBookingRequestService\HotelBookingV7Service.wsdl" />
+    <Content Include="Service References\HotelBookingRequestService\TravillioXMLOutService.HotelBookingRequestService.doHotelBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\HotelBookingRequestService\TravillioXMLOutService.HotelBookingRequestService.HotelBookingV7Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\HotelCancellationDetails\CommonComplexType.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -446,6 +458,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\HotelCancellationDetails\TravillioXMLOutService.HotelCancellationDetails.getHotelCancellationDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\HotelCancellationDetails\TravillioXMLOutService.HotelCancellationDetails.HotelCancellationDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\HotelExtranet\ExtXmlOutService.wsdl" />
     <None Include="Service References\HotelExtranet\ExtXmlOutService.xsd">
       <SubType>Designer</SubType>
