@@ -1,0 +1,1316 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <searchRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <HotelID>56319</HotelID>
+      <RequestID />
+      <FromDate>27/07/2022</FromDate>
+      <ToDate>28/07/2022</ToDate>
+      <Nights>1</Nights>
+      <CountryID>1</CountryID>
+      <CountryCode>AE</CountryCode>
+      <CountryName>United Arab Emirates</CountryName>
+      <CityID>1312</CityID>
+      <CityCode>DXB</CityCode>
+      <CityName>DUBAI</CityName>
+      <AreaID>0</AreaID>
+      <AreaName />
+      <MinStarRating>3</MinStarRating>
+      <MaxStarRating>5</MaxStarRating>
+      <HotelName />
+      <PaxNationality_CountryID>29</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
+      <PaxResidenceID>29</PaxResidenceID>
+      <PaxResidenceName>United Kingdom</PaxResidenceName>
+      <CurrencyID>1</CurrencyID>
+      <DesiredCurrencyCode />
+      <CustomerID>10017</CustomerID>
+      <TransID>3f3e658d-422b-4c28-8ee9-7b8ccfd82c7c</TransID>
+      <OnRequest>true</OnRequest>
+      <GiataList>
+        <GiataHotelList GHtlID="56319" GSupID="4" GRequestID="" xmlout="false" custID="10017" custName="HotelBeds" sessionKey="" sourcekey="" publishedkey="" />
+        <GiataHotelList GHtlID="1091ff" GSupID="6" GRequestID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" xmlout="false" custID="10017" custName="HPro" sessionKey="" sourcekey="" publishedkey="" />
+      </GiataList>
+      <Rooms>
+        <RoomPax>
+          <Adult>2</Adult>
+          <Child>0</Child>
+          <ChildAges>0</ChildAges>
+        </RoomPax>
+      </Rooms>
+      <MealPlanList>
+        <MealType />
+      </MealPlanList>
+      <PropertyType />
+      <SuppliersList>
+        <SupplierID xmlout="false">4</SupplierID>
+        <SupplierID xmlout="false">44</SupplierID>
+      </SuppliersList>
+      <SubAgentID>50092</SubAgentID>
+      <AgentUserID>0</AgentUserID>
+      <NationalityName>United Kingdom</NationalityName>
+    </searchRequest>
+    <searchResponse>
+      <Hotels>
+        <Hotel>
+          <HotelID />
+          <HotelName />
+          <PropertyTypeName />
+          <CountryID />
+          <CountryName />
+          <CountryCode />
+          <CityId />
+          <CityCode />
+          <CityName />
+          <AreaId />
+          <AreaName />
+          <Address />
+          <Location />
+          <Description />
+          <StarRating />
+          <MinRate />
+          <HotelImgSmall />
+          <HotelImgLarge />
+          <MapLink />
+          <Longitude />
+          <Latitude />
+          <DMC />
+          <SupplierID />
+          <Currency />
+          <Offers />
+          <Rooms>
+            <RoomTypes TotalRate="26.17" Index="1" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|RO||1~2~0||N@06~A-SIC~2111a~-2040079473~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK000029601180007082111a" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|RO||1~2~0||N@06~A-SIC~2111a~-2040079473~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK000029601180007082111a" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="26.17" TotalRoomRate="26.17" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="26.17" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes TotalRate="42.01" Index="2" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR RO|RO||1~2~0||N@06~A-SIC~2012a~-1659320130~N~~~NOR~CAEB46AFD4FB45C165476110423104AAUK000029601180007082012a" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR RO|RO||1~2~0||N@06~A-SIC~2012a~-1659320130~N~~~NOR~CAEB46AFD4FB45C165476110423104AAUK000029601180007082012a" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="42.01" TotalRoomRate="42.01" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="42.01" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes TotalRate="37.82" Index="3" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|BB||1~2~0||N@06~A-SIC~25225~-490903028~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK0000296011800070825225" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|BB||1~2~0||N@06~A-SIC~25225~-490903028~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK0000296011800070825225" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="BED AND BREAKFAST" MealPlanCode="BB" MealPlanPrice="" PerNightRoomRate="37.82" TotalRoomRate="37.82" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.82" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes TotalRate="61.41" Index="4" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR RO|BB||1~2~0||N@06~A-SIC~2293d~2037279915~N~~~NOR~CAEB46AFD4FB45C165476110423104AAUK000029601180007082293d" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR RO|BB||1~2~0||N@06~A-SIC~2293d~2037279915~N~~~NOR~CAEB46AFD4FB45C165476110423104AAUK000029601180007082293d" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="BED AND BREAKFAST" MealPlanCode="BB" MealPlanPrice="" PerNightRoomRate="61.41" TotalRoomRate="61.41" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="61.41" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes TotalRate="55.24" Index="5" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|HB||1~2~0||N@06~A-SIC~21837~1561897128~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK0000296011800070821837" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|HB||1~2~0||N@06~A-SIC~21837~1561897128~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK0000296011800070821837" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="HALF BOARD" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="55.24" TotalRoomRate="55.24" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="55.24" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes TotalRate="77.55" Index="6" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR RO|HB||1~2~0||N@06~A-SIC~2374d~-836877655~N~~~NOR~CAEB46AFD4FB45C165476110423104AAUK000029601180007082374d" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR RO|HB||1~2~0||N@06~A-SIC~2374d~-836877655~N~~~NOR~CAEB46AFD4FB45C165476110423104AAUK000029601180007082374d" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="HALF BOARD" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="77.55" TotalRoomRate="77.55" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="77.55" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="1" TotalRate="27.60" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_759962682_1_75-27_2_2_0_0_759962634_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Superior Room Double Use" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="27.60" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="27.60" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="2" TotalRate="28.32" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3213482167_1_7-24_2_2_0_0_3213482119_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Superior Room" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="28.32" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="28.32" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="3" TotalRate="35.13" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3610775803_2_61-27_2_2_0_0_3610775755_0_1-8-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="35.13" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="35.13" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="4" TotalRate="35.14" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2630488881_2_61-27_2_2_0_0_2630488833_0_1-6-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin STANDARD" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="35.14" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="35.14" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="5" TotalRate="39.85" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_4039221041_1_94-24_2_2_0_0_4039220993_0_1-6-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Or Twin Standard Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="39.85" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="39.85" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="6" TotalRate="39.87" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_759962682_1_75-27_2_2_1_0_759962634_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Superior Room Double Use" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="39.87" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="39.87" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="7" TotalRate="43.90" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3846064454_2_61-27_2_2_0_0_3846064502_0_1-6-0_7-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin WITH DOUBLE BED" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="43.90" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="43.90" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="8" TotalRate="46.50" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_0_0_1242344451_0_1-8-0_3-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="46.50" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="46.50" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="9" TotalRate="50.74" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3610775803_2_61-27_2_2_1_0_3610775755_0_1-8-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="50.74" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="50.74" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="10" TotalRate="50.75" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2630488881_2_61-27_2_2_1_0_2630488833_0_1-6-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin STANDARD" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="50.75" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="50.75" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="11" TotalRate="51.44" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_762241051_2_61-27_2_2_0_0_762241067_0_1-8-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Room SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="51.44" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="51.44" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="12" TotalRate="53.44" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3846064454_2_61-27_2_2_1_0_3846064502_0_1-6-0_7-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin WITH DOUBLE BED" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="53.44" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="53.44" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="13" TotalRate="54.05" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3846064454_0_75-27_2_2_1_0_3846064502_0_1-6-0_8-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin WITH DOUBLE BED" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="54.05" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="54.05" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="14" TotalRate="57.84" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_4039221041_1_94-24_2_2_1_0_4039220993_0_1-6-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Or Twin Standard Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="57.84" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="57.84" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="15" TotalRate="60.60" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_1_61-27_2_2_3_0_1242344451_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="60.60" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="60.60" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="16" TotalRate="62.04" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_0_0_1242344451_0_1-8-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="62.04" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="62.04" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="17" TotalRate="63.80" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2093174690_1_75-27_2_2_0_0_2093174674_0_1-13-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Deluxe Room Double Use" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="63.80" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="63.80" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="18" TotalRate="64.44" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_1_0_1242344451_0_1-8-0_7-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="64.44" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="64.44" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="19" TotalRate="68.36" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2093174690_1_75-27_2_2_1_0_2093174674_0_1-13-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Deluxe Room Double Use" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="68.36" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="68.36" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="20" TotalRate="69.61" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2630488881_2_61-27_2_2_3_0_2630488833_0_1-6-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin STANDARD" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="69.61" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="69.61" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="21" TotalRate="69.84" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_762241051_2_61-27_2_2_1_0_762241067_0_1-8-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Room SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="69.84" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="69.84" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="22" TotalRate="70.62" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_1_0_1242344451_0_1-8-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="70.62" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="70.62" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="23" TotalRate="70.72" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_762241051_1_75-27_2_2_1_0_762241067_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Room SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="70.72" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="70.72" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="24" TotalRate="73.87" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_642606940_2_94-24_2_2_0_0_642606956_0_1-13-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Deluxe Room (Double) Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="73.87" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="73.87" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="25" TotalRate="79.16" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_642606940_2_94-24_2_2_1_0_642606956_0_1-13-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Deluxe Room (Double) Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="79.16" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="79.16" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="26" TotalRate="81.23" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_2_61-27_2_2_0_0_1476622922_0_1-13-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="81.23" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="81.23" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="27" TotalRate="81.66" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_2_61-27_2_2_0_0_1476622922_0_1-13-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="81.66" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="81.66" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="28" TotalRate="81.89" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_2_61-27_2_2_0_0_506879658_0_1-13-0_7-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="81.89" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="81.89" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="29" TotalRate="85.06" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_3_0_1242344451_0_1-8-0_3-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="85.06" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="85.06" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="30" TotalRate="86.67" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_0_75-27_2_2_3_0_1242344451_0_1-8-0_4-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="86.67" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="86.67" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="31" TotalRate="87.02" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_2_61-27_2_2_1_0_1476622922_0_1-13-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="87.02" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="87.02" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="32" TotalRate="87.26" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_2_61-27_2_2_1_0_506879658_0_1-13-0_7-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="87.26" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="87.26" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="33" TotalRate="88.13" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_1_75-27_2_2_1_0_1476622922_0_1-13-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="88.13" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="88.13" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="34" TotalRate="88.27" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_0_75-27_2_2_1_0_506879658_0_1-13-0_8-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="88.27" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="88.27" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="35" TotalRate="88.44" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_2_61-27_2_2_0_0_506879658_0_1-13-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="88.44" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="88.44" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="36" TotalRate="88.79" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_2_61-27_2_2_1_0_1476622922_0_1-13-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="88.79" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="88.79" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="37" TotalRate="88.97" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2630488881_2_61-27_2_2_4_0_2630488833_0_1-6-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin STANDARD" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="88.97" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="88.97" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="38" TotalRate="89.92" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_0_75-27_2_2_1_0_1476622922_0_1-13-0_18-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="89.92" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="89.92" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="39" TotalRate="90.09" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2630488881_1_75-27_2_2_4_0_2630488833_0_1-6-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin STANDARD" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="90.09" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="90.09" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="40" TotalRate="91.64" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_3_0_1242344451_0_1-8-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="91.64" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="91.64" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="41" TotalRate="95.56" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_2_61-27_2_2_1_0_506879658_0_1-13-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="95.56" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="95.56" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="42" TotalRate="96.70" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1756632856_1_94-24_2_2_4_0_1756632872_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Or Twin Superior Non Refundable Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="96.70" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="96.70" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="43" TotalRate="98.23" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_2334809579_1_94-24_2_2_4_0_2334809563_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Superior Non Refundable Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="98.23" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="98.23" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="44" TotalRate="98.73" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_225510539_1_94-24_2_2_1_0_225510587_0_1-13-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Deluxe Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Breakfast Continental" MealPlanCode="BC" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="98.73" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="98.73" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="45" TotalRate="112.42" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_2_61-27_2_2_4_0_1242344451_0_1-8-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="112.42" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="112.42" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="46" TotalRate="113.84" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1242344499_0_75-27_2_2_4_0_1242344451_0_1-8-0_18-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="113.84" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="113.84" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="47" TotalRate="114.69" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_3610775803_2_61-27_2_2_3_0_3610775755_0_1-8-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="114.69" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="114.69" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="48" TotalRate="117.68" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_2_61-27_2_2_3_0_1476622922_0_1-13-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="117.68" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="117.68" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="49" TotalRate="120.51" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1120757713_2_94-24_2_2_4_0_1120757729_0_1-8-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Or Twin Superior Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="120.51" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="120.51" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="50" TotalRate="129.14" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_2_61-27_2_2_3_0_506879658_0_1-13-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Half Board" MealPlanCode="HB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="129.14" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="129.14" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="51" TotalRate="148.57" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_2_61-27_2_2_4_0_1476622922_0_1-13-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="148.57" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="148.57" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="52" TotalRate="150.43" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_1476622970_1_75-27_2_2_4_0_1476622922_0_1-13-0_49-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="DOUBLE DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="150.43" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="150.43" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="53" TotalRate="162.58" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_2_61-27_2_2_4_0_506879658_0_1-13-0_17-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="162.58" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="162.58" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="54" TotalRate="164.65" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_506879642_0_75-27_2_2_4_0_506879658_0_1-13-0_18-100_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double or Twin DELUXE" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="164.65" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="164.65" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="55" TotalRate="165.87" HtlCode="1091ff" CrncyCode="USD" DMCType="HPro" CUID="10017">
+              <Room ID="1091ff_655850586_1_94-24_2_2_4_0_655850602_0_1-8-0_0_76_2.20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" SuppliersID="6" RoomSeq="1" SessionID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" RoomType="Double Superior Double" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="Full Board" MealPlanCode="FB" MealPlanPrice="" PerNightRoomRate="0" TotalRoomRate="165.87" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID />
+                <Offers />
+                <PromotionList />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="165.87" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+          </Rooms>
+        </Hotel>
+      </Hotels>
+    </searchResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

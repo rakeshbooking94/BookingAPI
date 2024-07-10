@@ -12,7 +12,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58,7 +62,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -105,7 +113,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequestBaseType))]
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -151,7 +163,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -179,7 +195,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -267,7 +287,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.travco.co.uk/trlink/xsd/simpletype")]
     public enum YesNoType {
@@ -280,7 +304,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -326,7 +354,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -372,7 +404,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -418,7 +454,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -520,7 +560,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travco.co.uk/trlink/xsd/hotelavailabilityv7/response")]
     public enum HotelMessageMessageIndicator {
@@ -533,7 +577,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -650,7 +698,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -897,7 +949,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1041,7 +1097,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1087,7 +1147,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1175,7 +1239,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1221,7 +1289,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1267,7 +1339,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1355,7 +1431,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1500,7 +1580,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1546,7 +1630,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1858,7 +1946,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1946,7 +2038,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2076,7 +2172,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2206,7 +2306,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2266,7 +2370,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2326,7 +2434,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2428,7 +2540,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2474,7 +2590,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2549,7 +2669,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2637,7 +2761,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2753,7 +2881,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2842,7 +2974,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2888,7 +3024,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2934,7 +3074,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2980,7 +3124,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3026,7 +3174,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3209,7 +3361,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3340,7 +3496,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3428,7 +3588,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3817,7 +3981,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3940,7 +4108,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.travco.co.uk/trlink/xsd/hotelavailabilityv7/request")]
     public enum RequestCriteriaSortingOrder {
@@ -3953,7 +4125,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4004,7 +4180,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4169,7 +4349,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4317,7 +4501,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4479,7 +4667,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4641,7 +4833,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4817,7 +5013,11 @@ namespace TravillioXMLOutService.HotelAvailabilityService {
     }
     
     /// <remarks/>
+<<<<<<< HEAD
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+=======
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+>>>>>>> 41190ec33698c9e82a8e9fabc5386b821ee52b58
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]

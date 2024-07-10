@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -277,6 +277,9 @@
     <Content Include="App_Data\HotelBeds\hotelimage.xml" />
     <Content Include="App_Data\HotelBeds\hotelstatic_hb.xml" />
     <Content Include="App_Data\HotelBeds\sample.xml" />
+    <Content Include="App_Data\HotelBeds\Task.txt" />
+    <Content Include="App_Data\Hotel\RoomAvail.xml" />
+    <Content Include="App_Data\Hotel\Search.xml" />
     <Content Include="App_Data\Script\apilog.sql" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />
     <Content Include="App_Data\SupplierCredential\SupplierCredentials.xml" />
@@ -306,7 +309,6 @@
     <Content Include="packages\repositories.config" />
     <Content Include="packages\RestSharpSigned.105.2.3\.signature.p7s" />
     <Content Include="packages\RestSharpSigned.105.2.3\RestSharpSigned.105.2.3.nupkg" />
-    <Content Include="App_Data\HotelBeds\test.json" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
@@ -412,10 +414,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.checkAvailabilityByHotelNameResponse1.datasource">
+    <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.checkAvailabilityByHotelNameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.HotelAvailabilityV7Response1.datasource">
+    <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.HotelAvailabilityV7Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\HotelBookingRequestService\CommonComplexType.xsd">
@@ -431,10 +433,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HotelBookingRequestService\HotelBookingV7Service.wsdl" />
-    <Content Include="Service References\HotelBookingRequestService\TravillioXMLOutService.HotelBookingRequestService.doHotelBookingResponse1.datasource">
+    <Content Include="Service References\HotelBookingRequestService\TravillioXMLOutService.HotelBookingRequestService.doHotelBookingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\HotelBookingRequestService\TravillioXMLOutService.HotelBookingRequestService.HotelBookingV7Response1.datasource">
+    <Content Include="Service References\HotelBookingRequestService\TravillioXMLOutService.HotelBookingRequestService.HotelBookingV7Response.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\HotelCancellationDetails\CommonComplexType.xsd">
@@ -456,10 +458,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\HotelCancellationDetails\TravillioXMLOutService.HotelCancellationDetails.getHotelCancellationDetailsResponse1.datasource">
+    <Content Include="Service References\HotelCancellationDetails\TravillioXMLOutService.HotelCancellationDetails.getHotelCancellationDetailsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\HotelCancellationDetails\TravillioXMLOutService.HotelCancellationDetails.HotelCancellationDetailResponse1.datasource">
+    <Content Include="Service References\HotelCancellationDetails\TravillioXMLOutService.HotelCancellationDetails.HotelCancellationDetailResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\HotelExtranet\ExtXmlOutService.wsdl" />
