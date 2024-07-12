@@ -48,8 +48,6 @@ namespace TravillioXMLOutService.Transfer.Services
             return reqModel;
         }
 
-
-
         RequestModel CreateReqModell(XElement _travyoReq)
         {
             reqModel = new RequestModel();

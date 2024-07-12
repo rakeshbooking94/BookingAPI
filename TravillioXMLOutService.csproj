@@ -139,6 +139,8 @@
     <Compile Include="Common\TravayooHelper.cs" />
     <Compile Include="Common\Travco\TravcoHelper.cs" />
     <Compile Include="Filters\CompressFilter.cs" />
+    <Compile Include="Hotel\Model\CredentialModel.cs" />
+    <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
     <Compile Include="IAirService.cs" />
     <Compile Include="ITransferService.cs" />
     <Compile Include="ITravayooOUTService.cs" />
@@ -216,6 +218,8 @@
     <Compile Include="Models\Travco\travco_static.cs" />
     <Compile Include="Models\TravelGate\LogModel.cs" />
     <Compile Include="Models\TravelGate\TGDataAccess.cs" />
+    <Compile Include="Hotel\Repository\Interfaces\IRTHWKRepository.cs" />
+    <Compile Include="Hotel\Repository\RTHWKRepository.cs" />
     <Compile Include="Service References\AllocationEnquiryService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -621,6 +625,8 @@
     <Compile Include="Models\LogWriter.cs" />
     <Compile Include="Models\VerifySearchHotelRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hotel\Service\Interfaces\IRTHWKServices.cs" />
+    <Compile Include="Hotel\Service\RTHWKServices.cs" />
     <Compile Include="Supplier\Darina\dr_Booking.cs" />
     <Compile Include="Supplier\Darina\dr_Cancel.cs" />
     <Compile Include="Supplier\Darina\dr_CXLpolicy.cs" />
