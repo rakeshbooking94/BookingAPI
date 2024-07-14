@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -139,8 +139,12 @@
     <Compile Include="Common\TravayooHelper.cs" />
     <Compile Include="Common\Travco\TravcoHelper.cs" />
     <Compile Include="Filters\CompressFilter.cs" />
+    <Compile Include="Hotel\Helper\CommonHelper.cs" />
+    <Compile Include="Hotel\Helper\RTHWKHelper.cs" />
     <Compile Include="Hotel\Model\CredentialModel.cs" />
+    <Compile Include="Hotel\Model\RequestModel.cs" />
     <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
+    <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
     <Compile Include="IAirService.cs" />
     <Compile Include="ITransferService.cs" />
     <Compile Include="ITravayooOUTService.cs" />
