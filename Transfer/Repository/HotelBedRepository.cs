@@ -91,6 +91,18 @@ namespace TravillioXMLOutService.Repository.Transfer
 
         }
                
+
+
+
+
+
+
+
+
+
+
+
+
         public async Task<SearchResponseModel> GetPreBookSearchAsync(LogRequestModel reqModel)
         {
             string stringResponse;
