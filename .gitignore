@@ -24,3 +24,6 @@
 *.vsidx
 *.json
 /.vs/TravillioXMLOutService.csproj.dtbcache.json
+/.vs/TravillioXMLOutService_Hotel/v17/.suo
+/.vs/TravillioXMLOutService_Hotel/v17/DocumentLayout.json
+/.gitignore
