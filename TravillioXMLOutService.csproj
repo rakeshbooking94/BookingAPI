@@ -144,6 +144,7 @@
     <Compile Include="Hotel\Model\CredentialModel.cs" />
     <Compile Include="Hotel\Model\RequestModel.cs" />
     <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
+    <Compile Include="Hotel\Model\RTHWKHotelSearchResponse.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
     <Compile Include="IAirService.cs" />
     <Compile Include="ITransferService.cs" />

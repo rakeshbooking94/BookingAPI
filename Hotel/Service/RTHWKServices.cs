@@ -51,9 +51,9 @@ namespace TravillioXMLOutService.Hotel.Service
             {
                 checkin = req.Element("FromDate").Value.RTHWKDate(),
                 checkout = req.Element("ToDate").Value.RTHWKDate(),
-                residency = req.Element("PaxResidenceID").Value.RTHWKDate(),
+                residency = req.Element("PaxNationality_CountryCode").Value.RTHWKResidenc(),
                 language = RTHWKHelper.RTHWKlanguage(),
-                currency = req.Element("CurrencyID").Value.RTHWKCurrency(),
+                currency = req.Element("DesiredCurrencyCode").Value.RTHWKCurrency(),
             };
             model.guests = req.Element("Rooms").Descendants("RoomPax").Select(x => new Guest
             {
@@ -94,26 +94,26 @@ namespace TravillioXMLOutService.Hotel.Service
             reqModel.StartTime = DateTime.Now;
             reqModel.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
             reqModel.TrackNo = _travyoReq.Attribute("transId").Value;
-          
+            var _model = BindModel(_travyoReq);
             return reqModel;
         }
 
 
-        public async Task<XElement> GetSearchAsync(RTHWKHotelSearchRequest req, List<string> htlCodes, RequestModel reqObj)
+        public async Task<XElement> GetSearchAsync(List<string> htlCodes, XElement _travyoReq)
         {
+            var reqObj = new RequestModel();
+            reqObj.StartTime = DateTime.Now;
+            reqObj.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
+            reqObj.TrackNo = _travyoReq.Attribute("transId").Value;
             reqObj.ActionId = (int)_travyoReq.Name.LocalName.GetAction();
             reqObj.Action = _travyoReq.Name.LocalName.GetAction().ToString();
-
-
-
-            req.ids = htlCodes;
-
-
-            reqObj.RequestStr = JsonConvert.SerializeObject(req);
+            var _req = BindModel(_travyoReq);
+            _req.ids = htlCodes;
+            reqObj.RequestStr = JsonConvert.SerializeObject(_req);
             reqObj.ResponseStr = await repo.HotelSearchAsync(reqObj);
       
 
-            //    result = JsonConvert.DeserializeObject<SearchResponseModel>(responseBody);
+            result = JsonConvert.DeserializeObject<SearchResponseModel>(responseBody);
         }
 
 

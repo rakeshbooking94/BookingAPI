@@ -45,13 +45,12 @@ namespace TravillioXMLOutService.Hotel.Helper
         }
         public static string RTHWKResidenc(this string str)
         {
-
-            return "gb";
+            return str.ToLower();
         }
 
         public static string RTHWKCurrency(this string str)
         {
-            return "EUR";
+            return "USD";
         }
 
         public static string RTHWKlanguage()
