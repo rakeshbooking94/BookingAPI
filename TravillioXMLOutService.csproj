@@ -283,6 +283,7 @@
     <Content Include="App_Data\HotelBeds\Task.txt" />
     <Content Include="App_Data\Hotel\RoomAvail.xml" />
     <Content Include="App_Data\Hotel\Search.xml" />
+    <Content Include="App_Data\Query.txt" />
     <Content Include="App_Data\Script\apilog.sql" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />
     <Content Include="App_Data\SupplierCredential\SupplierCredentials.xml" />

@@ -8,7 +8,28 @@ using System.Text;
 namespace TravillioXMLOutService.Hotel.Model
 {
 
-   
+
+
+    public class RTHWKHotelSearchResponse
+    {
+        public Data data { get; set; }
+        public Debug debug { get; set; }
+        public string status { get; set; }
+        public object error { get; set; }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class CancellationPenalties
     {
         public List<Policy> policies { get; set; }
@@ -133,13 +154,7 @@ namespace TravillioXMLOutService.Hotel.Model
         public string misc_room_type { get; set; }
     }
 
-    public class RTHWKHotelSearchResponse
-    {
-        public Data data { get; set; }
-        public Debug debug { get; set; }
-        public string status { get; set; }
-        public object error { get; set; }
-    }
+  
 
     public class Show
     {

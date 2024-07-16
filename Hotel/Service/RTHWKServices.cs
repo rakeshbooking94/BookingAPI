@@ -44,7 +44,7 @@ namespace TravillioXMLOutService.Hotel.Service
 
         #region HotelSearch
 
-        RTHWKHotelSearchRequest BindModel(XElement req)
+        RTHWKHotelSearchRequest BindSearchRequest(XElement req)
         {
             req = req.Element("searchRequest");
             RTHWKHotelSearchRequest model = new RTHWKHotelSearchRequest()
@@ -67,7 +67,7 @@ namespace TravillioXMLOutService.Hotel.Service
             List<XElement> HotelsList = new List<XElement>();
             try
             {
-                var reqModel = CreateReqModel(req);
+
                 return null;
             }
             catch (Exception ex)
@@ -88,32 +88,68 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
 
-        RequestModel CreateReqModel(XElement _travyoReq)
+        public async Task<List<XElement>> GetSearchAsync(List<string> htlCodes, XElement _travyoReq)
         {
-            var reqModel = new RequestModel();
-            reqModel.StartTime = DateTime.Now;
-            reqModel.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
-            reqModel.TrackNo = _travyoReq.Attribute("transId").Value;
-            var _model = BindModel(_travyoReq);
-            return reqModel;
-        }
-
-
-        public async Task<XElement> GetSearchAsync(List<string> htlCodes, XElement _travyoReq)
-        {
+            List<XElement> htList = new List<XElement>();
             var reqObj = new RequestModel();
             reqObj.StartTime = DateTime.Now;
             reqObj.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
             reqObj.TrackNo = _travyoReq.Attribute("transId").Value;
             reqObj.ActionId = (int)_travyoReq.Name.LocalName.GetAction();
             reqObj.Action = _travyoReq.Name.LocalName.GetAction().ToString();
-            var _req = BindModel(_travyoReq);
+            var _req = BindSearchRequest(_travyoReq);
             _req.ids = htlCodes;
             reqObj.RequestStr = JsonConvert.SerializeObject(_req);
             reqObj.ResponseStr = await repo.HotelSearchAsync(reqObj);
-      
+            var response = JsonConvert.DeserializeObject<RTHWKHotelSearchResponse>(reqObj.ResponseStr);
+            if (response.status == "ok")
+            {
+                if (response.data.total_hotels > 0)
+                {
+                    //response.data.hotels.Select()
 
-            result = JsonConvert.DeserializeObject<SearchResponseModel>(responseBody);
+                    var hobj = response.data.hotels.First();
+
+
+                    XElement hoteldata = new XElement("Hotel", new XElement("HotelID", hobj.id),
+                                    new XElement("HotelName", HotelData["hotelname"].ToString()),
+                                    new XElement("PropertyTypeName", ""),
+                                    new XElement("CountryID", ""),
+                                    new XElement("CountryName", _travyoReq.Descendants("CountryName").FirstOrDefault().Value),
+                                    new XElement("CountryCode", HotelData["country_code"].ToString()),
+                                    new XElement("CityId"),
+                                    new XElement("CityCode", _travyoReq.Descendants("CityCode").FirstOrDefault().Value),
+                                    new XElement("CityName", HotelData["city"].ToString()),
+                                    new XElement("AreaId"),
+                                    new XElement("AreaName", ""),
+                                    new XElement("RequestID", ""),
+                                    new XElement("Address", HotelData["address"].ToString()),
+                                    new XElement("Location", HotelData["address"].ToString()),
+                                    new XElement("Description"),
+                                    new XElement("StarRating", HotelData["rating"].ToString().ModifyToStar()),
+                                    new XElement("MinRate", minrate),
+                                    new XElement("HotelImgSmall", HotelData["image"].ToString()),
+                                    new XElement("HotelImgLarge", HotelData["image"].ToString()),
+                                    new XElement("MapLink"),
+                                    new XElement("Longitude", HotelData["longitude"].ToString()),
+                                    new XElement("Latitude", HotelData["latitude"].ToString()),
+                                    new XElement("xmloutcustid", customerid),
+                                    new XElement("xmlouttype", false),
+                                    new XElement("DMC", dmc), new XElement("SupplierID", supplierid),
+                                    new XElement("Currency", _req.currency),
+                                    new XElement("Offers", ""), new XElement("Facilities", null),
+                                    new XElement("Rooms", ""),
+                                    new XElement("searchType", sales_environment)
+                                    );
+
+                }
+
+
+                htList = new List<XElement>();
+            }
+
+            return htList;
+
         }
 
 
