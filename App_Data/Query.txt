@@ -7,3 +7,19 @@ uspgetexpediahotels
 
 *******************************************************************************************************************
 
+SELECT top 12 ID, HotelDetais
+FROM tblRTHWKStaticData
+FOR JSON PATH
+
+SELECT top 10 
+JSON_VALUE(HotelDetais, '$.id') AS HotelId,
+JSON_VALUE(HotelDetais, '$.name') AS HotelName
+FROM tblRTHWKStaticData with(nolock)
+WHERE ISJSON(HotelDetais) > 0   AND JSON_VALUE(HotelDetais, '$.is_closed') = 'false'
+ORDER BY JSON_VALUE(HotelDetais, '$.star_rating');
+
+
+select count(*) from tblRTHWKStaticData
+
+  
+
