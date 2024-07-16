@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -139,13 +139,6 @@
     <Compile Include="Common\TravayooHelper.cs" />
     <Compile Include="Common\Travco\TravcoHelper.cs" />
     <Compile Include="Filters\CompressFilter.cs" />
-    <Compile Include="Hotel\Helper\CommonHelper.cs" />
-    <Compile Include="Hotel\Helper\RTHWKHelper.cs" />
-    <Compile Include="Hotel\Model\CredentialModel.cs" />
-    <Compile Include="Hotel\Model\RequestModel.cs" />
-    <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
-    <Compile Include="Hotel\Model\RTHWKHotelSearchResponse.cs" />
-    <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
     <Compile Include="IAirService.cs" />
     <Compile Include="ITransferService.cs" />
     <Compile Include="ITravayooOUTService.cs" />
@@ -223,8 +216,6 @@
     <Compile Include="Models\Travco\travco_static.cs" />
     <Compile Include="Models\TravelGate\LogModel.cs" />
     <Compile Include="Models\TravelGate\TGDataAccess.cs" />
-    <Compile Include="Hotel\Repository\Interfaces\IRTHWKRepository.cs" />
-    <Compile Include="Hotel\Repository\RTHWKRepository.cs" />
     <Compile Include="Service References\AllocationEnquiryService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -271,6 +262,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceLog\ServiceLog.txt" />
+    <Content Include=".vs\slnx.sqlite" />
+    <Content Include=".vs\TravillioXMLOutService_Hotel\config\applicationhost.config" />
+    <Content Include=".vs\TravillioXMLOutService_Hotel\FileContentIndex\96894f60-81cd-4515-a76d-7f797dbb1f2f.vsidx" />
+    <Content Include=".vs\TravillioXMLOutService_Hotel\FileContentIndex\b21de2e7-35b6-4a24-9e9a-3f0969e94859.vsidx" />
+    <Content Include=".vs\TravillioXMLOutService_Hotel\v17\.suo" />
+    <Content Include=".vs\VSWorkspaceState.json" />
     <Content Include="App_Data\HotelBeds\Booking.json" />
     <Content Include="App_Data\HotelBeds\Cancel.json" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
@@ -310,50 +307,6 @@
     <Content Include="packages\jQuery.UI.Core.1.8.9\jQuery.UI.Core.1.8.9.nuspec" />
     <Content Include="packages\jQuery.UI.Widgets.Datepicker.1.8.9\jQuery.UI.Widgets.Datepicker.1.8.9.nupkg" />
     <Content Include="packages\jQuery.UI.Widgets.Datepicker.1.8.9\jQuery.UI.Widgets.Datepicker.1.8.9.nuspec" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\cs\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\cs\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\cs\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\de\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\de\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\de\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\es\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\es\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\es\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\fr\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\fr\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\fr\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\it\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\it\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\it\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ja\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ja\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ja\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ko\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ko\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ko\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\Microsoft.VisualStudio.Containers.Tools.Common.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\Microsoft.VisualStudio.Containers.Tools.Shared.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\Microsoft.VisualStudio.Containers.Tools.Tasks.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\Newtonsoft.Json.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\pl\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\pl\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\pl\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\pt-BR\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\pt-BR\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\pt-BR\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ru\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ru\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\ru\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\tr\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\tr\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\tr\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\utils\KillProcess.exe" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\zh-Hans\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\zh-Hans\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\zh-Hans\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\zh-Hant\Microsoft.VisualStudio.Containers.Tools.Common.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\zh-Hant\Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\tools\zh-Hant\Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll" />
     <Content Include="packages\repositories.config" />
     <Content Include="packages\RestSharpSigned.105.2.3\.signature.p7s" />
     <Content Include="packages\RestSharpSigned.105.2.3\RestSharpSigned.105.2.3.nupkg" />
@@ -361,15 +314,6 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\.signature.p7s" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\build\Container.props" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\build\Container.targets" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\build\ToolsTarget.props" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\build\ToolsTarget.targets" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\EULA.md" />
-    <Content Include="packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.4.10.nupkg" />
     <None Include="Properties\PublishProfiles\BEServiceAPI.pubxml" />
     <None Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <None Include="Service References\AllocationEnquiryService\AllocationEnquiryV7Request.xsd">
@@ -631,8 +575,6 @@
     <Compile Include="Models\LogWriter.cs" />
     <Compile Include="Models\VerifySearchHotelRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Hotel\Service\Interfaces\IRTHWKServices.cs" />
-    <Compile Include="Hotel\Service\RTHWKServices.cs" />
     <Compile Include="Supplier\Darina\dr_Booking.cs" />
     <Compile Include="Supplier\Darina\dr_Cancel.cs" />
     <Compile Include="Supplier\Darina\dr_CXLpolicy.cs" />
@@ -913,6 +855,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".vs\BookingAPI\v16\" />
+    <Folder Include=".vs\TravillioXMLOutService_Hotel\v16\" />
     <Folder Include="Common\Juniper\" />
     <Folder Include="Supplier\Travelgate_new\" />
   </ItemGroup>
