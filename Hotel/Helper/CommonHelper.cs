@@ -131,6 +131,13 @@ namespace TravillioXMLOutService.Hotel.Helper
             else
                 return Convert.ToInt32(item.Value);
         }
+        public static int GetValueOrDefault(this XAttribute item, int defaultValue = 0)
+        {
+            if (item == null)
+                return defaultValue;
+            else
+                return Convert.ToInt32(item.Value);
+        }
         public static string GetValueOrDefault(this XAttribute attribute, string defaultValue = null)
         {
             if (attribute == null)

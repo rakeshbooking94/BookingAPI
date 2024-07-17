@@ -43,7 +43,12 @@ namespace TravillioXMLOutService.Hotel.Service
             repo = new RTHWKRepository(model);
             htlRepo = new HotelRepository();
         }
-
+        public RTHWKServices(string customerId)
+        {
+            model = customerId.ReadCredential(supplierId);
+            repo = new RTHWKRepository(model);
+            htlRepo = new HotelRepository();
+        }
 
         #region HotelSearch
 
@@ -239,33 +244,31 @@ namespace TravillioXMLOutService.Hotel.Service
             {
                 if (response.data.total_hotels > 0)
                 {
-                    //response.data.hotels.Select()
-
-                    var hobj = response.data.hotels.First();
-
-
-                    XElement hoteldata = new XElement("Hotel", new XElement("HotelID", hobj.id),
-                                    new XElement("HotelName", HotelData["hotelname"].ToString()),
+                    var hotelResult = from htl in response.data.hotels
+                                      join htlD in hotelData
+                                      on htl.id equals htlD.HotelId
+                                      select new XElement("Hotel", new XElement("HotelID", htl.id),
+                                    new XElement("HotelName", htlD.HotelName),
                                     new XElement("PropertyTypeName", ""),
                                     new XElement("CountryID", ""),
                                     new XElement("CountryName", _travyoReq.Descendants("CountryName").FirstOrDefault().Value),
-                                    new XElement("CountryCode", HotelData["country_code"].ToString()),
+                                    new XElement("CountryCode", htlD.CountryCode),
                                     new XElement("CityId"),
                                     new XElement("CityCode", _travyoReq.Descendants("CityCode").FirstOrDefault().Value),
-                                    new XElement("CityName", HotelData["city"].ToString()),
+                                    new XElement("CityName", htlD.CityName),
                                     new XElement("AreaId"),
                                     new XElement("AreaName", ""),
                                     new XElement("RequestID", ""),
-                                    new XElement("Address", HotelData["address"].ToString()),
-                                    new XElement("Location", HotelData["address"].ToString()),
+                                    new XElement("Address", htlD.HotelAddress),
+                                    new XElement("Location", htlD.HotelAddress),
                                     new XElement("Description"),
-                                    new XElement("StarRating", HotelData["rating"].ToString().ModifyToStar()),
-                                    new XElement("MinRate", minrate),
-                                    new XElement("HotelImgSmall", HotelData["image"].ToString()),
-                                    new XElement("HotelImgLarge", HotelData["image"].ToString()),
+                                    new XElement("StarRating", htlD.Rating),
+                                    new XElement("MinRate", htl.rates.Min(x => x.totalPrice)),
+                                    new XElement("HotelImgSmall", htlD.HotelImage),
+                                    new XElement("HotelImgLarge", htlD.HotelImage),
                                     new XElement("MapLink"),
-                                    new XElement("Longitude", HotelData["longitude"].ToString()),
-                                    new XElement("Latitude", HotelData["latitude"].ToString()),
+                                    new XElement("Longitude", htlD.Longitude),
+                                    new XElement("Latitude", htlD.Latitude),
                                     new XElement("xmloutcustid", customerid),
                                     new XElement("xmlouttype", false),
                                     new XElement("DMC", dmc), new XElement("SupplierID", supplierId),
@@ -274,45 +277,8 @@ namespace TravillioXMLOutService.Hotel.Service
                                     new XElement("Rooms", ""),
                                     new XElement("searchType", sales_environment)
                                     );
-
-
-
-
-                    //XElement hoteldata = new XElement("Hotel", new XElement("HotelID", HotelData["hotelcode"].ToString()),
-                    //                new XElement("HotelName", HotelData["hotelname"].ToString()),
-                    //                new XElement("PropertyTypeName", ""),
-                    //                new XElement("CountryID", ""),
-                    //                new XElement("CountryName", req.Descendants("CountryName").FirstOrDefault().Value),
-                    //                new XElement("CountryCode", HotelData["country_code"].ToString()),
-                    //                new XElement("CityId"),
-                    //                new XElement("CityCode", req.Descendants("CityCode").FirstOrDefault().Value),
-                    //                new XElement("CityName", HotelData["city"].ToString()),
-                    //                new XElement("AreaId"),
-                    //                new XElement("AreaName", ""),
-                    //                new XElement("RequestID", ""),
-                    //                new XElement("Address", HotelData["address"].ToString()),
-                    //                new XElement("Location", HotelData["address"].ToString()),
-                    //                new XElement("Description"),
-                    //                new XElement("StarRating", HotelData["rating"].ToString().ModifyToStar()),
-                    //                new XElement("MinRate", minrate),
-                    //                new XElement("HotelImgSmall", HotelData["image"].ToString()),
-                    //                new XElement("HotelImgLarge", HotelData["image"].ToString()),
-                    //                new XElement("MapLink"),
-                    //                new XElement("Longitude", HotelData["longitude"].ToString()),
-                    //                new XElement("Latitude", HotelData["latitude"].ToString()),
-                    //                new XElement("xmloutcustid", customerid),
-                    //                new XElement("xmlouttype", xmlouttype),
-                    //                new XElement("DMC", dmc), new XElement("SupplierID", supplierid),
-                    //                new XElement("Currency", currency),
-                    //                new XElement("Offers", ""), new XElement("Facilities", null),
-                    //                new XElement("Rooms", ""),
-                    //                new XElement("searchType", sales_environment)
-                    //                );
-
+                    htList = hotelResult.ToList();
                 }
-
-
-                htList = new List<XElement>();
             }
 
             return htList;

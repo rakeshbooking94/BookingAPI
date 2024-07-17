@@ -49,6 +49,7 @@ using TravillioXMLOutService.Supplier.Welcomebeds;
 using TravillioXMLOutService.Supplier.Expedia;
 using TravillioXMLOutService.Supplier.Withinearth;
 using TravillioXMLOutService.Supplier.IOL;
+using TravillioXMLOutService.Hotel.Service;
 
 namespace TravillioXMLOutService.Supplier.XMLOUT
 {
@@ -186,6 +187,7 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                     int vot = req.Descendants("SupplierID").Where(x => x.Value == "46" && x.Attribute("xmlout").Value == "false").Count();
                     int ebookingcenter = req.Descendants("SupplierID").Where(x => x.Value == "47" && x.Attribute("xmlout").Value == "false").Count();
                     int wte = req.Descendants("SupplierID").Where(x => x.Value == "48" && x.Attribute("xmlout").Value == "false").Count();
+                    int rthwk = req.Descendants("SupplierID").Where(x => x.Value == "50" && x.Attribute("xmlout").Value == "false").Count();
                     int iol = req.Descendants("SupplierID").Where(x => x.Value == "50" && x.Attribute("xmlout").Value == "false").Count();
                     //int bookingexpress = req.Descendants("SupplierID").Where(x => x.Value == "501" && x.Attribute("xmlout").Value == "false").Count();
                     //int etripcenter = req.Descendants("SupplierID").Where(x => x.Value == "502" && x.Attribute("xmlout").Value == "false").Count();
@@ -253,6 +255,7 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                         List<XElement> ebookingcenterhotelslst = null;
                         List<XElement> wtelst = null;
                         List<XElement> iollst = null;
+                        List<XElement> rthwklst = null;
                         //List<XElement> bookingexpresslst = null;
                         //List<XElement> etripcenterlst = null;
                         //List<XElement> holidaysarabialst = null;
@@ -384,6 +387,7 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                         Thread tid47 = null;
                         Thread tid48 = null;
                         Thread tid50 = null;
+                        Thread tid24 = null;
                         //Thread tid501 = null;
                         //Thread tid502 = null;
                         //Thread tid503 = null;
@@ -714,6 +718,27 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                                 custName = "Expedia";
                             }
                         }
+                        if (rthwk == 1 && Convert.ToInt32(req.Descendants("RoomPax").Count()) < 9)
+                        {
+                            string custID = string.Empty;
+                            string custName = string.Empty;
+                            try
+                            {
+                                custID = req.Descendants("SupplierID").Where(x => x.Value == "24" && x.Attribute("xmlout").Value == "false").FirstOrDefault().Attribute("custID").Value;
+
+                                int customerid = Convert.ToInt32(custID);
+                                RTHWKServices objRs = new RTHWKServices(custID);
+                                tid24 = new Thread(new ThreadStart(() => { rthwklst = objRs.HotelAvailability(reqTravillio, custID, "Ratehawk"); }));
+                                tid24.Priority = System.Threading.ThreadPriority.AboveNormal;
+                            }
+                            catch
+                            {
+                                rthwk = 0;
+                                custName = "Ratehawk";
+                            }
+                        }
+
+
                         if (tbo == 1 && req.Descendants("RoomPax").Count() < 10)
                         {
                             bool roomPax = true;
@@ -1697,6 +1722,31 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                             }
                             catch { }
                         }
+
+
+                        if (rthwk == 1 && req.Descendants("RoomPax").Count() < 5)
+                        {
+                            try
+                            {
+                                int newTime = sup_cutime - Convert.ToInt32(timer.ElapsedMilliseconds);
+                                if (newTime < 0)
+                                {
+                                    newTime = 0;
+                                }
+                                tid24.Join(newTime);
+                            }
+                            catch { }
+                        }
+
+
+
+
+
+
+
+
+
+
                         //if (bookingexpress == 1 && Convert.ToInt32(req.Descendants("RoomPax").Count()) < 10)
                         //{
                         //    try
@@ -1882,6 +1932,8 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                             tid48.Abort();
                         if (tid50 != null && tid50.IsAlive)
                             tid50.Abort();
+                        if (tid24 != null && tid24.IsAlive)
+                            tid24.Abort();
                         //if (tid501 != null && tid501.IsAlive)
                         //    tid501.Abort();
                         //if (tid502 != null && tid502.IsAlive)
@@ -1938,6 +1990,8 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                         List<XElement> listebookingcenterhotelstl = null;
                         List<XElement> listwtehtl = null;
                         List<XElement> listiolhtl = null;
+                        List<XElement> listrthwkhtl = null;
+                        
                         //List<XElement> listbookingexpresshotelstl = null;
                         //List<XElement> listetripcenterhotelstl = null;
                         //List<XElement> listholidaysarabiahotelstl = null;
@@ -2470,6 +2524,21 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                             catch { }
                         }
                         #endregion
+
+
+                        #region RTHWK
+                        if (rthwk == 1)
+                        {
+                            try
+                            {
+                                if (rthwklst.Count > 0)
+                                {
+                                    tasks.Add(Task.Run(() => { listExpediahtl = rthwklst; }));
+                                }
+                            }
+                            catch { }
+                        }
+                        #endregion
                         //#region Booking Express
                         //if (bookingexpress == 1 && Convert.ToInt32(req.Descendants("RoomPax").Count()) < 10)
                         //{
@@ -2664,16 +2733,17 @@ namespace TravillioXMLOutService.Supplier.XMLOUT
                                              listvothotelstl,
                                              listebookingcenterhotelstl,
                                              listwtehtl,
-                                             listiolhtl
-                                             //listbookingexpresshotelstl,
-                                             //listetripcenterhotelstl,
-                                             //listholidaysarabiahotelstl,
-                                             //listnovodestinohotelstl,
-                                             //listplazahotelstl,
-                                             //listcbhhotelstl,
-                                             //listadventureshotelstl,
-                                             //listgtsbedshotelstl,
-                                             //listh2gohotelstl
+                                             listiolhtl,
+                                             listrthwkhtl
+                                       //listbookingexpresshotelstl,
+                                       //listetripcenterhotelstl,
+                                       //listholidaysarabiahotelstl,
+                                       //listnovodestinohotelstl,
+                                       //listplazahotelstl,
+                                       //listcbhhotelstl,
+                                       //listadventureshotelstl,
+                                       //listgtsbedshotelstl,
+                                       //listh2gohotelstl
                                        )
                       ))));
                        

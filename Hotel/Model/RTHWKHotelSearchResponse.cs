@@ -109,8 +109,15 @@ namespace TravillioXMLOutService.Hotel.Model
 
     public class Rate
     {
+
+        public Rate()
+        {
+            this.totalPrice = daily_prices.Sum();
+
+        }
+        public double totalPrice { get; set; }
         public string match_hash { get; set; }
-        public List<string> daily_prices { get; set; }
+        public List<double> daily_prices { get; set; }
         public string meal { get; set; }
         public PaymentOptions payment_options { get; set; }
         public object bar_rate_price_data { get; set; }
@@ -127,7 +134,7 @@ namespace TravillioXMLOutService.Hotel.Model
         public RoomDataTrans room_data_trans { get; set; }
     }
 
-  
+
 
     public class RgExt
     {
@@ -154,7 +161,7 @@ namespace TravillioXMLOutService.Hotel.Model
         public string misc_room_type { get; set; }
     }
 
-  
+
 
     public class Show
     {

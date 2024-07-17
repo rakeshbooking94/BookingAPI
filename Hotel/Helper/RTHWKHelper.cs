@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml.Linq;
 using System.Xml;
+using TravillioXMLOutService.Hotel.Model;
 
 namespace TravillioXMLOutService.Hotel.Helper
 {
@@ -18,16 +19,28 @@ namespace TravillioXMLOutService.Hotel.Helper
         static readonly XElement _credentialList;
         static RTHWKHelper()
         {
-            _credentialList = XElement.Load(HttpContext.Current.Server.MapPath(@"~/App_Data/SupplierCredentialTransfer/transfercredentials.xml"));
+            _credentialList = XElement.Load(HttpContext.Current.Server.MapPath(@"~/App_Data/SupplierCredential/SupplierCredentials.xml"));
         }
-        public static XElement ReadCredential(this string custId, string supplId)
+        public static RTHWKCredentials ReadCredential(this string custId, int supplId)
         {
-            XElement _credential = null;
+            RTHWKCredentials _credential = null;
             try
             {
                 if (!string.IsNullOrEmpty(custId))
                 {
-                    _credential = _credentialList.Descendants("credential").Where(x => x.Attribute("customerid").Value == custId && x.Attribute("supplierid").Value == supplId).FirstOrDefault();
+                    var data = _credentialList.Descendants("credential").Where(x =>
+                    x.Attribute("customerid").Value == custId &&
+                    x.Attribute("supplierid").Value == supplId.ToString()).FirstOrDefault();
+                    _credential = new RTHWKCredentials
+                    {
+                        BaseUrl = "https://api.worldota.net/api/b2b/v3/",
+                        ClientId = data.Element("ClientId").Value,
+                        SecretKey = data.Element("SecretKey").Value,
+                        CustomerId = data.Attribute("customerid").Value,
+                        SupplierId = data.Attribute("supplierid").GetValueOrDefault(0),
+                        Currency = data.Element("Currency").Value,
+                        Culture = data.Element("Culture").Value
+                    };
                 }
                 return _credential;
             }
@@ -86,19 +99,6 @@ namespace TravillioXMLOutService.Hotel.Helper
             return date;
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         public static ApiAction GetAction(this string ElementName)

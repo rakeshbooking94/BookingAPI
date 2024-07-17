@@ -142,6 +142,9 @@
     <Compile Include="DataAccess\TravayooConnection.cs" />
     <Compile Include="DataAccess\TravayooLogs.cs" />
     <Compile Include="Filters\CompressFilter.cs" />
+    <Compile Include="HotelService.svc.cs">
+      <DependentUpon>HotelService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Hotel\Helper\CommonHelper.cs" />
     <Compile Include="Hotel\Helper\RTHWKHelper.cs" />
     <Compile Include="Hotel\Model\CredentialModel.cs" />
@@ -155,7 +158,9 @@
     <Compile Include="Hotel\Repository\HotelRepository.cs" />
     <Compile Include="Hotel\Service\Interfaces\IRTHWKServices.cs" />
     <Compile Include="Hotel\Service\RTHWKServices.cs" />
+    <Compile Include="Hotel\TravayooHotelSearch.cs" />
     <Compile Include="IAirService.cs" />
+    <Compile Include="IHotelService.cs" />
     <Compile Include="ITransferService.cs" />
     <Compile Include="ITravayooOUTService.cs" />
     <Compile Include="Models\Air\AirSearchRequest.cs" />
@@ -315,6 +320,7 @@
     <Content Include="App_Data\Transfer\vs2.0\newSearch.xml" />
     <Content Include="App_Data\Transfer\Terminals.xml" />
     <Content Include="App_Data\Transfer\search.xml" />
+    <Content Include="HotelService.svc" />
     <Content Include="log.txt" />
     <Content Include="packages.config" />
     <Content Include="packages\jQuery.1.4.4\jQuery.1.4.4.nupkg" />
