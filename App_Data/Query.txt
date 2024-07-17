@@ -24,5 +24,24 @@ select count(*) from tblRTHWKStaticData
 
 GetAllHotelSearchProc
 
+
+
+            DataSet Ds = SqlHelper.ExecuteDataset(ErpGlobal.DBCONNECTIONSTRING, CommandType.Text, Str);
+            if (Ds.Tables[0].Rows.Count > 0 && DDChallanNo.SelectedIndex > 0)
+            {
+                TxtFromDate.Text = Ds.Tables[0].Rows[0]["Date"].ToString();
+                TxtToDate.Text = Ds.Tables[0].Rows[0]["Date"].ToString();
+            }
+			
+			       //SqlParameter[] param = new SqlParameter[5];
+            //param[0] = new SqlParameter("@companyId", DDCompany.SelectedValue);
+            //param[1] = new SqlParameter("@processid", DDProcessName.SelectedValue);
+            //param[2] = new SqlParameter("@where", str);
+            //param[3] = new SqlParameter("@userid", Session["varuserid"]);
+            //param[4] = new SqlParameter("MasterCompanyId", Session["varMasterCompanyIDForERP"]);
+
+            //ds = SqlHelper.ExecuteDataset(ErpGlobal.DBCONNECTIONSTRING, CommandType.StoredProcedure, "Pro_GetprocessreceiveExcel", param);
+
+
   
 
