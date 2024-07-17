@@ -223,8 +223,6 @@ namespace TravillioXMLOutService.Hotel.Service
             }
         }
 
-
-
         public async Task<List<XElement>> GetSearchAsync(XElement _travyoReq, List<string> htlCodes, List<HotelModel> hotelData, int timeout, string sales_environment = "")
         {
             List<XElement> htList = new List<XElement>();
@@ -284,15 +282,6 @@ namespace TravillioXMLOutService.Hotel.Service
             return htList;
 
         }
-
-
-
-
-
-
-
-
-
 
 
         #endregion
