@@ -138,10 +138,14 @@
     <Compile Include="Common\Miki\Utility.cs" />
     <Compile Include="Common\TravayooHelper.cs" />
     <Compile Include="Common\Travco\TravcoHelper.cs" />
+    <Compile Include="DataAccess\SQLContext.cs" />
+    <Compile Include="DataAccess\TravayooConnection.cs" />
+    <Compile Include="DataAccess\TravayooLogs.cs" />
     <Compile Include="Filters\CompressFilter.cs" />
     <Compile Include="Hotel\Helper\CommonHelper.cs" />
     <Compile Include="Hotel\Helper\RTHWKHelper.cs" />
     <Compile Include="Hotel\Model\CredentialModel.cs" />
+    <Compile Include="Hotel\Model\HotelModel.cs" />
     <Compile Include="Hotel\Model\RequestModel.cs" />
     <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
