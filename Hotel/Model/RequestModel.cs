@@ -49,6 +49,10 @@ namespace TravillioXMLOutService.Hotel.Model
             get;
             set;
         }
-
+        public int TimeOut
+        {
+            get;
+            set;
+        }
     }
 }

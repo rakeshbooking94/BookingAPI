@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 using TravillioXMLOutService.Hotel.Model;
@@ -32,7 +33,7 @@ namespace TravillioXMLOutService.Hotel.Repository
         {
             HttpClient _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(model.BaseUrl);
-            _httpClient.Timeout = new TimeSpan(0, 10, 30);
+            _httpClient.Timeout = new TimeSpan(0, 1, 30);
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
             var authenticationString = $"{model.ClientId}:{model.SecretKey}";
@@ -47,10 +48,12 @@ namespace TravillioXMLOutService.Hotel.Repository
             var startTime = DateTime.Now;
             APILogDetail log = new APILogDetail();
             string response = string.Empty;
-         
+
             try
             {
                 var _httpClient = this.CreateClient();
+                _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+
                 using (var request = new HttpRequestMessage(HttpMethod.Post, "hotel/info/dump/"))
                 {
                     request.Content = new StringContent(reqModel.RequestStr);
@@ -64,7 +67,7 @@ namespace TravillioXMLOutService.Hotel.Repository
                         //    File.WriteAllText(basePath + string.Format("HBSRESP-{0}.json", DateTime.Now.Ticks), responseBody);
                         //    result = JsonConvert.DeserializeObject<SearchResponseModel>(responseBody);
                         //}
-                       
+
                     }
                     else
                     {
@@ -72,7 +75,7 @@ namespace TravillioXMLOutService.Hotel.Repository
                     }
                 }
 
-          
+
             }
             catch (Exception ex)
             {
@@ -85,11 +88,11 @@ namespace TravillioXMLOutService.Hotel.Repository
                 apilog.SendCustomExcepToDB(custEx);
                 log.logMsg = ex.Message.ToString();
                 log.logresponseXML = response;
-          
+
             }
             finally
             {
-                
+
                 log.customerID = reqModel.Customer;
                 log.LogTypeID = reqModel.ActionId;
                 log.LogType = reqModel.Action;

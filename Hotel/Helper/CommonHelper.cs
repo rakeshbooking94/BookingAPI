@@ -18,7 +18,7 @@ namespace TravillioXMLOutService.Hotel.Helper
     public static class CommonHelper
     {
         static readonly string travyoPath = ConfigurationManager.AppSettings["TravyoPath"];
-        static readonly string dotWPath = ConfigurationManager.AppSettings["DotWPath"];    
+        static readonly string dotWPath = ConfigurationManager.AppSettings["DotWPath"];
         static readonly int SuplId;
         static int requestNo = 0;
 
@@ -80,7 +80,7 @@ namespace TravillioXMLOutService.Hotel.Helper
 
 
 
-        public static List<List<T>> SplitPropertyList<T>(this List<T> htlList, int size)
+        public static List<List<T>> SplitHotelList<T>(this List<T> htlList, int size)
         {
             var list = new List<List<T>>();
             for (int i = 0; i < htlList.Count; i += size)
@@ -122,6 +122,14 @@ namespace TravillioXMLOutService.Hotel.Helper
                 return defaultValue;
             else
                 return item.Value;
+        }
+
+        public static int GetValueOrDefault(this XElement item, int defaultValue = 0)
+        {
+            if (item == null)
+                return defaultValue;
+            else
+                return Convert.ToInt32(item.Value);
         }
         public static string GetValueOrDefault(this XAttribute attribute, string defaultValue = null)
         {
@@ -186,9 +194,9 @@ namespace TravillioXMLOutService.Hotel.Helper
         }
 
 
-   
 
-  
+
+
         public static XElement RemoveXmlns(this XElement doc)
         {
             doc.Descendants().Attributes().Where(x => x.IsNamespaceDeclaration).Remove();
@@ -236,8 +244,8 @@ namespace TravillioXMLOutService.Hotel.Helper
             return uniqueSessionId;
         }
 
-     
- 
+
+
         public static decimal ModifyToDecimal(this string str)
         {
             decimal num = 0;
@@ -265,7 +273,7 @@ namespace TravillioXMLOutService.Hotel.Helper
             return retVal;
         }
 
-     
+
         public static decimal AttributetoDecimal(this XAttribute item)
         {
             decimal result = 0.0m;
@@ -302,6 +310,6 @@ namespace TravillioXMLOutService.Hotel.Helper
             string re = @"[^\0x02\x09\x0A\x0D\x20-\xD7FF\xE000-\xFFFD\x10000-x10FFFF]";
             return Regex.Replace(text, re, "");
         }
-   
+
     }
 }

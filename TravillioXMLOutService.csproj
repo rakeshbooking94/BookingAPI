@@ -120,9 +120,6 @@
     <Compile Include="Air\TBO\tbo_getavail.cs" />
     <Compile Include="Air\TBO\tbo_pricecheck.cs" />
     <Compile Include="Air\TBO\tbo_supresponse.cs" />
-    <Content Include="App_Code\DAL\ErpGlobal.cs" />
-    <Content Include="App_Code\DAL\SQLHelper.cs" />
-    <Content Include="App_Code\DAL\Logs.cs" />
     <Compile Include="App_Code\SerializeXMLOut.cs" />
     <Content Include="App_Code\Soap_280417 - Copy.cs" />
     <Compile Include="App_Code\TouricoModel.cs" />

@@ -15,6 +15,8 @@ using TravillioXMLOutService.Hotel.Repository.Interfaces;
 using TravillioXMLOutService.Models;
 using Newtonsoft.Json;
 using TravillioXMLOutService.Transfer.Models.HB;
+using TravillioXMLOutService.Supplier.Expedia;
+using System.Threading;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -23,22 +25,23 @@ namespace TravillioXMLOutService.Hotel.Service
     {
 
         #region Global vars
-        IRTHWKRepository repo;
         RTHWKCredentials model;
+        IRTHWKRepository repo;
+        HotelRepository htlRepo;
         string customerid = string.Empty;
         string dmc = string.Empty;
-        const int supplierid = 20;
+        const int supplierId = 24;
         int chunksize = 250;
         int sup_cutime = 20, threadCount = 2;
         XNamespace soapenv = "http://schemas.xmlsoap.org/soap/envelope/";
-
+        ExpediaRequest epsRequest;
         string sales_environment = "hotel_package";
-
         #endregion
         public RTHWKServices()
         {
             model = new RTHWKCredentials();
             repo = new RTHWKRepository(model);
+            htlRepo = new HotelRepository();
         }
 
 
@@ -62,13 +65,142 @@ namespace TravillioXMLOutService.Hotel.Service
             }).ToList();
             return model;
         }
-        Task<List<XElement>> HotelAvailabilityAsync(XElement req)
+        public List<XElement> HotelAvailability(XElement req, string custID, string xtype)
         {
+
+
             List<XElement> HotelsList = new List<XElement>();
+            var _hreq = new HotelSearch()
+            {
+                SupplierId = supplierId,
+                CityCode = req.Descendants("CityID").FirstOrDefault().Value,
+                CountryCode = req.Descendants("CountryID").FirstOrDefault().Value,
+                HotelId = req.Descendants("HotelID").FirstOrDefault().Value,
+                HotelName = req.Descendants("HotelName").FirstOrDefault().Value,
+                MinRating = req.Descendants("MinStarRating").FirstOrDefault().GetValueOrDefault(0),
+                MaxRating = req.Descendants("MaxStarRating").FirstOrDefault().GetValueOrDefault(0),
+            };
             try
             {
+                #region get cut off time
+                try
+                {
+                    sup_cutime = supplier_Cred.secondcutoff_time(req.Descendants("HotelID").FirstOrDefault().Value);
+                }
+                catch { }
 
-                return null;
+                int timeOut = sup_cutime;
+                System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
+                timer.Start();
+                #endregion
+
+                var hotelData = htlRepo.GetAllHotelList(_hreq);
+                if (hotelData == null || hotelData.Count == 0)
+                {
+                    #region No hotel found exception
+                    CustomException ex1 = new CustomException("There is no hotel available in database");
+                    ex1.MethodName = "HotelAvailability";
+                    ex1.PageName = "ExpediaService";
+                    ex1.CustomerID = customerid.ToString();
+                    ex1.TranID = req.Descendants("TransID").First().Value;
+                    SaveAPILog saveex = new SaveAPILog();
+                    saveex.SendCustomExcepToDB(ex1);
+                    #endregion
+                    return null;
+                }
+                string occupancy = req.Descendants("Rooms").FirstOrDefault().Descendants("RoomPax").ToList().epsOccupancy();
+                var statiProperties = hotelData.Select(r => r.HotelId).ToList();
+                List<List<string>> splitList = statiProperties.SplitHotelList(chunksize);
+
+                #region Thread Initialize
+                List<XElement> thr1 = new List<XElement>();
+                List<XElement> thr2 = new List<XElement>();
+                List<XElement> thr3 = new List<XElement>();
+                List<XElement> thr4 = new List<XElement>();
+                List<XElement> thr5 = new List<XElement>();
+                List<XElement> thr6 = new List<XElement>();
+                List<Thread> threadlist;
+
+                for (int i = 0; i < splitList.Count(); i += 2)
+                {
+                    if (timeOut >= 1)
+                    {
+                        int rangecount = threadCount;
+                        if (splitList.Count - i < threadCount)
+                            rangecount = splitList.Count - i;
+
+                        #region rangecount equals 1
+                        if (rangecount == 1)
+                        {
+                            threadlist = new List<Thread>
+                                {
+                                    new Thread(async()=> thr1 = await GetSearchAsync(req, splitList[i], hotelData,timeOut,sales_environment)),
+
+                                };
+                            threadlist.ForEach(t => t.Start());
+                            threadlist.ForEach(t => t.Join(timeOut));
+                            threadlist.ForEach(t => t.Abort());
+                            HotelsList.AddRange(thr1);
+                        }
+                        #endregion
+                        #region rangecount equals 2
+                        else if (rangecount == 2)
+                        {
+                            threadlist = new List<Thread>
+                                {
+                                   new Thread(async()=> thr1 = await GetSearchAsync(req, splitList[i], hotelData,timeOut,sales_environment)),
+                                  new Thread(async()=> thr2 =  await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
+
+                                };
+                            threadlist.ForEach(t => t.Start());
+                            threadlist.ForEach(t => t.Join(timeOut));
+                            threadlist.ForEach(t => t.Abort());
+                            HotelsList.AddRange(thr1.Concat(thr2));
+
+
+                        }
+                        #endregion
+                        #region rangecount equals 3
+                        else if (rangecount == 3)
+                        {
+                            threadlist = new List<Thread>
+                                {
+                                    new Thread(async ()=> thr1 = await GetSearchAsync(req,splitList[i], hotelData,timeOut ,sales_environment)),
+                                    new Thread(async()=> thr2 =await  GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
+                                    new Thread(async()=> thr3 =await GetSearchAsync(req,splitList[i+2], hotelData,timeOut,sales_environment)),
+
+                                };
+                            threadlist.ForEach(t => t.Start());
+                            threadlist.ForEach(t => t.Join(timeOut));
+                            threadlist.ForEach(t => t.Abort());
+                            HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3));
+                        }
+                        #endregion
+                        #region rangecount equals 4
+                        else if (rangecount == 4)
+                        {
+                            threadlist = new List<Thread>
+                                {
+                                    new Thread(async()=> thr1 =await GetSearchAsync(req, splitList[i], hotelData,timeOut ,sales_environment)),
+                                    new Thread(async()=> thr2 =await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
+                                    new Thread(async()=> thr3 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
+                                     new Thread(async()=> thr4 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
+
+                                };
+                            threadlist.ForEach(t => t.Start());
+                            threadlist.ForEach(t => t.Join(timeOut));
+                            threadlist.ForEach(t => t.Abort());
+                            HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3).Concat(thr4));
+                        }
+                        #endregion
+
+                        HotelsList = HotelsList.OrderBy(x => x.Descendants("MinRate").FirstOrDefault().Value).ToList();
+                        timeOut = timeOut - Convert.ToInt32(timer.ElapsedMilliseconds);
+                    }
+
+                }
+                #endregion
+                return HotelsList;
             }
             catch (Exception ex)
             {
@@ -88,10 +220,11 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
 
-        public async Task<List<XElement>> GetSearchAsync(List<string> htlCodes, XElement _travyoReq)
+        public async Task<List<XElement>> GetSearchAsync(XElement _travyoReq, List<string> htlCodes, List<HotelModel> hotelData, int timeout, string sales_environment = "")
         {
             List<XElement> htList = new List<XElement>();
             var reqObj = new RequestModel();
+            reqObj.TimeOut = timeout;
             reqObj.StartTime = DateTime.Now;
             reqObj.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
             reqObj.TrackNo = _travyoReq.Attribute("transId").Value;
@@ -135,12 +268,46 @@ namespace TravillioXMLOutService.Hotel.Service
                                     new XElement("Latitude", HotelData["latitude"].ToString()),
                                     new XElement("xmloutcustid", customerid),
                                     new XElement("xmlouttype", false),
-                                    new XElement("DMC", dmc), new XElement("SupplierID", supplierid),
+                                    new XElement("DMC", dmc), new XElement("SupplierID", supplierId),
                                     new XElement("Currency", _req.currency),
                                     new XElement("Offers", ""), new XElement("Facilities", null),
                                     new XElement("Rooms", ""),
                                     new XElement("searchType", sales_environment)
                                     );
+
+
+
+
+                    //XElement hoteldata = new XElement("Hotel", new XElement("HotelID", HotelData["hotelcode"].ToString()),
+                    //                new XElement("HotelName", HotelData["hotelname"].ToString()),
+                    //                new XElement("PropertyTypeName", ""),
+                    //                new XElement("CountryID", ""),
+                    //                new XElement("CountryName", req.Descendants("CountryName").FirstOrDefault().Value),
+                    //                new XElement("CountryCode", HotelData["country_code"].ToString()),
+                    //                new XElement("CityId"),
+                    //                new XElement("CityCode", req.Descendants("CityCode").FirstOrDefault().Value),
+                    //                new XElement("CityName", HotelData["city"].ToString()),
+                    //                new XElement("AreaId"),
+                    //                new XElement("AreaName", ""),
+                    //                new XElement("RequestID", ""),
+                    //                new XElement("Address", HotelData["address"].ToString()),
+                    //                new XElement("Location", HotelData["address"].ToString()),
+                    //                new XElement("Description"),
+                    //                new XElement("StarRating", HotelData["rating"].ToString().ModifyToStar()),
+                    //                new XElement("MinRate", minrate),
+                    //                new XElement("HotelImgSmall", HotelData["image"].ToString()),
+                    //                new XElement("HotelImgLarge", HotelData["image"].ToString()),
+                    //                new XElement("MapLink"),
+                    //                new XElement("Longitude", HotelData["longitude"].ToString()),
+                    //                new XElement("Latitude", HotelData["latitude"].ToString()),
+                    //                new XElement("xmloutcustid", customerid),
+                    //                new XElement("xmlouttype", xmlouttype),
+                    //                new XElement("DMC", dmc), new XElement("SupplierID", supplierid),
+                    //                new XElement("Currency", currency),
+                    //                new XElement("Offers", ""), new XElement("Facilities", null),
+                    //                new XElement("Rooms", ""),
+                    //                new XElement("searchType", sales_environment)
+                    //                );
 
                 }
 

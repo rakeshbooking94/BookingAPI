@@ -1,65 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Xml.Linq;
+using TravillioXMLOutService.DataAccess;
 using TravillioXMLOutService.Hotel.Model;
+using Newtonsoft.Json.Linq;
 
 namespace TravillioXMLOutService.Hotel.Repository
 {
     public class HotelRepository
     {
-        public List<HotelModel> GetAllHotelList(XElement req)
+        public List<HotelModel> GetAllHotelList(HotelSearch req)
         {
-            SqlHelper.ExecuteDataset()
-
-
-            public DataTable GetCityCode(string CityCode, string CountryID, int SupplierId)
-            {
-                DataTable dt = new DataTable("CityCode");
-               
-
-            }
-
+            List<HotelModel> lst = new List<HotelModel>();
             try
             {
-                using (conn = new SqlConnection(ConfigurationManager.ConnectionStrings["INGMContext"].ToString()))
+                SqlParameter[] param = new SqlParameter[6];
+                param[0] = new SqlParameter("@SupplierId", req.SupplierId);
+                param[1] = new SqlParameter("@HotelCode", req.HotelId);
+                param[2] = new SqlParameter("@HotelName", req.CityCode);
+                param[3] = new SqlParameter("@CountryCode", req.CountryCode);
+                param[4] = new SqlParameter("@MinStarRating", req.MinRating);
+                param[5] = new SqlParameter("@MaxStarRating", req.MaxRating);
+                var ds = SqlHelper.ExecuteDataset(TravayooConnection.ServiceConnection,
+                     CommandType.StoredProcedure, "GetAllHotelSearchProc", param);
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    using (cmd = new SqlCommand("usp_GetExpediaCity", conn))
+                    ds.Tables[0].AsEnumerable().Select(x => new HotelModel
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@cityId", CityCode);
-                        cmd.Parameters.AddWithValue("@countryId", CountryID);
-                        cmd.Parameters.AddWithValue("@suplId", SupplierId);
-                        using (adap = new SqlDataAdapter(cmd))
-                        {
-                            conn.Open();
-                            adap.Fill(dt);
-                            conn.Close();
-                            return dt;
-                        }
-                    }
+                        HotelId = x["hotelcode"] != DBNull.Value ? x["hotelcode"].ToString() : "",
+                        HotelName = x["hotelname"] != DBNull.Value ? x["hotelname"].ToString() : "",
+                        Rating = x["rating"] != DBNull.Value ? x["rating"].ToString() : "",
+                        Latitude = x["Latitude"] != DBNull.Value ? x["Latitude"].ToString() : "",
+                        Longitude = x["longitude"] != DBNull.Value ? x["longitude"].ToString() : "",
+                        HotelAddress = x["address"] != DBNull.Value ? x["address"].ToString() : "",
+                        CityName = x["city"] != DBNull.Value ? x["city"].ToString() : "",
+                        CountryCode = x["country_code"] != DBNull.Value ? x["country_code"].ToString() : "",
+                        HotelImage = x["image"] != DBNull.Value ? x["image"].ToString() : "",
+                        //PostalCode = x["HotelId"] != DBNull.Value ? x["HotelId"].ToString() : "",
+                    }).ToList();
                 }
+
             }
-            catch (Exception ex)
+            catch
             {
-                return dt;
+                throw new Exception("Hotel not avaialabe  in Giata");
 
             }
-
-
-
-
-            req.Element("FromDate").Value.RTHWKDate(),
-
-            @SupplierId int= NULL,
-@HotelCode nvarchar(50) = NULL,    
-@HotelName nvarchar(50)= NULL,    
-@CityCode nvarchar(50)= NULL,    
-@CountryCode nvarchar(50)= NULL,    
-@MinStarRating int= NULL,
-@MaxStarRating int= NULL
-
+            return lst;
         }
 
     }
