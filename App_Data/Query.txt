@@ -21,5 +21,8 @@ ORDER BY JSON_VALUE(HotelDetais, '$.star_rating');
 
 select count(*) from tblRTHWKStaticData
 
+
+GetAllHotelSearchProc
+
   
 
