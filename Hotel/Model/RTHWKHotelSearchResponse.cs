@@ -172,6 +172,7 @@ namespace TravillioXMLOutService.Hotel.Model
 
     public class TaxData
     {
+        public List<Tax> taxes { get; set; }
     }
 
     public class VatData
@@ -183,6 +184,14 @@ namespace TravillioXMLOutService.Hotel.Model
         public string value { get; set; }
     }
 
+    public class Tax
+    {
+        public string name { get; set; }
+        public bool included_by_supplier { get; set; }     
+        public double amount { get; set; }
+        public string currency_code { get; set; }
+      
+    }
 
 
 }

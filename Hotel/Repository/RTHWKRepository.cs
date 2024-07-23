@@ -28,7 +28,6 @@ namespace TravillioXMLOutService.Hotel.Repository
             model = _model;
         }
 
-
         HttpClient CreateClient()
         {
             HttpClient _httpClient = new HttpClient();
@@ -42,7 +41,6 @@ namespace TravillioXMLOutService.Hotel.Repository
             return _httpClient;
         }
 
-
         public async Task<string> HotelSearchAsync(RequestModel reqModel)
         {
             var startTime = DateTime.Now;
@@ -51,10 +49,11 @@ namespace TravillioXMLOutService.Hotel.Repository
 
             try
             {
+
                 var _httpClient = this.CreateClient();
                 _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
 
-                using (var request = new HttpRequestMessage(HttpMethod.Post, "hotel/info/dump/"))
+                using (var request = new HttpRequestMessage(HttpMethod.Post, "search/serp/hotels/"))
                 {
                     request.Content = new StringContent(reqModel.RequestStr);
                     request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
@@ -62,12 +61,6 @@ namespace TravillioXMLOutService.Hotel.Repository
                     if (result.IsSuccessStatusCode)
                     {
                         response = await result.Content.ReadAsStringAsync();
-                        //if (!string.IsNullOrEmpty(responseBody))
-                        //{
-                        //    File.WriteAllText(basePath + string.Format("HBSRESP-{0}.json", DateTime.Now.Ticks), responseBody);
-                        //    result = JsonConvert.DeserializeObject<SearchResponseModel>(responseBody);
-                        //}
-
                     }
                     else
                     {
@@ -135,28 +128,109 @@ namespace TravillioXMLOutService.Hotel.Repository
             return response;
         }
 
-        //Task<string> HotelSearchAsync(XElement req);
-        //Task<string> RoomSearchAsync(XElement req);
+        public async Task<string> RoomSearchAsync(RequestModel reqModel)
+        {
+            var startTime = DateTime.Now;
+            APILogDetail log = new APILogDetail();
+            string response = string.Empty;
+
+            try
+            {
+
+                var _httpClient = this.CreateClient();
+                _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+
+                using (var request = new HttpRequestMessage(HttpMethod.Post, "search/hp/"))
+                {
+                    request.Content = new StringContent(reqModel.RequestStr);
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var result = await _httpClient.SendAsync(request);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        response = await result.Content.ReadAsStringAsync();
+
+                    }
+                    else
+                    {
+                        throw new HttpRequestException(result.ReasonPhrase);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                CustomException custEx = new CustomException(ex);
+                custEx.MethodName = "RoomSearchAsync Issue while reading response";
+                custEx.PageName = "RTHWKRepository";
+                custEx.CustomerID = reqModel.Customer.ToString();
+                custEx.TranID = reqModel.TrackNo;
+                SaveAPILog apilog = new SaveAPILog();
+                apilog.SendCustomExcepToDB(custEx);
+                log.logMsg = ex.Message.ToString();
+                log.logresponseXML = response;
+
+            }
+            finally
+            {
+
+                log.customerID = reqModel.Customer;
+                log.LogTypeID = reqModel.ActionId;
+                log.LogType = reqModel.Action;
+                log.SupplierID = model.SupplierId;
+                log.TrackNumber = reqModel.TrackNo;
+                log.logrequestXML = reqModel.RequestStr;
+
+                log.StartTime = startTime;
+                log.EndTime = DateTime.Now;
+                SaveAPILog savelog = new SaveAPILog();
+                try
+                {
+                    if (log.LogTypeID == 1 && log.LogType == "Search")
+                    {
+                        log.logresponseXML = response == null ? null : response.ToString();
+                        savelog.SaveAPILogs_search(log);
+                    }
+                    else
+                    {
+                        log.logresponseXML = response == null ? null : response.ToString();
+                        savelog.SaveAPILogs(log);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    CustomException custEx = new CustomException(ex);
+                    custEx.MethodName = "RoomSearchAsync Error on saving apilog";
+                    custEx.PageName = "RTHWKRepository";
+                    custEx.CustomerID = log.customerID.ToString();
+                    custEx.TranID = log.TrackNumber;
+                    SaveAPILog apilog = new SaveAPILog();
+                    apilog.SendCustomExcepToDB(custEx);
+                    log.logMsg = ex.Message.ToString();
+                    log.logresponseXML = response;
+                    savelog.SaveAPILogwithResponseError(log);
+                }
+            }
+
+            return response;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         //Task<string> CancellationPolicyAsync(XElement req);
         //Task<string> PreBookingAsync(XElement req);
         //Task<string> HotelBookingAsync(XElement req);
         //Task<string> CancelBookingAsync(XElement req);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         public async Task<string> DownlaodHotelAsync()
@@ -198,8 +272,6 @@ namespace TravillioXMLOutService.Hotel.Repository
             }
 
         }
-
-
 
         #region Dispose
         /// <summary>
