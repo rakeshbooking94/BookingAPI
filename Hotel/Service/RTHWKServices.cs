@@ -341,8 +341,6 @@ namespace TravillioXMLOutService.Hotel.Service
                 var response = JsonConvert.DeserializeObject<RTHWKHotelSearchResponse>(reqObj.ResponseStr);
                 if (response.status == "ok")
                 {
-
-
                     var hotelResult = from htl in response.data.hotels
                                       join htlD in hotelData
                                       on htl.id equals htlD.HotelId
@@ -373,14 +371,14 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
 
-                    XElement hoteldata = new XElement("Hotels", new XElement("Hotel",
-                        new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
-                        new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
-                        new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
-                        new XElement("Description"), new XElement("StarRating"), new XElement("MinRate"), new XElement("HotelImgSmall"),
-                        new XElement("HotelImgLarge"), new XElement("MapLink"), new XElement("Longitude"), new XElement("Latitude"), new XElement("DMC"),
-                        new XElement("SupplierID"), new XElement("Currency", currency), new XElement("Offers"),
-                        new XElement(groupDetails)));
+                    //XElement hoteldata = new XElement("Hotels", new XElement("Hotel",
+                    //    new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
+                    //    new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
+                    //    new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
+                    //    new XElement("Description"), new XElement("StarRating"), new XElement("MinRate"), new XElement("HotelImgSmall"),
+                    //    new XElement("HotelImgLarge"), new XElement("MapLink"), new XElement("Longitude"), new XElement("Latitude"), new XElement("DMC"),
+                    //    new XElement("SupplierID"), new XElement("Currency", currency), new XElement("Offers"),
+                    //    new XElement(groupDetails)));
                     RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", hoteldata)));
                 }
                 else

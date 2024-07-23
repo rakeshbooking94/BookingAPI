@@ -303,6 +303,7 @@
     <Content Include="App_Data\Hotel\Search.xml" />
     <Content Include="App_Data\Query.txt" />
     <Content Include="App_Data\Script\apilog.sql" />
+    <Content Include="App_Data\SQL\sqlquery.sql" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />
     <Content Include="App_Data\SupplierCredential\SupplierCredentials.xml" />
     <Content Include="App_Data\Transfer\Currency.xml" />
