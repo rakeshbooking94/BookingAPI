@@ -17,6 +17,8 @@ using Newtonsoft.Json;
 using TravillioXMLOutService.Transfer.Models.HB;
 using TravillioXMLOutService.Supplier.Expedia;
 using System.Threading;
+using System.Web.UI.WebControls.Expressions;
+using Newtonsoft.Json.Linq;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -288,34 +290,163 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
 
-        //#region RoomSearch
-        //Task<XElement> GetRoomAvailabilityAsync(XElement roomReq)
-        //{
-        //    XElement searchReq = roomReq.Descendants("searchRequest").FirstOrDefault();
-        //    XElement RoomDetails = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
-        //                           new XElement("Authentication", new XElement("AgentID", roomReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", roomReq.Descendants("UserName").FirstOrDefault().Value), new XElement("Password", roomReq.Descendants("Password").FirstOrDefault().Value),
-        //                           new XElement("ServiceType", roomReq.Descendants("ServiceType").FirstOrDefault().Value), new XElement("ServiceVersion", roomReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
+        #region RoomSearch
+        RTHWKRoomSearchRequest BindRoomRequest(XElement req)
+        {
+            req = req.Element("searchRequest");
 
-        //    try
-        //    {
-        //        return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        #region Exception
-        //        CustomException ex1 = new CustomException(ex);
-        //        ex1.MethodName = "RoomAvailability";
-        //        ex1.PageName = "ExpediaService";
-        //        ex1.CustomerID = roomReq.Descendants("CustomerID").FirstOrDefault().Value;
-        //        ex1.TranID = roomReq.Descendants("TransID").FirstOrDefault().Value;
-        //        SaveAPILog saveex = new SaveAPILog();
-        //        saveex.SendCustomExcepToDB(ex1);
-        //        RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
-        //        #endregion
-        //        return RoomDetails;
-        //    }
-        //}
-        //#endregion
+            var htl = req.Element("GiataList").Descendants("GiataHotelList").Where(x => x.Attribute("GSupID").Value == "24").FirstOrDefault();
+
+            RTHWKRoomSearchRequest model = new RTHWKRoomSearchRequest()
+            {
+                checkin = req.Element("FromDate").Value.RTHWKDate(),
+                checkout = req.Element("ToDate").Value.RTHWKDate(),
+                residency = req.Element("PaxNationality_CountryCode").Value.RTHWKResidenc(),
+                language = RTHWKHelper.RTHWKlanguage(),
+                currency = req.Element("DesiredCurrencyCode").Value.RTHWKCurrency(),
+                id = htl.Attribute("GHtlID").Value
+            };
+            model.guests = req.Element("Rooms").Descendants("RoomPax").Select(x => new Guest
+            {
+                adults = x.Attribute("Adult").ToINT(),
+                children = x.Attribute("ChildAge").Children()
+            }).ToList();
+            return model;
+        }
+
+        public async Task<XElement> GetRoomAvailabilityAsync(XElement roomReq, int timeout, string xtype, string htlid, string custid)
+        {
+            XElement searchReq = roomReq.Descendants("searchRequest").FirstOrDefault();
+            XElement RoomDetails = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                new XElement("Authentication", new XElement("AgentID", roomReq.Descendants("AgentID").FirstOrDefault().Value),
+                new XElement("UserName", roomReq.Descendants("UserName").FirstOrDefault().Value),
+                new XElement("Password", roomReq.Descendants("Password").FirstOrDefault().Value),
+                new XElement("ServiceType", roomReq.Descendants("ServiceType").FirstOrDefault().Value),
+                new XElement("ServiceVersion", roomReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
+
+            try
+            {
+                List<XElement> htList = new List<XElement>();
+                var reqObj = new RequestModel();
+                reqObj.TimeOut = timeout;
+                reqObj.StartTime = DateTime.Now;
+                reqObj.Customer = Convert.ToInt64(roomReq.Attribute("customerId").Value);
+                reqObj.TrackNo = roomReq.Attribute("transId").Value;
+                reqObj.ActionId = (int)roomReq.Name.LocalName.GetAction();
+                reqObj.Action = roomReq.Name.LocalName.GetAction().ToString();
+                var _req = BindRoomRequest(roomReq);
+                reqObj.RequestStr = JsonConvert.SerializeObject(_req);
+                reqObj.ResponseStr = await repo.RoomSearchAsync(reqObj);
+                var response = JsonConvert.DeserializeObject<RTHWKHotelSearchResponse>(reqObj.ResponseStr);
+                if (response.status == "ok")
+                {
+
+
+                    var hotelResult = from htl in response.data.hotels
+                                      join htlD in hotelData
+                                      on htl.id equals htlD.HotelId
+                                      select new XElement("Room", new XAttribute("ID", roomid), new XAttribute("SuppliersID", supplierid),
+                                      new XAttribute("RoomSeq", roomSeq),
+                                      new XAttribute("SessionID", cxlPolicy), new XAttribute("RoomType", roomName), new XAttribute("OccupancyID", bedgroupid),
+                                                          new XAttribute("OccupancyName", bedname), new XAttribute("MealPlanID", promotion),
+                                                          new XAttribute("MealPlanName", BoardName), new XAttribute("MealPlanCode", ""), new XAttribute("MealPlanPrice", ""),
+                                                          new XAttribute("PerNightRoomRate", roomPrice / nights),
+                                                          new XAttribute("TotalRoomRate", roomPrice), new XAttribute("CancellationDate", ""),
+                                                          new XAttribute("CancellationAmount", nonRefundableDate),
+                                                          new XAttribute("isAvailable", true),
+                                                          new XAttribute("searchType", searchtype),
+                                                          new XElement("RequestID", pricechecklink), new XElement("Offers", ""), new XElement("PromotionList", new XElement("Promotions", promotion)),
+                                                          new XElement("CancellationPolicy"), new XElement("Amenities", new XElement("Amenity")),
+                                                          new XElement("Images", new XElement("Image", new XAttribute("Path", ""))),
+                                                          new XElement("Supplements"),
+                                                          new XElement(getPriceBreakup(nights, roomPrice)),
+                                                          new XElement("AdultNum", roompax.Descendants("Adult").FirstOrDefault().Value),
+                                                          new XElement("ChildNum", roompax.Descendants("Child").FirstOrDefault().Value))
+
+
+
+
+
+
+
+
+
+
+                    XElement hoteldata = new XElement("Hotels", new XElement("Hotel",
+                        new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
+                        new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
+                        new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
+                        new XElement("Description"), new XElement("StarRating"), new XElement("MinRate"), new XElement("HotelImgSmall"),
+                        new XElement("HotelImgLarge"), new XElement("MapLink"), new XElement("Longitude"), new XElement("Latitude"), new XElement("DMC"),
+                        new XElement("SupplierID"), new XElement("Currency", currency), new XElement("Offers"),
+                        new XElement(groupDetails)));
+                    RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", hoteldata)));
+                }
+                else
+                {
+                    RoomDetails.Add(new XElement(soapenv + "Body", searchReq,
+                        new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                #region Exception
+                CustomException ex1 = new CustomException(ex);
+                ex1.MethodName = "RoomAvailability";
+                ex1.PageName = "ExpediaService";
+                ex1.CustomerID = roomReq.Descendants("CustomerID").FirstOrDefault().Value;
+                ex1.TranID = roomReq.Descendants("TransID").FirstOrDefault().Value;
+                SaveAPILog saveex = new SaveAPILog();
+                saveex.SendCustomExcepToDB(ex1);
+                RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
+                #endregion
+                return RoomDetails;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public XElement BindSuplements(TaxData tax_data)
+        {
+            XElement supplements = new XElement("Supplements");
+            if (tax_data != null)
+            {
+                var _suplements = tax_data.taxes.Select(tax =>
+                new XElement("Supplement",
+                new XAttribute("suppId", ""),
+                new XAttribute("supptType", ""),
+                new XAttribute("suppType", "PerRoomSupplement"),
+                new XAttribute("suppCurrency", tax.currency_code),
+                new XAttribute("suppName", tax.name),
+                new XAttribute("suppIsMandatory", !tax.included_by_supplier),
+                new XAttribute("suppChargeType", "AtProperty"),
+                new XAttribute("suppPrice", tax.amount)));
+                supplements.Add(_suplements);
+            }
+            return supplements;
+        }
+
+        #endregion
+
+
+
+
+
+
+
+
         //#region Cancellation Policy
         //Task<XElement> CancellationPolicyAsync(XElement cxlPolicyReq)
         //{

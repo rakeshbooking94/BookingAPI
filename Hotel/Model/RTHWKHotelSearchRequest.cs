@@ -24,5 +24,14 @@ namespace TravillioXMLOutService.Hotel.Model
         public List<string> ids { get; set; }
         public string currency { get; set; }
     }
-
+    public class RTHWKRoomSearchRequest
+    {
+        public string checkin { get; set; }
+        public string checkout { get; set; }
+        public string residency { get; set; }
+        public string language { get; set; }
+        public List<Guest> guests { get; set; }
+        public string id { get; set; }
+        public string currency { get; set; }
+    }
 }
