@@ -473,6 +473,8 @@ namespace TravillioXMLOutService.Supplier.Expedia
                 return hotelDescResdoc;
             }
         }
+
+
         #endregion
 
         #region Room Availability

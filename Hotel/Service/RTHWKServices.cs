@@ -19,6 +19,10 @@ using TravillioXMLOutService.Supplier.Expedia;
 using System.Threading;
 using System.Web.UI.WebControls.Expressions;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
+using TravillioXMLOutService.Air.Models.TBO;
+using System.Data;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -74,8 +78,6 @@ namespace TravillioXMLOutService.Hotel.Service
         }
         public List<XElement> HotelAvailability(XElement req, string custID, string xtype)
         {
-
-
             List<XElement> HotelsList = new List<XElement>();
             var _hreq = new HotelSearch()
             {
@@ -163,8 +165,6 @@ namespace TravillioXMLOutService.Hotel.Service
                             threadlist.ForEach(t => t.Join(timeOut));
                             threadlist.ForEach(t => t.Abort());
                             HotelsList.AddRange(thr1.Concat(thr2));
-
-
                         }
                         #endregion
                         #region rangecount equals 3
@@ -192,7 +192,6 @@ namespace TravillioXMLOutService.Hotel.Service
                                     new Thread(async()=> thr2 =await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
                                     new Thread(async()=> thr3 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
                                      new Thread(async()=> thr4 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
-
                                 };
                             threadlist.ForEach(t => t.Start());
                             threadlist.ForEach(t => t.Join(timeOut));
@@ -200,7 +199,6 @@ namespace TravillioXMLOutService.Hotel.Service
                             HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3).Concat(thr4));
                         }
                         #endregion
-
                         HotelsList = HotelsList.OrderBy(x => x.Descendants("MinRate").FirstOrDefault().Value).ToList();
                         timeOut = timeOut - Convert.ToInt32(timer.ElapsedMilliseconds);
                     }
@@ -280,12 +278,9 @@ namespace TravillioXMLOutService.Hotel.Service
                     htList = hotelResult.ToList();
                 }
             }
-
             return htList;
-
         }
-
-
+        
         #endregion
 
 
@@ -294,9 +289,7 @@ namespace TravillioXMLOutService.Hotel.Service
         RTHWKRoomSearchRequest BindRoomRequest(XElement req)
         {
             req = req.Element("searchRequest");
-
-            var htl = req.Element("GiataList").Descendants("GiataHotelList").Where(x => x.Attribute("GSupID").Value == "24").FirstOrDefault();
-
+            var htl = req.Element("GiataList").Descendants("GiataHotelList").Where(x => x.Attribute("GSupID").Value == supplierId.ToString()).FirstOrDefault();
             RTHWKRoomSearchRequest model = new RTHWKRoomSearchRequest()
             {
                 checkin = req.Element("FromDate").Value.RTHWKDate(),
@@ -327,7 +320,8 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
-                List<XElement> htList = new List<XElement>();
+                var _req = BindRoomRequest(roomReq);
+                var hotelObj = htlRepo.GetHotelDetail(_req.id);
                 var reqObj = new RequestModel();
                 reqObj.TimeOut = timeout;
                 reqObj.StartTime = DateTime.Now;
@@ -335,50 +329,53 @@ namespace TravillioXMLOutService.Hotel.Service
                 reqObj.TrackNo = roomReq.Attribute("transId").Value;
                 reqObj.ActionId = (int)roomReq.Name.LocalName.GetAction();
                 reqObj.Action = roomReq.Name.LocalName.GetAction().ToString();
-                var _req = BindRoomRequest(roomReq);
                 reqObj.RequestStr = JsonConvert.SerializeObject(_req);
                 reqObj.ResponseStr = await repo.RoomSearchAsync(reqObj);
+
                 var response = JsonConvert.DeserializeObject<RTHWKHotelSearchResponse>(reqObj.ResponseStr);
                 if (response.status == "ok")
                 {
-                    var hotelResult = from htl in response.data.hotels
-                                      join htlD in hotelData
-                                      on htl.id equals htlD.HotelId
-                                      select new XElement("Room", new XAttribute("ID", roomid), new XAttribute("SuppliersID", supplierid),
-                                      new XAttribute("RoomSeq", roomSeq),
-                                      new XAttribute("SessionID", cxlPolicy), new XAttribute("RoomType", roomName), new XAttribute("OccupancyID", bedgroupid),
-                                                          new XAttribute("OccupancyName", bedname), new XAttribute("MealPlanID", promotion),
-                                                          new XAttribute("MealPlanName", BoardName), new XAttribute("MealPlanCode", ""), new XAttribute("MealPlanPrice", ""),
-                                                          new XAttribute("PerNightRoomRate", roomPrice / nights),
-                                                          new XAttribute("TotalRoomRate", roomPrice), new XAttribute("CancellationDate", ""),
-                                                          new XAttribute("CancellationAmount", nonRefundableDate),
-                                                          new XAttribute("isAvailable", true),
-                                                          new XAttribute("searchType", searchtype),
-                                                          new XElement("RequestID", pricechecklink), new XElement("Offers", ""), new XElement("PromotionList", new XElement("Promotions", promotion)),
-                                                          new XElement("CancellationPolicy"), new XElement("Amenities", new XElement("Amenity")),
-                                                          new XElement("Images", new XElement("Image", new XAttribute("Path", ""))),
-                                                          new XElement("Supplements"),
-                                                          new XElement(getPriceBreakup(nights, roomPrice)),
-                                                          new XElement("AdultNum", roompax.Descendants("Adult").FirstOrDefault().Value),
-                                                          new XElement("ChildNum", roompax.Descendants("Child").FirstOrDefault().Value))
+                    int counter = 0;
+                    var roomsResult = from rate in response.data.hotels[0].rates
+                                      join roms in hotelObj.room_groups on rate.rg_ext equals roms.rg_ext
+                                      let nightPrice = rate.totalPrice / rate.daily_prices.Count
+                                      let roomPrice = nightPrice / searchReq.Descendants("RoomPax").Count()
+                                      select new XElement("RoomTypes",
+                                             new XAttribute("Index", counter++), new XAttribute("HtlCode", htlid),
+                                             new XAttribute("CrncyCode", _req.currency), new XAttribute("DMCType", dmc),
+                                             new XAttribute("CUID", customerid), new XAttribute("TotalRate", rate.totalPrice),
+                                             searchReq.Descendants("RoomPax").Select((y, i) =>
+                                             new XElement("Room",
+                                                 new XAttribute("ID", rate.book_hash),
+                                                 new XElement("RequestID", ""),
+                                                 new XAttribute("SuppliersID", supplierId),
+                                                 new XAttribute("RoomSeq", i),
+                                                 new XAttribute("SessionID", rate.match_hash),
+                                                 new XAttribute("RoomType", rate.room_name),
+                                                 new XAttribute("OccupancyID", string.Empty),
+                                                 new XAttribute("OccupancyName", rate.room_data_trans.bedding_type),
+                                                 new XAttribute("MealPlanID", ""),
+                                                 new XAttribute("MealPlanName", ""),
+                                                 new XAttribute("MealPlanCode", ""),
+                                                 new XAttribute("MealPlanPrice", ""),
+                                                 new XAttribute("PerNightRoomRate", nightPrice),
+                                                 new XAttribute("TotalRoomRate", roomPrice),
+                                                 new XAttribute("CancellationDate", ""),
+                                                 new XAttribute("CancellationAmount", ""),
+                                                 new XAttribute("isAvailable", true),
+                                                 new XElement("Offers", ""),
+                                                 BindSuplements(rate.payment_options.payment_types.First().tax_data),
+                                                 new XElement("AdultNum", y.Element("Adult").Value),
+                                                 new XElement("ChildNum", y.Element("Child").Value)))
+                                             );
+                    XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
+                                       new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
+                                       new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
+                                       new XElement("Description"), new XElement("StarRating"), new XElement("MinRate"), new XElement("HotelImgSmall"),
+                                       new XElement("HotelImgLarge"), new XElement("MapLink"), new XElement("Longitude"), new XElement("Latitude"), new XElement("DMC"),
+                                       new XElement("SupplierID"), new XElement("Currency", _req.currency), new XElement("Offers"),
+                                       new XElement("Rooms", roomsResult)));
 
-
-
-
-
-
-
-
-
-
-                    //XElement hoteldata = new XElement("Hotels", new XElement("Hotel",
-                    //    new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
-                    //    new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
-                    //    new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
-                    //    new XElement("Description"), new XElement("StarRating"), new XElement("MinRate"), new XElement("HotelImgSmall"),
-                    //    new XElement("HotelImgLarge"), new XElement("MapLink"), new XElement("Longitude"), new XElement("Latitude"), new XElement("DMC"),
-                    //    new XElement("SupplierID"), new XElement("Currency", currency), new XElement("Offers"),
-                    //    new XElement(groupDetails)));
                     RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", hoteldata)));
                 }
                 else
@@ -403,19 +400,6 @@ namespace TravillioXMLOutService.Hotel.Service
                 return RoomDetails;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
         public XElement BindSuplements(TaxData tax_data)
         {
             XElement supplements = new XElement("Supplements");
@@ -435,12 +419,74 @@ namespace TravillioXMLOutService.Hotel.Service
             }
             return supplements;
         }
-
+        
         #endregion
 
 
 
+        #region Hotel Details
+        public XElement HotelDetails(XElement req)
+        {
+            XElement hotelDesc = new XElement("Hotels");
+            XElement HotelDescReq = req.Descendants("hoteldescRequest").FirstOrDefault();
+            XElement hotelDescResdoc = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                new XElement("Authentication", new XElement("AgentID", req.Descendants("AgentID").Single().Value),
+                new XElement("UserName", req.Descendants("UserName").Single().Value),
+                new XElement("Password", req.Descendants("Password").Single().Value),
+                new XElement("ServiceType", req.Descendants("ServiceType").Single().Value),
+                new XElement("ServiceVersion", req.Descendants("ServiceVersion").Single().Value))));
 
+            try
+            {
+                var hotelObj = htlRepo.GetHotelDetail(req.Descendants("HotelID").FirstOrDefault().Value);
+                if (hotelObj != null)
+                {
+                    StringBuilder sb = new StringBuilder("<h5>" + hotelObj.name + "</h6>");
+                    sb.Append("<p>" + hotelObj.address + "</p>");
+                    foreach (var item in hotelObj.description_struct)
+                    {
+                        sb.Append("<h6><b>" + item.title + "</b></h6>");
+                        foreach (var text in item.paragraphs)
+                        {
+                            sb.Append("<p>" + text + "</p>");
+                        }
+                    }
+                    hotelDescResdoc.Add(new XElement(soapenv + "Body", HotelDescReq, new XElement("hoteldescResponse",
+                        new XElement("Hotels", new XElement("Hotel",
+                        new XElement("HotelID", req.Descendants("HotelID").FirstOrDefault().Value),
+                                        new XElement("Description", sb.ToString()),
+                                        HotelImageTag(hotelObj.images),
+                                        new XElement("ContactDetails", new XElement("Phone", hotelObj.phone),
+                                        new XElement("Fax", "")),
+                                        new XElement("CheckinTime", hotelObj.check_in_time), new XElement("CheckoutTime", hotelObj.check_out_time)
+                                        )))));
+                }
+                return hotelDescResdoc;
+            }
+            catch (Exception ex)
+            {
+                return hotelDescResdoc;
+            }
+        }
+        public XElement HotelImageTag(List<string> imgList)
+        {
+            XElement mgItem;
+            if (!imgList.IsNullOrEmpty())
+            {
+
+                var result = from itm in imgList
+                             select new XElement("Image", new XAttribute("Path", itm));
+                mgItem = new XElement("Images", result);
+            }
+            else
+            {
+                mgItem = new XElement("Images", null);
+            }
+            return mgItem;
+
+        }
+        #endregion
 
 
 
@@ -476,6 +522,8 @@ namespace TravillioXMLOutService.Hotel.Service
         //    }
         //}
         //#endregion
+
+
         //#region Pre Booking
         //Task<XElement> PreBookingAsync(XElement preBookReq)
         //{

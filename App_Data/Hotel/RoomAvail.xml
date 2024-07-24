@@ -89,7 +89,8 @@
           <Offers />
           <Rooms>
             <RoomTypes TotalRate="26.17" Index="1" HtlCode="56319" CrncyCode="USD" DMCType="HotelBeds" CUID="10017">
-              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|RO||1~2~0||N@06~A-SIC~2111a~-2040079473~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK000029601180007082111a" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|RO||1~2~0||N@06~A-SIC~2111a~-2040079473~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK000029601180007082111a" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="26.17" TotalRoomRate="26.17" CancellationDate="" CancellationAmount="" isAvailable="true">
+              <Room ID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|RO||1~2~0||N@06~A-SIC~2111a~-2040079473~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK000029601180007082111a" SuppliersID="4" RoomSeq="1" SessionID="20220727|20220728|W|148|56319|DBT.SU|GAR-RO-NRF|RO||1~2~0||N@06~A-SIC~2111a~-2040079473~N~~~NRF~CAEB46AFD4FB45C165476110423104AAUK000029601180007082111a" RoomType="Double or Twin SUPERIOR" OccupancyID="" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="26.17" TotalRoomRate="26.17" CancellationDate="" 
+                    CancellationAmount="" isAvailable="true">
                 <RequestID />
                 <Offers />
                 <PromotionList />

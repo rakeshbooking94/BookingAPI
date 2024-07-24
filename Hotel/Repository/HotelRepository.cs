@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using TravillioXMLOutService.DataAccess;
 using TravillioXMLOutService.Hotel.Model;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace TravillioXMLOutService.Hotel.Repository
 {
@@ -52,6 +53,43 @@ namespace TravillioXMLOutService.Hotel.Repository
             }
             return lst;
         }
+
+        public RTHWKHotelModel GetHotelDetail(string hotelId)
+        {
+            RTHWKHotelModel result = null;
+            string json = string.Empty;
+            try
+            {
+                SqlParameter[] param = new SqlParameter[1];
+                param[0] = new SqlParameter("@HotelCode", hotelId);
+                var dr = SqlHelper.ExecuteReader(TravayooConnection.ServiceConnection,
+                     CommandType.StoredProcedure, "GetAllHotelSearchProc", param);
+                using (var reader = SqlHelper.ExecuteReader(TravayooConnection.ServiceConnection,
+                     CommandType.StoredProcedure, "GetAllHotelSearchProc", param))
+                {
+                    if (reader.Read())
+                    {
+                        json = reader.GetString(reader.GetOrdinal("HotelDetais"));
+                        result = JsonConvert.DeserializeObject<RTHWKHotelModel>(json);
+                    }
+                }
+            }
+            catch
+            {
+                throw new Exception("Hotel data not avaialabe  in  database");
+            }
+            return result;
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }
