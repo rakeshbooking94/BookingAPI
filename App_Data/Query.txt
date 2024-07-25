@@ -45,3 +45,19 @@ GetAllHotelSearchProc
 
   
 
+  {
+{
+    "hash": "h-015cecbe-8f40-5149-88d1-0ae56fe7d245"
+}
+{
+    "data": null,
+    "debug": {
+        "request": {
+            "hash": "h-015cecbe-8f40-5149-88d1-0ae56fe7d245"
+        },
+        "key_id": 9034,
+        "validation_error": null
+    },
+    "status": "error",
+    "error": "prebook_disabled"
+}

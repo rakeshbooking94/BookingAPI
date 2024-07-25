@@ -541,11 +541,6 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
             }
-
-
-
-           
-          
             return cxlItem;
         }
 
