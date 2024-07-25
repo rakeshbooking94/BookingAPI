@@ -1,0 +1,104 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <Username>Travillio</Username>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <HotelPreBookingRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <FromDate>29/07/2021</FromDate>
+      <ToDate>30/07/2021</ToDate>
+      <CountryID>29</CountryID>
+      <CityID>137</CityID>
+      <MinStarRating>3</MinStarRating>
+      <MaxStarRating>5</MaxStarRating>
+      <HotelID>5131830</HotelID>
+      <HotelName>Shepherd's Bush Flats</HotelName>
+      <MealPlanID />
+      <RoomTypeID>202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141</RoomTypeID>
+      <OccupancyID>1</OccupancyID>
+      <CurrencyID>1</CurrencyID>
+      <CurrencyName>USD</CurrencyName>
+      <PerNightRoomRate>31.48</PerNightRoomRate>
+      <TotalRoomRate>31.48</TotalRoomRate>
+      <SupplierID>21</SupplierID>
+      <PaxNationality_CountryID>29</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
+      <PaxResidenceID>29</PaxResidenceID>
+      <PaxResidenceName>United Kingdom</PaxResidenceName>
+      <CustomerID>10017</CustomerID>
+      <TransID>249556d9-20bc-49d7-91db-d8f98e72412a</TransID>
+      <SubAgentID>50092</SubAgentID>
+      <CityCode>LON</CityCode>
+      <CityName>London</CityName>
+      <AreaID />
+      <AreaName />
+      <GiataList>
+        <GiataHotelList GHtlID="5131830" GSupID="21" xmlout="false" custName="TBO" custID="10017" sessionKey="" sourcekey="" publishedkey="" />
+      </GiataList>
+      <Rooms>
+        <RoomPax>
+          <Adult>2</Adult>
+          <Child>0</Child>
+        </RoomPax>
+        <RoomTypes Index="1" TotalRate="31.48" HtlCode="5131830">
+          <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true" RoomType="Comfort Double Room,1 Double Bed,Nonsmoking" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" TotalRoomRate="31.48" CancellationAmount="" isavailable="true" Adult="2" ChildAge="" sourcekey="">
+            <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
+            <searchType />
+            <Supplements />
+          </Room>
+        </RoomTypes>
+      </Rooms>
+    </HotelPreBookingRequest>
+    <HotelPreBookingResponse>
+      <Hotels>
+        <Hotel>
+          <HotelID />
+          <HotelName />
+          <NewPrice />
+          <Status>true</Status>
+          <TermCondition>CheckIn Time-Begin: 3:00 PM CheckOut Time: 10:00 AM CheckIn Instructions: &amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;Extra-person charges may apply and vary depending on property policy&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Government-issued photo identification and a credit card, debit card, or cash deposit may be required at check-in for incidental charges&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Special requests are subject to availability upon check-in and may incur additional charges; special requests cannot be guaranteed&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;No onsite parking is available&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;This property accepts credit cards; cash is not accepted&amp;lt;/li&amp;gt;  &amp;lt;/ul&amp;gt;   Special Instructions : There is no front desk at this property. To make arrangements for check-in please contact the property at least 72 hours before arrival using the information on the booking confirmation. Guests must contact the property in advance for check-in instructions. Guests can access their accommodation through a private entrance. Minimum CheckIn Age : 21 Mandatory Fees: &amp;lt;p&amp;gt;You'll be asked to pay the following charges at the property:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;Breakage deposit: GBP 50 per stay&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;We have included all charges provided to us by the property. &amp;lt;/p&amp;gt; Cards Accepted: Visa,Debit cards not accepted,Cash not accepted,American Express,Mastercard &amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;No pets and no service animals are allowed at this property. &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;,Service animals not allowed,Pets not allowed,No cribs (infant beds) available,No rollaway/extra beds available,Essential Workers Only - NO,No elevators Please refer to the following Terms of Use - http://mytravelagent.online/termsofuse.pdf  &lt;br/&gt;&lt;br/&gt; &lt;b&gt;Default Policy&lt;/b&gt;: Early check out will attract full cancellation charge unless otherwise specified</TermCondition>
+          <HotelImgSmall />
+          <HotelImgLarge />
+          <MapLink />
+          <DMC>TBO</DMC>
+          <Currency />
+          <Offers />
+          <Rooms>
+            <RoomTypes Index="1" TotalRate="31.48">
+              <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true" RoomType="Comfort Double Room,1 Double Bed,Nonsmoking" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" TotalRoomRate="31.48" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="31.4826" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+              <CancellationPolicies>
+                <CancellationPolicy LastCancellationDate="28/06/2021" ApplicableAmount="31.48" NoShowPolicy="0" />
+                <CancellationPolicy LastCancellationDate="27/06/2021" ApplicableAmount="0" NoShowPolicy="0" />
+              </CancellationPolicies>
+            </RoomTypes>
+          </Rooms>
+        </Hotel>
+      </Hotels>
+    </HotelPreBookingResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,75 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <Username>Travillio</Username>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <hotelcancelpolicyrequest>
+      <Response_Type>XML</Response_Type>
+      <FromDate>29/07/2021</FromDate>
+      <ToDate>30/07/2021</ToDate>
+      <CountryID>29</CountryID>
+      <CityID>137</CityID>
+      <CityCode>LON</CityCode>
+      <MinStarRating>3</MinStarRating>
+      <MaxStarRating>5</MaxStarRating>
+      <HotelID>5131830</HotelID>
+      <HotelName>Shepherd's Bush Flats</HotelName>
+      <MealPlanID />
+      <RoomID>202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141</RoomID>
+      <CurrencyName>USD</CurrencyName>
+      <OccupancyID>1</OccupancyID>
+      <CurrencyID>1</CurrencyID>
+      <SupplierID>21</SupplierID>
+      <PerNightRoomRate>31.48</PerNightRoomRate>
+      <TotalRoomRate>31.48</TotalRoomRate>
+      <PaxNationality_CountryID>29</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
+      <CustomerID>10017</CustomerID>
+      <TransID>249556d9-20bc-49d7-91db-d8f98e72412a</TransID>
+      <SubAgentID>50092</SubAgentID>
+      <CityName>London</CityName>
+      <AreaID />
+      <AreaName />
+      <GiataList>
+        <GiataHotelList GHtlID="5131830" GSupID="21" xmlout="false" custName="TBO" custID="10017" sessionKey="" sourcekey="" publishedkey="" />
+      </GiataList>
+      <Rooms>
+        <RoomPax>
+          <Adult>2</Adult>
+          <Child>0</Child>
+        </RoomPax>
+        <RoomTypes Index="1" TotalRate="31.48" HtlCode="5131830">
+          <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true" RoomType="Comfort Double Room,1 Double Bed,Nonsmoking" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" TotalRoomRate="31.48" CancellationDate="" CancellationAmount="" isavailable="true" sourcekey="">
+            <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
+          </Room>
+        </RoomTypes>
+      </Rooms>
+    </hotelcancelpolicyrequest>
+    <HotelDetailwithcancellationResponse>
+      <Hotels>
+        <Hotel>
+          <HotelID>5131830</HotelID>
+          <HotelName>Shepherd's Bush Flats</HotelName>
+          <HotelImgSmall />
+          <HotelImgLarge />
+          <MapLink />
+          <DMC>TBO</DMC>
+          <Currency />
+          <Offers />
+          <Room ID="" RoomType="" MealPlanPrice="" PerNightRoomRate="" TotalRoomRate="" CancellationDate="">
+            <CancellationPolicies>
+              <CancellationPolicy LastCancellationDate="28/06/2021" ApplicableAmount="31.48" NoShowPolicy="0" />
+              <CancellationPolicy LastCancellationDate="27/06/2021" ApplicableAmount="0" NoShowPolicy="0" />
+            </CancellationPolicies>
+          </Room>
+        </Hotel>
+      </Hotels>
+    </HotelDetailwithcancellationResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

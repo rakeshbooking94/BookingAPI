@@ -1,0 +1,38 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <HotelCancellationRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <SupplierID>20</SupplierID>
+      <ConfirmationNumber>7732101840904</ConfirmationNumber>
+      <ServiceID />
+      <PerNightPrice>136.98</PerNightPrice>
+      <TotalPrice>273.96</TotalPrice>
+      <CustomerID>10017</CustomerID>
+      <TransID>6ec2fc58-4596-4a3c-a2fb-1e72e71191f4</TransID>
+      <BookingCode>support12@bookingexpress.co</BookingCode>
+      <sessionKey />
+      <sourcekey />
+      <publishedkey />
+      <SubAgentID>50092</SubAgentID>
+    </HotelCancellationRequest>
+    <HotelCancellationResponse>
+      <Rooms>
+        <Room>
+          <Cancellation>
+            <Amount>0.00</Amount>
+            <Status>Success</Status>
+          </Cancellation>
+        </Room>
+      </Rooms>
+    </HotelCancellationResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

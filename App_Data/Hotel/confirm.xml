@@ -1,0 +1,113 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <HotelBookingRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <SuppliersID>20</SuppliersID>
+      <TransID>569560</TransID>
+      <FromDate>21/02/2022</FromDate>
+      <ToDate>22/02/2022</ToDate>
+      <CurrencyID>1</CurrencyID>
+      <HotelID>15170636</HotelID>
+      <CurrencyCode>USD</CurrencyCode>
+      <TotalAmount>84.56</TotalAmount>
+      <MinStarRating>4</MinStarRating>
+      <MaxStarRating>4</MaxStarRating>
+      <HotelName>Grand Excelsior Hotel Deira</HotelName>
+      <PaxNationality_CountryID>29</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
+      <PaxResidenceID>29</PaxResidenceID>
+      <CustomerID>10017</CustomerID>
+      <TransactionID>e4393139-0fe6-428d-831b-5d24d4ae5d19</TransactionID>
+      <RequestID />
+      <SpecialRemarks>need smoking room</SpecialRemarks>
+      <IsVoucher>2</IsVoucher>
+      <sessionKey />
+      <sourcekey />
+      <publishedkey />
+      <SubAgentID>50092</SubAgentID>
+      <Rooms>
+        <RoomPax>
+          <Adult>2</Adult>
+          <Child>0</Child>
+        </RoomPax>
+      </Rooms>
+      <PassengersDetail>
+        <Room RoomTypeID="221730678" RoomType="Superior Double Room" SupplierID="20" SessionID="" OccupancyID="" OccupancyName="1 King Bed" MealPlanID="" MealPlanPrice="" Adult="2" ChildAge="" TotalRoomRate="84.56" isavailable="true" sourcekey="">
+          <Supplements />
+          <RequestID>/v3/itineraries?token=QldfCGlcUA4FVlBVBwYGUgBDRwdWXBBLDwheZkFdBwVWBgILBVhTVBlSW1FVSwdUWgYYXQUFAUwICVZVBVUCV1YEUgUQXlVHVApVC0BrDlBnQ1BWWxYBD3w9YHNxcSceQBZfUFI-UAtZWgMEUAVUAFUVUENDVk0AbApXCwZfC1UKBwAABxNADUNdORZNEVUOWAZcXxZnFVcOWUddVwUWQlRbURxbB0RZVBNaA0BaWlU-VlQHXwZMVgcSDgRfUkZYVFJfUgobbGtHR1ZGRgVQBEtRElxcHEMRXVdVSVFcAFAOREAFEQBvFRpIBgxnMXAtfHVqIBFdURdrFFQRA0RbTBcRURIGU0UKU1sBQFdRAFYKWA8FVwcEChoCV05QBh4UURdDDVFAbxJHDl5QWABsWQUMBQddVAoIQFsDVFNcFwlQBVRHB0VTRRFCAFZXGAkwMXdADARBWVZMDVdfPQdYAFZfBw4FCEUFX1FQDVsRRgxQUVRXHFJUTldURFVSBj1bVAUDUgUHBRVDFAgGCQMBVQhDRgpfSRJQCAFmSVRACwU1ZSd9cXgoLHohHwVZCUZYTVgNUEoAVUdDXARRQBRfXFNpRFxDQVNQChBVFV1QTEZKWFZQGQcNV1oOFlVASxJXXQFEbEQEQBBRWwo-XVwPBA1VDFYABABIAwVWABlSAVxdGwgAAVceUVMKUgYAAFUGXVAAFxFdEksIWg9tXQJeClMBVgEFAlUZV1MHABkHAAoFHQgAWgVPUQZWWlZXAwMIBVEBERREVkgERk1Kaw9RBAgFUwIIBwBVElNVCldGBEcABm0QDAhVXFEIUQAZVABOCgFsVQYWByIFVRBWJwdWFlVTDAdSBgxSBzwXBVtMC0ETSD5bClNTBXBwQwEHU2cAVRZUEV1CRAtaDwUIHy5aXgYacVIAQ1FdAmkFVl9fDFNDFllACwxeDUYFJx0DIxFXUEcfEQAWAAEdV3gdUFZ7CFZWIAdcHVFUEgZwQwZWQVgYBENXA0dVIkBUUHxeDAUXAgoVV3UQBgFGEQAMQF9EHB1XB0cDeFMcUSIcDHESEE0WQQpaUEs7ClBZC1ASJVtTWg5GEQkIW1gEC1QHCl8G</RequestID>
+          <PaxInfo>
+            <GuestType>Adult</GuestType>
+            <Title>Mr</Title>
+            <FirstName>Rajiv</FirstName>
+            <MiddleName />
+            <LastName>Kumar</LastName>
+            <Age>0</Age>
+            <NeedVisa>false</NeedVisa>
+            <Email>ravish111123@ingeniumsoftech.com</Email>
+            <Phone>9876543210</Phone>
+            <IsLead>true</IsLead>
+          </PaxInfo>
+          <PaxInfo>
+            <GuestType>Adult</GuestType>
+            <Title>Mr</Title>
+            <FirstName>Rajiv</FirstName>
+            <MiddleName />
+            <LastName>Chaudhary</LastName>
+            <Age>0</Age>
+            <NeedVisa>false</NeedVisa>
+            <Email>ravish111123@ingeniumsoftech.com</Email>
+            <Phone>9876543210</Phone>
+            <IsLead>false</IsLead>
+          </PaxInfo>
+        </Room>
+      </PassengersDetail>
+    </HotelBookingRequest>
+    <HotelBookingResponse>
+      <Hotels>
+        <HotelID>15170636</HotelID>
+        <HotelName>Grand Excelsior Hotel Deira</HotelName>
+        <FromDate>21/02/2022</FromDate>
+        <ToDate>22/02/2022</ToDate>
+        <AdultPax>2</AdultPax>
+        <ChildPax>0</ChildPax>
+        <TotalPrice>84.56</TotalPrice>
+        <CurrencyID />
+        <CurrencyCode>USD</CurrencyCode>
+        <MarketID />
+        <MarketName />
+        <HotelImgSmall />
+        <HotelImgLarge />
+        <MapLink />
+        <VoucherRemark />
+        <TransID>569560</TransID>
+        <ConfirmationNumber>7988436732857</ConfirmationNumber>
+        <Status>Success</Status>
+        <PassengersDetail>
+          <GuestDetails>
+            <Room ID="221730678" RoomType="Superior Double Room" ServiceID="" RefNo="ravish111123@ingeniumsoftech.com" MealPlanID="" MealPlanName="" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="" RoomStatus="true" TotalRoomRate="">
+              <RoomGuest>
+                <GuestType>Adult</GuestType>
+                <Title />
+                <FirstName>Rajiv</FirstName>
+                <MiddleName />
+                <LastName>Kumar</LastName>
+                <IsLead>true</IsLead>
+                <Age />
+              </RoomGuest>
+              <Supplements />
+            </Room>
+          </GuestDetails>
+        </PassengersDetail>
+      </Hotels>
+    </HotelBookingResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
