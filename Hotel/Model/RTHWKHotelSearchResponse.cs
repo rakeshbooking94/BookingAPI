@@ -102,8 +102,8 @@ namespace TravillioXMLOutService.Hotel.Model
     {
         public DateTime? start_at { get; set; }
         public DateTime? end_at { get; set; }
-        public string amount_charge { get; set; }
-        public string amount_show { get; set; }
+        public double amount_charge { get; set; }
+        public double amount_show { get; set; }
         public CommissionInfo commission_info { get; set; }
     }
 
@@ -177,6 +177,14 @@ namespace TravillioXMLOutService.Hotel.Model
         public double amount { get; set; }
         public string currency_code { get; set; }
       
+    }
+
+
+    public class cxlPolicyModel
+    {
+        public double amount { get; set; }
+        public DateTime? start { get; set; }
+        public DateTime? end { get; set; }
     }
 
 

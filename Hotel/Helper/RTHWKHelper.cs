@@ -56,6 +56,15 @@ namespace TravillioXMLOutService.Hotel.Helper
             DateTime dte = DateTime.ParseExact(strDate.Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             return dte.ToString("yyyy-MM-dd");
         }
+
+
+        public static DateTime RTHWKDateTime(this string strDate)
+        {
+            DateTime dte = DateTime.ParseExact(strDate.Trim(), "yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture);
+            return dte;
+        }
+
+  
         public static string RTHWKResidenc(this string str)
         {
             return str.ToLower();
