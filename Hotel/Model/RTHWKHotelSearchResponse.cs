@@ -116,6 +116,7 @@ namespace TravillioXMLOutService.Hotel.Model
 
         }
         public double totalPrice { get; set; }
+        public string book_hash { get; set; }
         public string match_hash { get; set; }
         public List<double> daily_prices { get; set; }
         public string meal { get; set; }
@@ -136,21 +137,6 @@ namespace TravillioXMLOutService.Hotel.Model
 
 
 
-    public class RgExt
-    {
-        public int @class { get; set; }
-        public int quality { get; set; }
-        public int sex { get; set; }
-        public int bathroom { get; set; }
-        public int bedding { get; set; }
-        public int family { get; set; }
-        public int capacity { get; set; }
-        public int club { get; set; }
-        public int bedrooms { get; set; }
-        public int balcony { get; set; }
-        public int view { get; set; }
-        public int floor { get; set; }
-    }
 
     public class RoomDataTrans
     {
