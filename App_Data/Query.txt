@@ -61,3 +61,25 @@ GetAllHotelSearchProc
     "status": "error",
     "error": "prebook_disabled"
 }
+
+
+
+{
+    "book_hash": "h-015cecbe-8f40-5149-88d1-0ae56fe7d245",
+    "language": "en"
+}
+
+
+{
+    "data": null,
+    "debug": {
+        "request": {
+            "book_hash": "h-015cecbe-8f40-5149-88d1-0ae56fe7d245",
+            "language": "en"
+        },
+        "key_id": 9034,
+        "validation_error": null
+    },
+    "status": "error",
+    "error": "endpoint_not_found"
+}
