@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -299,10 +299,15 @@
     <Content Include="App_Data\HotelBeds\hotelstatic_hb.xml" />
     <Content Include="App_Data\HotelBeds\sample.xml" />
     <Content Include="App_Data\HotelBeds\Task.txt" />
+    <Content Include="App_Data\Hotel\cancellation.xml" />
+    <Content Include="App_Data\Hotel\confirm.xml" />
+    <Content Include="App_Data\Hotel\cxlPolicy.xml" />
+    <Content Include="App_Data\Hotel\prebook.xml" />
     <Content Include="App_Data\Hotel\RoomAvail.xml" />
     <Content Include="App_Data\Hotel\Search.xml" />
     <Content Include="App_Data\Query.txt" />
     <Content Include="App_Data\Script\apilog.sql" />
+    <Content Include="App_Data\SQL\sqlquery.sql" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />
     <Content Include="App_Data\SupplierCredential\SupplierCredentials.xml" />
     <Content Include="App_Data\Transfer\Currency.xml" />
