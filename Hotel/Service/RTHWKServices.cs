@@ -489,9 +489,10 @@ namespace TravillioXMLOutService.Hotel.Service
         #endregion
 
 
-        public XElement RoomCxlPolicy(CancellationPenalties cancellation_penalties, string cxlFlag, string sumPrice)
+        public XElement RoomCxlPolicy(CancellationPenalties cancellation_penalties, DateTime checkIn, double sumPrice)
         {
-            XElement cxlItem;
+           
+            XElement cxlItem = new XElement("CancellationPolicies");
             List<cxlPolicyModel> cxlList = new List<cxlPolicyModel>();
             cxlList = cancellation_penalties.policies.Select(x =>
                new cxlPolicyModel()
@@ -503,86 +504,48 @@ namespace TravillioXMLOutService.Hotel.Service
 
             if (cancellation_penalties.free_cancellation_before != null)
             {
-                cxlList.Add(new cxlPolicyModel()
+                var lastDate = cancellation_penalties.free_cancellation_before.Value.AddDays(-1);
+                var _item = new XElement("CancellationPolicy",
+                                       new XAttribute("LastCancellationDate", lastDate.ToString("yyyy-MM-dd")),
+                                       new XAttribute("ApplicableAmount", 0),
+                                       new XAttribute("NoShowPolicy", 0));
+                cxlItem.AddAfterSelf(_item);
+
+                cxlList = cxlList.Where(x => x.amount > 0).OrderBy(x => x.start).Distinct().ToList();
+                foreach (var item in cxlList)
                 {
-                    start = DateTime.Now,
-                    end = cancellation_penalties.free_cancellation_before.HasValue ? cancellation_penalties.free_cancellation_before.Value : DateTime.Now,
-                    amount = 0
-                });
+                    if(item.start> lastDate&& item.start < checkIn)
+                    {
+                        var cItem = new XElement("CancellationPolicy",
+                                                              new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
+                                                              new XAttribute("ApplicableAmount", item.amount),
+                                                              new XAttribute("NoShowPolicy", 0));
+                        cxlItem.AddAfterSelf(cItem);
+                    }
+                    else
+                    {
+                        var cItem = new XElement("CancellationPolicy",
+                                                              new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
+                                                              new XAttribute("ApplicableAmount", sumPrice),
+                                                              new XAttribute("NoShowPolicy", 0));
+                        cxlItem.AddAfterSelf(cItem);
+                    }
+                }
             }
             else
             {
                 cxlItem = new XElement("CancellationPolicies", new XElement("CancellationPolicy",
                               new XAttribute("LastCancellationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
                               new XAttribute("ApplicableAmount", sumPrice),
-                              new XAttribute("NoShowPolicy", 0)));
-               
+                              new XAttribute("NoShowPolicy", 1)));
+
 
             }
-            cxlList = cxlList.OrderBy(x => x.start).Distinct().ToList();
 
 
-            if (cxlFlag == "yes")
-            {
 
-                cxlItem = new XElement("CancellationPolicies", new XElement("CancellationPolicy",
-                                 new XAttribute("LastCancellationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                                 new XAttribute("ApplicableAmount", sumPrice),
-                                 new XAttribute("NoShowPolicy", 0)));
-
-            }
-            else
-            {
-                if (Cxllst != null)
-                {
-                    var noshowList = Cxllst.Where(x => (x.Element("cancelRestricted").GetValueOrDefault("false") == "true")).ToList();
-
-                    Cxllst = Cxllst.Where(x => ((x.Element("cancelRestricted").GetValueOrDefault("false") != "true"))).ToList();
-
-                    var result = from cxl in Cxllst.Where(x => (x.Element("charge").Element("formatted").GetValueOrDefault("0.00") != "0.00"))
-                                 let noShow = cxl.Element("noShowPolicy").GetValueOrDefault("false") == "true" ? 1 : 0
-                                 let Price = (noShow == 0 ? cxl.Element("cancelCharge").Element("formatted").Value : cxl.Element("charge").Element("formatted").Value)
-                                 let cxlDate = cxl.CxlDate()
-                                 select new XElement("CancellationPolicy",
-                                     new XAttribute("LastCancellationDate", cxlDate),
-                                     new XAttribute("ApplicableAmount", Price),
-                                     new XAttribute("NoShowPolicy", noShow));
-
-                    if (noshowList.Count > 0)
-                    {
-                        var flagCxlItem = from cxl in noshowList
-                                          let cxlDate = cxl.CxlDate()
-                                          select new XElement("CancellationPolicy",
-                         new XAttribute("LastCancellationDate", cxlDate),
-                         new XAttribute("ApplicableAmount", sumPrice),
-                         new XAttribute("NoShowPolicy", 0));
-
-                        cxlItem = new XElement("CancellationPolicies", result, flagCxlItem);
-
-                    }
-                    else
-                    {
-                        cxlItem = new XElement("CancellationPolicies", result);
-                    }
-
-                    int noIndex = cxlItem.Descendants("CancellationPolicy").Where(x => x.Attribute("NoShowPolicy").Value == "0").Count();
-                    int showIndex = cxlItem.Descendants("CancellationPolicy").Where(x => x.Attribute("NoShowPolicy").Value == "1").Count();
-                    if (showIndex > 0 && noIndex == 0)
-                    {
-                        var item = new XElement("CancellationPolicies", new XElement("CancellationPolicy",
-                                          new XAttribute("LastCancellationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                                          new XAttribute("ApplicableAmount", sumPrice),
-                                          new XAttribute("NoShowPolicy", 0)));
-                        cxlItem.Element("CancellationPolicies").Add(item);
-                    }
-
-                }
-                else
-                {
-                    cxlItem = new XElement("CancellationPolicies", null);
-                }
-
-            }
+           
+          
             return cxlItem;
         }
 
