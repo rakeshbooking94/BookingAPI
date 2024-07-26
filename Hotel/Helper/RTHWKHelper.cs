@@ -64,7 +64,7 @@ namespace TravillioXMLOutService.Hotel.Helper
             return dte;
         }
 
-  
+
         public static string RTHWKResidenc(this string str)
         {
             return str.ToLower();
@@ -112,23 +112,28 @@ namespace TravillioXMLOutService.Hotel.Helper
 
         public static ApiAction GetAction(this string ElementName)
         {
-            if (ElementName == "SearchRequest")
+            if (ElementName == "searchRequest")
             {
                 return ApiAction.Search;
             }
-            else if (ElementName == "PrebookRequest")
+            else if (ElementName == "HotelPreBookingRequest")
             {
                 return ApiAction.PreBook;
-
             }
-            else if (ElementName == "bookRequest")
+            else if (ElementName == "HotelBookingRequest")
             {
                 return ApiAction.Book;
             }
-            else if (ElementName == "TransferCXLPolicyRequest")
+            else if (ElementName == "hotelcancelpolicyrequest")
             {
                 return ApiAction.CXLPolicy;
             }
+            else if (ElementName == "HotelCancellationRequest")
+            {
+                return ApiAction.Cancel;
+            }
+
+            
             else
             {
                 return ApiAction.Cancel;
@@ -323,6 +328,7 @@ namespace TravillioXMLOutService.Hotel.Helper
         {
             //[Description("Searching")]
             Search = 1,
+            RoomSearch = 2,
             //[Description("Cancellation Policy")]
             CXLPolicy = 3,
             //[Description("PreBooking")]
