@@ -71,7 +71,13 @@
           <Offers />
           <Rooms>
             <RoomTypes Index="1" TotalRate="31.48">
-              <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true" RoomType="Comfort Double Room,1 Double Bed,Nonsmoking" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" TotalRoomRate="31.48" CancellationDate="" CancellationAmount="" isAvailable="true">
+              <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" 
+                    RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true"
+                    RoomType="Comfort Double Room,1 Double Bed,Nonsmoking"
+                    OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi "
+                    
+                    MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" 
+                    TotalRoomRate="31.48" CancellationDate="" CancellationAmount="" isAvailable="true">
                 <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
                 <Offers />
                 <PromotionList>

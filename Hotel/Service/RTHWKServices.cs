@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+
+
 using TravillioXMLOutService.Hotel.Helper;
 using TravillioXMLOutService.Hotel.Model;
 using TravillioXMLOutService.Hotel.Repository;
@@ -306,8 +308,6 @@ namespace TravillioXMLOutService.Hotel.Service
             return supplements;
         }
 
-
-
         public XElement BindAmenity(List<string> amenities_data)
         {
             XElement AmtyItem;
@@ -323,10 +323,6 @@ namespace TravillioXMLOutService.Hotel.Service
             }
             return AmtyItem;
         }
-
-
-
-
 
         #endregion
         #region RoomSearch
@@ -575,7 +571,6 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
         #region PreBooking
-
         RTHWKPreBookRequest BindPreBookRequest(XElement req)
         {
             req = req.Element("HotelPreBookingRequest");
@@ -586,8 +581,6 @@ namespace TravillioXMLOutService.Hotel.Service
             return model;
         }
 
-
-
         public async Task<XElement> PreBooking(XElement preBookReq, string xmlout)
         {
             dmc = xmlout;
@@ -596,7 +589,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                        new XElement("Authentication", new XElement("AgentID", preBookReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", preBookReq.Descendants("UserName").FirstOrDefault().Value),
                                        new XElement("Password", preBookReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", preBookReq.Descendants("ServiceType").FirstOrDefault().Value),
                                        new XElement("ServiceVersion", preBookReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
-
+            var checkIn = preBookReq.Element("FromDate").Value.TravayooDateTime();
             try
             {
                 var _req = BindPreBookRequest(preBookReq);
@@ -609,163 +602,71 @@ namespace TravillioXMLOutService.Hotel.Service
                 reqObj.RequestStr = JsonConvert.SerializeObject(_req);
                 reqObj.ResponseStr = await repo.PreBookingAsync(reqObj);
 
-
-
-
-
-                if (!string.IsNullOrEmpty(respPreBook) && respPreBook != "[]")
+                var response = JsonConvert.DeserializeObject<RTHWKPreBookResponse>(reqObj.ResponseStr);
+                if (response.status == "ok")
                 {
-                    List<XElement> tvRoomList = preBookReq.Descendants("Room").ToList();
-                    XElement groupDetails = new XElement("Rooms");
-                    string termsCondition = string.Empty;
-                    try
-                    {
-                        termsCondition = epsStatic.GetHotelPolicy(preBookReq.Descendants("HotelID").FirstOrDefault().Value);
-                    }
-                    catch { }
-                    bool isNonrefundabele = false;
-                    int totalrooms = preBookReq.Descendants("Room").Count();
-                    int nights = (int)(preBookReq.Descendants("ToDate").FirstOrDefault().Value.ConvertToDate() - preBookReq.Descendants("FromDate").FirstOrDefault().Value.ConvertToDate()).TotalDays;
-                    decimal TotalRateOld = preBookReq.Descendants("RoomTypes").FirstOrDefault().Attribute("TotalRate").Value.ModifyToDecimal();
-                    string cxl_penalty = preBookReq.Descendants("Room").FirstOrDefault().Attribute("SessionID").Value;
-                    string nonrefund_DateRange = preBookReq.Descendants("Room").FirstOrDefault().Attribute("CancellationAmount").Value;
-                    DateTime checkinDt = (DateTime)preBookReq.Descendants("FromDate").FirstOrDefault().Value.StringToDate();
-                    DateTime checkoutDt = (DateTime)preBookReq.Descendants("ToDate").FirstOrDefault().Value.StringToDate();
-                    try
-                    {
-                        if (!string.IsNullOrEmpty(nonrefund_DateRange))
-                        {
-                            JArray NonRefDateList = (JArray)JsonConvert.DeserializeObject(nonrefund_DateRange);
-                            if (NonRefDateList != null)
-                            {
-                                foreach (var nonrefdate in NonRefDateList)
-                                {
-                                    var startdt = (DateTime)nonrefdate["start"];
-                                    var enddt = (DateTime)nonrefdate["end"];
-                                    if ((startdt <= checkinDt && checkinDt <= enddt) && isNonrefundabele == false)
-                                    {
-                                        isNonrefundabele = true;
-                                    }
-                                    if ((startdt <= checkoutDt && checkoutDt <= enddt) && isNonrefundabele == false)
-                                    {
-                                        isNonrefundabele = true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    catch { }
-                    cxl_penalty = isNonrefundabele ? string.Empty : cxl_penalty;
+                    int counter = 0;
+                    var roomsResult = (from rate in response.data.hotels[0].rates
+                                       let nightPrice = rate.totalPrice / rate.daily_prices.Count
+                                       let roomPrice = nightPrice / preBookReq.Descendants("RoomPax").Count()
+                                       select new XElement("RoomTypes",
+                                              new XAttribute("Index", counter++),
+                                              new XAttribute("DMCType", dmc),
+                                              new XAttribute("CUID", customerid), new XAttribute("TotalRate", rate.totalPrice),
+                                              preBookReq.Descendants("RoomPax").Select((y, i) =>
+                                              new XElement("Room",
+                                                  new XAttribute("ID", rate.book_hash),
+                                                  new XElement("RequestID", rate.book_hash),
+                                                  new XAttribute("SuppliersID", supplierId),
+                                                  new XAttribute("RoomSeq", i),
+                                                  new XAttribute("SessionID", rate.match_hash),
+                                                  new XAttribute("RoomType", rate.room_name),
+                                                  new XAttribute("OccupancyID", string.Empty),
+                                                  new XAttribute("OccupancyName", rate.room_data_trans.bedding_type),
+                                                  new XAttribute("MealPlanID", ""),
+                                                  new XAttribute("MealPlanName", rate.meal),
+                                                  new XAttribute("MealPlanCode", ""),
+                                                  new XAttribute("MealPlanPrice", ""),
+                                                  new XAttribute("PerNightRoomRate", nightPrice),
+                                                  new XAttribute("TotalRoomRate", roomPrice),
+                                                  new XAttribute("CancellationDate", ""),
+                                                  new XAttribute("CancellationAmount", ""),
+                                                  new XAttribute("isAvailable", true),
+                                                  new XElement("Offers", ""),
+                                                  BindAmenity(rate.amenities_data),
+                                                  BindSuplements(rate.payment_options.payment_types.First().tax_data),
+                                                  new XElement("AdultNum", y.Element("Adult").Value),
+                                                  new XElement("ChildNum", y.Element("Child").Value))),
+                                              RoomCxlPolicy(rate.payment_options.payment_types[0].cancellation_penalties, checkIn, rate.totalPrice)
+                                              )).First();
+                    
+                    string termsCondition = "";
+                    XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID", preBookReq.Descendants("HotelID").FirstOrDefault().Value),
+                                           new XElement("HotelName", preBookReq.Descendants("HotelName").FirstOrDefault().Value), new XElement("Status", true),
+                                           new XElement("TermCondition", termsCondition), new XElement("HotelImgSmall"), new XElement("HotelImgLarge"),
+                                           new XElement("MapLink"), new XElement("DMC", dmc), new XElement("Currency", ""),
+                                           new XElement("Offers"), new XElement("Rooms", roomsResult)));
 
-                    JObject preBook = (JObject)JsonConvert.DeserializeObject(respPreBook);
-                    string status = (string)preBook["status"];
-                    string bookinglink = (string)preBook["links"]["book"]["href"];
-                    int roomSeq = 1;
-                    if (status == "available")
+                    if (response.data.changes.price_changed)
                     {
-                        XElement RoomType = new XElement("RoomTypes", new XAttribute("Index", "1"), new XAttribute("TotalRate", TotalRateOld));
-                        foreach (var room in tvRoomList)
-                        {
-                            string eOcp = string.Empty;
-                            if (string.IsNullOrEmpty(room.Attribute("ChildAge").Value))
-                            {
-                                eOcp = room.Attribute("Adult").Value;
-                            }
-                            else
-                            {
-                                eOcp = room.Attribute("Adult").Value + "-" + room.Attribute("ChildAge").Value;
-                            }
-                            JArray nightly = (JArray)preBook["occupancy_pricing"][eOcp]["nightly"];
-                            JToken Fees = (JToken)preBook["occupancy_pricing"][eOcp]["fees"];
-                            room.Element("RequestID").SetValue("");
-                            var preRoom = new XElement("Room", new XAttribute("ID", room.Attribute("ID").Value), new XAttribute("SuppliersID", supplierid), new XAttribute("RoomSeq", roomSeq), new XAttribute("SessionID", ""), new XAttribute("RoomType", room.Attribute("RoomType").Value), new XAttribute("OccupancyID", ""),
-                                          new XAttribute("OccupancyName", room.Attribute("OccupancyName").Value), new XAttribute("MealPlanID", ""), new XAttribute("MealPlanName", room.Attribute("MealPlanName").Value), new XAttribute("MealPlanCode", ""), new XAttribute("MealPlanPrice", ""), new XAttribute("PerNightRoomRate", room.Attribute("PerNightRoomRate").Value),
-                                          new XAttribute("TotalRoomRate", room.Attribute("TotalRoomRate").Value), new XAttribute("CancellationDate", ""), new XAttribute("CancellationAmount", ""), new XAttribute("isAvailable", true), new XAttribute("searchType", room.Element("searchType").Value),
-                                          new XElement("RequestID", bookinglink),
-                                          new XElement("Offers"), new XElement("PromotionList", new XElement("Promotions", room.Attribute("MealPlanID").Value)),
-                                          new XElement("CancellationPolicy"), new XElement("Amenities", new XElement("Amenity")),
-                                          new XElement("Images", new XElement("Image", new XAttribute("Path", ""))),
-                                          GetSupplement(Fees),
-                                          new XElement(getPriceBreakup(nights, room.Attribute("TotalRoomRate").Value.ModifyToDecimal())),
-                                          new XElement("AdultNum", room.Attribute("Adult").Value),
-                                          new XElement("ChildNum", string.IsNullOrEmpty(room.Attribute("ChildAge").Value) ? 0 : room.Attribute("ChildAge").Value.Split(',').Count()));
-
-                            RoomType.Add(preRoom);
-                            roomSeq++;
-                        }
-                        RoomType.Add(GetCxlPolicy(cxl_penalty, nights, TotalRateOld));
-                        XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID", preBookReq.Descendants("HotelID").FirstOrDefault().Value),
-                                                new XElement("HotelName", preBookReq.Descendants("HotelName").FirstOrDefault().Value), new XElement("Status", true),
-                                                new XElement("TermCondition", termsCondition), new XElement("HotelImgSmall"), new XElement("HotelImgLarge"),
-                                                new XElement("MapLink"), new XElement("DMC", dmc), new XElement("Currency", currency),
-                                                new XElement("Offers"), new XElement("Rooms", RoomType)));
-
-                        PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest, new XElement("HotelPreBookingResponse", new XElement("NewPrice", ""), hoteldata)));
+                        PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest,
+                            new XElement("HotelPreBookingResponse",
+                            new XElement("NewPrice", response.data.hotels[0].rates[0].totalPrice), hoteldata)));
 
                     }
-                    else if (status == "price_changed")
+                    else
                     {
-                        List<XElement> roomlst = new List<XElement>();
-                        decimal totalRoomPrice = 0;
-                        foreach (var room in preBookReq.Descendants("Room"))
-                        {
-                            room.Element("RequestID").SetValue("");
-
-                            string eOcp = string.Empty;
-                            if (string.IsNullOrEmpty(room.Attribute("ChildAge").Value))
-                            {
-                                eOcp = room.Attribute("Adult").Value;
-                            }
-                            else
-                            {
-                                eOcp = room.Attribute("Adult").Value + "-" + room.Attribute("ChildAge").Value;
-                            }
-
-                            decimal roomprice = (decimal)preBook["occupancy_pricing"][eOcp]["totals"]["inclusive"]["request_currency"]["value"];
-                            decimal marketingFee = (decimal)preBook["occupancy_pricing"][eOcp]["totals"]["marketing_fee"]["request_currency"]["value"];
-                            roomprice = roomprice - marketingFee;
-                            //JArray nightly = (JArray)preBook["occupancy_pricing"][eOcp]["nightly"];
-
-                            JToken Fees = (JToken)preBook["occupancy_pricing"][eOcp]["fees"];
-                            totalRoomPrice = totalRoomPrice + roomprice;
-
-                            var preRoom = new XElement("Room", new XAttribute("ID", room.Attribute("ID").Value), new XAttribute("SuppliersID", supplierid), new XAttribute("RoomSeq", roomSeq), new XAttribute("SessionID", ""), new XAttribute("RoomType", room.Attribute("RoomType").Value), new XAttribute("OccupancyID", ""),
-                                          new XAttribute("OccupancyName", room.Attribute("OccupancyName").Value), new XAttribute("MealPlanID", ""), new XAttribute("MealPlanName", room.Attribute("MealPlanName").Value), new XAttribute("MealPlanCode", ""), new XAttribute("MealPlanPrice", ""), new XAttribute("PerNightRoomRate", Math.Round(roomprice / nights, 5)),
-                                          new XAttribute("TotalRoomRate", roomprice), new XAttribute("CancellationDate", ""), new XAttribute("CancellationAmount", ""), new XAttribute("isAvailable", true), new XAttribute("searchType", room.Element("searchType").Value),
-                                          new XElement("RequestID", bookinglink),
-                                          new XElement("Offers"), new XElement("PromotionList", new XElement("Promotions", room.Attribute("MealPlanID").Value)),
-                                          new XElement("CancellationPolicy"), new XElement("Amenities", new XElement("Amenity")),
-                                          new XElement("Images", new XElement("Image", new XAttribute("Path", ""))), GetSupplement(Fees),
-                                          new XElement(getPriceBreakup(nights, roomprice)),
-                                          new XElement("AdultNum", room.Attribute("Adult").Value),
-                                          new XElement("ChildNum", string.IsNullOrEmpty(room.Attribute("ChildAge").Value) ? 0 : room.Attribute("ChildAge").Value.Split(',').Count()));
-
-                            roomlst.Add(preRoom);
-                            roomSeq++;
-                        }
-                        XElement RoomType = new XElement("RoomTypes", new XAttribute("Index", "1"), new XAttribute("TotalRate", totalRoomPrice));
-                        RoomType.Add(GetCxlPolicy(cxl_penalty, nights, totalRoomPrice));
-                        XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID", preBookReq.Descendants("HotelID").FirstOrDefault().Value),
-                                                new XElement("HotelName", preBookReq.Descendants("HotelName").FirstOrDefault().Value), new XElement("Status", true),
-                                                new XElement("TermCondition", termsCondition), new XElement("HotelImgSmall"), new XElement("HotelImgLarge"),
-                                                new XElement("MapLink"), new XElement("DMC", dmc), new XElement("Currency", currency),
-                                                new XElement("Offers"), new XElement("Rooms", RoomType)));
-                        PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest, new XElement("HotelPreBookingResponse", new XElement("ErrorTxt", "Amount has been changed"), new XElement("NewPrice", totalRoomPrice), hoteldata)));
-
+                        PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest,
+                        new XElement("HotelPreBookingResponse",
+                        new XElement("NewPrice", ""), hoteldata)));
                     }
-                    else if (status == "sold_out")
-                    {
-                        PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest, new XElement("HotelPreBookingResponse", new XElement("ErrorTxt", "Room is not available"))));
 
-                    }
                 }
                 else
                 {
                     PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest, new XElement("HotelPreBookingResponse", new XElement("ErrorTxt", "Room is not available"))));
 
                 }
-
-
                 return PreBookResponse;
             }
             catch (Exception ex)
@@ -785,30 +686,7 @@ namespace TravillioXMLOutService.Hotel.Service
             }
         }
 
-        #region Supplement
-        public XElement GetSupplement(JToken Fees)
-        {
-            decimal atPropertyFees = 0, mandatoryTax = 0, mandatoryFees = 0, resortFees = 0;
-            XElement supplements = new XElement("Supplements");
-            if (Fees != null)
-            {
-                var mand_tax = Fees.SelectToken("mandatory_tax");
-                mandatoryTax = mand_tax != null ? (decimal)Fees["mandatory_tax"]["request_currency"]["value"] : 0;
-                var mand_fee = Fees.SelectToken("mandatory_fee");
-                mandatoryFees = mand_fee != null ? (decimal)Fees["mandatory_fee"]["request_currency"]["value"] : 0;
-                var resort_fee = Fees.SelectToken("resort_fee");
-                resortFees = resort_fee != null ? (decimal)Fees["resort_fee"]["request_currency"]["value"] : 0;
-                atPropertyFees = mandatoryTax + mandatoryFees + resortFees;
-                if (atPropertyFees > 0)
-                {
-                    supplements.Add(new XElement("Supplement", new XAttribute("suppType", "PerRoomSupplement"),
-                    new XAttribute("suppId", ""), new XAttribute("suppName", "Property Fee"), new XAttribute("supptType", ""),
-                    new XAttribute("suppIsMandatory", "True"), new XAttribute("suppChargeType", "AtProperty"), new XAttribute("suppPrice", atPropertyFees)));
-                }
-            }
-            return supplements;
-        }
-        #endregion
+        
 
 
 
