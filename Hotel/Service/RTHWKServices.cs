@@ -639,7 +639,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                   new XElement("ChildNum", y.Element("Child").Value))),
                                               RoomCxlPolicy(rate.payment_options.payment_types[0].cancellation_penalties, checkIn, rate.totalPrice)
                                               )).First();
-                    
+
                     string termsCondition = "";
                     XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID", preBookReq.Descendants("HotelID").FirstOrDefault().Value),
                                            new XElement("HotelName", preBookReq.Descendants("HotelName").FirstOrDefault().Value), new XElement("Status", true),
@@ -686,118 +686,101 @@ namespace TravillioXMLOutService.Hotel.Service
             }
         }
 
+
+
+
+
+        #region Cancellation Policy
+        public async  Task<XElement> CancellationPolicyAsync(XElement cxlPolicyReq)
+        {
+            XElement CxlPolicyReqest = cxlPolicyReq.Descendants("hotelcancelpolicyrequest").FirstOrDefault();
+            XElement CxlPolicyResponse = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                                       new XElement("Authentication", new XElement("AgentID", cxlPolicyReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", cxlPolicyReq.Descendants("UserName").FirstOrDefault().Value),
+                                       new XElement("Password", cxlPolicyReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", cxlPolicyReq.Descendants("ServiceType").FirstOrDefault().Value),
+                                       new XElement("ServiceVersion", cxlPolicyReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
+
+            try
+            {
+                var _req = new
+                {
+                    book_hash = CxlPolicyReqest.Descendants("RequestID").First().Value.ToString(),
+                    language = "en"
+                };
+                var reqObj = new RequestModel();
+                reqObj.StartTime = DateTime.Now;
+                reqObj.Customer = Convert.ToInt64(CxlPolicyReqest.Element("CustomerID").Value);
+                reqObj.TrackNo = CxlPolicyReqest.Element("TransID").Value;
+                reqObj.ActionId = (int)CxlPolicyReqest.Name.LocalName.GetAction();
+                reqObj.Action = CxlPolicyReqest.Name.LocalName.GetAction().ToString();
+                reqObj.RequestStr = JsonConvert.SerializeObject(_req);
+                reqObj.ResponseStr = await repo.CancellationPolicyAsync(reqObj);
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                #region Exception
+                CustomException ex1 = new CustomException(ex);
+                ex1.MethodName = "CancellationPolicy";
+                ex1.PageName = "ExpediaService";
+                ex1.CustomerID = cxlPolicyReq.Descendants("CustomerID").FirstOrDefault().Value;
+                ex1.TranID = cxlPolicyReq.Descendants("TransID").FirstOrDefault().Value;
+                SaveAPILog saveex = new SaveAPILog();
+                saveex.SendCustomExcepToDB(ex1);
+                CxlPolicyResponse.Add(new XElement(soapenv + "Body", CxlPolicyReqest, new XElement("HotelDetailwithcancellationResponse", new XElement("ErrorTxt", "No cancellation policy found"))));
+                #endregion
+                return CxlPolicyResponse;
+            }
+        }
+        #endregion
+
+
         
+        #region Confirm Booking
+        Task<XElement> HotelBookingAsync(XElement BookingReq)
+        {
+            XElement BookReq = BookingReq.Descendants("HotelBookingRequest").FirstOrDefault();
+            XElement HotelBookingRes = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                                       new XElement("Authentication", new XElement("AgentID", BookingReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", BookingReq.Descendants("UserName").FirstOrDefault().Value), new XElement("Password", BookingReq.Descendants("Password").FirstOrDefault().Value),
+                                       new XElement("ServiceType", BookingReq.Descendants("ServiceType").FirstOrDefault().Value), new XElement("ServiceVersion", BookingReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
 
+            try
+            {
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+        #region Cancel Booking
+        Task<XElement> CancelBookingAsync(XElement cancelReq)
+        {
+            XElement CxlReq = cancelReq.Descendants("HotelCancellationRequest").FirstOrDefault();
+            XElement BookCXlRes = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
+                                  new XElement("Authentication", new XElement("AgentID", cancelReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", cancelReq.Descendants("UserName").FirstOrDefault().Value),
+                                  new XElement("Password", cancelReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", cancelReq.Descendants("ServiceType").FirstOrDefault().Value),
+                                  new XElement("ServiceVersion", cancelReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
 
-
-        //#region Cancellation Policy
-        //Task<XElement> CancellationPolicyAsync(XElement cxlPolicyReq)
-        //{
-        //    XElement CxlPolicyReqest = cxlPolicyReq.Descendants("hotelcancelpolicyrequest").FirstOrDefault();
-        //    XElement CxlPolicyResponse = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
-        //                               new XElement("Authentication", new XElement("AgentID", cxlPolicyReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", cxlPolicyReq.Descendants("UserName").FirstOrDefault().Value),
-        //                               new XElement("Password", cxlPolicyReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", cxlPolicyReq.Descendants("ServiceType").FirstOrDefault().Value),
-        //                               new XElement("ServiceVersion", cxlPolicyReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
-
-
-        //    try
-        //    {
-        //        return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        #region Exception
-        //        CustomException ex1 = new CustomException(ex);
-        //        ex1.MethodName = "CancellationPolicy";
-        //        ex1.PageName = "ExpediaService";
-        //        ex1.CustomerID = cxlPolicyReq.Descendants("CustomerID").FirstOrDefault().Value;
-        //        ex1.TranID = cxlPolicyReq.Descendants("TransID").FirstOrDefault().Value;
-        //        SaveAPILog saveex = new SaveAPILog();
-        //        saveex.SendCustomExcepToDB(ex1);
-        //        CxlPolicyResponse.Add(new XElement(soapenv + "Body", CxlPolicyReqest, new XElement("HotelDetailwithcancellationResponse", new XElement("ErrorTxt", "No cancellation policy found"))));
-        //        #endregion
-        //        return CxlPolicyResponse;
-
-        //    }
-        //}
-        //#endregion
-
-
-        //#region Pre Booking
-        //Task<XElement> PreBookingAsync(XElement preBookReq)
-        //{
-        //    XElement preBookReqest = preBookReq.Descendants("HotelPreBookingRequest").FirstOrDefault();
-        //    XElement PreBookResponse = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
-        //                               new XElement("Authentication", new XElement("AgentID", preBookReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", preBookReq.Descendants("UserName").FirstOrDefault().Value),
-        //                               new XElement("Password", preBookReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", preBookReq.Descendants("ServiceType").FirstOrDefault().Value),
-        //                               new XElement("ServiceVersion", preBookReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
-
-        //    try
-        //    {
-        //        return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        #region Exception
-        //        CustomException ex1 = new CustomException(ex);
-        //        ex1.MethodName = "PreBooking";
-        //        ex1.PageName = "ExpediaService";
-        //        ex1.CustomerID = preBookReq.Descendants("CustomerID").FirstOrDefault().Value;
-        //        ex1.TranID = preBookReq.Descendants("TransID").FirstOrDefault().Value;
-        //        SaveAPILog saveex = new SaveAPILog();
-        //        saveex.SendCustomExcepToDB(ex1);
-        //        #endregion
-        //        PreBookResponse.Add(new XElement(soapenv + "Body", preBookReqest, new XElement("HotelPreBookingResponse", new XElement("ErrorTxt", "Room is not available"))));
-
-        //        return PreBookResponse;
-        //    }
-        //}
-        //#endregion
-        //#region Confirm Booking
-        //Task<XElement> HotelBookingAsync(XElement BookingReq)
-        //{
-        //    XElement BookReq = BookingReq.Descendants("HotelBookingRequest").FirstOrDefault();
-        //    XElement HotelBookingRes = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
-        //                               new XElement("Authentication", new XElement("AgentID", BookingReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", BookingReq.Descendants("UserName").FirstOrDefault().Value), new XElement("Password", BookingReq.Descendants("Password").FirstOrDefault().Value),
-        //                               new XElement("ServiceType", BookingReq.Descendants("ServiceType").FirstOrDefault().Value), new XElement("ServiceVersion", BookingReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
-
-        //    try
-        //    {
-        //        return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-        //#endregion
-        //#region Cancel Booking
-        //Task<XElement> CancelBookingAsync(XElement cancelReq)
-        //{
-        //    XElement CxlReq = cancelReq.Descendants("HotelCancellationRequest").FirstOrDefault();
-        //    XElement BookCXlRes = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
-        //                          new XElement("Authentication", new XElement("AgentID", cancelReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", cancelReq.Descendants("UserName").FirstOrDefault().Value),
-        //                          new XElement("Password", cancelReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", cancelReq.Descendants("ServiceType").FirstOrDefault().Value),
-        //                          new XElement("ServiceVersion", cancelReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
-
-        //    try
-        //    {
-        //        return null;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        CustomException ex1 = new CustomException(ex);
-        //        ex1.MethodName = "BookingCancellation";
-        //        ex1.PageName = "Expedia";
-        //        ex1.CustomerID = cancelReq.Descendants("CustomerID").FirstOrDefault().Value;
-        //        ex1.TranID = cancelReq.Descendants("TransID").FirstOrDefault().Value;
-        //        SaveAPILog saveex = new SaveAPILog();
-        //        saveex.SendCustomExcepToDB(ex1);
-        //        BookCXlRes.Add(new XElement(soapenv + "Body", CxlReq, new XElement("HotelCancellationResponse", new XElement("ErrorTxt", "There is some technical error"))));
-        //        return BookCXlRes;
-        //    }
-        //}
-        //#endregion
+            try
+            {
+                return null;
+            }
+            catch (Exception ex)
+            {
+                CustomException ex1 = new CustomException(ex);
+                ex1.MethodName = "BookingCancellation";
+                ex1.PageName = "Expedia";
+                ex1.CustomerID = cancelReq.Descendants("CustomerID").FirstOrDefault().Value;
+                ex1.TranID = cancelReq.Descendants("TransID").FirstOrDefault().Value;
+                SaveAPILog saveex = new SaveAPILog();
+                saveex.SendCustomExcepToDB(ex1);
+                BookCXlRes.Add(new XElement(soapenv + "Body", CxlReq, new XElement("HotelCancellationResponse", new XElement("ErrorTxt", "There is some technical error"))));
+                return BookCXlRes;
+            }
+        }
+        #endregion
 
 
 

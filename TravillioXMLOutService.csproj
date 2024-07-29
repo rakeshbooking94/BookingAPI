@@ -154,6 +154,7 @@
     <Compile Include="Hotel\Model\RTHWKHotelModel.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchResponse.cs" />
+    <Compile Include="Hotel\Model\RTHWKLookUpRate.cs" />
     <Compile Include="Hotel\Model\RTHWKPreBookModel.cs" />
     <Compile Include="Hotel\Repository\Interfaces\IRTHWKRepository.cs" />
     <Compile Include="Hotel\Repository\RTHWKRepository.cs" />
