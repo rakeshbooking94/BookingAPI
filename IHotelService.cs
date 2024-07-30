@@ -34,11 +34,7 @@ namespace TravillioXMLOutService
         [OperationContract, XmlSerializerFormat]
         object HotelCancellation(XElement req);
 
-        [OperationContract, XmlSerializerFormat]
-        object HotelCancellationFee(XElement req);
 
-        [OperationContract, XmlSerializerFormat]
-        object HotelImportBooking(XElement req);
         #endregion
 
     }

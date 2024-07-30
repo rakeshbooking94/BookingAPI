@@ -181,7 +181,7 @@ namespace TravillioXMLOutService
         {
             try
             {
-                TrvHotelDetails reqs = new TrvHotelDetails();
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement htdetails = reqs.CreateHotelDescriptionDetail(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -231,7 +231,7 @@ namespace TravillioXMLOutService
             try
             {
 
-                TrvHotelDetailsWithCancellation reqs = new TrvHotelDetailsWithCancellation();
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement htdetails = reqs.HotelDetailWithCancellations(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -277,7 +277,7 @@ namespace TravillioXMLOutService
             DateTime Reqstattime = DateTime.Now;
             try
             {
-                TrvRoomAvailabilityNew reqs = new TrvRoomAvailabilityNew();
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement availabilityresponse = reqs.CreateCheckAvailability(req);
                 if (req.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -439,26 +439,11 @@ namespace TravillioXMLOutService
                 string[] spt = dd.Split('T');
                 DateTime lastCancellationDate = DateTime.ParseExact(spt[0], "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 string sss = lastCancellationDate.ToString("dd/MM/yyyy");
-                //////string supcred = XElement.Load(HttpContext.Current.Server.MapPath(@"~/App_Data/xmlres.xml")).ToString();
-                //////XElement prc = XElement.Parse(supcred);
-                //////////XElement cancelPenaltiesElement = prc.Descendants("response").FirstOrDefault().Descendants("CancelPenalties").FirstOrDefault();
-                //////////XElement prc12 = dd.Descendants("CancelPenalties").FirstOrDefault();
-                //////////////decimal ddd = Convert.ToDecimal(prc.Descendants("Price").Sum(x => Convert.ToDecimal(x.Attribute("PriceValue").Value)));
-                //////string sss = prc.Descendants("response").FirstOrDefault().ToString();
-                //////String St = sss;// "super exemple of string key : text I want to keep - end of my string";
-
-                //////int pFrom = St.IndexOf("&lt;ValuationRS") + "&lt;ValuationRS".Length;
-                //////int pTo = St.LastIndexOf("ValuationRS&gt;");
-
-                //////String result = St.Substring(pFrom, pTo - pFrom);
-
-                //////string fff = "&lt;ValuationRS " + result + "ValuationRS&gt;";
-
-                //////string fdd = HttpUtility.HtmlDecode(fff.ToString());
+         
 
 
                 DateTime Reqstattime = DateTime.Now;
-                TrvHotelPreBooking reqs = new TrvHotelPreBooking();
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement htdetails = reqs.HotelPreBooking(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -639,56 +624,13 @@ namespace TravillioXMLOutService
                 #endregion
             }
         }
-        public object HotelImportBooking(XElement request)
-        {
-            try
-            {
 
-                TrvHotelImportBooking reqs = new TrvHotelImportBooking();
-                XElement bookingres = reqs.HotelImportBooking(request);
-                if (request.Descendants("Response_Type").Single().Value == "JSON")
-                {
-                    return JsonConvert.SerializeXNode(bookingres);
-                }
-                else
-                {
-                    try
-                    {
-                        APILogDetail log = new APILogDetail();
-                        log.customerID = Convert.ToInt64(request.Descendants("CustomerID").Single().Value);
-                        log.LogTypeID = 7;
-                        log.LogType = "Import";
-                        log.logrequestXML = request.ToString();
-                        log.logresponseXML = bookingres.ToString();
-                        SaveAPILog savelog = new SaveAPILog();
-                        savelog.SaveAPILogs(log);
-                    }
-                    catch (Exception ex)
-                    {
-                        CustomException ex1 = new CustomException(ex);
-                        ex1.MethodName = "HotelImportBooking";
-                        ex1.PageName = "TravillioService";
-                        ex1.CustomerID = request.Descendants("CustomerID").Single().Value;
-                        ex1.TranID = request.Descendants("TransID").Single().Value;
-                        SaveAPILog saveex = new SaveAPILog();
-                        saveex.SendCustomExcepToDB(ex1);
-                    }
-                    SerializeXMLOut serialization = new SerializeXMLOut();
-                    return serialization.Serialize(bookingres);
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
         public object HotelCancellation(XElement request)
         {
             try
             {
                 DateTime Reqstattime = DateTime.Now;
-                TrvHotelCancellation reqs = new TrvHotelCancellation();
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement cancellationres = reqs.HotelCancellation(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -730,51 +672,7 @@ namespace TravillioXMLOutService
                 return ex.Message;
             }
         }
-        public object HotelCancellationFee(XElement request)
-        {
-            try
-            {
-
-                TrvHotelCancellationFee reqs = new TrvHotelCancellationFee();
-                XElement cancellationres = reqs.HotelCancellationFee(request);
-                if (request.Descendants("Response_Type").Single().Value == "JSON")
-                {
-                    return JsonConvert.SerializeXNode(cancellationres);
-                }
-                else
-                {
-                    try
-                    {
-                        APILogDetail log = new APILogDetail();
-                        log.customerID = Convert.ToInt64(request.Descendants("CustomerID").Single().Value);
-                        log.TrackNumber = request.Descendants("TransID").Single().Value;
-                        log.LogTypeID = 8;
-                        log.LogType = "CancelFee";
-                        log.logrequestXML = request.ToString();
-                        log.logresponseXML = cancellationres.ToString();
-                        SaveAPILog savelog = new SaveAPILog();
-                        savelog.SaveAPILogs(log);
-                    }
-                    catch (Exception ex)
-                    {
-                        CustomException ex1 = new CustomException(ex);
-                        ex1.MethodName = "HotelCancellationFee";
-                        ex1.PageName = "TravillioService";
-                        ex1.CustomerID = request.Descendants("CustomerID").Single().Value;
-                        ex1.TranID = request.Descendants("TransID").Single().Value;
-                        SaveAPILog saveex = new SaveAPILog();
-                        saveex.SendCustomExcepToDB(ex1);
-                    }
-                    SerializeXMLOut serialization = new SerializeXMLOut();
-                    return serialization.Serialize(cancellationres);
-
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
+       
         public void Dispose()
         {
             this.Dispose();
