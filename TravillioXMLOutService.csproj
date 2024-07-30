@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -441,7 +441,6 @@
     <None Include="Service References\BookEnquiryService\configuration.svcinfo" />
     <None Include="Service References\BookEnquiryService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.checkAvailabilityByHotelNameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
