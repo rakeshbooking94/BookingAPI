@@ -121,7 +121,6 @@
     <Compile Include="Air\TBO\tbo_pricecheck.cs" />
     <Compile Include="Air\TBO\tbo_supresponse.cs" />
     <Compile Include="App_Code\SerializeXMLOut.cs" />
-    <Content Include="App_Code\Soap_280417 - Copy.cs" />
     <Compile Include="App_Code\TouricoModel.cs" />
     <Compile Include="App_Code\TouricoRoomAvail.cs" />
     <Compile Include="App_Code\Travco.cs" />
