@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "D:\\Travayoo\\BookingAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\hotel\\service\\rthwkservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:hotel\\service\\rthwkservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\hotel\\travayoohotelsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:hotel\\travayoohotelsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\travayoooutservice.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:travayoooutservice.svc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\ihotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:ihotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\app_code\\searchhotelrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:app_code\\searchhotelrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\app_code\\trvhotelprebooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:app_code\\trvhotelprebooking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,15 +94,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RTHWKServices.cs",
-              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\Hotel\\Service\\RTHWKServices.cs",
-              "RelativeDocumentMoniker": "Hotel\\Service\\RTHWKServices.cs",
-              "ToolTip": "D:\\Travayoo\\BookingAPI\\Hotel\\Service\\RTHWKServices.cs",
-              "RelativeToolTip": "Hotel\\Service\\RTHWKServices.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAA6wJwAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "TravayooOUTService.svc.cs",
+              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\TravayooOUTService.svc.cs",
+              "RelativeDocumentMoniker": "TravayooOUTService.svc.cs",
+              "ToolTip": "D:\\Travayoo\\BookingAPI\\TravayooOUTService.svc.cs",
+              "RelativeToolTip": "TravayooOUTService.svc.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAQwEMAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T06:43:51.721Z",
+              "WhenOpened": "2024-07-30T07:30:59.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TravayooHotelSearch.cs",
+              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\Hotel\\TravayooHotelSearch.cs",
+              "RelativeDocumentMoniker": "Hotel\\TravayooHotelSearch.cs",
+              "ToolTip": "D:\\Travayoo\\BookingAPI\\Hotel\\TravayooHotelSearch.cs",
+              "RelativeToolTip": "Hotel\\TravayooHotelSearch.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T07:19:10.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SearchHotelRequest.cs",
+              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\App_Code\\SearchHotelRequest.cs",
+              "RelativeDocumentMoniker": "App_Code\\SearchHotelRequest.cs",
+              "ToolTip": "D:\\Travayoo\\BookingAPI\\App_Code\\SearchHotelRequest.cs",
+              "RelativeToolTip": "App_Code\\SearchHotelRequest.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T07:16:54.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrvHotelPreBooking.cs",
+              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\App_Code\\TrvHotelPreBooking.cs",
+              "RelativeDocumentMoniker": "App_Code\\TrvHotelPreBooking.cs",
+              "ToolTip": "D:\\Travayoo\\BookingAPI\\App_Code\\TrvHotelPreBooking.cs",
+              "RelativeToolTip": "App_Code\\TrvHotelPreBooking.cs",
+              "ViewState": "AQIAAHsCAAAAAAAAAAAgwBkDAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T07:16:35.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IHotelService.cs",
+              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\IHotelService.cs",
+              "RelativeDocumentMoniker": "IHotelService.cs",
+              "ToolTip": "D:\\Travayoo\\BookingAPI\\IHotelService.cs",
+              "RelativeToolTip": "IHotelService.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwBsAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T07:15:52.83Z",
               "EditorCaption": ""
             }
           ]

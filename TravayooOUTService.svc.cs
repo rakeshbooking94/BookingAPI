@@ -25,6 +25,8 @@ namespace TravillioXMLOutService
     // NOTE: In order to launch WCF Test Client for testing this service, please select TravayooOUTService.svc or TravayooOUTService.svc.cs at the Solution Explorer and start debugging.
     //[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, IncludeExceptionDetailInFaults = true)]
+    
+    
     public class TravayooOUTService : ITravayooOUTService,IDisposable
     {
         #region Hotel Travayoo
