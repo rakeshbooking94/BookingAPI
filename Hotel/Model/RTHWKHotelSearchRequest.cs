@@ -35,8 +35,6 @@ namespace TravillioXMLOutService.Hotel.Model
         public string currency { get; set; }
     }
 
-    public class RTHWKPreBookRequest
-    {
-        public string hash { get; set; }     
-    }
+   
+
 }

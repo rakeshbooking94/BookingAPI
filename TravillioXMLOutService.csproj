@@ -121,7 +121,6 @@
     <Compile Include="Air\TBO\tbo_pricecheck.cs" />
     <Compile Include="Air\TBO\tbo_supresponse.cs" />
     <Compile Include="App_Code\SerializeXMLOut.cs" />
-    <Content Include="App_Code\Soap_280417 - Copy.cs" />
     <Compile Include="App_Code\TouricoModel.cs" />
     <Compile Include="App_Code\TouricoRoomAvail.cs" />
     <Compile Include="App_Code\Travco.cs" />
@@ -150,10 +149,13 @@
     <Compile Include="Hotel\Model\CredentialModel.cs" />
     <Compile Include="Hotel\Model\HotelModel.cs" />
     <Compile Include="Hotel\Model\RequestModel.cs" />
+    <Compile Include="Hotel\Model\RTHWKCancelBooking.cs" />
     <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelModel.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchResponse.cs" />
+    <Compile Include="Hotel\Model\RTHWKLookUpRate.cs" />
+    <Compile Include="Hotel\Model\RTHWKPreBookModel.cs" />
     <Compile Include="Hotel\Repository\Interfaces\IRTHWKRepository.cs" />
     <Compile Include="Hotel\Repository\RTHWKRepository.cs" />
     <Compile Include="Hotel\Repository\HotelRepository.cs" />

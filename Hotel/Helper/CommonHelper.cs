@@ -22,11 +22,20 @@ namespace TravillioXMLOutService.Hotel.Helper
         static readonly int SuplId;
         static int requestNo = 0;
 
+        public static DateTime TravayooDateTime(this string strDate)
+        {
+            DateTime dte = DateTime.ParseExact(strDate.Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            return dte;
+        }
+
         public static string AlterFormat(this string strDate, string oldFormat, string newFormat)
         {
             DateTime dte = DateTime.ParseExact(strDate.Trim(), oldFormat, CultureInfo.InvariantCulture);
             return dte.ToString(newFormat);
         }
+
+
+
 
 
         public static DateTime GetDateTime(this string strDate, string strTime, string dateTimeFormate)
