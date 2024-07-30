@@ -150,6 +150,7 @@
     <Compile Include="Hotel\Model\CredentialModel.cs" />
     <Compile Include="Hotel\Model\HotelModel.cs" />
     <Compile Include="Hotel\Model\RequestModel.cs" />
+    <Compile Include="Hotel\Model\RTHWKCancelBooking.cs" />
     <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelModel.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />

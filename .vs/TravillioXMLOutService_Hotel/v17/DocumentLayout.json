@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Travayoo\\BookingAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\app_data\\hotel\\cxlpolicy.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:app_data\\hotel\\cxlpolicy.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|d:\\travayoo\\bookingapi\\hotel\\service\\rthwkservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AC0EC4A1-1A22-40A3-B827-4CFC23A2956F}|TravillioXMLOutService.csproj|solutionrelative:hotel\\service\\rthwkservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -83,27 +79,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "cxlPolicy.xml",
-              "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\App_Data\\Hotel\\cxlPolicy.xml",
-              "RelativeDocumentMoniker": "App_Data\\Hotel\\cxlPolicy.xml",
-              "ToolTip": "D:\\Travayoo\\BookingAPI\\App_Data\\Hotel\\cxlPolicy.xml",
-              "RelativeToolTip": "App_Data\\Hotel\\cxlPolicy.xml",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADAAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-07-29T13:03:06.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "RTHWKServices.cs",
               "DocumentMoniker": "D:\\Travayoo\\BookingAPI\\Hotel\\Service\\RTHWKServices.cs",
               "RelativeDocumentMoniker": "Hotel\\Service\\RTHWKServices.cs",
               "ToolTip": "D:\\Travayoo\\BookingAPI\\Hotel\\Service\\RTHWKServices.cs",
               "RelativeToolTip": "Hotel\\Service\\RTHWKServices.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAA6wJwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T13:02:39.443Z",
+              "WhenOpened": "2024-07-30T06:43:51.721Z",
               "EditorCaption": ""
             }
           ]

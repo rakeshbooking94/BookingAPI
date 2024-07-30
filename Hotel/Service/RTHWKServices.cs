@@ -27,6 +27,7 @@ using System.Net.Sockets;
 using System.Net;
 using TravillioXMLOutService.Models.Expedia;
 using System.Security.Policy;
+using TravillioXMLOutService.Supplier.TravelGate;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -59,6 +60,100 @@ namespace TravillioXMLOutService.Hotel.Service
             repo = new RTHWKRepository(model);
             htlRepo = new HotelRepository();
         }
+
+
+        #region Common
+        public XElement BindSuplements(TaxData tax_data)
+        {
+            XElement supplements = new XElement("Supplements");
+            if (tax_data != null)
+            {
+                var _suplements = tax_data.taxes.Select(tax =>
+                new XElement("Supplement",
+                new XAttribute("suppId", ""),
+                new XAttribute("supptType", ""),
+                new XAttribute("suppType", "PerRoomSupplement"),
+                new XAttribute("suppCurrency", tax.currency_code),
+                new XAttribute("suppName", tax.name),
+                new XAttribute("suppIsMandatory", !tax.included_by_supplier),
+                new XAttribute("suppChargeType", "AtProperty"),
+                new XAttribute("suppPrice", tax.amount)));
+                supplements.Add(_suplements);
+            }
+            return supplements;
+        }
+
+        public XElement BindAmenity(List<string> amenities_data)
+        {
+            XElement AmtyItem;
+            if (!amenities_data.IsNullOrEmpty())
+            {
+                var result = from amty in amenities_data
+                             select new XElement("Amenity", amty);
+                AmtyItem = new XElement("Amenities", result);
+            }
+            else
+            {
+                AmtyItem = new XElement("Amenities", new XElement("Amenity", null));
+            }
+            return AmtyItem;
+        }
+        public XElement RoomCxlPolicy(CancellationPenalties cancellation_penalties, DateTime checkIn, double sumPrice)
+        {
+
+            XElement cxlItem = new XElement("CancellationPolicies");
+            List<cxlPolicyModel> cxlList = new List<cxlPolicyModel>();
+            cxlList = cancellation_penalties.policies.Select(x =>
+               new cxlPolicyModel()
+               {
+                   start = x.start_at.HasValue ? x.start_at.Value : DateTime.Now,
+                   end = x.end_at.HasValue ? x.end_at.Value : checkIn,
+                   amount = x.amount_show
+               }).ToList();
+
+            if (cancellation_penalties.free_cancellation_before != null)
+            {
+                var lastDate = cancellation_penalties.free_cancellation_before.Value.AddDays(-1);
+                var _item = new XElement("CancellationPolicy",
+                                       new XAttribute("LastCancellationDate", lastDate.ToString("yyyy-MM-dd")),
+                                       new XAttribute("ApplicableAmount", 0),
+                                       new XAttribute("NoShowPolicy", 0));
+                cxlItem.AddAfterSelf(_item);
+
+                cxlList = cxlList.Where(x => x.amount > 0).OrderBy(x => x.start).Distinct().ToList();
+                foreach (var item in cxlList)
+                {
+                    if (item.start > lastDate && item.start < checkIn)
+                    {
+                        var cItem = new XElement("CancellationPolicy",
+                                                              new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
+                                                              new XAttribute("ApplicableAmount", item.amount),
+                                                              new XAttribute("NoShowPolicy", 0));
+                        cxlItem.AddAfterSelf(cItem);
+                    }
+                    else
+                    {
+                        var cItem = new XElement("CancellationPolicy",
+                                                              new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
+                                                              new XAttribute("ApplicableAmount", sumPrice),
+                                                              new XAttribute("NoShowPolicy", 0));
+                        cxlItem.AddAfterSelf(cItem);
+                    }
+                }
+            }
+            else
+            {
+                cxlItem = new XElement("CancellationPolicies", new XElement("CancellationPolicy",
+                              new XAttribute("LastCancellationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                              new XAttribute("ApplicableAmount", sumPrice),
+                              new XAttribute("NoShowPolicy", 1)));
+
+
+            }
+            return cxlItem;
+        }
+
+        #endregion
 
         #region HotelSearch
 
@@ -287,44 +382,7 @@ namespace TravillioXMLOutService.Hotel.Service
 
         #endregion
 
-        #region Common
-        public XElement BindSuplements(TaxData tax_data)
-        {
-            XElement supplements = new XElement("Supplements");
-            if (tax_data != null)
-            {
-                var _suplements = tax_data.taxes.Select(tax =>
-                new XElement("Supplement",
-                new XAttribute("suppId", ""),
-                new XAttribute("supptType", ""),
-                new XAttribute("suppType", "PerRoomSupplement"),
-                new XAttribute("suppCurrency", tax.currency_code),
-                new XAttribute("suppName", tax.name),
-                new XAttribute("suppIsMandatory", !tax.included_by_supplier),
-                new XAttribute("suppChargeType", "AtProperty"),
-                new XAttribute("suppPrice", tax.amount)));
-                supplements.Add(_suplements);
-            }
-            return supplements;
-        }
-
-        public XElement BindAmenity(List<string> amenities_data)
-        {
-            XElement AmtyItem;
-            if (!amenities_data.IsNullOrEmpty())
-            {
-                var result = from amty in amenities_data
-                             select new XElement("Amenity", amty);
-                AmtyItem = new XElement("Amenities", result);
-            }
-            else
-            {
-                AmtyItem = new XElement("Amenities", new XElement("Amenity", null));
-            }
-            return AmtyItem;
-        }
-
-        #endregion
+        
         #region RoomSearch
         RTHWKRoomSearchRequest BindRoomRequest(XElement req)
         {
@@ -512,64 +570,7 @@ namespace TravillioXMLOutService.Hotel.Service
         #endregion
 
 
-        public XElement RoomCxlPolicy(CancellationPenalties cancellation_penalties, DateTime checkIn, double sumPrice)
-        {
-
-            XElement cxlItem = new XElement("CancellationPolicies");
-            List<cxlPolicyModel> cxlList = new List<cxlPolicyModel>();
-            cxlList = cancellation_penalties.policies.Select(x =>
-               new cxlPolicyModel()
-               {
-                   start = x.start_at.HasValue ? x.start_at.Value : DateTime.Now,
-                   end = x.end_at.HasValue ? x.end_at.Value : checkIn,
-                   amount = x.amount_show
-               }).ToList();
-
-            if (cancellation_penalties.free_cancellation_before != null)
-            {
-                var lastDate = cancellation_penalties.free_cancellation_before.Value.AddDays(-1);
-                var _item = new XElement("CancellationPolicy",
-                                       new XAttribute("LastCancellationDate", lastDate.ToString("yyyy-MM-dd")),
-                                       new XAttribute("ApplicableAmount", 0),
-                                       new XAttribute("NoShowPolicy", 0));
-                cxlItem.AddAfterSelf(_item);
-
-                cxlList = cxlList.Where(x => x.amount > 0).OrderBy(x => x.start).Distinct().ToList();
-                foreach (var item in cxlList)
-                {
-                    if (item.start > lastDate && item.start < checkIn)
-                    {
-                        var cItem = new XElement("CancellationPolicy",
-                                                              new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
-                                                              new XAttribute("ApplicableAmount", item.amount),
-                                                              new XAttribute("NoShowPolicy", 0));
-                        cxlItem.AddAfterSelf(cItem);
-                    }
-                    else
-                    {
-                        var cItem = new XElement("CancellationPolicy",
-                                                              new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
-                                                              new XAttribute("ApplicableAmount", sumPrice),
-                                                              new XAttribute("NoShowPolicy", 0));
-                        cxlItem.AddAfterSelf(cItem);
-                    }
-                }
-            }
-            else
-            {
-                cxlItem = new XElement("CancellationPolicies", new XElement("CancellationPolicy",
-                              new XAttribute("LastCancellationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                              new XAttribute("ApplicableAmount", sumPrice),
-                              new XAttribute("NoShowPolicy", 1)));
-
-
-            }
-            return cxlItem;
-        }
-
-
-
-
+      
         #region PreBooking
         RTHWKPreBookRequest BindPreBookRequest(XElement req)
         {
@@ -674,7 +675,7 @@ namespace TravillioXMLOutService.Hotel.Service
                 #region Exception
                 CustomException ex1 = new CustomException(ex);
                 ex1.MethodName = "PreBooking";
-                ex1.PageName = "ExpediaService";
+                ex1.PageName = "RTHWKServices";
                 ex1.CustomerID = preBookReq.Descendants("CustomerID").FirstOrDefault().Value;
                 ex1.TranID = preBookReq.Descendants("TransID").FirstOrDefault().Value;
                 SaveAPILog saveex = new SaveAPILog();
@@ -685,13 +686,10 @@ namespace TravillioXMLOutService.Hotel.Service
                 return PreBookResponse;
             }
         }
-
-
-
-
+        #endregion
 
         #region Cancellation Policy
-        public async  Task<XElement> CancellationPolicyAsync(XElement cxlPolicyReq)
+        public async Task<XElement> CancellationPolicyAsync(XElement cxlPolicyReq)
         {
             XElement CxlPolicyReqest = cxlPolicyReq.Descendants("hotelcancelpolicyrequest").FirstOrDefault();
             XElement CxlPolicyResponse = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
@@ -714,15 +712,45 @@ namespace TravillioXMLOutService.Hotel.Service
                 reqObj.Action = CxlPolicyReqest.Name.LocalName.GetAction().ToString();
                 reqObj.RequestStr = JsonConvert.SerializeObject(_req);
                 reqObj.ResponseStr = await repo.CancellationPolicyAsync(reqObj);
+                var response = JsonConvert.DeserializeObject<RTHWKLookUpRateResponse>(reqObj.ResponseStr);
+                if (response.status == "ok")
+                {
+                    var checkIn = CxlPolicyReqest.Element("FromDate").Value.TravayooDateTime();
+                    var rate = response.data.hotels[0].rates[0];
+                    CxlPolicyResponse.Add(new XElement(soapenv + "Body", cxlPolicyReq, new XElement("HotelDetailwithcancellationResponse",
+             new XElement("Hotels", new XElement("Hotel",
+             new XElement("HotelID", cxlPolicyReq.Descendants("HotelID").FirstOrDefault().Value),
+             new XElement("HotelName"), new XElement("HotelImgSmall"),
+             new XElement("HotelImgLarge"), new XElement("MapLink"),
+             new XElement("DMC", "Expedia"),
+             new XElement("Currency"), new XElement("Offers"),
+             new XElement("Rooms",
+             new XElement("Room", new XAttribute("ID", cxlPolicyReq.Descendants("Room").FirstOrDefault().Attribute("ID").Value),
+             new XAttribute("RoomType", ""),
+             new XAttribute("PerNightRoomRate", cxlPolicyReq.Descendants("PerNightRoomRate").FirstOrDefault().Value),
+             new XAttribute("TotalRoomRate", cxlPolicyReq.Descendants("TotalRoomRate").FirstOrDefault().Value),
+             new XAttribute("LastCancellationDate", ""),
+             RoomCxlPolicy(rate.payment_options.payment_types[0].cancellation_penalties, checkIn, rate.totalPrice)
+             )))))));
 
-                return null;
+
+
+                }
+                else
+                {
+                    CxlPolicyResponse.Add(new XElement(soapenv + "Body",
+                        CxlPolicyReqest,
+                        new XElement("HotelDetailwithcancellationResponse",
+                        new XElement("ErrorTxt", "No cancellation policy found"))));
+                }
+                return CxlPolicyResponse;
             }
             catch (Exception ex)
             {
                 #region Exception
                 CustomException ex1 = new CustomException(ex);
                 ex1.MethodName = "CancellationPolicy";
-                ex1.PageName = "ExpediaService";
+                ex1.PageName = "RTHWKServices";
                 ex1.CustomerID = cxlPolicyReq.Descendants("CustomerID").FirstOrDefault().Value;
                 ex1.TranID = cxlPolicyReq.Descendants("TransID").FirstOrDefault().Value;
                 SaveAPILog saveex = new SaveAPILog();
@@ -735,7 +763,7 @@ namespace TravillioXMLOutService.Hotel.Service
         #endregion
 
 
-        
+
         #region Confirm Booking
         Task<XElement> HotelBookingAsync(XElement BookingReq)
         {
@@ -754,8 +782,10 @@ namespace TravillioXMLOutService.Hotel.Service
             }
         }
         #endregion
+
+
         #region Cancel Booking
-        Task<XElement> CancelBookingAsync(XElement cancelReq)
+        public async Task<XElement> CancelBookingAsync(XElement cancelReq)
         {
             XElement CxlReq = cancelReq.Descendants("HotelCancellationRequest").FirstOrDefault();
             XElement BookCXlRes = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
@@ -765,13 +795,55 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
-                return null;
+                var _req = new RTHWKCancelRequest
+                {
+                    partner_order_id = cancelReq.Descendants("ConfirmationNumber").FirstOrDefault().Value,
+                };
+                var reqObj = new RequestModel();
+                reqObj.StartTime = DateTime.Now;
+                reqObj.Customer = Convert.ToInt64(CxlReq.Element("CustomerID").Value);
+                reqObj.TrackNo = CxlReq.Element("TransID").Value;
+                reqObj.ActionId = (int)CxlReq.Name.LocalName.GetAction();
+                reqObj.Action = CxlReq.Name.LocalName.GetAction().ToString();
+                reqObj.RequestStr = JsonConvert.SerializeObject(_req);
+                reqObj.ResponseStr = await repo.CancelBookingAsync(reqObj);
+                var response = JsonConvert.DeserializeObject<RTHWKCancelResponse>(reqObj.ResponseStr);
+                if (response.status == "ok")
+                {
+                    if (response.error == "order_not_cancellable")
+                    {
+                        BookCXlRes.Add(new XElement(soapenv + "Body", CxlReq, new XElement("HotelCancellationResponse",
+           new XElement("Rooms",
+           new XElement("Room",
+           new XElement("Cancellation",
+       new XElement("Amount", "0.00"),
+           new XElement("Status", "Fail")))))));
+                    }
+                    else
+                    {
+
+                        BookCXlRes.Add(new XElement(soapenv + "Body", CxlReq, new XElement("HotelCancellationResponse",
+                            new XElement("Rooms",
+                            new XElement("Room",
+                            new XElement("Cancellation",
+                        new XElement("Amount", response.data.amount_payable),
+                            new XElement("Status", "Success")))))));
+                    }
+                }
+                else
+                {
+                    BookCXlRes.Add(new XElement(soapenv + "Body", CxlReq,
+                        new XElement("HotelCancellationResponse",
+                        new XElement("ErrorTxt", response.error))));
+                }
+                return BookCXlRes;
+
             }
             catch (Exception ex)
             {
                 CustomException ex1 = new CustomException(ex);
                 ex1.MethodName = "BookingCancellation";
-                ex1.PageName = "Expedia";
+                ex1.PageName = "RTHWKServices";
                 ex1.CustomerID = cancelReq.Descendants("CustomerID").FirstOrDefault().Value;
                 ex1.TranID = cancelReq.Descendants("TransID").FirstOrDefault().Value;
                 SaveAPILog saveex = new SaveAPILog();
@@ -781,13 +853,6 @@ namespace TravillioXMLOutService.Hotel.Service
             }
         }
         #endregion
-
-
-
-
-
-
-
 
 
         #region Hotel Static
