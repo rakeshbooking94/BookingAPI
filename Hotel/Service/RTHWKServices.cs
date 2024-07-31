@@ -1,33 +1,21 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls.Expressions;
 using System.Xml.Linq;
-
-
 using TravillioXMLOutService.Hotel.Helper;
 using TravillioXMLOutService.Hotel.Model;
 using TravillioXMLOutService.Hotel.Repository;
 using TravillioXMLOutService.Hotel.Repository.Interfaces;
 using TravillioXMLOutService.Models;
-using Newtonsoft.Json;
-using TravillioXMLOutService.Transfer.Models.HB;
 using TravillioXMLOutService.Supplier.Expedia;
-using System.Threading;
-using System.Web.UI.WebControls.Expressions;
-using Newtonsoft.Json.Linq;
-using System.Reflection;
-using TravillioXMLOutService.Air.Models.TBO;
-using System.Data;
-using static System.Net.Mime.MediaTypeNames;
-using System.Net.Sockets;
-using System.Net;
-using TravillioXMLOutService.Models.Expedia;
-using System.Security.Policy;
-using TravillioXMLOutService.Supplier.TravelGate;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -159,7 +147,7 @@ namespace TravillioXMLOutService.Hotel.Service
 
         RTHWKHotelSearchRequest BindSearchRequest(XElement req)
         {
-            req = req.Element("searchRequest");
+            // req = req.Element("searchRequest");
             RTHWKHotelSearchRequest model = new RTHWKHotelSearchRequest()
             {
                 checkin = req.Element("FromDate").Value.RTHWKDate(),
@@ -170,8 +158,8 @@ namespace TravillioXMLOutService.Hotel.Service
             };
             model.guests = req.Element("Rooms").Descendants("RoomPax").Select(x => new Guest
             {
-                adults = x.Attribute("Adult").ToINT(),
-                children = x.Attribute("ChildAge").Children()
+                adults = x.Element("Adult").GetValueOrDefault(1),
+                children = x.Descendants("ChildAge") != null ? x.Descendants("ChildAge").Select(y => y.Value.ModifyToInt()).ToList() : new List<int>(),
             }).ToList();
             return model;
         }
@@ -203,6 +191,14 @@ namespace TravillioXMLOutService.Hotel.Service
                 #endregion
 
                 var hotelData = htlRepo.GetAllHotelList(_hreq);
+
+                hotelData[0].HotelId = "test_hotel";
+                hotelData[1].HotelId = "test_hotel_do_not_book";
+
+                hotelData = hotelData.Take(2).ToList();
+                //splitList[0][0] = "test_hotel";
+                //splitList[0][1] = "test_hotel_do_not_book";
+
                 if (hotelData == null || hotelData.Count == 0)
                 {
                     #region No hotel found exception
@@ -220,90 +216,108 @@ namespace TravillioXMLOutService.Hotel.Service
                 var statiProperties = hotelData.Select(r => r.HotelId).ToList();
                 List<List<string>> splitList = statiProperties.SplitHotelList(chunksize);
 
-                #region Thread Initialize
-                List<XElement> thr1 = new List<XElement>();
-                List<XElement> thr2 = new List<XElement>();
-                List<XElement> thr3 = new List<XElement>();
-                List<XElement> thr4 = new List<XElement>();
-                List<XElement> thr5 = new List<XElement>();
-                List<XElement> thr6 = new List<XElement>();
-                List<Thread> threadlist;
 
-                for (int i = 0; i < splitList.Count(); i += 2)
-                {
-                    if (timeOut >= 1)
-                    {
-                        int rangecount = threadCount;
-                        if (splitList.Count - i < threadCount)
-                            rangecount = splitList.Count - i;
 
-                        #region rangecount equals 1
-                        if (rangecount == 1)
-                        {
-                            threadlist = new List<Thread>
-                                {
-                                    new Thread(async()=> thr1 = await GetSearchAsync(req, splitList[i], hotelData,timeOut,sales_environment)),
 
-                                };
-                            threadlist.ForEach(t => t.Start());
-                            threadlist.ForEach(t => t.Join(timeOut));
-                            threadlist.ForEach(t => t.Abort());
-                            HotelsList.AddRange(thr1);
-                        }
-                        #endregion
-                        #region rangecount equals 2
-                        else if (rangecount == 2)
-                        {
-                            threadlist = new List<Thread>
-                                {
-                                   new Thread(async()=> thr1 = await GetSearchAsync(req, splitList[i], hotelData,timeOut,sales_environment)),
-                                  new Thread(async()=> thr2 =  await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
 
-                                };
-                            threadlist.ForEach(t => t.Start());
-                            threadlist.ForEach(t => t.Join(timeOut));
-                            threadlist.ForEach(t => t.Abort());
-                            HotelsList.AddRange(thr1.Concat(thr2));
-                        }
-                        #endregion
-                        #region rangecount equals 3
-                        else if (rangecount == 3)
-                        {
-                            threadlist = new List<Thread>
-                                {
-                                    new Thread(async ()=> thr1 = await GetSearchAsync(req,splitList[i], hotelData,timeOut ,sales_environment)),
-                                    new Thread(async()=> thr2 =await  GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
-                                    new Thread(async()=> thr3 =await GetSearchAsync(req,splitList[i+2], hotelData,timeOut,sales_environment)),
 
-                                };
-                            threadlist.ForEach(t => t.Start());
-                            threadlist.ForEach(t => t.Join(timeOut));
-                            threadlist.ForEach(t => t.Abort());
-                            HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3));
-                        }
-                        #endregion
-                        #region rangecount equals 4
-                        else if (rangecount == 4)
-                        {
-                            threadlist = new List<Thread>
-                                {
-                                    new Thread(async()=> thr1 =await GetSearchAsync(req, splitList[i], hotelData,timeOut ,sales_environment)),
-                                    new Thread(async()=> thr2 =await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
-                                    new Thread(async()=> thr3 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
-                                     new Thread(async()=> thr4 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
-                                };
-                            threadlist.ForEach(t => t.Start());
-                            threadlist.ForEach(t => t.Join(timeOut));
-                            threadlist.ForEach(t => t.Abort());
-                            HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3).Concat(thr4));
-                        }
-                        #endregion
-                        HotelsList = HotelsList.OrderBy(x => x.Descendants("MinRate").FirstOrDefault().Value).ToList();
-                        timeOut = timeOut - Convert.ToInt32(timer.ElapsedMilliseconds);
-                    }
 
-                }
-                #endregion
+                var task = Task.Run(async () => await GetSearchAsync(req, splitList[0], hotelData, timeOut, sales_environment));
+
+                HotelsList.AddRange(task.Result);
+
+
+                HotelsList = HotelsList.OrderBy(x => x.Descendants("MinRate").FirstOrDefault().Value).ToList();
+                timeOut = timeOut - Convert.ToInt32(timer.ElapsedMilliseconds);
+
+                //#region Thread Initialize
+                //List<XElement> thr1 = new List<XElement>();
+                //List<XElement> thr2 = new List<XElement>();
+                //List<XElement> thr3 = new List<XElement>();
+                //List<XElement> thr4 = new List<XElement>();
+                //List<XElement> thr5 = new List<XElement>();
+                //List<XElement> thr6 = new List<XElement>();
+                //List<Thread> threadlist;
+
+                //for (int i = 0; i < splitList.Count(); i += 2)
+                //{
+                //    if (timeOut >= 1)
+                //    {
+                //        int rangecount = threadCount;
+                //        if (splitList.Count - i < threadCount)
+                //            rangecount = splitList.Count - i;
+
+                //        #region rangecount equals 1
+                //        if (rangecount == 1)
+                //        {
+                //            threadlist = new List<Thread>
+                //                {
+                //                    new Thread(async()=> thr1 = await GetSearchAsync(req, splitList[i], hotelData,timeOut,sales_environment)),
+
+                //                };
+                //            threadlist.ForEach(t => t.Start());
+                //            threadlist.ForEach(t => t.Join(timeOut));
+                //            threadlist.ForEach(t => t.Abort());
+                //            HotelsList.AddRange(thr1);
+                //        }
+                //        #endregion
+                //        #region rangecount equals 2
+                //        else if (rangecount == 2)
+                //        {
+                //            threadlist = new List<Thread>
+                //                {
+                //                   new Thread(async()=> thr1 = await GetSearchAsync(req, splitList[i], hotelData,timeOut,sales_environment)),
+                //                  new Thread(async()=> thr2 =  await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
+
+                //                };
+                //            threadlist.ForEach(t => t.Start());
+                //            threadlist.ForEach(t => t.Join(timeOut));
+                //            threadlist.ForEach(t => t.Abort());
+                //            HotelsList.AddRange(thr1.Concat(thr2));
+                //        }
+                //        #endregion
+                //        #region rangecount equals 3
+                //        else if (rangecount == 3)
+                //        {
+                //            threadlist = new List<Thread>
+                //                {
+                //                    new Thread(async ()=> thr1 = await GetSearchAsync(req,splitList[i], hotelData,timeOut ,sales_environment)),
+                //                    new Thread(async()=> thr2 =await  GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
+                //                    new Thread(async()=> thr3 =await GetSearchAsync(req,splitList[i+2], hotelData,timeOut,sales_environment)),
+
+                //                };
+                //            threadlist.ForEach(t => t.Start());
+                //            threadlist.ForEach(t => t.Join(timeOut));
+                //            threadlist.ForEach(t => t.Abort());
+                //            HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3));
+                //        }
+                //        #endregion
+                //        #region rangecount equals 4
+                //        else if (rangecount == 4)
+                //        {
+                //            threadlist = new List<Thread>
+                //                {
+                //                    new Thread(async()=> thr1 =await GetSearchAsync(req, splitList[i], hotelData,timeOut ,sales_environment)),
+                //                    new Thread(async()=> thr2 =await GetSearchAsync(req, splitList[i+1], hotelData,timeOut,sales_environment)),
+                //                    new Thread(async()=> thr3 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
+                //                     new Thread(async()=> thr4 =await GetSearchAsync(req, splitList[i+2], hotelData,timeOut,sales_environment)),
+                //                };
+                //            threadlist.ForEach(t => t.Start());
+                //            threadlist.ForEach(t => t.Join(timeOut));
+                //            threadlist.ForEach(t => t.Abort());
+                //            HotelsList.AddRange(thr1.Concat(thr2).Concat(thr3).Concat(thr4));
+                //        }
+                //        #endregion
+                //        HotelsList = HotelsList.OrderBy(x => x.Descendants("MinRate").FirstOrDefault().Value).ToList();
+                //        timeOut = timeOut - Convert.ToInt32(timer.ElapsedMilliseconds);
+                //    }
+
+                //}
+                //#endregion
+
+
+
+
                 return HotelsList;
             }
             catch (Exception ex)
@@ -328,8 +342,8 @@ namespace TravillioXMLOutService.Hotel.Service
             var reqObj = new RequestModel();
             reqObj.TimeOut = timeout;
             reqObj.StartTime = DateTime.Now;
-            reqObj.Customer = Convert.ToInt64(_travyoReq.Attribute("customerId").Value);
-            reqObj.TrackNo = _travyoReq.Attribute("transId").Value;
+            reqObj.Customer = Convert.ToInt64(_travyoReq.Element("CustomerID").Value);
+            reqObj.TrackNo = _travyoReq.Element("TransID").Value;
             reqObj.ActionId = (int)_travyoReq.Name.LocalName.GetAction();
             reqObj.Action = _travyoReq.Name.LocalName.GetAction().ToString();
             var _req = BindSearchRequest(_travyoReq);
@@ -341,9 +355,14 @@ namespace TravillioXMLOutService.Hotel.Service
             {
                 if (response.data.total_hotels > 0)
                 {
+
+
+
+
                     var hotelResult = from htl in response.data.hotels
                                       join htlD in hotelData
                                       on htl.id equals htlD.HotelId
+                                      let item = htl.rates.OrderBy(x => x.totalPrice).First()
                                       select new XElement("Hotel", new XElement("HotelID", htl.id),
                                     new XElement("HotelName", htlD.HotelName),
                                     new XElement("PropertyTypeName", ""),
@@ -355,12 +374,12 @@ namespace TravillioXMLOutService.Hotel.Service
                                     new XElement("CityName", htlD.CityName),
                                     new XElement("AreaId"),
                                     new XElement("AreaName", ""),
-                                    new XElement("RequestID", ""),
+                                    new XElement("RequestID", item.match_hash),
                                     new XElement("Address", htlD.HotelAddress),
                                     new XElement("Location", htlD.HotelAddress),
                                     new XElement("Description"),
                                     new XElement("StarRating", htlD.Rating),
-                                    new XElement("MinRate", htl.rates.Min(x => x.totalPrice)),
+                                    new XElement("MinRate", item.totalPrice),
                                     new XElement("HotelImgSmall", htlD.HotelImage),
                                     new XElement("HotelImgLarge", htlD.HotelImage),
                                     new XElement("MapLink"),
@@ -382,7 +401,7 @@ namespace TravillioXMLOutService.Hotel.Service
 
         #endregion
 
-        
+
         #region RoomSearch
         RTHWKRoomSearchRequest BindRoomRequest(XElement req)
         {
@@ -570,7 +589,7 @@ namespace TravillioXMLOutService.Hotel.Service
         #endregion
 
 
-      
+
         #region PreBooking
         RTHWKPreBookRequest BindPreBookRequest(XElement req)
         {

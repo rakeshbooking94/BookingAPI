@@ -9,28 +9,85 @@ using TravillioXMLOutService.DataAccess;
 using TravillioXMLOutService.Hotel.Model;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace TravillioXMLOutService.Hotel.Repository
 {
     public class HotelRepository
     {
+
+
+
+
+
+        public DataTable GetStaticHotels(int SupplierId, string HotelCode, string HotelName, string CityName, string CountryCode, int MinRating, int MaxRating)
+        {
+            DataTable dt = new DataTable("Hotels");
+            try
+            {
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["INGMContext"].ToString()))
+                {
+                    using (var cmd = new SqlCommand("GetAllHotelSearchProc", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@SupplierId", SupplierId);
+                        cmd.Parameters.AddWithValue("@HotelCode", HotelCode);
+                        cmd.Parameters.AddWithValue("@HotelName", HotelName);
+                        cmd.Parameters.AddWithValue("@cityCode", CityName);
+                        cmd.Parameters.AddWithValue("@CountryCode", CountryCode);
+                        cmd.Parameters.AddWithValue("@MinStarRating", MinRating);
+                        cmd.Parameters.AddWithValue("@MaxStarRating", MaxRating);
+                        using (var adap = new SqlDataAdapter(cmd))
+                        {
+                            conn.Open();
+                            adap.Fill(dt);
+                            conn.Close();
+                            return dt;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return dt;
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
         public List<HotelModel> GetAllHotelList(HotelSearch req)
         {
             List<HotelModel> lst = new List<HotelModel>();
             try
             {
-                SqlParameter[] param = new SqlParameter[6];
-                param[0] = new SqlParameter("@SupplierId", req.SupplierId);
-                param[1] = new SqlParameter("@HotelCode", req.HotelId);
-                param[2] = new SqlParameter("@HotelName", req.CityCode);
-                param[3] = new SqlParameter("@CountryCode", req.CountryCode);
-                param[4] = new SqlParameter("@MinStarRating", req.MinRating);
-                param[5] = new SqlParameter("@MaxStarRating", req.MaxRating);
-                var ds = SqlHelper.ExecuteDataset(TravayooConnection.ServiceConnection,
-                     CommandType.StoredProcedure, "GetAllHotelSearchProc", param);
-                if (ds.Tables[0].Rows.Count > 0)
+                //SqlParameter[] param = new SqlParameter[6];
+                //param[0] = new SqlParameter("@SupplierId", req.SupplierId);
+                //param[1] = new SqlParameter("@HotelCode", req.HotelId);
+                //param[2] = new SqlParameter("@HotelName", req.CityCode);
+                //param[3] = new SqlParameter("@CountryCode", req.CountryCode);
+                //param[4] = new SqlParameter("@MinStarRating", req.MinRating);
+                //param[5] = new SqlParameter("@MaxStarRating", req.MaxRating);
+                //var ds = SqlHelper.ExecuteDataset(TravayooConnection.ServiceConnection,
+                //     CommandType.StoredProcedure, "GetAllHotelSearchProc", param);
+
+
+
+                var dt = GetStaticHotels(req.SupplierId, req.HotelId, req.HotelName, req.CityCode, req.CountryCode, req.MinRating, req.MaxRating);
+
+
+                if (dt.Rows.Count > 0)
                 {
-                    ds.Tables[0].AsEnumerable().Select(x => new HotelModel
+                    lst = dt.AsEnumerable().Select(x => new HotelModel
                     {
                         HotelId = x["hotelcode"] != DBNull.Value ? x["hotelcode"].ToString() : "",
                         HotelName = x["hotelname"] != DBNull.Value ? x["hotelname"].ToString() : "",

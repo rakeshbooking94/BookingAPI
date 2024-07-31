@@ -109,13 +109,6 @@ namespace TravillioXMLOutService.Hotel.Model
 
     public class Rate
     {
-
-        public Rate()
-        {
-            this.totalPrice = daily_prices.Sum();
-
-        }
-        public double totalPrice { get; set; }
         public string book_hash { get; set; }
         public string match_hash { get; set; }
         public List<double> daily_prices { get; set; }
@@ -133,6 +126,17 @@ namespace TravillioXMLOutService.Hotel.Model
         public object deposit { get; set; }
         public object no_show { get; set; }
         public RoomDataTrans room_data_trans { get; set; }
+
+
+
+        public double caltotalPrice()
+        {
+            return this.daily_prices != null ? this.daily_prices.Sum() : 0;
+
+        }
+        public double totalPrice { get { return this.daily_prices != null ? this.daily_prices.Sum() : 0; } }
+
+
     }
 
 
@@ -173,10 +177,10 @@ namespace TravillioXMLOutService.Hotel.Model
     public class Tax
     {
         public string name { get; set; }
-        public bool included_by_supplier { get; set; }     
+        public bool included_by_supplier { get; set; }
         public double amount { get; set; }
         public string currency_code { get; set; }
-      
+
     }
 
 

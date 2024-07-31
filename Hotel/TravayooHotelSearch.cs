@@ -92,9 +92,10 @@ namespace TravillioXMLOutService.Hotel
 
                 try
                 {
-                    string customerId = req.Descendants("SearchRequest").Attributes("CustomerID").FirstOrDefault().Value;
+                    XElement SearReq = req.Descendants("searchRequest").FirstOrDefault();
+                    string customerId = SearReq.Element("CustomerID").Value;
                     RTHWKServices hbreq = new RTHWKServices(customerId);
-                    XElement SearReq = req.Descendants("SearchRequest").FirstOrDefault();
+              
                     List<XElement> hotels = hbreq.HotelAvailability(SearReq, customerId, "false");
 
                     IEnumerable<XElement> request = req.Descendants("searchRequest");
@@ -198,7 +199,7 @@ namespace TravillioXMLOutService.Hotel
                 try
                 {
                     reqTravillio = req;
-                    int expedia = req.Descendants("GiataHotelList").Attributes("GSupID").Where(x => x.Value == "20").Count();
+                    int expedia = req.Descendants("GiataHotelList").Attributes("GSupID").Where(x => x.Value == "24").Count();
 
 
                     if (expedia > 0 )

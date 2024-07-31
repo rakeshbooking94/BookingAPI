@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -41,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -49,6 +50,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -286,12 +288,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceLog\ServiceLog.txt" />
-    <Content Include=".vs\slnx.sqlite" />
-    <Content Include=".vs\TravillioXMLOutService_Hotel\config\applicationhost.config" />
-    <Content Include=".vs\TravillioXMLOutService_Hotel\FileContentIndex\96894f60-81cd-4515-a76d-7f797dbb1f2f.vsidx" />
-    <Content Include=".vs\TravillioXMLOutService_Hotel\FileContentIndex\b21de2e7-35b6-4a24-9e9a-3f0969e94859.vsidx" />
-    <Content Include=".vs\TravillioXMLOutService_Hotel\v17\.suo" />
-    <Content Include=".vs\VSWorkspaceState.json" />
     <Content Include="App_Data\HotelBeds\Booking.json" />
     <Content Include="App_Data\HotelBeds\Cancel.json" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
@@ -308,6 +304,7 @@
     <Content Include="App_Data\Hotel\prebook.xml" />
     <Content Include="App_Data\Hotel\RoomAvail.xml" />
     <Content Include="App_Data\Hotel\Search.xml" />
+    <Content Include="App_Data\Hotel\Test.xml" />
     <Content Include="App_Data\Query.txt" />
     <Content Include="App_Data\Script\apilog.sql" />
     <Content Include="App_Data\SQL\sqlquery.sql" />
@@ -443,6 +440,7 @@
     <None Include="Service References\BookEnquiryService\configuration.svcinfo" />
     <None Include="Service References\BookEnquiryService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference1.cs</LastGenOutput>
     </None>
     <Content Include="Service References\HotelAvailabilityService\TravillioXMLOutService.HotelAvailabilityService.checkAvailabilityByHotelNameResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -884,8 +882,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include=".vs\BookingAPI\v16\" />
-    <Folder Include=".vs\TravillioXMLOutService_Hotel\v16\" />
     <Folder Include="Common\Juniper\" />
     <Folder Include="Supplier\Travelgate_new\" />
   </ItemGroup>

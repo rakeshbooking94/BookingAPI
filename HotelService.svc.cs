@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Text;
 using System.Web;
 using System.Xml.Linq;
@@ -20,7 +21,7 @@ namespace TravillioXMLOutService
     // NOTE: In order to launch WCF Test Client for testing this service, please select HotelService.svc or HotelService.svc.cs at the Solution Explorer and start debugging.
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, IncludeExceptionDetailInFaults = true)]
 
-
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class HotelService : IHotelService
     {
         #region Hotel Travayoo
@@ -58,8 +59,8 @@ namespace TravillioXMLOutService
                     saveex.SendCustomExcepToDB(ex1);
                 }
                 #endregion
-                HotelSearch_XMLOUT reqs = new HotelSearch_XMLOUT();
-                availabilityresponse = reqs.HotelAvail_XMLOUT(req);
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
+                availabilityresponse = reqs.HotelAvailability(req);
                 if (req.Descendants("Response_Type").Single().Value == "JSON")
                 {
                     #region JSON Response
