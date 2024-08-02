@@ -487,10 +487,13 @@ namespace TravillioXMLOutService.Hotel.Service
             {
                 var _req = BindRoomRequest(searchReq);
 
-                var hotelObj = htlRepo.GetHotelDetail(_req.id);
+                //var hotelObj = htlRepo.GetHotelDetail(_req.id);
 
+                
+                var basePath = CommonHelper.BasePath() + @"\App_Data\Ratehawk\hotelInfo.json";
+                var jsonstr = File.ReadAllText(basePath);
+                var hotelObj = JsonConvert.DeserializeObject<RTHWKHotelModel>(jsonstr);
 
-                var jsonstr = File.ReadAllText("");
 
                 var reqObj = new RequestModel();
                 //reqObj.TimeOut = timeout;

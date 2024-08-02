@@ -27,3 +27,5 @@
 /.vs/TravillioXMLOutService_Hotel/v17/.suo
 /.vs/TravillioXMLOutService_Hotel/v17/DocumentLayout.json
 /.gitignore
+/Service References/TouricoReservation/Reference.cs
+/Service References/Tourico/Reference.cs
