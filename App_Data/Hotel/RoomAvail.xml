@@ -37,7 +37,7 @@
       <TransID>3f3e658d-422b-4c28-8ee9-7b8ccfd82c7c</TransID>
       <OnRequest>true</OnRequest>
       <GiataList>
-        <GiataHotelList GHtlID="56319" GSupID="4" GRequestID="" xmlout="false" custID="10017" custName="HotelBeds" sessionKey="" sourcekey="" publishedkey="" />
+        <GiataHotelList GHtlID="56319" GSupID="24" GRequestID="" xmlout="false" custID="10017" custName="HotelBeds" sessionKey="" sourcekey="" publishedkey="" />
         <GiataHotelList GHtlID="1091ff" GSupID="6" GRequestID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" xmlout="false" custID="10017" custName="HPro" sessionKey="" sourcekey="" publishedkey="" />
       </GiataList>
       <Rooms>
