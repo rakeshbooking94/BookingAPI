@@ -1,0 +1,6 @@
+Testing API URL: http://serviceapi.bookingexpress.co/TravayooOUTService.svc
+Testing B2b URL: testing.bookingexpress.co
+B2B Credentials: rishima02, pass: qa@ing2510
+
+github
+rakeshbooking94
