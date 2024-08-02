@@ -199,6 +199,12 @@ namespace TravillioXMLOutService.Hotel
                 try
                 {
                     reqTravillio = req;
+
+            
+
+                 
+
+
                     int expedia = req.Descendants("GiataHotelList").Attributes("GSupID").Where(x => x.Value == "24").Count();
 
 
@@ -227,8 +233,10 @@ namespace TravillioXMLOutService.Hotel
                             {
                                 try
                                 {
-                                    ExpediaService expobj = new ExpediaService();
-                                    tid20 = new Thread(new ThreadStart(() => { expediahtlavailresp = expobj.GetRoomAvail_ExpediaOUT(req); }));
+                                    XElement SearReq = req.Descendants("searchRequest").FirstOrDefault();
+                                    string customerId = SearReq.Element("CustomerID").Value;
+                                    RTHWKServices hbreq = new RTHWKServices(customerId);
+                                    tid20 = new Thread(new ThreadStart(() => { expediahtlavailresp = hbreq.GetRoomAvailability(req); }));
                                 }
                                 catch { }
                             }

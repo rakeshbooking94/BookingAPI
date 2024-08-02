@@ -111,25 +111,72 @@ namespace TravillioXMLOutService.Hotel.Repository
             return lst;
         }
 
+        public string GetStaticHotel(string HotelCode)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["INGMContext"].ToString()))
+                {
+                    using (var cmd = new SqlCommand("RateHawkProc", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@flag", 1);
+                        cmd.Parameters.AddWithValue("@SupplierId", 24);
+                        cmd.Parameters.AddWithValue("@HotelId", HotelCode);
+                        conn.Open();
+                        using (SqlDataReader rdr = cmd.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                var content = rdr.GetString(0);
+                                return content;
+                            }
+                        }
+                        conn.Close();
+                        return null;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
         public RTHWKHotelModel GetHotelDetail(string hotelId)
         {
             RTHWKHotelModel result = null;
-            string json = string.Empty;
+            string json = this.GetStaticHotel(hotelId);
             try
             {
-                SqlParameter[] param = new SqlParameter[1];
-                param[0] = new SqlParameter("@HotelCode", hotelId);
-                var dr = SqlHelper.ExecuteReader(TravayooConnection.ServiceConnection,
-                     CommandType.StoredProcedure, "GetAllHotelSearchProc", param);
-                using (var reader = SqlHelper.ExecuteReader(TravayooConnection.ServiceConnection,
-                     CommandType.StoredProcedure, "GetAllHotelSearchProc", param))
-                {
-                    if (reader.Read())
-                    {
-                        json = reader.GetString(reader.GetOrdinal("HotelDetais"));
-                        result = JsonConvert.DeserializeObject<RTHWKHotelModel>(json);
-                    }
-                }
+                result = JsonConvert.DeserializeObject<RTHWKHotelModel>(json);
+                //SqlParameter[] param = new SqlParameter[3];
+                //param[0] = new SqlParameter("@flag", 1);
+                //param[1] = new SqlParameter("@SupplierId", 24);
+                //param[2] = new SqlParameter("@HotelId", hotelId);
+
+                //using (var reader = SqlHelper.ExecuteReader(TravayooConnection.ServiceConnection,
+                //     CommandType.StoredProcedure, "RateHawkProc", param))
+                //{
+                //    if (reader.Read())
+                //    {
+                //        json = reader.GetString(reader.GetOrdinal("StaticContent"));
+                       
+                //    }
+                //}
             }
             catch
             {

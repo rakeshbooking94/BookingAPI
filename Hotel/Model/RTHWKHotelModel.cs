@@ -219,6 +219,22 @@ namespace TravillioXMLOutService.Hotel.Model
         public int balcony { get; set; }
         public int floor { get; set; }
         public int view { get; set; }
+
+        public string rmKey
+        {
+
+            get
+            {
+                return (this.@class.ToString() + this.quality.ToString()
+                    + this.sex.ToString() + this.bathroom.ToString()
+                    + this.bedding.ToString() + this.family.ToString()
+                    + this.capacity.ToString() + this.club.ToString() +
+                    this.bedrooms.ToString() + this.balcony.ToString() +
+                    this.floor.ToString() + this.view.ToString());
+            }
+        }
+
+
     }
 
     public class RoomGroup

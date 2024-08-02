@@ -33,8 +33,8 @@ namespace TravillioXMLOutService.Hotel.Repository
             HttpClient _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(model.BaseUrl);
             _httpClient.Timeout = TimeSpan.FromSeconds(20);
-            
-            
+
+
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
@@ -141,7 +141,8 @@ namespace TravillioXMLOutService.Hotel.Repository
             {
 
                 var _httpClient = this.CreateClient();
-                _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+                if (reqModel.TimeOut > 0)
+                    _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
 
                 using (var request = new HttpRequestMessage(HttpMethod.Post, "search/hp/"))
                 {
@@ -485,7 +486,7 @@ namespace TravillioXMLOutService.Hotel.Repository
         }
 
 
-      
+
 
 
 

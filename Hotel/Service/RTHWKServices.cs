@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls.Expressions;
@@ -405,7 +406,7 @@ namespace TravillioXMLOutService.Hotel.Service
         #region RoomSearch
         RTHWKRoomSearchRequest BindRoomRequest(XElement req)
         {
-            req = req.Element("searchRequest");
+
             var htl = req.Element("GiataList").Descendants("GiataHotelList").Where(x => x.Attribute("GSupID").Value == supplierId.ToString()).FirstOrDefault();
             RTHWKRoomSearchRequest model = new RTHWKRoomSearchRequest()
             {
@@ -418,13 +419,60 @@ namespace TravillioXMLOutService.Hotel.Service
             };
             model.guests = req.Element("Rooms").Descendants("RoomPax").Select(x => new Guest
             {
-                adults = x.Attribute("Adult").ToINT(),
-                children = x.Attribute("ChildAge").Children()
+                adults = x.Element("Adult").GetValueOrDefault(1),
+                children = x.Descendants("ChildAge") != null ? x.Descendants("ChildAge").Select(y => y.Value.ModifyToInt()).ToList() : new List<int>(),
             }).ToList();
             return model;
         }
 
-        public async Task<XElement> GetRoomAvailabilityAsync(XElement roomReq, int timeout, string xtype, string htlid, string custid)
+        public XElement GetRoomAvailability(XElement req)
+        {
+            List<XElement> roomavailabilityresponse = new List<XElement>();
+            XElement getrm = null;
+            try
+            {
+
+                string dmc = string.Empty;
+                List<XElement> htlele = req.Descendants("GiataHotelList").Where(x => x.Attribute("GSupID").Value == "24").ToList();
+                for (int i = 0; i < htlele.Count(); i++)
+                {
+                    string custID = string.Empty;
+                    string custName = string.Empty;
+                    string htlid = htlele[i].Attribute("GHtlID").Value;
+                    string xmlout = string.Empty;
+                    try
+                    {
+                        xmlout = htlele[i].Attribute("xmlout").Value;
+                    }
+                    catch { xmlout = "false"; }
+                    if (xmlout == "true")
+                    {
+                        try
+                        {
+                            customerid = htlele[i].Attribute("custIDs").Value;
+                            dmc = htlele[i].Attribute("custName").Value;
+                        }
+                        catch { custName = "HA"; }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            customerid = htlele[i].Attribute("custID").Value;
+                        }
+                        catch { }
+                        dmc = "RateHawk";
+                    }
+                    var task = Task.Run(async () => await GetRoomAvailabilityAsync(req, dmc, htlid, customerid));
+                    roomavailabilityresponse.Add(task.Result);
+                }
+                getrm = new XElement("TotalRooms", roomavailabilityresponse);
+                return getrm;
+            }
+            catch { return null; }
+        }
+
+        public async Task<XElement> GetRoomAvailabilityAsync(XElement roomReq, string dmc, string htlid, string customerid)
         {
             XElement searchReq = roomReq.Descendants("searchRequest").FirstOrDefault();
             XElement RoomDetails = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
@@ -437,15 +485,20 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
-                var _req = BindRoomRequest(roomReq);
+                var _req = BindRoomRequest(searchReq);
+
                 var hotelObj = htlRepo.GetHotelDetail(_req.id);
+
+
+                var jsonstr = File.ReadAllText("");
+
                 var reqObj = new RequestModel();
-                reqObj.TimeOut = timeout;
+                //reqObj.TimeOut = timeout;
                 reqObj.StartTime = DateTime.Now;
-                reqObj.Customer = Convert.ToInt64(roomReq.Attribute("customerId").Value);
-                reqObj.TrackNo = roomReq.Attribute("transId").Value;
-                reqObj.ActionId = (int)roomReq.Name.LocalName.GetAction();
-                reqObj.Action = roomReq.Name.LocalName.GetAction().ToString();
+                reqObj.Customer = Convert.ToInt64(searchReq.Element("CustomerID").Value);
+                reqObj.TrackNo = searchReq.Element("TransID").Value;
+                reqObj.ActionId = (int)searchReq.Name.LocalName.GetAction();
+                reqObj.Action = searchReq.Name.LocalName.GetAction().ToString();
                 reqObj.RequestStr = JsonConvert.SerializeObject(_req);
                 reqObj.ResponseStr = await repo.RoomSearchAsync(reqObj);
 
@@ -454,7 +507,28 @@ namespace TravillioXMLOutService.Hotel.Service
                 {
                     int counter = 0;
                     var roomsResult = from rate in response.data.hotels[0].rates
-                                      join roms in hotelObj.room_groups on rate.rg_ext equals roms.rg_ext
+                                      from roms in hotelObj.room_groups
+                                      where (rate.rg_ext.@class == roms.rg_ext.@class &&
+                                      rate.rg_ext.quality == roms.rg_ext.quality &&
+                                      rate.rg_ext.sex == roms.rg_ext.sex &&
+                                      rate.rg_ext.bedding == roms.rg_ext.bedding &&
+                                      rate.rg_ext.bathroom == roms.rg_ext.bathroom &&
+                                      rate.rg_ext.capacity == roms.rg_ext.capacity &&
+                                      rate.rg_ext.family == roms.rg_ext.family &&
+                                      rate.rg_ext.club == roms.rg_ext.club &&
+                                      rate.rg_ext.bedrooms == roms.rg_ext.bedrooms &&
+                                      rate.rg_ext.balcony == roms.rg_ext.balcony &&
+                                      rate.rg_ext.floor == roms.rg_ext.floor &&
+                                          rate.rg_ext.view == roms.rg_ext.view)
+
+
+
+
+
+
+
+
+
                                       let nightPrice = rate.totalPrice / rate.daily_prices.Count
                                       let roomPrice = nightPrice / searchReq.Descendants("RoomPax").Count()
                                       select new XElement("RoomTypes",
