@@ -1,0 +1,703 @@
+﻿{
+  "data": {
+    "address": "123 Moscow street, Belogorsk",
+    "amenity_groups": [
+      {
+        "amenities": [
+          "Air conditioning",
+          "Elevator/lift",
+          "Smoking areas",
+          "Heating",
+          "Security guard",
+          "Terrace",
+          "Fire Extinguisher",
+          "Smoking Allowed",
+          "Electric car charging"
+        ],
+        "group_name": "General"
+      },
+      {
+        "amenities": [
+          "Fridge",
+          "Cable TV",
+          "TV",
+          "Music system",
+          "Minibar",
+          "DVD Player",
+          "Locker",
+          "Bathrobe",
+          "Safe (in room)"
+        ],
+        "group_name": "Rooms"
+      },
+      {
+        "amenities": [
+          "Accessibility features"
+        ],
+        "group_name": "Accessibility"
+      },
+      {
+        "amenities": [
+          "Iron and board",
+          "Hairdryer (on request)",
+          "Telephone",
+          "Iron"
+        ],
+        "group_name": "Services and amenities"
+      },
+      {
+        "amenities": [
+          "Common kitchen",
+          "Kitchen"
+        ],
+        "group_name": "Meals"
+      },
+      {
+        "amenities": [
+          "Wi-Fi"
+        ],
+        "group_name": "Internet"
+      },
+      {
+        "amenities": [
+          "Russian",
+          "English"
+        ],
+        "group_name": "Languages Spoken"
+      },
+      {
+        "amenities": [
+          "Sun Deck"
+        ],
+        "group_name": "Recreation"
+      },
+      {
+        "amenities": [
+          "Parking"
+        ],
+        "group_name": "Parking"
+      },
+      {
+        "amenities": [
+          "Photocopy machines"
+        ],
+        "group_name": "Business"
+      },
+      {
+        "amenities": [
+          "First Aid Kit"
+        ],
+        "group_name": "Beauty and wellness"
+      },
+      {
+        "amenities": [
+          "Pets allowed"
+        ],
+        "group_name": "Pets"
+      },
+      {
+        "amenities": [
+          "Temperature control for staff"
+        ],
+        "group_name": "Health and Safety Measures"
+      }
+    ],
+    "check_in_time": "14:00:00",
+    "check_out_time": "12:00:00",
+    "description_struct": [
+      {
+        "paragraphs": [
+          "A very nice place to stay for a reasonable price — living quarters «Kitty Test Hotel (Do Not Book)» are located in Belogorsk. These living quarters are located in walking distance from the city center."
+        ],
+        "title": "Location"
+      },
+      {
+        "paragraphs": [
+          "In the shared kitchen, you can cook anything you want. Wi-Fi is available on the premises. Ask for more information when checking-in. Specially for tourists who travel by car, there’s a parking zone. Pets are welcome here.",
+          "Accessible for guests with disabilities: the elevator helps them to go to the highest floors. Additional services that the living quarters offers to its guests: ironing. The staff of the living quarters will be happy to talk to you in English and Russian."
+        ],
+        "title": "At the living quarters"
+      },
+      {
+        "paragraphs": [
+          "The room is warmly decorated and has everything you need to have a rest after a long eventful day. There is a DVD player, a TV, a mini-bar and a bathrobe. The room equipment depends on its category."
+        ],
+        "title": "Room amenities"
+      }
+    ],
+    "email": "10@list.ru",
+    "facts": {
+      "electricity": {
+        "frequency": [
+          50
+        ],
+        "sockets": [
+          "c",
+          "f"
+        ],
+        "voltage": [
+          220
+        ]
+      },
+      "floors_number": 2,
+      "rooms_number": 11,
+      "year_built": 2000,
+      "year_renovated": 2021
+    },
+    "front_desk_time_end": "10:00:00",
+    "front_desk_time_start": "08:00:00",
+    "hotel_chain": "No chain",
+    "id": "test_hotel",
+    "images": [
+      "https://cdn.worldota.net/t/{size}/ostrovok/e4/39/e439cdefa0ccd873017aea1168a4d415f3cb2fc5.JPEG",
+      "https://cdn.worldota.net/t/{size}/extranet/b6/32/b63252ca248284f1d76a04f687148dd842105c32.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/38/da/38da64833864125e6bce2c5ce3693d08d17b58dd.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/a1/c4/a1c43714db4b446d8cb45343ee901a688b376871.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/34/dd/34ddb81b601a3ed939dbda64726503286caab75a.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/3f/ac/3fac1f63d1c0f5e3929e6a73abf074aec400b6fe.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/8a/84/8a8406f0a7c9bd1f96c79383b44e927c114f136d.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/03/9d/039d14e20ed3f1271d98acb2bf3bc3fee973ff89.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/12/48/124805d0eebf5672e92fef123f8526d714c27487.jpeg",
+      "https://cdn.worldota.net/t/{size}/extranet/01/88/01887841dc7e13d90860e5cb618283dcd1ff4aa5.jpeg"
+    ],
+    "is_closed": false,
+    "is_gender_specification_required": true,
+    "kind": "Hotel",
+    "latitude": 50.91802,
+    "longitude": 128.48706,
+    "metapolicy_extra_info": "Russian citizens must have an original Russian passport upon arrival.\nThe given hotel is fiction and should not be booked. If you book this hotel further accommodation shall not be provided.\r\n\r\nThe front desk is not open around o'clock. If the guests arrive after 11:00 РM, it is necessary to notify the hotel in advance and get the check-in instructions. Contact information is provided in the booking confirmation.\r\n\r\nThe hotel charges a resort fee of AED 15.00 per room for one night, for a two-room — AED 30.00 per day, for a three-room — AED 45.00 per day.",
+    "metapolicy_struct": {
+      "add_fee": [],
+      "check_in_check_out": [],
+      "children": [
+        {
+          "age_end": 3,
+          "age_start": 0,
+          "currency": "CHF",
+          "extra_bed": "available",
+          "price": "500"
+        },
+        {
+          "age_end": 9,
+          "age_start": 4,
+          "currency": "ALL",
+          "extra_bed": "available",
+          "price": "700"
+        },
+        {
+          "age_end": 12,
+          "age_start": 10,
+          "currency": "",
+          "extra_bed": "available",
+          "price": "0"
+        }
+      ],
+      "children_meal": [
+        {
+          "age_end": 5,
+          "age_start": 0,
+          "currency": "RUB",
+          "inclusion": "not_included",
+          "meal_type": "breakfast",
+          "price": "300"
+        },
+        {
+          "age_end": 12,
+          "age_start": 6,
+          "currency": "RUB",
+          "inclusion": "not_included",
+          "meal_type": "breakfast",
+          "price": "400"
+        }
+      ],
+      "cot": [
+        {
+          "amount": 1,
+          "currency": "",
+          "inclusion": "included",
+          "price": "0",
+          "price_unit": "unspecified"
+        }
+      ],
+      "deposit": [
+        {
+          "availability": "available",
+          "currency": "RUB",
+          "deposit_type": "keys",
+          "payment_type": "card",
+          "price": "1000",
+          "price_unit": "per_room_per_stay",
+          "pricing_method": "fixed"
+        },
+        {
+          "availability": "available",
+          "currency": "RUB",
+          "deposit_type": "pet",
+          "payment_type": "cash",
+          "price": "10000",
+          "price_unit": "per_room_per_stay",
+          "pricing_method": "fixed"
+        },
+        {
+          "availability": "available",
+          "currency": "RUB",
+          "deposit_type": "breakage",
+          "payment_type": "unspecified",
+          "price": "500",
+          "price_unit": "per_room_per_stay",
+          "pricing_method": "fixed"
+        },
+        {
+          "availability": "available",
+          "currency": "RUB",
+          "deposit_type": "unspecified",
+          "payment_type": "unspecified",
+          "price": "100",
+          "price_unit": "per_room_per_stay",
+          "pricing_method": "fixed"
+        }
+      ],
+      "extra_bed": [
+        {
+          "amount": 1,
+          "currency": "ALL",
+          "inclusion": "not_included",
+          "price": "100",
+          "price_unit": "per_guest_per_night"
+        }
+      ],
+      "internet": [
+        {
+          "currency": "",
+          "inclusion": "included",
+          "internet_type": "unspecified",
+          "price": "0",
+          "price_unit": "unspecified",
+          "work_area": "hotel"
+        },
+        {
+          "currency": "RUB",
+          "inclusion": "not_included",
+          "internet_type": "unspecified",
+          "price": "35",
+          "price_unit": "per_hour",
+          "work_area": "room"
+        }
+      ],
+      "meal": [
+        {
+          "currency": "RUB",
+          "inclusion": "not_included",
+          "meal_type": "breakfast",
+          "price": "500"
+        }
+      ],
+      "no_show": {
+        "availability": "available",
+        "day_period": "after_midday",
+        "time": "09:00:00"
+      },
+      "parking": [
+        {
+          "currency": "RUB",
+          "inclusion": "not_included",
+          "price": "500",
+          "price_unit": "per_guest_per_night",
+          "territory_type": "unspecified"
+        }
+      ],
+      "pets": [
+        {
+          "currency": "EUR",
+          "inclusion": "not_included",
+          "pets_type": "unspecified",
+          "price": "50",
+          "price_unit": "per_guest_per_stay"
+        }
+      ],
+      "shuttle": [
+        {
+          "currency": "RUB",
+          "destination_type": "train",
+          "inclusion": "not_included",
+          "price": "1000",
+          "shuttle_type": "one_way"
+        },
+        {
+          "currency": "RUB",
+          "destination_type": "airport",
+          "inclusion": "not_included",
+          "price": "2000",
+          "shuttle_type": "one_way"
+        },
+        {
+          "currency": "",
+          "destination_type": "airport_train",
+          "inclusion": "included",
+          "price": "0",
+          "shuttle_type": "unspecified"
+        }
+      ],
+      "visa": {
+        "visa_support": "support_enable"
+      }
+    },
+    "name": "Test Hotel (Do Not Book)",
+    "payment_methods": [
+      "visa",
+      "euro_mastercard",
+      "mir"
+    ],
+    "phone": "+0011111",
+    "policy_struct": [
+      {
+        "paragraphs": [
+          "Price of an additional breakfast: 500.00 RUB per person. Information about the type of meals included in the price is indicated in the rate details."
+        ],
+        "title": "Meals"
+      },
+      {
+        "paragraphs": [
+          "Fee for an extra bed: 100.00 ALL per night.",
+          "The number of extra beds depends on the room category. You must take a look at the information about the size of the selected room.",
+          "Breakfast for children aged 0-5 costs: 300.00 RUB.",
+          "Breakfast for children aged 6-12 costs: 400.00 RUB.",
+          "Children from the age of 0 to 3 can stay in additional beds (child bed/cot) for a charge of 500.00 CHF a night providing they share a room with their parents or guardians. Additional beds (child bed/cot) available on request.",
+          "Children from the age of 4 to 9 can stay in additional beds (child bed/cot) for a charge of 700.00 ALL a night providing they share a room with their parents or guardians. Additional beds (child bed/cot) available on request.",
+          "Children from the age of 10 to 12 can stay free of charge providing they share a room with their parents or guardians, in the existing beds."
+        ],
+        "title": "Children and information about extra beds"
+      },
+      {
+        "paragraphs": [
+          "Deposit is required. Cost: 100.00 RUB per room per stay.",
+          "You can request the documents necessary for a visa, the service is provided for an additional fee. Any additional fee will have to be paid even if the booking is subsequently cancelled, and all the agreements exist exclusively between you and the provider of the documents.",
+          "Attention! If you do not check in to your room before 9:00 PM at night, the booking will be cancelled."
+        ],
+        "title": "Special living conditions"
+      },
+      {
+        "paragraphs": [
+          "Pets are allowed for an additional fee. Price of accommodation: 50.00 EUR per stay."
+        ],
+        "title": "Pets"
+      },
+      {
+        "paragraphs": [
+          "Chargeable parking available. Cost: 500.00 RUB per day."
+        ],
+        "title": "Parking space"
+      },
+      {
+        "paragraphs": [
+          "Transfer from/to railway station available. Cost: 1,000.00 RUB one way.",
+          "Transfer from/to airport available. Cost: 2,000.00 RUB one way."
+        ],
+        "title": "Transfer"
+      },
+      {
+        "paragraphs": [
+          "Russian citizens must have an original Russian passport upon arrival.",
+          "The given hotel is fiction and should not be booked. If you book this hotel further accommodation shall not be provided.\r",
+          "\r",
+          "The front desk is not open around o'clock. If the guests arrive after 11:00 РM, it is necessary to notify the hotel in advance and get the check-in instructions. Contact information is provided in the booking confirmation.\r",
+          "\r",
+          "The hotel charges a resort fee of AED 15.00 per room for one night, for a two-room — AED 30.00 per day, for a three-room — AED 45.00 per day."
+        ],
+        "title": "Extra info"
+      }
+    ],
+    "postal_code": "",
+    "region": {
+      "country_code": "RU",
+      "iata": "",
+      "id": 6308866,
+      "name": "Belogorsk",
+      "type": "City"
+    },
+    "room_groups": [
+      {
+        "images": [
+          "https://cdn.worldota.net/t/{size}/extranet/12/cf/12cfca71cf812714e6dd0ea6ec78ec3b22383808.jpeg",
+          "https://cdn.worldota.net/t/{size}/extranet/98/82/9882ec59804ceb320083254c1a3e36fcea5254a0.jpeg",
+          "https://cdn.worldota.net/t/{size}/extranet/58/cd/58cd094c3a4c39de80b0321d219a58164caad35e.png"
+        ],
+        "name": "Standard Double room full double bed",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "full double bed",
+          "main_name": "Standard Double room"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 3,
+          "bedrooms": 0,
+          "capacity": 2,
+          "class": 3,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 2,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "barbecue",
+          "fitness",
+          "golf",
+          "private-bathroom"
+        ],
+        "room_group_id": 90
+      },
+      {
+        "images": [],
+        "name": "Standard Plus Double room full double bed",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "full double bed",
+          "main_name": "Standard Plus Double room"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 3,
+          "bedrooms": 0,
+          "capacity": 2,
+          "class": 3,
+          "club": 1,
+          "family": 0,
+          "floor": 0,
+          "quality": 2,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "private-bathroom"
+        ],
+        "room_group_id": 37368372
+      },
+      {
+        "images": [],
+        "name": "Standard room",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "",
+          "main_name": "Standard room"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 3,
+          "bedding": 0,
+          "bedrooms": 0,
+          "capacity": 0,
+          "class": 3,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 2,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "external-private-bathroom"
+        ],
+        "room_group_id": 18399796
+      },
+      {
+        "images": [],
+        "name": "Family room",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "",
+          "main_name": "Family room"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 0,
+          "bedrooms": 0,
+          "capacity": 0,
+          "class": 3,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 25,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "private-bathroom"
+        ],
+        "room_group_id": 18396068
+      },
+      {
+        "images": [],
+        "name": "Family Plus room",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "",
+          "main_name": "Family Plus room"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 0,
+          "bedrooms": 0,
+          "capacity": 0,
+          "class": 3,
+          "club": 1,
+          "family": 0,
+          "floor": 0,
+          "quality": 25,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "private-bathroom"
+        ],
+        "room_group_id": 35173284
+      },
+      {
+        "images": [
+          "https://cdn.worldota.net/t/{size}/ostrovok/b8/ec/b8ecb59908a88e814b4a5a2231b7fe698982f178.jpeg"
+        ],
+        "name": "Royal Suite",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "",
+          "main_name": "Royal Suite"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 0,
+          "bedrooms": 0,
+          "capacity": 0,
+          "class": 5,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 25,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "mirror",
+          "private-bathroom",
+          "safe",
+          "telephone",
+          "toiletries",
+          "towels"
+        ],
+        "room_group_id": 18396070
+      },
+      {
+        "images": [
+          "https://cdn.worldota.net/t/{size}/extranet/f5/f8/f5f8ad26819a471318d24631fa5055036712a87e.jpeg",
+          "https://cdn.worldota.net/t/{size}/extranet/30/42/30420d1a9afb2bcb60335812569af4435a59ce17.jpeg",
+          "https://cdn.worldota.net/t/{size}/extranet/9c/3d/9c3dcb1f9185a314ea25d51aed3b5881b32f420c.jpeg",
+          "https://cdn.worldota.net/t/{size}/extranet/1b/46/1b4605b0e20ceccf91aa278d10e81fad64e24e27.jpeg"
+        ],
+        "name": "1 Bedroom Apartment",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "",
+          "main_name": "1 Bedroom Apartment"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 0,
+          "bedrooms": 1,
+          "capacity": 0,
+          "class": 6,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 0,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "barbecue",
+          "bath",
+          "bathrobe",
+          "kitchen",
+          "private-bathroom",
+          "safe"
+        ],
+        "room_group_id": 18395671
+      },
+      {
+        "images": [],
+        "name": "1 Bedroom Double Apartment full double bed",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "full double bed",
+          "main_name": "1 Bedroom Double Apartment"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 3,
+          "bedrooms": 1,
+          "capacity": 2,
+          "class": 6,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 0,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "private-bathroom"
+        ],
+        "room_group_id": 20591127
+      },
+      {
+        "images": [],
+        "name": "2 Bedrooms Double Apartment full double bed",
+        "name_struct": {
+          "bathroom": "",
+          "bedding_type": "full double bed",
+          "main_name": "2 Bedrooms Double Apartment"
+        },
+        "rg_ext": {
+          "balcony": 0,
+          "bathroom": 2,
+          "bedding": 3,
+          "bedrooms": 2,
+          "capacity": 2,
+          "class": 6,
+          "club": 0,
+          "family": 0,
+          "floor": 0,
+          "quality": 0,
+          "sex": 0,
+          "view": 0
+        },
+        "room_amenities": [
+          "private-bathroom"
+        ],
+        "room_group_id": 20591127
+      }
+    ],
+    "serp_filters": [
+      "has_internet",
+      "has_parking",
+      "has_disabled_support",
+      "air_conditioning",
+      "has_pets",
+      "kitchen",
+      "has_smoking",
+      "has_ecar_charger"
+    ],
+    "star_certificate": null,
+    "star_rating": 0
+  },
+  "debug": null,
+  "error": null,
+  "status": "ok"
+}

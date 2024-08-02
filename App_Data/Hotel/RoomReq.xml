@@ -1,0 +1,77 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <UserName>Travillio</UserName>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <searchRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <FromDate>27/09/2024</FromDate>
+      <ToDate>30/09/2024</ToDate>
+      <Nights>3</Nights>
+      <CountryID>1</CountryID>
+      <CountryCode>AE</CountryCode>
+      <CountryName>United Arab Emirates</CountryName>
+      <CityID>1312</CityID>
+      <CityCode>DXB</CityCode>
+      <CityName>DUBAI</CityName>
+      <AreaID>0</AreaID>
+      <AreaName />
+      <MinStarRating>3</MinStarRating>
+      <MaxStarRating>5</MaxStarRating>
+      <HotelID>56319</HotelID>
+      <HotelName />
+      <PaxNationality_CountryID>29</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
+      <PaxResidenceID>29</PaxResidenceID>
+      <PaxResidenceName>United Kingdom</PaxResidenceName>
+      <CurrencyID>1</CurrencyID>
+      <DesiredCurrencyCode>EUR</DesiredCurrencyCode>
+      <CustomerID>10017</CustomerID>
+      <TransID>99acc419-749e-48d0-bce6-ec195cbdea54</TransID>
+      <StaffUser>0</StaffUser>
+      <WhiteLabelCustID>0</WhiteLabelCustID>
+      <Giata>TRUE</Giata>
+      <DeployementType>TRUE</DeployementType>
+      <OnRequest>true</OnRequest>
+      <Rooms>
+        <RoomPax>
+          <Adult>2</Adult>
+          <Child>2</Child>
+          <ChildAge>4</ChildAge>
+          <ChildAge>7</ChildAge>
+        </RoomPax>
+        <RoomPax>
+          <Adult>2</Adult>
+          <Child>2</Child>
+          <ChildAge>3</ChildAge>
+          <ChildAge>4</ChildAge>
+        </RoomPax>
+      </Rooms>
+
+      <MealPlanList>
+        <MealType />
+      </MealPlanList>
+      <PropertyType />
+
+      <GiataList>
+        <GiataHotelList GHtlID="56319" GSupID="24" GRequestID="" xmlout="false" custID="10017" custName="HotelBeds" sessionKey="" sourcekey="" publishedkey="" />
+        <GiataHotelList GHtlID="1091ff" GSupID="6" GRequestID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" xmlout="false" custID="10017" custName="HPro" sessionKey="" sourcekey="" publishedkey="" />
+      </GiataList>
+
+
+      <SuppliersList>
+        <SupplierID xmlout="false">20</SupplierID>
+        <SupplierID xmlout="false">24</SupplierID>
+      </SuppliersList>
+      <SubAgentID>50092</SubAgentID>
+      <AgentUserID>0</AgentUserID>
+      <NationalityName>United Kingdom</NationalityName>
+    </searchRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
