@@ -17,6 +17,9 @@ using TravillioXMLOutService.Hotel.Repository;
 using TravillioXMLOutService.Hotel.Repository.Interfaces;
 using TravillioXMLOutService.Models;
 using TravillioXMLOutService.Supplier.Expedia;
+using System.Web;
+using System.Reflection;
+using TravillioXMLOutService.Transfer.Models.HB;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -141,6 +144,36 @@ namespace TravillioXMLOutService.Hotel.Service
             }
             return cxlItem;
         }
+
+
+
+
+        public XElement RoomTag(List<string> imgList)
+        {
+            XElement mgItem;
+            if (!imgList.IsNullOrEmpty())
+            {
+                var result = from itm in imgList
+                             select new XElement("Image", new XAttribute("Path", itm));
+                mgItem = new XElement("Images", result);
+            }
+            else
+            {
+                mgItem = new XElement("Images", null);
+            }
+            return mgItem;
+
+        }
+
+
+
+
+
+
+
+
+
+
 
         #endregion
 
@@ -485,15 +518,16 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
+        
                 var _req = BindRoomRequest(searchReq);
 
                 //var hotelObj = htlRepo.GetHotelDetail(_req.id);
-
-                
-                var basePath = CommonHelper.BasePath() + @"\App_Data\Ratehawk\hotelInfo.json";
+                string path = AppDomain.CurrentDomain.BaseDirectory;
+                string basePath = AppDomain.CurrentDomain.BaseDirectory + "hotelInfo.json";
+                //var basePath = CommonHelper.BasePath() + @"\App_Data\Ratehawk\hotelInfo.json";
                 var jsonstr = File.ReadAllText(basePath);
-                var hotelObj = JsonConvert.DeserializeObject<RTHWKHotelModel>(jsonstr);
-
+                var hotelObj = (JsonConvert.DeserializeObject<RTHWKHotelModelResponse>(jsonstr)).data;
+                
 
                 var reqObj = new RequestModel();
                 //reqObj.TimeOut = timeout;
@@ -555,14 +589,32 @@ namespace TravillioXMLOutService.Hotel.Service
                                                  new XAttribute("PerNightRoomRate", nightPrice),
                                                  new XAttribute("TotalRoomRate", roomPrice),
                                                  new XAttribute("CancellationDate", ""),
-                                                 new XAttribute("CancellationAmount", ""),
+                                                 new XAttribute("CancellationAmount", "")
+
+                                                 ,
                                                  new XAttribute("isAvailable", true),
                                                  new XElement("Offers", ""),
                                                  BindAmenity(rate.amenities_data),
+                                                 RoomTag(roms.images),
                                                  BindSuplements(rate.payment_options.payment_types.First().tax_data),
                                                  new XElement("AdultNum", y.Element("Adult").Value),
-                                                 new XElement("ChildNum", y.Element("Child").Value)))
-                                             );
+                                                 new XElement("ChildNum", y.Element("Child").Value)
+
+                                                 )
+                                                ));
+
+
+
+
+
+
+
+                //      < Images >
+                //  < Image Path = "" />
+                //</ Images >
+
+
+
                     XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
                                        new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
                                        new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
