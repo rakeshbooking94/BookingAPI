@@ -20,6 +20,7 @@ using TravillioXMLOutService.Supplier.Expedia;
 using System.Web;
 using System.Reflection;
 using TravillioXMLOutService.Transfer.Models.HB;
+using TravillioXMLOutService.Supplier.TravelGate;
 
 
 namespace TravillioXMLOutService.Hotel.Service
@@ -164,13 +165,6 @@ namespace TravillioXMLOutService.Hotel.Service
             return mgItem;
 
         }
-
-
-
-
-
-
-
 
 
 
@@ -518,7 +512,7 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
-        
+
                 var _req = BindRoomRequest(searchReq);
 
                 //var hotelObj = htlRepo.GetHotelDetail(_req.id);
@@ -527,7 +521,7 @@ namespace TravillioXMLOutService.Hotel.Service
                 //var basePath = CommonHelper.BasePath() + @"\App_Data\Ratehawk\hotelInfo.json";
                 var jsonstr = File.ReadAllText(basePath);
                 var hotelObj = (JsonConvert.DeserializeObject<RTHWKHotelModelResponse>(jsonstr)).data;
-                
+
 
                 var reqObj = new RequestModel();
                 //reqObj.TimeOut = timeout;
@@ -543,32 +537,35 @@ namespace TravillioXMLOutService.Hotel.Service
                 if (response.status == "ok")
                 {
                     int counter = 0;
-                    var roomsResult = from rate in response.data.hotels[0].rates
-                                      from roms in hotelObj.room_groups
-                                      where (rate.rg_ext.@class == roms.rg_ext.@class &&
-                                      rate.rg_ext.quality == roms.rg_ext.quality &&
-                                      rate.rg_ext.sex == roms.rg_ext.sex &&
-                                      rate.rg_ext.bedding == roms.rg_ext.bedding &&
-                                      rate.rg_ext.bathroom == roms.rg_ext.bathroom &&
-                                      rate.rg_ext.capacity == roms.rg_ext.capacity &&
-                                      rate.rg_ext.family == roms.rg_ext.family &&
-                                      rate.rg_ext.club == roms.rg_ext.club &&
-                                      rate.rg_ext.bedrooms == roms.rg_ext.bedrooms &&
-                                      rate.rg_ext.balcony == roms.rg_ext.balcony &&
-                                      rate.rg_ext.floor == roms.rg_ext.floor &&
-                                          rate.rg_ext.view == roms.rg_ext.view)
+                   
+                    List<XElement> roomsResult = new List<XElement>();
+                    foreach (var rate in response.data.hotels[0].rates)
+                    {
+                        double nightPrice = rate.totalPrice / rate.daily_prices.Count;
+                        double roomPrice = nightPrice / searchReq.Descendants("RoomPax").Count();
+                        var rmData = hotelObj.room_groups.Where(x => (x.rg_ext.@class == rate.rg_ext.@class
+                        && x.rg_ext.quality == rate.rg_ext.quality
+                        && x.rg_ext.sex == rate.rg_ext.sex
+                        && x.rg_ext.bedding == rate.rg_ext.bedding
+                        && x.rg_ext.bathroom == rate.rg_ext.bathroom
+                        && x.rg_ext.capacity == rate.rg_ext.capacity
+                        && x.rg_ext.family == rate.rg_ext.family
+                        && x.rg_ext.club == rate.rg_ext.club
+                        && x.rg_ext.bedrooms == rate.rg_ext.bedrooms
+                        && x.rg_ext.balcony == rate.rg_ext.balcony
+                        && x.rg_ext.floor == rate.rg_ext.floor
+                        && x.rg_ext.view == rate.rg_ext.view)).First();
 
-
-
-
-
-
-
-
-
-                                      let nightPrice = rate.totalPrice / rate.daily_prices.Count
-                                      let roomPrice = nightPrice / searchReq.Descendants("RoomPax").Count()
-                                      select new XElement("RoomTypes",
+                        XElement imgList;
+                        if (rmData != null)
+                        {
+                            imgList = RoomTag(rmData.images);
+                        }
+                        else
+                        {
+                            imgList = new XElement("Images", null);
+                        }
+                        var roomType = new XElement("RoomTypes",
                                              new XAttribute("Index", counter++), new XAttribute("HtlCode", htlid),
                                              new XAttribute("CrncyCode", _req.currency), new XAttribute("DMCType", dmc),
                                              new XAttribute("CUID", customerid), new XAttribute("TotalRate", rate.totalPrice),
@@ -581,7 +578,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                  new XAttribute("SessionID", rate.match_hash),
                                                  new XAttribute("RoomType", rate.room_name),
                                                  new XAttribute("OccupancyID", string.Empty),
-                                                 new XAttribute("OccupancyName", rate.room_data_trans.bedding_type),
+                                                 new XAttribute("OccupancyName", rate.room_data_trans.bedding_type==null?"": rate.room_data_trans.bedding_type),
                                                  new XAttribute("MealPlanID", ""),
                                                  new XAttribute("MealPlanName", ""),
                                                  new XAttribute("MealPlanCode", ""),
@@ -589,32 +586,18 @@ namespace TravillioXMLOutService.Hotel.Service
                                                  new XAttribute("PerNightRoomRate", nightPrice),
                                                  new XAttribute("TotalRoomRate", roomPrice),
                                                  new XAttribute("CancellationDate", ""),
-                                                 new XAttribute("CancellationAmount", "")
-
-                                                 ,
+                                                 new XAttribute("CancellationAmount", ""),
                                                  new XAttribute("isAvailable", true),
                                                  new XElement("Offers", ""),
                                                  BindAmenity(rate.amenities_data),
-                                                 RoomTag(roms.images),
+                                                 imgList,
                                                  BindSuplements(rate.payment_options.payment_types.First().tax_data),
                                                  new XElement("AdultNum", y.Element("Adult").Value),
                                                  new XElement("ChildNum", y.Element("Child").Value)
+                                                 )));
 
-                                                 )
-                                                ));
-
-
-
-
-
-
-
-                //      < Images >
-                //  < Image Path = "" />
-                //</ Images >
-
-
-
+                        roomsResult.Add(roomType);
+                    }
                     XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID"), new XElement("HotelName"), new XElement("PropertyTypeName"),
                                        new XElement("CountryID"), new XElement("CountryName"), new XElement("CityCode"), new XElement("CityName"),
                                        new XElement("AreaId"), new XElement("AreaName"), new XElement("RequestID"), new XElement("Address"), new XElement("Location"),
@@ -630,7 +613,7 @@ namespace TravillioXMLOutService.Hotel.Service
                     RoomDetails.Add(new XElement(soapenv + "Body", searchReq,
                         new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
                 }
-                return null;
+                
             }
             catch (Exception ex)
             {
@@ -644,8 +627,10 @@ namespace TravillioXMLOutService.Hotel.Service
                 saveex.SendCustomExcepToDB(ex1);
                 RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
                 #endregion
-                return RoomDetails;
+            
             }
+
+            return RoomDetails;
         }
 
 

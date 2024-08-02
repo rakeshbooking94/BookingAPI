@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -290,6 +290,7 @@
     <Compile Include="ServiceLog\ServiceLog.txt" />
     <Content Include="App_Data\HotelBeds\Booking.json" />
     <Content Include="App_Data\HotelBeds\Cancel.json" />
+    <Content Include="admin.config" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
     <None Include="App_Data\HotelBeds\cancelResp.json" />
     <Content Include="App_Data\HotelBeds\confirmResponse.json" />
@@ -343,6 +344,7 @@
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
+    <Content Include="hotelInfo.json" />
     <None Include="Properties\PublishProfiles\BEServiceAPI.pubxml" />
     <None Include="Scripts\jquery-1.4.4-vsdoc.js" />
     <None Include="Service References\AllocationEnquiryService\AllocationEnquiryV7Request.xsd">
