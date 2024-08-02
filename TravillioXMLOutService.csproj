@@ -288,6 +288,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceLog\ServiceLog.txt" />
+    <Content Include="App_Data\BookingExpress\LiveConnectionString.txt" />
+    <Content Include="App_Data\BookingExpress\QA.txt" />
+    <Content Include="App_Data\BookingExpress\Testing site.txt" />
     <Content Include="App_Data\HotelBeds\Booking.json" />
     <Content Include="App_Data\HotelBeds\Cancel.json" />
     <None Include="App_Data\HotelBeds\confirmation.json" />
