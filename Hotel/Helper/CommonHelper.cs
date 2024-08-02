@@ -22,6 +22,16 @@ namespace TravillioXMLOutService.Hotel.Helper
         static readonly int SuplId;
         static int requestNo = 0;
 
+
+
+        public static string BasePath()
+        {
+            var currentDirectory = Directory.GetCurrentDirectory();
+            var basePath = currentDirectory.Split(new string[] { "\\bin" }, StringSplitOptions.None)[0];
+            return basePath;
+        }
+
+
         public static DateTime TravayooDateTime(this string strDate)
         {
             DateTime dte = DateTime.ParseExact(strDate.Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);

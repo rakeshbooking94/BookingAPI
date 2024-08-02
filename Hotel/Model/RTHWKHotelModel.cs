@@ -5,6 +5,30 @@ using System.Web;
 
 namespace TravillioXMLOutService.Hotel.Model
 {
+
+
+
+
+    public class RTHWKHotelModelResponse
+    {
+        public RTHWKHotelModel data { get; set; }
+        public RTHWKHotelModelDebug debug { get; set; }
+        public string status { get; set; }
+        public object error { get; set; }
+    }
+
+    public class RTHWKHotelModelDebug
+    {
+
+        public int key_id { get; set; }
+        public object validation_error { get; set; }
+    }
+
+
+
+
+
+
     public class RTHWKHotelModel
     {
         public string address { get; set; }
