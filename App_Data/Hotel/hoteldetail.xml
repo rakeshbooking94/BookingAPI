@@ -1,0 +1,43 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header>
+    <Authentication>
+      <AgentID>TRV</AgentID>
+      <Username>Travillio</Username>
+      <Password>ing@tech</Password>
+      <ServiceType>HT_001</ServiceType>
+      <ServiceVersion>v1.0</ServiceVersion>
+    </Authentication>
+  </soapenv:Header>
+  <soapenv:Body>
+    <hoteldescRequest xmlns="">
+      <Response_Type>XML</Response_Type>
+      <HotelID>11884</HotelID>
+      <CityID>1312</CityID>
+      <SupplierID>43</SupplierID>
+      <PaxNationality_CountryCode>SA</PaxNationality_CountryCode>
+      <CustomerID>10028</CustomerID>
+      <TransID>650e3f7d-cfe9-4904-8c69-1b6682ccd40e</TransID>
+      <RequestID>12c5db72-936e-4f11-a3f2-24aa5a43c621</RequestID>
+      <CountryID>1</CountryID>
+      <AreaId />
+    </hoteldescRequest>
+    <hoteldescResponse>
+      <Hotels>
+        <Hotel>
+          <HotelID>11884</HotelID>
+          <Description />
+          <Images>
+            <Image Path="https://images.bookingexpress.co/HotelPrimary/1284668/PrimaryImage.webp" Caption="" />
+          </Images>
+          <Facilities />
+          <ContactDetails>
+            <Phone />
+            <Fax />
+          </ContactDetails>
+          <CheckinTime />
+          <CheckoutTime />
+        </Hotel>
+      </Hotels>
+    </hoteldescResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
