@@ -11,44 +11,45 @@
   <soapenv:Body>
     <HotelPreBookingRequest xmlns="">
       <Response_Type>XML</Response_Type>
-      <FromDate>29/07/2021</FromDate>
-      <ToDate>30/07/2021</ToDate>
-      <CountryID>29</CountryID>
-      <CityID>137</CityID>
+      <FromDate>26/12/2024</FromDate>
+      <ToDate>28/12/2024</ToDate>
+      <CountryID>1</CountryID>
+      <CityID>1312</CityID>
       <MinStarRating>3</MinStarRating>
       <MaxStarRating>5</MaxStarRating>
-      <HotelID>5131830</HotelID>
-      <HotelName>Shepherd's Bush Flats</HotelName>
-      <MealPlanID />
-      <RoomTypeID>202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141</RoomTypeID>
+      <HotelID>JP03939S</HotelID>
+      <HotelName>Capital O160 Lumbini Dream Garden Guest House LLC</HotelName>
+      <MealPlanID>1</MealPlanID>
+      <RoomTypeID>N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZft1jM20cnniKiJ8J06isTvma2xWnSuB7IeN8CMQrM4aG+lChIBazTJTmfgtfD+qEXoFi3TKtWAqy6OwjxtcE84e32lR/gI6pi7T/7Xui/RMq77QoV4j6mrDOmxwwghuRJH0nPBKKgprBGOew6tXzFOv69T9lcXKaJKN9HTokZ3ZMMnqj5HYyOaA3w4eVTpIqqEqYM7A0Tr2dMd9vhLJ5ofOIo491LFO8Ksu5MWA5V/wnd_Standard Double - King</RoomTypeID>
       <OccupancyID>1</OccupancyID>
       <CurrencyID>1</CurrencyID>
       <CurrencyName>USD</CurrencyName>
-      <PerNightRoomRate>31.48</PerNightRoomRate>
-      <TotalRoomRate>31.48</TotalRoomRate>
-      <SupplierID>21</SupplierID>
-      <PaxNationality_CountryID>29</PaxNationality_CountryID>
-      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
-      <PaxResidenceID>29</PaxResidenceID>
-      <PaxResidenceName>United Kingdom</PaxResidenceName>
-      <CustomerID>10017</CustomerID>
-      <TransID>249556d9-20bc-49d7-91db-d8f98e72412a</TransID>
-      <SubAgentID>50092</SubAgentID>
-      <CityCode>LON</CityCode>
-      <CityName>London</CityName>
+      <PerNightRoomRate>28.15</PerNightRoomRate>
+      <TotalRoomRate>56.30</TotalRoomRate>
+      <SupplierID>17</SupplierID>
+      <PaxNationality_CountryID>21</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>SA</PaxNationality_CountryCode>
+      <PaxResidenceID>21</PaxResidenceID>
+      <PaxResidenceName>Saudi Arabia</PaxResidenceName>
+      <CustomerID>10028</CustomerID>
+      <TransID>650e3f7d-cfe9-4904-8c69-1b6682ccd40e</TransID>
+      <SubAgentID>23625</SubAgentID>
+      <CityCode>DXB</CityCode>
+      <CityName>DUBAI</CityName>
       <AreaID />
       <AreaName />
       <GiataList>
-        <GiataHotelList GHtlID="5131830" GSupID="21" xmlout="false" custName="TBO" custID="10017" sessionKey="" sourcekey="" publishedkey="" />
+        <GiataHotelList GHtlID="JP03939S" GSupID="17" xmlout="false" custName="EgyptExpress" custID="10028" sessionKey="" sourcekey="" publishedkey="" />
       </GiataList>
       <Rooms>
         <RoomPax>
           <Adult>2</Adult>
           <Child>0</Child>
+          <id>1</id>
         </RoomPax>
-        <RoomTypes Index="1" TotalRate="31.48" HtlCode="5131830">
-          <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true" RoomType="Comfort Double Room,1 Double Bed,Nonsmoking" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" TotalRoomRate="31.48" CancellationAmount="" isavailable="true" Adult="2" ChildAge="" sourcekey="">
-            <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
+        <RoomTypes Index="1" TotalRate="56.3" HtlCode="JP03939S">
+          <Room ID="N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZft1jM20cnniKiJ8J06isTvma2xWnSuB7IeN8CMQrM4aG+lChIBazTJTmfgtfD+qEXoFi3TKtWAqy6OwjxtcE84e32lR/gI6pi7T/7Xui/RMq77QoV4j6mrDOmxwwghuRJH0nPBKKgprBGOew6tXzFOv69T9lcXKaJKN9HTokZ3ZMMnqj5HYyOaA3w4eVTpIqqEqYM7A0Tr2dMd9vhLJ5ofOIo491LFO8Ksu5MWA5V/wnd_Standard Double - King" SuppliersID="17" RoomSeq="1" SessionID="JP03939S" RoomType="Standard Double - King" OccupancyID="1" OccupancyName="" MealPlanID="1" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="28.15" TotalRoomRate="56.30" CancellationAmount="" isavailable="true" Adult="2" ChildAge="" sourcekey="">
+            <RequestID>JP03939S</RequestID>
             <searchType />
             <Supplements />
           </Room>
@@ -56,32 +57,29 @@
       </Rooms>
     </HotelPreBookingRequest>
     <HotelPreBookingResponse>
+      <NewPrice />
       <Hotels>
         <Hotel>
-          <HotelID />
-          <HotelName />
-          <NewPrice />
+          <HotelID>JP03939S</HotelID>
+          <HotelName>Capital O160 Lumbini Dream Garden Guest House LLC~</HotelName>
+          <Address> Bur Dubai near Souk Al kabeer, Bur Dubai, Dubai, United Arab Emirates </Address>
+          <ContactInfo>492 8889</ContactInfo>
+          <StarRating>4</StarRating>
           <Status>true</Status>
-          <TermCondition>CheckIn Time-Begin: 3:00 PM CheckOut Time: 10:00 AM CheckIn Instructions: &amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;Extra-person charges may apply and vary depending on property policy&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Government-issued photo identification and a credit card, debit card, or cash deposit may be required at check-in for incidental charges&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Special requests are subject to availability upon check-in and may incur additional charges; special requests cannot be guaranteed&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;No onsite parking is available&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;This property accepts credit cards; cash is not accepted&amp;lt;/li&amp;gt;  &amp;lt;/ul&amp;gt;   Special Instructions : There is no front desk at this property. To make arrangements for check-in please contact the property at least 72 hours before arrival using the information on the booking confirmation. Guests must contact the property in advance for check-in instructions. Guests can access their accommodation through a private entrance. Minimum CheckIn Age : 21 Mandatory Fees: &amp;lt;p&amp;gt;You'll be asked to pay the following charges at the property:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;Breakage deposit: GBP 50 per stay&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;We have included all charges provided to us by the property. &amp;lt;/p&amp;gt; Cards Accepted: Visa,Debit cards not accepted,Cash not accepted,American Express,Mastercard &amp;lt;ul&amp;gt;  &amp;lt;li&amp;gt;No pets and no service animals are allowed at this property. &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;,Service animals not allowed,Pets not allowed,No cribs (infant beds) available,No rollaway/extra beds available,Essential Workers Only - NO,No elevators Please refer to the following Terms of Use - http://mytravelagent.online/termsofuse.pdf  &lt;br/&gt;&lt;br/&gt; &lt;b&gt;Default Policy&lt;/b&gt;: Early check out will attract full cancellation charge unless otherwise specified</TermCondition>
+          <TermCondition>&lt;ul&gt;&lt;li&gt;* Bookings including children will be based on sharing parents bedding and no separate bed for children is provided unless otherwise statedlt;brgt;lt;brgt;* **Please be advised there is a fee for early departure. **Please note the bedding type isn't guaranteed and depends on availability upon arrival to the hotel. **Cancel policy is based on EST (Eastern Standard Time). **We reserve the right to cancel any booking in case of a price loading error which results in an unrealistic booking value.lt;brgt;lt;brgt;* Tourism Dirham fee, an additional charge per room per night will be paid separately at the hotel as it is not included in the room rates.lt;brgt;lt;brgt;lt;br/gt;Please note that our rates do not include some expenses or fees which must be settled by the guest at the hotel, such as resort fees, city tax, tourism fee, parking, gratuities, etc.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;</TermCondition>
           <HotelImgSmall />
           <HotelImgLarge />
           <MapLink />
-          <DMC>TBO</DMC>
-          <Currency />
+          <DMC>EgyptExpress</DMC>
+          <Currency>USD</Currency>
           <Offers />
           <Rooms>
-            <RoomTypes Index="1" TotalRate="31.48">
-              <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" 
-                    RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true"
-                    RoomType="Comfort Double Room,1 Double Bed,Nonsmoking"
-                    OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi "
-                    
-                    MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" 
-                    TotalRoomRate="31.48" CancellationDate="" CancellationAmount="" isAvailable="true">
-                <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
+            <RoomTypes Index="1" TotalRate="56.30">
+              <Room ID="N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZftwoByZMo+tNTT+ysCovy2kVSK1muAVkBKrTwUEiOEMrRe4tlKDV1Dz7hAp9Z2bjKVdCxl1LlO0Osgafr+esjH4oMZG57SnzYF1iPoftsIbmjC7jFuo7Op1NVkZRIBBbtFV8F1WnhwZUvzcdfi7uxZ6/xe2Rr969C2e1P0nhQlPyiLl3/jyRJjjGpVEWDDUXpyDZ0//6yvgpuzjptZWTeadO7ibuMqo3XzTXiB+5AxxZaIobEZUtoYwsgo6FlFA+A5mBBvfn8yeV8PkwhsnEIZt7lYip8AZsqJlDYBB/C80jt_Standard Double - King" SuppliersID="17" RoomSeq="1" SessionID="JP03939S" RoomType="Standard Double - King" OccupancyID="1" OccupancyName="" MealPlanID="1" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="28.15" TotalRoomRate="56.30" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZftwoByZMo+tNTT+ysCovy2kVSK1muAVkBKrTwUEiOEMrRe4tlKDV1Dz7hAp9Z2bjKVdCxl1LlO0Osgafr+esjH4oMZG57SnzYF1iPoftsIbmjC7jFuo7Op1NVkZRIBBbtFV8F1WnhwZUvzcdfi7uxZ6/xe2Rr969C2e1P0nhQlPyiLl3/jyRJjjGpVEWDDUXpyDZ0//6yvgpuzjptZWTeadO7ibuMqo3XzTXiB+5AxxZaIobEZUtoYwsgo6FlFA+A5mBBvfn8yeV8PkwhsnEIZt7lYip8AZsqJlDYBB/C80jt</RequestID>
                 <Offers />
                 <PromotionList>
-                  <Promotions />
+                  <Promotions>Special discount</Promotions>
                 </PromotionList>
                 <CancellationPolicy />
                 <Amenities>
@@ -92,14 +90,15 @@
                 </Images>
                 <Supplements />
                 <PriceBreakups>
-                  <Price Night="1" PriceValue="31.4826" />
+                  <Price Night="1" PriceValue="28.15" />
+                  <Price Night="2" PriceValue="28.15" />
                 </PriceBreakups>
                 <AdultNum>2</AdultNum>
                 <ChildNum>0</ChildNum>
               </Room>
               <CancellationPolicies>
-                <CancellationPolicy LastCancellationDate="28/06/2021" ApplicableAmount="31.48" NoShowPolicy="0" />
-                <CancellationPolicy LastCancellationDate="27/06/2021" ApplicableAmount="0" NoShowPolicy="0" />
+                <CancellationPolicy LastCancellationDate="01/08/2024" ApplicableAmount="0.00" NoShowPolicy="0" />
+                <CancellationPolicy LastCancellationDate="02/08/2024" ApplicableAmount="56.30" NoShowPolicy="0" />
               </CancellationPolicies>
             </RoomTypes>
           </Rooms>

@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -252,6 +252,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\BookEnquiryService\Reference1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HotelAvailabilityService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -305,11 +310,12 @@
     <Content Include="App_Data\Hotel\cancellation.xml" />
     <Content Include="App_Data\Hotel\confirm.xml" />
     <Content Include="App_Data\Hotel\cxlPolicy.xml" />
+    <Content Include="App_Data\Hotel\hoteldetail.xml" />
     <Content Include="App_Data\Hotel\prebook.xml" />
     <Content Include="App_Data\Hotel\RoomAvail.xml" />
     <Content Include="App_Data\Hotel\RoomReq.xml" />
     <Content Include="App_Data\Hotel\Search.xml" />
-    <Content Include="App_Data\Hotel\SearchTest.xml" />
+    <None Include="App_Data\Hotel\Searchreqxml" />
     <Content Include="App_Data\Query.txt" />
     <Content Include="App_Data\Script\apilog.sql" />
     <Content Include="App_Data\SQL\sqlquery.sql" />

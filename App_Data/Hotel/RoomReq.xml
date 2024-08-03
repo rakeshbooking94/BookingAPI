@@ -11,9 +11,11 @@
   <soapenv:Body>
     <searchRequest xmlns="">
       <Response_Type>XML</Response_Type>
-      <FromDate>27/09/2024</FromDate>
-      <ToDate>30/09/2024</ToDate>
-      <Nights>3</Nights>
+      <HotelID>JP03939S</HotelID>
+      <RequestID>JP03939S</RequestID>
+      <FromDate>26/12/2024</FromDate>
+      <ToDate>28/12/2024</ToDate>
+      <Nights>2</Nights>
       <CountryID>1</CountryID>
       <CountryCode>AE</CountryCode>
       <CountryName>United Arab Emirates</CountryName>
@@ -24,54 +26,617 @@
       <AreaName />
       <MinStarRating>3</MinStarRating>
       <MaxStarRating>5</MaxStarRating>
-      <HotelID>56319</HotelID>
       <HotelName />
-      <PaxNationality_CountryID>29</PaxNationality_CountryID>
-      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
-      <PaxResidenceID>29</PaxResidenceID>
-      <PaxResidenceName>United Kingdom</PaxResidenceName>
+      <PaxNationality_CountryID>21</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>SA</PaxNationality_CountryCode>
+      <PaxResidenceID>21</PaxResidenceID>
+      <PaxResidenceName>Saudi Arabia</PaxResidenceName>
       <CurrencyID>1</CurrencyID>
-      <DesiredCurrencyCode>EUR</DesiredCurrencyCode>
-      <CustomerID>10017</CustomerID>
-      <TransID>99acc419-749e-48d0-bce6-ec195cbdea54</TransID>
-      <StaffUser>0</StaffUser>
-      <WhiteLabelCustID>0</WhiteLabelCustID>
-      <Giata>TRUE</Giata>
-      <DeployementType>TRUE</DeployementType>
+      <DesiredCurrencyCode />
+      <CustomerID>10028</CustomerID>
+      <TransID>650e3f7d-cfe9-4904-8c69-1b6682ccd40e</TransID>
       <OnRequest>true</OnRequest>
+      <GiataList>
+        <GiataHotelList GHtlID="JP03939S" GSupID="17" GRequestID="JP03939S" xmlout="false" custID="10028" custName="EgyptExpress" sessionKey="" sourcekey="" publishedkey="" />
+        <GiataHotelList GHtlID="1814800" GSupID="21" GRequestID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1" xmlout="false" custID="10028" custName="TBO" sessionKey="" sourcekey="" publishedkey="" />
+      </GiataList>
       <Rooms>
         <RoomPax>
           <Adult>2</Adult>
-          <Child>2</Child>
-          <ChildAge>4</ChildAge>
-          <ChildAge>7</ChildAge>
-        </RoomPax>
-        <RoomPax>
-          <Adult>2</Adult>
-          <Child>2</Child>
-          <ChildAge>3</ChildAge>
-          <ChildAge>4</ChildAge>
+          <Child>0</Child>
+          <id>1</id>
         </RoomPax>
       </Rooms>
-
       <MealPlanList>
         <MealType />
       </MealPlanList>
       <PropertyType />
-
-      <GiataList>
-        <GiataHotelList GHtlID="56319" GSupID="24" GRequestID="" xmlout="false" custID="10017" custName="HotelBeds" sessionKey="" sourcekey="" publishedkey="" />
-        <GiataHotelList GHtlID="1091ff" GSupID="6" GRequestID="20220727_1_2_0_76_zen5f36296a5f77466d9c6e5d8894e84714_1654761114" xmlout="false" custID="10017" custName="HPro" sessionKey="" sourcekey="" publishedkey="" />
-      </GiataList>
-
-
       <SuppliersList>
-        <SupplierID xmlout="false">20</SupplierID>
-        <SupplierID xmlout="false">24</SupplierID>
+        <SupplierID xmlout="false">17</SupplierID>
       </SuppliersList>
-      <SubAgentID>50092</SubAgentID>
+      <SubAgentID>23625</SubAgentID>
       <AgentUserID>0</AgentUserID>
-      <NationalityName>United Kingdom</NationalityName>
+      <NationalityName>Saudi Arabia</NationalityName>
     </searchRequest>
+    <searchResponse>
+      <Hotels>
+        <Hotel>
+          <HotelID />
+          <HotelName />
+          <PropertyTypeName />
+          <CountryID />
+          <CountryName />
+          <CountryCode />
+          <CityId />
+          <CityCode />
+          <CityName />
+          <AreaId />
+          <AreaName />
+          <Address />
+          <Location />
+          <Description />
+          <StarRating />
+          <MinRate />
+          <HotelImgSmall />
+          <HotelImgLarge />
+          <MapLink />
+          <Longitude />
+          <Latitude />
+          <DMC />
+          <SupplierID />
+          <Currency />
+          <Offers />
+          <Rooms>
+            <RoomTypes Index="1" TotalRate="56.3" HtlCode="JP03939S" CrncyCode="USD" DMCType="EgyptExpress" CUID="10028" policy="Non-Refundable">
+              <Room ID="N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZft8tplaBHV+9eEGGMAoMpkuiE4MoNLusnZ6xrsAGih3rO5vfhyYJDOdH/L+JZpofRRxB6m3wfx0id48Sja156UFHPxQU5zcTUWtJMepisIe1qKllAZuJgU0ytaA3QkvHMuw6n2qgRtwu8lDsWpyzvyBig0XcXZxSD5C2Qao45LrgMqvkZsPQCrMqmZh8O6D/G8LjhvdinA/sx/VzWb44aKGIvugrpiGAg2WLo8C35IMTD_Standard Double - King" SuppliersID="17" RoomSeq="1" SessionID="JP03939S" RoomType="Standard Double - King" OccupancyID="1" OccupancyName="" MealPlanID="1" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="28.15" TotalRoomRate="56.30" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>JP03939S</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Special discount</Promotions>
+                </PromotionList>
+                <Supplements />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="28.15" />
+                  <Price Night="2" PriceValue="28.15" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="2" TotalRate="56.3" HtlCode="JP03939S" CrncyCode="USD" DMCType="EgyptExpress" CUID="10028" policy="Non-Refundable">
+              <Room ID="N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZft8tplaBHV+9eEGGMAoMpkuiE4MoNLusnZ6xrsAGih3rO5vfhyYJDOdH/L+JZpofRRxB6m3wfx0id48Sja156UFHPxQU5zcTUWtJMepisIe1qKllAZuJgU0ytaA3QkvHMuw6n2qgRtwu8lDsWpyzvyBig0XcXZxSD5C2Qao45LrgMwhOpsuJm+mgvX/XQHkIHIZH/IBbjFuSmUfIEQqk61AkZPH3TMCIOc9Y481K9D+ZE_Deluxe Double - King" SuppliersID="17" RoomSeq="1" SessionID="JP03939S" RoomType="Deluxe Double - King" OccupancyID="1" OccupancyName="" MealPlanID="1" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="28.15" TotalRoomRate="56.30" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>JP03939S</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Special discount</Promotions>
+                </PromotionList>
+                <Supplements />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="28.15" />
+                  <Price Night="2" PriceValue="28.15" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="3" TotalRate="56.3" HtlCode="JP03939S" CrncyCode="USD" DMCType="EgyptExpress" CUID="10028" policy="Non-Refundable">
+              <Room ID="N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlrGxnhfN9c9w8XlsrdAJ9p3Q12gi0EcvszTO2NLHHamLcRTeeT5XUJ39VE2HYouNO7CTf66zICx5uH1zIFybLb3q4XCDPOlB5SkxBkaGSiwxGGb6cEtLxDiww59mXsr6qk02QC9v3h+iPsA2tmobx0TjSgIGnuZ8EimL+iwMjVZ+z06IwPKmcSg57x79BPWgN1QkIg8SsULeTUkISOwWv+tqEgRhqieZi0cecC6NCmt6ckXH+gKnCaua/GehGU8dY5ARttNYU0A3gM8iOe0DcKntjDqaWfYamcG70gv8TVqDOceQhAVB8KMaCqun1QXMGLluYhrXQrMYUhAH/3V+ezW_Super Deluxe" SuppliersID="17" RoomSeq="1" SessionID="JP03939S" RoomType="Super Deluxe" OccupancyID="1" OccupancyName="" MealPlanID="1" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="33.78" TotalRoomRate="67.56" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>JP03939S</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Special discount</Promotions>
+                </PromotionList>
+                <Supplements />
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="33.78" />
+                  <Price Night="2" PriceValue="33.78" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="1" TotalRate="75" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="1#42JNE5IO3$^$1_1_1^^1^^RO$^$1_1_1#ingeniumRO$^$1_1_1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Double Deluxe" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="37.5" TotalRoomRate="75.00" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.499895" />
+                  <Price Night="2" PriceValue="37.499895" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="2" TotalRate="75" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="1#42JOONMG3$^$1_2_1^^1^^RO$^$1_2_1#ingeniumRO$^$1_2_1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Double Standard" OccupancyID="2" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="37.5" TotalRoomRate="75.00" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.499895" />
+                  <Price Night="2" PriceValue="37.499895" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="3" TotalRate="90.01" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="1#42JNE5IG3$^$1_3_1^^1^^RO$^$1_3_1#ingeniumRO$^$1_3_1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Double Deluxe" OccupancyID="11" OccupancyName="" MealPlanID="" MealPlanName="ROOM ONLY" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="45.005" TotalRoomRate="90.01" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="45.0053325" />
+                  <Price Night="2" PriceValue="45.0053325" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="4" TotalRate="75.68" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="6590579523256120638-NR|1|1^^1^^6590579523256120638-NR|1|1#ingenium6590579523256120638-NR|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double King" OccupancyID="3" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="37.84" TotalRoomRate="75.68" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.838322" />
+                  <Price Night="2" PriceValue="37.838322" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="5" TotalRate="75.68" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="-6658550986481439913-NR|1|1^^1^^-6658550986481439913-NR|1|1#ingenium-6658550986481439913-NR|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Standard Double King" OccupancyID="4" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="37.84" TotalRoomRate="75.68" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.838322" />
+                  <Price Night="2" PriceValue="37.838322" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="6" TotalRate="75.89" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="6590579523256120638|1|1^^1^^6590579523256120638|1|1#ingenium6590579523256120638|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double King" OccupancyID="5" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="37.945" TotalRoomRate="75.89" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.947492" />
+                  <Price Night="2" PriceValue="37.947492" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="7" TotalRate="75.89" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="-6658550986481439913|1|1^^1^^-6658550986481439913|1|1#ingenium-6658550986481439913|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Standard Double King" OccupancyID="6" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="37.945" TotalRoomRate="75.89" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="37.947492" />
+                  <Price Night="2" PriceValue="37.947492" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="8" TotalRate="89.43" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="-1402266367996923418-NR|1|1^^1^^-1402266367996923418-NR|1|1#ingenium-1402266367996923418-NR|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double , King" OccupancyID="9" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="44.715" TotalRoomRate="89.43" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="44.716032" />
+                  <Price Night="2" PriceValue="44.716032" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="9" TotalRate="89.67" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="-1402266367996923418|1|1^^1^^-1402266367996923418|1|1#ingenium-1402266367996923418|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double , King" OccupancyID="10" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="44.835" TotalRoomRate="89.67" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="44.836119" />
+                  <Price Night="2" PriceValue="44.836119" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="10" TotalRate="90.79" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="4981829254583931611-NR|1|1^^1^^4981829254583931611-NR|1|1#ingenium4981829254583931611-NR|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Super Deluxe" OccupancyID="12" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="45.395" TotalRoomRate="90.79" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="45.392886" />
+                  <Price Night="2" PriceValue="45.392886" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="11" TotalRate="91.05" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="4981829254583931611|1|1^^1^^4981829254583931611|1|1#ingenium4981829254583931611|1|1" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Super Deluxe" OccupancyID="13" OccupancyName="" MealPlanID="" MealPlanName="Room Only" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="45.525" TotalRoomRate="91.05" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions />
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements />
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="45.52389" />
+                  <Price Night="2" PriceValue="45.52389" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="12" TotalRate="84.32" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="220210780|288036364$37321^^1^^220210780|288036364|37321|141#ingenium220210780|288036364|37321|141" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Standard Double,King,1 King Bed,Nonsmoking" OccupancyID="7" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="42.16" TotalRoomRate="84.32" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Book now and save</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="mandatory_tax" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="20.00" suppType="PerStaySupplement" currencyCode="AED" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="42.161656" />
+                  <Price Night="2" PriceValue="42.161656" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="13" TotalRate="84.32" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="220210781|288036368$37321^^1^^220210781|288036368|37321|141#ingenium220210781|288036368|37321|141" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double , King,1 King Bed,Nonsmoking" OccupancyID="8" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="42.16" TotalRoomRate="84.32" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Book now and save</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="mandatory_tax" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="20.00" suppType="PerStaySupplement" currencyCode="AED" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="42.161656" />
+                  <Price Night="2" PriceValue="42.161656" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="14" TotalRate="101.16" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="220210783|288036379$37321^^1^^220210783|288036379|37321|141#ingenium220210783|288036379|37321|141" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Super Deluxe,1 King Bed,Nonsmoking" OccupancyID="16" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="50.58" TotalRoomRate="101.16" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Book now and save</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="mandatory_tax" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="20.00" suppType="PerStaySupplement" currencyCode="AED" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="50.5807" />
+                  <Price Night="2" PriceValue="50.5807" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="15" TotalRate="91.47" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="220210780|288036364$37321^^1^^220210780|288036364|37321|127#ingenium220210780|288036364|37321|127" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Standard Double,King,1 King Bed,Nonsmoking" OccupancyID="14" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="45.735" TotalRoomRate="91.47" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Save 41%</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="mandatory_tax" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="20.00" suppType="PerStaySupplement" currencyCode="AED" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="45.73594" />
+                  <Price Night="2" PriceValue="45.73594" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="16" TotalRate="91.47" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="220210781|288036368$37321^^1^^220210781|288036368|37321|127#ingenium220210781|288036368|37321|127" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double , King,1 King Bed,Nonsmoking" OccupancyID="15" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="45.735" TotalRoomRate="91.47" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Save 41%</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="mandatory_tax" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="20.00" suppType="PerStaySupplement" currencyCode="AED" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="45.73594" />
+                  <Price Night="2" PriceValue="45.73594" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="17" TotalRate="109.78" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="220210783|288036379$37321^^1^^220210783|288036379|37321|127#ingenium220210783|288036379|37321|127" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Super Deluxe,1 King Bed,Nonsmoking" OccupancyID="17" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="54.89" TotalRoomRate="109.78" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Save 41%</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="mandatory_tax" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="20.00" suppType="PerStaySupplement" currencyCode="AED" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="54.888128" />
+                  <Price Night="2" PriceValue="54.888128" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="18" TotalRate="178.92" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="467897256|7b42d7fa-5da1-c60c-2b83-4c1c0bb41888|1^^1^^11335111|171330503|7b42d7fa-5da1-c60c-2b83-4c1c0bb41888|#ingenium11335111|171330503|7b42d7fa-5da1-c60c-2b83-4c1c0bb41888|" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Deluxe Double Room, Guest Room, 1 King" OccupancyID="18" OccupancyName="" MealPlanID="" MealPlanName="FREE WIFI" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="89.46" TotalRoomRate="178.92" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Limited Time Offer. Price includes 49% discount!</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="Tourism Dirham Fee" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="3.82" suppType="PerStaySupplement" currencyCode="USD" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="89.459253" />
+                  <Price Night="2" PriceValue="89.459253" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="19" TotalRate="178.92" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="467897232|e57c050a-bb96-1623-5713-eb5184c0bcbd|1^^1^^11335111|171330503|e57c050a-bb96-1623-5713-eb5184c0bcbd|#ingenium11335111|171330503|e57c050a-bb96-1623-5713-eb5184c0bcbd|" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Standard Double Room With King Bed" OccupancyID="19" OccupancyName="" MealPlanID="" MealPlanName="FREE WIFI" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="89.46" TotalRoomRate="178.92" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Limited Time Offer. Price includes 49% discount!</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="Tourism Dirham Fee" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="3.82" suppType="PerStaySupplement" currencyCode="USD" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="89.459253" />
+                  <Price Night="2" PriceValue="89.459253" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+            <RoomTypes Index="20" TotalRate="214.71" HtlCode="1814800" CrncyCode="USD" DMCType="TBO" CUID="10028">
+              <Room ID="467897266|f7e8f486-ff29-343f-9390-a91efede6b4d|1^^1^^11335111|171330503|f7e8f486-ff29-343f-9390-a91efede6b4d|#ingenium11335111|171330503|f7e8f486-ff29-343f-9390-a91efede6b4d|" SuppliersID="21" RoomSeq="1" SessionID="d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true" RoomType="Super Deluxe" OccupancyID="20" OccupancyName="" MealPlanID="" MealPlanName="FREE WIFI" MealPlanCode="" MealPlanPrice="" PerNightRoomRate="107.355" TotalRoomRate="214.71" CancellationDate="" CancellationAmount="" isAvailable="true">
+                <RequestID>d21d034b-8df8-4dc5-a6af-c0b234efef9a_1_true</RequestID>
+                <Offers />
+                <PromotionList>
+                  <Promotions>Limited Time Offer. Price includes 49% discount!</Promotions>
+                </PromotionList>
+                <CancellationPolicy />
+                <Amenities>
+                  <Amenity />
+                </Amenities>
+                <Images>
+                  <Image Path="" />
+                </Images>
+                <Supplements>
+                  <Supplement suppId="1" suppName="Tourism Dirham Fee" supptType="PerStaySupplement" suppIsMandatory="true" suppChargeType="AtProperty" suppPrice="3.82" suppType="PerStaySupplement" currencyCode="USD" />
+                </Supplements>
+                <PriceBreakups>
+                  <Price Night="1" PriceValue="107.357297" />
+                  <Price Night="2" PriceValue="107.357297" />
+                </PriceBreakups>
+                <AdultNum>2</AdultNum>
+                <ChildNum>0</ChildNum>
+              </Room>
+            </RoomTypes>
+          </Rooms>
+        </Hotel>
+      </Hotels>
+    </searchResponse>
   </soapenv:Body>
 </soapenv:Envelope>

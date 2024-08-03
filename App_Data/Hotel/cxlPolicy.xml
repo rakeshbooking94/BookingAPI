@@ -1,52 +1,53 @@
 ﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
   <soapenv:Header>
-    <Authentication>
+    <Authentication xmlns="">
       <AgentID>TRV</AgentID>
-      <Username>Travillio</Username>
+      <UserName>Travillio</UserName>
       <Password>ing@tech</Password>
       <ServiceType>HT_001</ServiceType>
       <ServiceVersion>v1.0</ServiceVersion>
     </Authentication>
   </soapenv:Header>
   <soapenv:Body>
-    <hotelcancelpolicyrequest>
+    <hotelcancelpolicyrequest xmlns="">
       <Response_Type>XML</Response_Type>
-      <FromDate>29/07/2021</FromDate>
-      <ToDate>30/07/2021</ToDate>
-      <CountryID>29</CountryID>
-      <CityID>137</CityID>
-      <CityCode>LON</CityCode>
+      <FromDate>26/12/2024</FromDate>
+      <ToDate>28/12/2024</ToDate>
+      <CountryID>1</CountryID>
+      <CityID>1312</CityID>
+      <CityCode>DXB</CityCode>
       <MinStarRating>3</MinStarRating>
       <MaxStarRating>5</MaxStarRating>
-      <HotelID>5131830</HotelID>
-      <HotelName>Shepherd's Bush Flats</HotelName>
-      <MealPlanID />
-      <RoomID>202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141</RoomID>
+      <HotelID>JP03939S</HotelID>
+      <HotelName>Capital O160 Lumbini Dream Garden Guest House LLC</HotelName>
+      <MealPlanID>1</MealPlanID>
+      <RoomID>N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZft8tplaBHV+9eEGGMAoMpkuiE4MoNLusnZ6xrsAGih3rO5vfhyYJDOdH/L+JZpofRRxB6m3wfx0id48Sja156UFHPxQU5zcTUWtJMepisIe1qKllAZuJgU0ytaA3QkvHMuw6n2qgRtwu8lDsWpyzvyBig0XcXZxSD5C2Qao45LrgMqvkZsPQCrMqmZh8O6D/G8LjhvdinA/sx/VzWb44aKGIvugrpiGAg2WLo8C35IMTD_Standard Double - King</RoomID>
       <CurrencyName>USD</CurrencyName>
       <OccupancyID>1</OccupancyID>
       <CurrencyID>1</CurrencyID>
-      <SupplierID>21</SupplierID>
-      <PerNightRoomRate>31.48</PerNightRoomRate>
-      <TotalRoomRate>31.48</TotalRoomRate>
-      <PaxNationality_CountryID>29</PaxNationality_CountryID>
-      <PaxNationality_CountryCode>GB</PaxNationality_CountryCode>
-      <CustomerID>10017</CustomerID>
-      <TransID>249556d9-20bc-49d7-91db-d8f98e72412a</TransID>
-      <SubAgentID>50092</SubAgentID>
-      <CityName>London</CityName>
+      <SupplierID>17</SupplierID>
+      <PerNightRoomRate>28.15</PerNightRoomRate>
+      <TotalRoomRate>56.30</TotalRoomRate>
+      <PaxNationality_CountryID>21</PaxNationality_CountryID>
+      <PaxNationality_CountryCode>SA</PaxNationality_CountryCode>
+      <CustomerID>10028</CustomerID>
+      <TransID>650e3f7d-cfe9-4904-8c69-1b6682ccd40e</TransID>
+      <SubAgentID>23625</SubAgentID>
+      <CityName>DUBAI</CityName>
       <AreaID />
       <AreaName />
       <GiataList>
-        <GiataHotelList GHtlID="5131830" GSupID="21" xmlout="false" custName="TBO" custID="10017" sessionKey="" sourcekey="" publishedkey="" />
+        <GiataHotelList GHtlID="JP03939S" GSupID="17" xmlout="false" custName="EgyptExpress" custID="10028" sessionKey="" sourcekey="" publishedkey="" />
       </GiataList>
       <Rooms>
         <RoomPax>
           <Adult>2</Adult>
           <Child>0</Child>
+          <id>1</id>
         </RoomPax>
-        <RoomTypes Index="1" TotalRate="31.48" HtlCode="5131830">
-          <Room ID="202099940|210768787$37316^^1^^202099940|210768787|37316|141#ingenium202099940|210768787|37316|141" SuppliersID="21" RoomSeq="1" SessionID="13739d45-fe05-499c-8a49-78d78c0a3dab_1_true" RoomType="Comfort Double Room,1 Double Bed,Nonsmoking" OccupancyID="1" OccupancyName="" MealPlanID="" MealPlanName="Free WiFi " MealPlanCode="" MealPlanPrice="" PerNightRoomRate="31.48" TotalRoomRate="31.48" CancellationDate="" CancellationAmount="" isavailable="true" sourcekey="">
-            <RequestID>13739d45-fe05-499c-8a49-78d78c0a3dab_1_true</RequestID>
+        <RoomTypes Index="1" TotalRate="56.3" HtlCode="JP03939S">
+          <Room ID="N7UmodKa6GdoUtckZtEWBL0yRqjZySwL2/v8kyWYSlraqjqs6VdHDd7ib1r2imWkzRXsBA2Rj/BPlDL3k5obQMdtAYUMbBePQfn9fbNR/vPz6tSwB1+kfVsi0lLk0bU2fMeZ5DnNyFOKb+Mb/TZft1jM20cnniKiJ8J06isTvma2xWnSuB7IeN8CMQrM4aG+lChIBazTJTmfgtfD+qEXoFi3TKtWAqy6OwjxtcE84e32lR/gI6pi7T/7Xui/RMq77QoV4j6mrDOmxwwghuRJH0nPBKKgprBGOew6tXzFOv69T9lcXKaJKN9HTokZ3ZMMnqj5HYyOaA3w4eVTpIqqEqYM7A0Tr2dMd9vhLJ5ofOIo491LFO8Ksu5MWA5V/wnd_Standard Double - King" SuppliersID="17" RoomSeq="1" SessionID="JP03939S" RoomType="Standard Double - King" OccupancyID="1" OccupancyName="" MealPlanID="1" MealPlanName="Room Only" MealPlanCode="RO" MealPlanPrice="" PerNightRoomRate="28.15" TotalRoomRate="56.30" CancellationDate="" CancellationAmount="" isavailable="true" sourcekey="">
+            <RequestID>JP03939S</RequestID>
           </Room>
         </RoomTypes>
       </Rooms>
@@ -54,20 +55,22 @@
     <HotelDetailwithcancellationResponse>
       <Hotels>
         <Hotel>
-          <HotelID>5131830</HotelID>
-          <HotelName>Shepherd's Bush Flats</HotelName>
+          <HotelID>JP03939S</HotelID>
+          <HotelName>Capital O160 Lumbini Dream Garden Guest House LLC</HotelName>
           <HotelImgSmall />
           <HotelImgLarge />
           <MapLink />
-          <DMC>TBO</DMC>
+          <DMC>EgyptExpress</DMC>
           <Currency />
           <Offers />
-          <Room ID="" RoomType="" MealPlanPrice="" PerNightRoomRate="" TotalRoomRate="" CancellationDate="">
-            <CancellationPolicies>
-              <CancellationPolicy LastCancellationDate="28/06/2021" ApplicableAmount="31.48" NoShowPolicy="0" />
-              <CancellationPolicy LastCancellationDate="27/06/2021" ApplicableAmount="0" NoShowPolicy="0" />
-            </CancellationPolicies>
-          </Room>
+          <Rooms>
+            <Room ID="" RoomType="" MealPlanPrice="" PerNightRoomRate="" TotalRoomRate="" CancellationDate="">
+              <CancellationPolicies>
+                <CancellationPolicy LastCancellationDate="01/08/2024" ApplicableAmount="0.00" NoShowPolicy="0" />
+                <CancellationPolicy LastCancellationDate="02/08/2024" ApplicableAmount="56.30" NoShowPolicy="0" />
+              </CancellationPolicies>
+            </Room>
+          </Rooms>
         </Hotel>
       </Hotels>
     </HotelDetailwithcancellationResponse>
