@@ -14,6 +14,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using TravillioXMLOutService.App_Code;
+using TravillioXMLOutService.Hotel;
 using TravillioXMLOutService.Models;
 using TravillioXMLOutService.Supplier.GoGlobals;
 using TravillioXMLOutService.Supplier.Withinearth;
@@ -25,9 +26,9 @@ namespace TravillioXMLOutService
     // NOTE: In order to launch WCF Test Client for testing this service, please select TravayooOUTService.svc or TravayooOUTService.svc.cs at the Solution Explorer and start debugging.
     //[ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single, IncludeExceptionDetailInFaults = true)]
-    
-    
-    public class TravayooOUTService : ITravayooOUTService,IDisposable
+
+
+    public class TravayooOUTService : ITravayooOUTService, IDisposable
     {
         #region Hotel Travayoo
         public object HotelAvailability(XElement req)
@@ -64,8 +65,13 @@ namespace TravillioXMLOutService
                     saveex.SendCustomExcepToDB(ex1);
                 }
                 #endregion
-                HotelSearch_XMLOUT reqs = new HotelSearch_XMLOUT();
-                availabilityresponse = reqs.HotelAvail_XMLOUT(req);
+                //HotelSearch_XMLOUT reqs = new HotelSearch_XMLOUT();
+                //availabilityresponse = reqs.HotelAvail_XMLOUT(req);
+
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
+                availabilityresponse = reqs.HotelAvailability(req);
+
+
                 if (req.Descendants("Response_Type").Single().Value == "JSON")
                 {
                     #region JSON Response
@@ -85,7 +91,7 @@ namespace TravillioXMLOutService
                         log.logrequestXML = req.ToString();
                         log.logresponseXML = availabilityresponse.ToString();
                         log.StartTime = Reqstattime;
-                        log.EndTime = DateTime.Now; 
+                        log.EndTime = DateTime.Now;
                         SaveAPILog savelog = new SaveAPILog();
                         savelog.SaveAPILogs_search(log);
                         #region Time End
@@ -187,8 +193,13 @@ namespace TravillioXMLOutService
         {
             try
             {
-                TrvHotelDetails reqs = new TrvHotelDetails();
+                //TrvHotelDetails reqs = new TrvHotelDetails();
+
+
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement htdetails = reqs.CreateHotelDescriptionDetail(request);
+
+
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
 
@@ -237,7 +248,9 @@ namespace TravillioXMLOutService
             try
             {
 
-                TrvHotelDetailsWithCancellation reqs = new TrvHotelDetailsWithCancellation();
+                //TrvHotelDetailsWithCancellation reqs = new TrvHotelDetailsWithCancellation();
+
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement htdetails = reqs.HotelDetailWithCancellations(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -283,7 +296,10 @@ namespace TravillioXMLOutService
             DateTime Reqstattime = DateTime.Now;
             try
             {
-                TrvRoomAvailabilityNew reqs = new TrvRoomAvailabilityNew();
+                //TrvRoomAvailabilityNew reqs = new TrvRoomAvailabilityNew();
+
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
+
                 XElement availabilityresponse = reqs.CreateCheckAvailability(req);
                 if (req.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -301,7 +317,7 @@ namespace TravillioXMLOutService
                         log.logrequestXML = req.ToString();
                         log.logresponseXML = availabilityresponse.ToString();
                         log.StartTime = Reqstattime;
-                        log.EndTime = DateTime.Now; 
+                        log.EndTime = DateTime.Now;
                         SaveAPILog savelog = new SaveAPILog();
                         savelog.SaveAPILogs_room(log);
                     }
@@ -357,7 +373,7 @@ namespace TravillioXMLOutService
               ));
                 return searchdoc;
                 #endregion
-            }            
+            }
 
         }
         public object HotelRoomsDesc(XElement req)
@@ -464,7 +480,12 @@ namespace TravillioXMLOutService
 
 
                 DateTime Reqstattime = DateTime.Now;
-                TrvHotelPreBooking reqs = new TrvHotelPreBooking();
+
+                //TrvHotelPreBooking reqs = new TrvHotelPreBooking();
+
+
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
+
                 XElement htdetails = reqs.HotelPreBooking(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -483,7 +504,7 @@ namespace TravillioXMLOutService
                         log.logrequestXML = request.ToString();
                         log.logresponseXML = htdetails.ToString();
                         log.StartTime = Reqstattime;
-                        log.EndTime = DateTime.Now; 
+                        log.EndTime = DateTime.Now;
                         SaveAPILog savelog = new SaveAPILog();
                         savelog.SaveAPILogs(log);
                     }
@@ -586,7 +607,7 @@ namespace TravillioXMLOutService
                         log.logrequestXML = request.ToString();
                         log.logresponseXML = bookingres.ToString();
                         log.StartTime = Reqstattime;
-                        log.EndTime = DateTime.Now; 
+                        log.EndTime = DateTime.Now;
                         SaveAPILog savelog = new SaveAPILog();
                         savelog.SaveAPILogs(log);
                     }
@@ -694,7 +715,9 @@ namespace TravillioXMLOutService
             try
             {
                 DateTime Reqstattime = DateTime.Now;
-                TrvHotelCancellation reqs = new TrvHotelCancellation();
+                //TrvHotelCancellation reqs = new TrvHotelCancellation();
+
+                TravayooHotelSearch reqs = new TravayooHotelSearch();
                 XElement cancellationres = reqs.HotelCancellation(request);
                 if (request.Descendants("Response_Type").Single().Value == "JSON")
                 {
@@ -712,7 +735,7 @@ namespace TravillioXMLOutService
                         log.logrequestXML = request.ToString();
                         log.logresponseXML = cancellationres.ToString();
                         log.StartTime = Reqstattime;
-                        log.EndTime = DateTime.Now; 
+                        log.EndTime = DateTime.Now;
                         SaveAPILog savelog = new SaveAPILog();
                         savelog.SaveAPILogs(log);
                     }
@@ -788,7 +811,7 @@ namespace TravillioXMLOutService
             //GC.WaitForPendingFinalizers();
             GC.SuppressFinalize(this);
         }
-        
+
         #endregion
     }
 }
