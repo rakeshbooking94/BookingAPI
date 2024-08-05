@@ -111,7 +111,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                        new XAttribute("LastCancellationDate", lastDate.ToString("yyyy-MM-dd")),
                                        new XAttribute("ApplicableAmount", 0),
                                        new XAttribute("NoShowPolicy", 0));
-                cxlItem.AddAfterSelf(_item);
+                cxlItem.Add(_item);
 
                 cxlList = cxlList.Where(x => x.amount > 0).OrderBy(x => x.start).Distinct().ToList();
                 foreach (var item in cxlList)
@@ -122,7 +122,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                               new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
                                                               new XAttribute("ApplicableAmount", item.amount),
                                                               new XAttribute("NoShowPolicy", 0));
-                        cxlItem.AddAfterSelf(cItem);
+                        cxlItem.Add(cItem);
                     }
                     else
                     {
@@ -130,7 +130,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                               new XAttribute("LastCancellationDate", item.start.Value.ToString("yyyy-MM-dd")),
                                                               new XAttribute("ApplicableAmount", sumPrice),
                                                               new XAttribute("NoShowPolicy", 0));
-                        cxlItem.AddAfterSelf(cItem);
+                        cxlItem.Add(cItem);
                     }
                 }
             }
@@ -537,7 +537,7 @@ namespace TravillioXMLOutService.Hotel.Service
                 if (response.status == "ok")
                 {
                     int counter = 0;
-                   
+
                     List<XElement> roomsResult = new List<XElement>();
                     foreach (var rate in response.data.hotels[0].rates)
                     {
@@ -578,7 +578,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                  new XAttribute("SessionID", rate.match_hash),
                                                  new XAttribute("RoomType", rate.room_name),
                                                  new XAttribute("OccupancyID", string.Empty),
-                                                 new XAttribute("OccupancyName", rate.room_data_trans.bedding_type==null?"": rate.room_data_trans.bedding_type),
+                                                 new XAttribute("OccupancyName", rate.room_data_trans.bedding_type == null ? "" : rate.room_data_trans.bedding_type),
                                                  new XAttribute("MealPlanID", ""),
                                                  new XAttribute("MealPlanName", ""),
                                                  new XAttribute("MealPlanCode", ""),
@@ -613,7 +613,7 @@ namespace TravillioXMLOutService.Hotel.Service
                     RoomDetails.Add(new XElement(soapenv + "Body", searchReq,
                         new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -627,7 +627,7 @@ namespace TravillioXMLOutService.Hotel.Service
                 saveex.SendCustomExcepToDB(ex1);
                 RoomDetails.Add(new XElement(soapenv + "Body", searchReq, new XElement("searchResponse", new XElement("ErrorTxt", "Room is not available"))));
                 #endregion
-            
+
             }
 
             return RoomDetails;
@@ -707,7 +707,7 @@ namespace TravillioXMLOutService.Hotel.Service
         #region PreBooking
         RTHWKPreBookRequest BindPreBookRequest(XElement req)
         {
-            req = req.Element("HotelPreBookingRequest");
+
             RTHWKPreBookRequest model = new RTHWKPreBookRequest()
             {
                 hash = req.Descendants("RequestID").First().Value.ToString()
@@ -723,10 +723,10 @@ namespace TravillioXMLOutService.Hotel.Service
                                        new XElement("Authentication", new XElement("AgentID", preBookReq.Descendants("AgentID").FirstOrDefault().Value), new XElement("UserName", preBookReq.Descendants("UserName").FirstOrDefault().Value),
                                        new XElement("Password", preBookReq.Descendants("Password").FirstOrDefault().Value), new XElement("ServiceType", preBookReq.Descendants("ServiceType").FirstOrDefault().Value),
                                        new XElement("ServiceVersion", preBookReq.Descendants("ServiceVersion").FirstOrDefault().Value))));
-            var checkIn = preBookReq.Element("FromDate").Value.TravayooDateTime();
+            var checkIn = preBookReqest.Element("FromDate").Value.TravayooDateTime();
             try
             {
-                var _req = BindPreBookRequest(preBookReq);
+                var _req = BindPreBookRequest(preBookReqest);
                 var reqObj = new RequestModel();
                 reqObj.StartTime = DateTime.Now;
                 reqObj.Customer = Convert.ToInt64(preBookReqest.Element("CustomerID").Value);
@@ -740,14 +740,17 @@ namespace TravillioXMLOutService.Hotel.Service
                 if (response.status == "ok")
                 {
                     int counter = 0;
-                    var roomsResult = (from rate in response.data.hotels[0].rates
-                                       let nightPrice = rate.totalPrice / rate.daily_prices.Count
-                                       let roomPrice = nightPrice / preBookReq.Descendants("RoomPax").Count()
-                                       select new XElement("RoomTypes",
+                    var rate = response.data.hotels[0].rates[0];
+
+                    var nightPrice = rate.totalPrice / rate.daily_prices.Count;
+                    var roomPrice = nightPrice / preBookReqest.Descendants("RoomPax").Count();
+
+
+                    var roomsResult = new XElement("RoomTypes",
                                               new XAttribute("Index", counter++),
                                               new XAttribute("DMCType", dmc),
                                               new XAttribute("CUID", customerid), new XAttribute("TotalRate", rate.totalPrice),
-                                              preBookReq.Descendants("RoomPax").Select((y, i) =>
+                                              preBookReqest.Descendants("RoomPax").Select((y, i) =>
                                               new XElement("Room",
                                                   new XAttribute("ID", rate.book_hash),
                                                   new XElement("RequestID", rate.book_hash),
@@ -756,7 +759,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                   new XAttribute("SessionID", rate.match_hash),
                                                   new XAttribute("RoomType", rate.room_name),
                                                   new XAttribute("OccupancyID", string.Empty),
-                                                  new XAttribute("OccupancyName", rate.room_data_trans.bedding_type),
+                                                  new XAttribute("OccupancyName", rate.room_data_trans.bedding_type == null ? "" : rate.room_data_trans.bedding_type),
                                                   new XAttribute("MealPlanID", ""),
                                                   new XAttribute("MealPlanName", rate.meal),
                                                   new XAttribute("MealPlanCode", ""),
@@ -772,7 +775,7 @@ namespace TravillioXMLOutService.Hotel.Service
                                                   new XElement("AdultNum", y.Element("Adult").Value),
                                                   new XElement("ChildNum", y.Element("Child").Value))),
                                               RoomCxlPolicy(rate.payment_options.payment_types[0].cancellation_penalties, checkIn, rate.totalPrice)
-                                              )).First();
+                                              );
 
                     string termsCondition = "";
                     XElement hoteldata = new XElement("Hotels", new XElement("Hotel", new XElement("HotelID", preBookReq.Descendants("HotelID").FirstOrDefault().Value),

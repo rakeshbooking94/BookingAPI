@@ -230,7 +230,8 @@ namespace TravillioXMLOutService.Hotel.Repository
             {
 
                 var _httpClient = this.CreateClient();
-                _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+                if (reqModel.TimeOut > 0)
+                    _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
 
                 using (var request = new HttpRequestMessage(HttpMethod.Post, "hotel/prebook"))
                 {

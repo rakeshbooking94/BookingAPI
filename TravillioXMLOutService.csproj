@@ -252,11 +252,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\BookEnquiryService\Reference1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\HotelAvailabilityService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -317,6 +312,7 @@
     <Content Include="App_Data\Hotel\Search.xml" />
     <None Include="App_Data\Hotel\Searchreqxml" />
     <Content Include="App_Data\Query.txt" />
+    <Content Include="App_Data\Ratehawk\room.xml" />
     <Content Include="App_Data\Script\apilog.sql" />
     <Content Include="App_Data\SQL\sqlquery.sql" />
     <Content Include="App_Data\SupplierCredentialTransfer\transfercredentials.xml" />

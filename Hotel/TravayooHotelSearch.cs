@@ -4,6 +4,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Xml.Linq;
 using TravillioXMLOutService.Hotel.Service;
@@ -19,7 +20,7 @@ namespace TravillioXMLOutService.Hotel
         XNamespace soapenv = "http://schemas.xmlsoap.org/soap/envelope/";
         XElement reqTravillio;
         int sup_cutime = 90000;
- 
+
         XElement bookingroom;
         List<XElement> hotelavailabilitylistextranet;
         #region Logs
@@ -95,7 +96,7 @@ namespace TravillioXMLOutService.Hotel
                     XElement SearReq = req.Descendants("searchRequest").FirstOrDefault();
                     string customerId = SearReq.Element("CustomerID").Value;
                     RTHWKServices hbreq = new RTHWKServices(customerId);
-              
+
                     List<XElement> hotels = hbreq.HotelAvailability(SearReq, customerId, "false");
 
                     IEnumerable<XElement> request = req.Descendants("searchRequest");
@@ -200,15 +201,15 @@ namespace TravillioXMLOutService.Hotel
                 {
                     reqTravillio = req;
 
-            
 
-                 
+
+
 
 
                     int expedia = req.Descendants("GiataHotelList").Attributes("GSupID").Where(x => x.Value == "24").Count();
 
 
-                    if (expedia > 0 )
+                    if (expedia > 0)
                     {
                         #region Supplier Credentials
                         System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(supplier_Cred).TypeHandle);
@@ -246,12 +247,12 @@ namespace TravillioXMLOutService.Hotel
                             #region Thread Start
                             try
                             {
-                                
+
                                 if (expedia > 0)
                                 {
                                     tid20.Start();
                                 }
-                              
+
                             }
                             catch (ThreadStateException te)
                             {
@@ -263,7 +264,7 @@ namespace TravillioXMLOutService.Hotel
                             timer.Start();
                             #endregion
                             #region Thread Join
-                           
+
                             if (expedia > 0)
                             {
                                 try
@@ -277,23 +278,23 @@ namespace TravillioXMLOutService.Hotel
                                 }
                                 catch { }
                             }
-                           
+
                             #endregion
                             #region Thread Abort
-                           
+
                             if (tid20 != null && tid20.IsAlive)
                                 tid20.Abort();
-                         
+
                             #endregion
                             #region Merge
                             try
                             {
-                               
+
                                 if (expediahtlavailresp != null)
                                 {
                                     XElement response = new XElement("Hotels", expediahtlavailresp.Descendants("RoomTypes").ToList());
                                     hotelavailabilityresp.Add(response);
-                                }                             
+                                }
 
                             }
                             catch { }
@@ -500,14 +501,29 @@ namespace TravillioXMLOutService.Hotel
 
 
 
-                    if (supplierid == "20")
+                    if (supplierid == "24")
                     {
                         if (custName == "")
                         {
                             custName = "Ratehawk";
                         }
-                        ExpediaService exobj = new ExpediaService(req.Descendants("CustomerID").Single().Value);
-                        XElement prebookres = exobj.PreBooking(req, custName);
+
+
+
+
+                        string customerId = req.Descendants("CustomerID").Single().Value;
+                        RTHWKServices hbreq = new RTHWKServices(customerId);
+
+
+
+
+                        var task = Task.Run(async () => await hbreq.PreBooking(req, custName));
+
+
+
+                        XElement prebookres = task.Result;
+
+
                         return prebookres;
                     }
                     else
@@ -612,7 +628,7 @@ namespace TravillioXMLOutService.Hotel
             #endregion
         }
 
-   
+
         public XElement HotelCancellation(XElement req)
         {
             #region XML OUT for Cancellation
@@ -738,7 +754,7 @@ namespace TravillioXMLOutService.Hotel
             }
             #endregion
         }
-  
+
         public XElement CreateHotelDescriptionDetail(XElement req)
         {
 
@@ -923,9 +939,9 @@ namespace TravillioXMLOutService.Hotel
                     System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(supplier_Cred).TypeHandle);
                     #endregion
                     IEnumerable<XElement> request = req.Descendants("hotelcancelpolicyrequest");
-               
-         
-              
+
+
+
                     #region Expedia
                     if (supplierid == "20")
                     {
@@ -934,7 +950,7 @@ namespace TravillioXMLOutService.Hotel
                         return CancellationPolicy;
                     }
                     #endregion
-                    
+
                     #region No Supplier Found
                     else
                     {
