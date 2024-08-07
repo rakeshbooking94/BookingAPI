@@ -901,7 +901,80 @@ namespace TravillioXMLOutService.Hotel.Service
 
 
         #region Confirm Booking
-        Task<XElement> HotelBookingAsync(XElement BookingReq)
+
+        RTHWKOrderFormRequest BindOrderFormReq(XElement req)
+        {
+
+            RTHWKOrderFormRequest model = new RTHWKOrderFormRequest()
+            {
+                partner_order_id = req.Element("TransID").Value,
+                book_hash = req.Descendants("RequestID").First().Value,
+                language = this.model.Culture,
+                user_ip = this.model.IpAddress,
+            };
+            return model;
+        }
+
+        RTHOrderFinishRequest BindOrderFinishReq(XElement req)
+        {
+            RTHOrderFinishRequest model = new RTHOrderFinishRequest()
+            {
+                user = new User
+                {
+                    email = this.model.Email,
+                    comment = "Booking Express",
+                    phone = this.model.Phone,
+                },
+                supplier_data = new SupplierData
+                {
+                    email = this.model.Email,
+                    phone = this.model.Phone,
+                    first_name_original = this.model.CustomerName,
+                    last_name_original = "Bookingexpress"
+                },
+                language = this.model.Culture,
+                partner = new Partner
+                {
+                    comment = "Booking Express",
+                    partner_order_id = req.Element("TransID").Value
+                },
+                payment_type = new OrderFinishPaymentType
+                {
+                    type = "deposit",
+                    amount = req.Element("TotalAmount").Value,
+                    currency_code = this.model.Currency,
+                },
+                rooms = (from rm in req.Descendants("Room")
+                         select new Room
+                         {
+                             guests = rm.Descendants("PaxInfo").Select(x => new GuestName
+                             {
+                                 first_name = x.Element("FirstName").Value,
+                                 last_name = x.Element("LastName").Value
+                             }).ToList(),
+                         }).ToList(),
+            };
+            return model;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public async Task<XElement> HotelBookingAsync(XElement BookingReq)
         {
             XElement BookReq = BookingReq.Descendants("HotelBookingRequest").FirstOrDefault();
             XElement HotelBookingRes = new XElement(soapenv + "Envelope", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv), new XElement(soapenv + "Header", new XAttribute(XNamespace.Xmlns + "soapenv", soapenv),
@@ -910,10 +983,67 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
+                var _req = BindOrderFormReq(BookReq);
+                var reqObj = new RequestModel();
+                reqObj.StartTime = DateTime.Now;
+                reqObj.Customer = Convert.ToInt64(BookReq.Element("CustomerID").Value);
+                reqObj.TrackNo = BookReq.Element("TransID").Value;
+                reqObj.ActionId = (int)BookReq.Name.LocalName.GetAction();
+                reqObj.Action = BookReq.Name.LocalName.GetAction().ToString();
+                reqObj.RequestStr = JsonConvert.SerializeObject(_req);
+                reqObj.ResponseStr = await repo.HotelBookingAsync(reqObj);
+
+                var response = JsonConvert.DeserializeObject<RTHWKOrderFormReponse>(reqObj.ResponseStr);
+                if (response.status == "ok")
+                {
+                    var _ordFreq = BindOrderFinishReq(BookReq);
+                    var ordfinish = new RequestModel();
+                    ordfinish.StartTime = DateTime.Now;
+                    ordfinish.Customer = Convert.ToInt64(BookReq.Element("CustomerID").Value);
+                    ordfinish.TrackNo = BookReq.Element("TransID").Value;
+                    ordfinish.ActionId = (int)BookReq.Name.LocalName.GetAction();
+                    ordfinish.Action = BookReq.Name.LocalName.GetAction().ToString();
+                    ordfinish.RequestStr = JsonConvert.SerializeObject(_ordFreq);
+                    ordfinish.ResponseStr = await repo.HotelBookingConfirmAsync(reqObj);
 
 
+                    var ordResp = JsonConvert.DeserializeObject<RTHWKOrderFormReponse>(reqObj.ResponseStr);
 
-                return null;
+
+                    XElement BookingRes = new XElement("HotelBookingResponse",
+                                   new XElement("Hotels", new XElement("HotelID", BookingReq.Descendants("HotelID").FirstOrDefault().Value),
+                                   new XElement("HotelName", BookingReq.Descendants("HotelName").FirstOrDefault().Value),
+                                   new XElement("FromDate", BookingReq.Descendants("FromDate").FirstOrDefault().Value),
+                                   new XElement("ToDate", BookingReq.Descendants("ToDate").FirstOrDefault().Value),
+                                   new XElement("AdultPax", BookingReq.Descendants("Rooms").Descendants("RoomPax").Descendants("Adult").FirstOrDefault().Value),
+                                   new XElement("ChildPax", BookingReq.Descendants("Rooms").Descendants("RoomPax").Descendants("Child").FirstOrDefault().Value),
+                                   //new XElement("TotalPrice", amount), new XElement("CurrencyID"),
+                                   //new XElement("CurrencyCode", currency),
+                                   //new XElement("MarketID"), new XElement("MarketName"), new XElement("HotelImgSmall"), new XElement("HotelImgLarge"), new XElement("MapLink"), new XElement("VoucherRemark"),
+                                   //new XElement("TransID", BookingReq.Descendants("TransID").FirstOrDefault().Value),
+                                   //new XElement("ConfirmationNumber", itinerary_id),
+                                   //new XElement("Status", bokStatus == "booked" ? "Success" : "Fail"),
+                                   new XElement("PassengersDetail", new XElement("GuestDetails",
+                                   from room in BookingReq.Descendants("Room")
+                                   select new XElement("Room", new XAttribute("ID", room.Attribute("RoomTypeID").Value), new XAttribute("RoomType", room.Attribute("RoomType").Value), new XAttribute("ServiceID", ""), new XAttribute("RefNo", ""),
+                                   new XAttribute("MealPlanID", ""), new XAttribute("MealPlanName", ""),
+                                   new XAttribute("MealPlanCode", ""), new XAttribute("MealPlanPrice", ""), new XAttribute("PerNightRoomRate", ""),
+                                   new XAttribute("RoomStatus", "true"), new XAttribute("TotalRoomRate", ""),
+                                   new XElement("RoomGuest", new XElement("GuestType", "Adult"), new XElement("Title"), new XElement("FirstName", room.Descendants("PaxInfo").FirstOrDefault().Descendants("FirstName").FirstOrDefault().Value),
+                                   new XElement("MiddleName"), new XElement("LastName", room.Descendants("PaxInfo").FirstOrDefault().Descendants("LastName").FirstOrDefault().Value), new XElement("IsLead", "true"), new XElement("Age")),
+                                   new XElement("Supplements"))
+                                   ))));
+
+                    HotelBookingRes.Add(new XElement(soapenv + "Body", BookReq, BookingRes));
+
+                    return null;
+                }
+                else
+                {
+                    HotelBookingRes.Add(new XElement(soapenv + "Body", BookReq, 
+                        new XElement("HotelBookingResponse", 
+                        new XElement("ErrorTxt", "No response from supplier!"))));
+                }
             }
             catch (Exception ex)
             {

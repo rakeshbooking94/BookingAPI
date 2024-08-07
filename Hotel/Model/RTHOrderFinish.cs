@@ -13,9 +13,19 @@ namespace TravillioXMLOutService.Hotel.Model
         public Partner partner { get; set; }
         public string language { get; set; }
         public List<Room> rooms { get; set; }
-        public List<UpsellDatum> upsell_data { get; set; }
-        public PaymentType payment_type { get; set; }
+        public OrderFinishPaymentType payment_type { get; set; }
     }
+
+
+    public class OrderFinishPaymentType
+    {
+        public string type { get; set; }
+        public string amount { get; set; }
+        public string currency_code { get; set; }
+
+
+    }
+
 
     public class Room
     {
@@ -32,7 +42,7 @@ namespace TravillioXMLOutService.Hotel.Model
     {
         public string partner_order_id { get; set; }
         public string comment { get; set; }
-        public string amount_sell_b2b2c { get; set; }
+
     }
 
 

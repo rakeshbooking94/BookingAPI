@@ -48,6 +48,7 @@ namespace TravillioXMLOutService.Hotel.Model
             get;
             set;
         }
+    
 
     }
 }

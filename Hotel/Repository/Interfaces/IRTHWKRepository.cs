@@ -17,9 +17,8 @@ namespace TravillioXMLOutService.Hotel.Repository.Interfaces
         Task<string> PreBookingAsync(RequestModel reqModel);
         Task<string> CancellationPolicyAsync(RequestModel reqModel);
         Task<string> CancelBookingAsync(RequestModel reqModel);
-
-        //Task<string> HotelBookingAsync(XElement req);
-
+        Task<string> HotelBookingAsync(RequestModel reqModel);
+        Task<string> HotelBookingConfirmAsync(RequestModel reqModel);
 
         Task<string> DownlaodHotelAsync();
     }

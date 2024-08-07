@@ -54,7 +54,10 @@ namespace TravillioXMLOutService.Hotel.Repository
             {
 
                 var _httpClient = this.CreateClient();
-                _httpClient.Timeout = TimeSpan.FromMilliseconds(reqModel.TimeOut);
+
+                if (reqModel.TimeOut > 0)
+                    _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+       
 
                 using (var request = new HttpRequestMessage(HttpMethod.Post, "search/serp/hotels/"))
                 {
@@ -488,9 +491,184 @@ namespace TravillioXMLOutService.Hotel.Repository
 
 
 
+        public async Task<string> HotelBookingAsync(RequestModel reqModel)
+        {
+            var startTime = DateTime.Now;
+            APILogDetail log = new APILogDetail();
+            string response = string.Empty;
+
+            try
+            {
+
+                var _httpClient = this.CreateClient();
+                if (reqModel.TimeOut > 0)
+                    _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+
+                using (var request = new HttpRequestMessage(HttpMethod.Post, "hotel/order/booking/form"))
+                {
+                    request.Content = new StringContent(reqModel.RequestStr);
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var result = await _httpClient.SendAsync(request);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        response = await result.Content.ReadAsStringAsync();
+
+                    }
+                    else
+                    {
+                        throw new HttpRequestException(result.ReasonPhrase);
+                    }
+                }
 
 
+            }
+            catch (Exception ex)
+            {
+                CustomException custEx = new CustomException(ex);
+                custEx.MethodName = "HotelBookingAsync Issue while reading response";
+                custEx.PageName = "RTHWKRepository";
+                custEx.CustomerID = reqModel.Customer.ToString();
+                custEx.TranID = reqModel.TrackNo;
+                SaveAPILog apilog = new SaveAPILog();
+                apilog.SendCustomExcepToDB(custEx);
+                log.logMsg = ex.Message.ToString();
+                log.logresponseXML = response;
 
+            }
+            finally
+            {
+
+                log.customerID = reqModel.Customer;
+                log.LogTypeID = reqModel.ActionId;
+                log.LogType = reqModel.Action;
+                log.SupplierID = model.SupplierId;
+                log.TrackNumber = reqModel.TrackNo;
+                log.logrequestXML = reqModel.RequestStr;
+
+                log.StartTime = startTime;
+                log.EndTime = DateTime.Now;
+                SaveAPILog savelog = new SaveAPILog();
+                try
+                {
+                    if (log.LogTypeID == 1 && log.LogType == "Search")
+                    {
+                        log.logresponseXML = response == null ? null : response.ToString();
+                        savelog.SaveAPILogs_search(log);
+                    }
+                    else
+                    {
+                        log.logresponseXML = response == null ? null : response.ToString();
+                        savelog.SaveAPILogs(log);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    CustomException custEx = new CustomException(ex);
+                    custEx.MethodName = "HotelBookingAsync Error on saving apilog";
+                    custEx.PageName = "RTHWKRepository";
+                    custEx.CustomerID = log.customerID.ToString();
+                    custEx.TranID = log.TrackNumber;
+                    SaveAPILog apilog = new SaveAPILog();
+                    apilog.SendCustomExcepToDB(custEx);
+                    log.logMsg = ex.Message.ToString();
+                    log.logresponseXML = response;
+                    savelog.SaveAPILogwithResponseError(log);
+                }
+            }
+
+            return response;
+        }
+
+
+        public async Task<string> HotelBookingConfirmAsync(RequestModel reqModel)
+        {
+            var startTime = DateTime.Now;
+            APILogDetail log = new APILogDetail();
+            string response = string.Empty;
+
+            try
+            {
+
+                var _httpClient = this.CreateClient();
+                if (reqModel.TimeOut > 0)
+                    _httpClient.Timeout = TimeSpan.FromTicks(reqModel.TimeOut);
+
+                using (var request = new HttpRequestMessage(HttpMethod.Post, "hotel/order/booking/finish"))
+                {
+                    request.Content = new StringContent(reqModel.RequestStr);
+                    request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var result = await _httpClient.SendAsync(request);
+                    if (result.IsSuccessStatusCode)
+                    {
+                        response = await result.Content.ReadAsStringAsync();
+
+                    }
+                    else
+                    {
+                        throw new HttpRequestException(result.ReasonPhrase);
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                CustomException custEx = new CustomException(ex);
+                custEx.MethodName = "HotelBookingConfirmAsync Issue while reading response";
+                custEx.PageName = "RTHWKRepository";
+                custEx.CustomerID = reqModel.Customer.ToString();
+                custEx.TranID = reqModel.TrackNo;
+                SaveAPILog apilog = new SaveAPILog();
+                apilog.SendCustomExcepToDB(custEx);
+                log.logMsg = ex.Message.ToString();
+                log.logresponseXML = response;
+
+            }
+            finally
+            {
+
+                log.customerID = reqModel.Customer;
+                log.LogTypeID = reqModel.ActionId;
+                log.LogType = reqModel.Action;
+                log.SupplierID = model.SupplierId;
+                log.TrackNumber = reqModel.TrackNo;
+                log.logrequestXML = reqModel.RequestStr;
+
+                log.StartTime = startTime;
+                log.EndTime = DateTime.Now;
+                SaveAPILog savelog = new SaveAPILog();
+                try
+                {
+                    if (log.LogTypeID == 1 && log.LogType == "Search")
+                    {
+                        log.logresponseXML = response == null ? null : response.ToString();
+                        savelog.SaveAPILogs_search(log);
+                    }
+                    else
+                    {
+                        log.logresponseXML = response == null ? null : response.ToString();
+                        savelog.SaveAPILogs(log);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    CustomException custEx = new CustomException(ex);
+                    custEx.MethodName = "HotelBookingConfirmAsync Error on saving apilog";
+                    custEx.PageName = "RTHWKRepository";
+                    custEx.CustomerID = log.customerID.ToString();
+                    custEx.TranID = log.TrackNumber;
+                    SaveAPILog apilog = new SaveAPILog();
+                    apilog.SendCustomExcepToDB(custEx);
+                    log.logMsg = ex.Message.ToString();
+                    log.logresponseXML = response;
+                    savelog.SaveAPILogwithResponseError(log);
+                }
+            }
+
+            return response;
+        }
 
 
         //Task<string> CancellationPolicyAsync(XElement req);
