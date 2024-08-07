@@ -910,6 +910,9 @@ namespace TravillioXMLOutService.Hotel.Service
 
             try
             {
+
+
+
                 return null;
             }
             catch (Exception ex)

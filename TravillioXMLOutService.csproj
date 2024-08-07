@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TravillioXMLOutService</RootNamespace>
     <AssemblyName>TravillioXMLOutService</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -151,12 +151,14 @@
     <Compile Include="Hotel\Model\CredentialModel.cs" />
     <Compile Include="Hotel\Model\HotelModel.cs" />
     <Compile Include="Hotel\Model\RequestModel.cs" />
+    <Compile Include="Hotel\Model\RTHOrderFinish.cs" />
     <Compile Include="Hotel\Model\RTHWKCancelBooking.cs" />
     <Compile Include="Hotel\Model\RTHWKCredentials.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelModel.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchRequest.cs" />
     <Compile Include="Hotel\Model\RTHWKHotelSearchResponse.cs" />
     <Compile Include="Hotel\Model\RTHWKLookUpRate.cs" />
+    <Compile Include="Hotel\Model\RTHWKOrderForm.cs" />
     <Compile Include="Hotel\Model\RTHWKPreBookModel.cs" />
     <Compile Include="Hotel\Repository\Interfaces\IRTHWKRepository.cs" />
     <Compile Include="Hotel\Repository\RTHWKRepository.cs" />
