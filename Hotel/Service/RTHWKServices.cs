@@ -690,7 +690,8 @@ namespace TravillioXMLOutService.Hotel.Service
             {
 
                 var result = from itm in imgList
-                             select new XElement("Image", new XAttribute("Path", itm));
+                             let url = itm.Replace("{size}", "")
+                             select new XElement("Image", new XAttribute("Path", url));
                 mgItem = new XElement("Images", result);
             }
             else
@@ -1040,8 +1041,8 @@ namespace TravillioXMLOutService.Hotel.Service
                 }
                 else
                 {
-                    HotelBookingRes.Add(new XElement(soapenv + "Body", BookReq, 
-                        new XElement("HotelBookingResponse", 
+                    HotelBookingRes.Add(new XElement(soapenv + "Body", BookReq,
+                        new XElement("HotelBookingResponse",
                         new XElement("ErrorTxt", "No response from supplier!"))));
                 }
             }
