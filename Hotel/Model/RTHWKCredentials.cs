@@ -14,8 +14,8 @@ namespace TravillioXMLOutService.Hotel.Model
         public string Email { get; set; }
         public string Phone { get; set; }
         public string CustomerName { get; set; }
-
-
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public RTHWKCredentials()
         {
             this.BaseUrl = "https://api.worldota.net/api/b2b/v3/";
@@ -27,6 +27,8 @@ namespace TravillioXMLOutService.Hotel.Model
             this.Culture = "en";
             this.Email = "s.hijazin@bookingexpress.co";
             this.CustomerName = "Saleem Hijazin";
+            this.FirstName = "Saleem";
+            this.LastName = "Hijazin";
             this.Phone = "+962795674029";
         }
     }

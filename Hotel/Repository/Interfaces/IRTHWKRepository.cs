@@ -10,16 +10,14 @@ namespace TravillioXMLOutService.Hotel.Repository.Interfaces
 {
     public interface IRTHWKRepository
     {
-
-
         Task<string> HotelSearchAsync(RequestModel reqModel);
         Task<string> RoomSearchAsync(RequestModel reqModel);
         Task<string> PreBookingAsync(RequestModel reqModel);
         Task<string> CancellationPolicyAsync(RequestModel reqModel);
-        Task<string> CancelBookingAsync(RequestModel reqModel);
         Task<string> HotelBookingAsync(RequestModel reqModel);
         Task<string> HotelBookingConfirmAsync(RequestModel reqModel);
-
+        Task<string> HotelBookingCheckStatusAsync(RequestModel reqModel);
+        Task<string> CancelBookingAsync(RequestModel reqModel);
         Task<string> DownlaodHotelAsync();
     }
 }

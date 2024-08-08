@@ -39,7 +39,12 @@ namespace TravillioXMLOutService.Hotel.Helper
                         CustomerId = data.Attribute("customerid").Value,
                         SupplierId = data.Attribute("supplierid").GetValueOrDefault(0),
                         Currency = data.Element("Currency").Value,
-                        Culture = data.Element("Culture").Value
+                        Culture = data.Element("Culture").Value,
+                        Email = data.Element("Email").Value,
+                        CustomerName = data.Element("CustomerName").Value,
+                        FirstName = data.Element("FirstName").Value,
+                        LastName = data.Element("LastName").Value,
+                        Phone = data.Element("Phone").Value,
                     };
                 }
                 return _credential;
@@ -133,7 +138,7 @@ namespace TravillioXMLOutService.Hotel.Helper
                 return ApiAction.Cancel;
             }
 
-            
+
             else
             {
                 return ApiAction.Cancel;
