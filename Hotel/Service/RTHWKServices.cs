@@ -620,7 +620,7 @@ namespace TravillioXMLOutService.Hotel.Service
                 #region Exception
                 CustomException ex1 = new CustomException(ex);
                 ex1.MethodName = "RoomAvailability";
-                ex1.PageName = "ExpediaService";
+                ex1.PageName = "RTHWKServices";
                 ex1.CustomerID = roomReq.Descendants("CustomerID").FirstOrDefault().Value;
                 ex1.TranID = roomReq.Descendants("TransID").FirstOrDefault().Value;
                 SaveAPILog saveex = new SaveAPILog();
@@ -680,6 +680,19 @@ namespace TravillioXMLOutService.Hotel.Service
             }
             catch (Exception ex)
             {
+
+                #region Exception
+                CustomException ex1 = new CustomException(ex);
+                ex1.MethodName = "HotelDetails";
+                ex1.PageName = "RTHWKServices";
+                ex1.CustomerID = req.Descendants("CustomerID").FirstOrDefault().Value;
+                ex1.TranID = req.Descendants("TransID").FirstOrDefault().Value;
+                SaveAPILog saveex = new SaveAPILog();
+                saveex.SendCustomExcepToDB(ex1);
+                #endregion
+
+                hotelDescResdoc.Add(new XElement(soapenv + "Body", HotelDescReq,
+                    new XElement("hoteldescResponse", new XElement("ErrorTxt", "Hotel detail is not available"))));
                 return hotelDescResdoc;
             }
         }
@@ -1060,10 +1073,23 @@ namespace TravillioXMLOutService.Hotel.Service
                         new XElement("HotelBookingResponse",
                         new XElement("ErrorTxt", "No response from supplier!"))));
                 }
+
+                return HotelBookingRes;
             }
             catch (Exception ex)
             {
-                throw ex;
+                CustomException ex1 = new CustomException(ex);
+                ex1.MethodName = "HotelBookingAsync";
+                ex1.PageName = "RTHWKServices";
+                ex1.CustomerID = BookingReq.Descendants("CustomerID").FirstOrDefault().Value;
+                ex1.TranID = BookingReq.Descendants("TransID").FirstOrDefault().Value;
+                SaveAPILog saveex = new SaveAPILog();
+                saveex.SendCustomExcepToDB(ex1);
+                HotelBookingRes.Add(new XElement(soapenv + "Body", BookReq,
+                    new XElement("HotelBookingResponse",
+                    new XElement("ErrorTxt", "There is some technical error !"))));
+                return HotelBookingRes;
+
             }
         }
         #endregion

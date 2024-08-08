@@ -196,7 +196,7 @@ namespace TravillioXMLOutService.Hotel.Repository
                     if (log.LogTypeID == 1 && log.LogType == "Search")
                     {
                         log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
+                        savelog.SaveAPILogs_room(log);
                     }
                     else
                     {
@@ -282,16 +282,8 @@ namespace TravillioXMLOutService.Hotel.Repository
                 SaveAPILog savelog = new SaveAPILog();
                 try
                 {
-                    if (log.LogTypeID == 1 && log.LogType == "Search")
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
-                    }
-                    else
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs(log);
-                    }
+                    log.logresponseXML = response == null ? null : response.ToString();
+                    savelog.SaveAPILogs(log);
 
                 }
                 catch (Exception ex)
@@ -370,16 +362,8 @@ namespace TravillioXMLOutService.Hotel.Repository
                 SaveAPILog savelog = new SaveAPILog();
                 try
                 {
-                    if (log.LogTypeID == 1 && log.LogType == "Search")
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
-                    }
-                    else
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs(log);
-                    }
+                    log.logresponseXML = response == null ? null : response.ToString();
+                    savelog.SaveAPILogs(log);
 
                 }
                 catch (Exception ex)
@@ -459,16 +443,8 @@ namespace TravillioXMLOutService.Hotel.Repository
                 SaveAPILog savelog = new SaveAPILog();
                 try
                 {
-                    if (log.LogTypeID == 1 && log.LogType == "Search")
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
-                    }
-                    else
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs(log);
-                    }
+                    log.logresponseXML = response == null ? null : response.ToString();
+                    savelog.SaveAPILogs(log);
 
                 }
                 catch (Exception ex)
@@ -548,16 +524,8 @@ namespace TravillioXMLOutService.Hotel.Repository
                 SaveAPILog savelog = new SaveAPILog();
                 try
                 {
-                    if (log.LogTypeID == 1 && log.LogType == "Search")
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
-                    }
-                    else
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs(log);
-                    }
+                    log.logresponseXML = response == null ? null : response.ToString();
+                    savelog.SaveAPILogs(log);
 
                 }
                 catch (Exception ex)
@@ -637,16 +605,8 @@ namespace TravillioXMLOutService.Hotel.Repository
                 SaveAPILog savelog = new SaveAPILog();
                 try
                 {
-                    if (log.LogTypeID == 1 && log.LogType == "Search")
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
-                    }
-                    else
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs(log);
-                    }
+                    log.logresponseXML = response == null ? null : response.ToString();
+                    savelog.SaveAPILogs(log);
 
                 }
                 catch (Exception ex)
@@ -721,16 +681,8 @@ namespace TravillioXMLOutService.Hotel.Repository
                 SaveAPILog savelog = new SaveAPILog();
                 try
                 {
-                    if (log.LogTypeID == 1 && log.LogType == "Search")
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs_search(log);
-                    }
-                    else
-                    {
-                        log.logresponseXML = response == null ? null : response.ToString();
-                        savelog.SaveAPILogs(log);
-                    }
+                    log.logresponseXML = response == null ? null : response.ToString();
+                    savelog.SaveAPILogs(log);
 
                 }
                 catch (Exception ex)
