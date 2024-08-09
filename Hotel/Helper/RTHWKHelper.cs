@@ -10,6 +10,7 @@ using System.Web;
 using System.Xml.Linq;
 using System.Xml;
 using TravillioXMLOutService.Hotel.Model;
+using Newtonsoft.Json;
 
 namespace TravillioXMLOutService.Hotel.Helper
 {
@@ -83,6 +84,41 @@ namespace TravillioXMLOutService.Hotel.Helper
         public static string RTHWKlanguage()
         {
             return "en";
+        }
+
+        public static string TravayooMeal(this string _meal)
+        {
+            _meal = _meal.ToLower();
+            string BoardName = "Room Only";
+            if (_meal == "nomeal".ToLower())
+            {
+                BoardName = "Room Only";
+            }
+            else if (_meal.Contains("breakfast"))
+            {
+                BoardName = "Bed & Breakfast";
+            }
+            else if (_meal.Contains("inclusive"))
+            {
+                BoardName = "All Inclusive";
+            }
+            else if (_meal.Contains("half-board"))
+            {
+                BoardName = "Half Board";
+            }
+            else if (_meal.Contains("full-board"))
+            {
+                BoardName = "Full Board";
+            }
+            else if (_meal.Contains("full-board"))
+            {
+                BoardName = "Full Board";
+            }
+            else
+            {
+                BoardName = "Half Board";
+            }
+            return BoardName;
         }
 
         public static List<int> Children(this XAttribute item)
